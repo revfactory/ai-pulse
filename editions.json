@@ -1,0 +1,18 @@
+{
+  "site": "AI PULSE",
+  "tagline": "매일 아침, 오늘의 AI 뉴스",
+  "editions": [
+    {
+      "date": "2026-07-13",
+      "weekday": "월",
+      "file": "editions/2026-07-13.html",
+      "storyCount": 15,
+      "headline": "Gemini 3.5 Pro, 7월 17일 베일을 벗는다",
+      "highlights": [
+        "Gemini 3.5 Pro 7.17 출시 예고 · 200만 토큰",
+        "머스크 vs 알트먼, 애플 소송 위로 설전",
+        "구글·MS, Anthropic MCP에 맞설 공동 전선"
+      ]
+    }
+  ]
+}

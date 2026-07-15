@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<title>AI PULSE · 아카이브 — 매일의 AI 뉴스</title>
+<meta name="description" content="매일 아침, 오늘의 AI 뉴스 · 날짜별 AI PULSE 아카이브. 총 1호.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@property --spin { syntax:'<angle>'; inherits:false; initial-value:0deg; }
+:root{--bg:#05060a;--bg2:#090b12;--ink:#eaf0ff;--muted:#8b93ab;--line:rgba(255,255,255,.08);
+  --cyan:#22e0d6;--violet:#7c5cff;--magenta:#ff4d8d;--amber:#ffcb47;--glass:rgba(255,255,255,.045);
+  --maxw:1180px;--ease:cubic-bezier(.16,1,.3,1);
+  --font:"Pretendard","Space Grotesk",system-ui,sans-serif;--disp:"Syne","Pretendard",sans-serif;--mono:"JetBrains Mono",monospace;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(70px) saturate(140%);opacity:.6;
+  background:
+    radial-gradient(38vw 38vw at 15% 20%, color-mix(in oklab,var(--violet) 60%,transparent), transparent 60%),
+    radial-gradient(34vw 34vw at 85% 18%, color-mix(in oklab,var(--cyan) 55%,transparent), transparent 60%),
+    radial-gradient(40vw 40vw at 70% 85%, color-mix(in oklab,var(--magenta) 50%,transparent), transparent 62%),
+    radial-gradient(30vw 30vw at 25% 90%, color-mix(in oklab,var(--amber) 40%,transparent), transparent 60%);
+  animation:mesh 26s var(--ease) infinite alternate}
+@keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0)}50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
+header.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:16px clamp(18px,5vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.72),transparent);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:18px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.nav-right{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.12em}
+main{max-width:var(--maxw);margin-inline:auto;padding:clamp(60px,10vw,120px) clamp(18px,5vw,40px) 120px}
+.hero{padding-bottom:clamp(40px,7vw,80px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:10px;margin-bottom:20px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+.hero h1{font-family:var(--disp);font-weight:800;letter-spacing:-.03em;line-height:.96;font-size:clamp(46px,11vw,120px)}
+.grad{background:linear-gradient(105deg,var(--cyan),var(--violet) 45%,var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:200% 0}}
+.hero p{color:var(--muted);font-size:clamp(15px,2.4vw,20px);margin-top:22px;max-width:560px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;align-items:center}
+.chip{font-family:var(--mono);font-size:12px;padding:9px 15px;border:1px solid var(--line);border-radius:99px;background:var(--glass);color:var(--muted)}
+.chip b{color:var(--ink)}
+.cta{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.04em;padding:12px 22px;border-radius:99px;
+  background:linear-gradient(105deg,var(--cyan),var(--violet));color:#05060a;display:inline-flex;gap:8px;align-items:center;
+  box-shadow:0 8px 30px color-mix(in oklab,var(--violet) 40%,transparent);transition:transform .4s var(--ease)}
+.cta:hover{transform:translateY(-3px)}
+.sect-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:0 0 28px;flex-wrap:wrap}
+.sect-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(24px,5vw,40px);letter-spacing:-.02em}
+.sect-head span{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.egrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.ecard{position:relative;border:1px solid var(--line);border-radius:22px;padding:26px;background:var(--glass);backdrop-filter:blur(8px);
+  overflow:hidden;transition:transform .5s var(--ease),border-color .5s;display:flex;flex-direction:column;min-height:230px}
+.ecard::after{content:"";position:absolute;inset:0;border-radius:22px;padding:1px;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:linear-gradient(140deg,var(--cyan),transparent 40%,var(--magenta));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.ecard:hover{transform:translateY(-6px);border-color:transparent}
+.ecard:hover::after{opacity:1}
+.badge{position:absolute;top:18px;right:18px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#05060a;background:var(--cyan);padding:4px 10px;border-radius:99px;box-shadow:0 0 16px color-mix(in oklab,var(--cyan) 60%,transparent)}
+.ecard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.edate{display:flex;align-items:baseline;gap:8px;font-family:var(--disp)}
+.edate .ym{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.08em}
+.edate .dd{font-weight:800;font-size:40px;line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#fff,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent}
+.edate .wd{font-family:var(--mono);font-size:12px;color:var(--cyan)}
+.ecount{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ecount span{font-size:11px;margin-left:2px}
+.ecard h3{font-family:var(--disp);font-weight:700;font-size:19px;line-height:1.22;letter-spacing:-.01em;text-wrap:balance;margin-bottom:14px}
+.hl{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.hl li{position:relative;padding-left:16px;color:var(--muted);font-size:13.5px;line-height:1.5}
+.hl li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--violet);box-shadow:0 0 8px var(--violet)}
+.ecard-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:12px;color:var(--muted)}
+.ecard .arw{font-size:16px;color:var(--ink);transition:transform .4s var(--ease)}
+.ecard:hover .arw{transform:translate(4px,-4px)}
+footer{border-top:1px solid var(--line);max-width:var(--maxw);margin:0 auto;padding:40px clamp(18px,5vw,40px) 60px;
+  font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9}
+footer b{font-family:var(--disp);color:var(--ink);font-size:18px}
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+</style>
+</head>
+<body>
+<div class="mesh"></div>
+<header class="nav">
+  <div class="brand"><span class="dot"></span>AI&nbsp;PULSE</div>
+  <div class="nav-right">ARCHIVE · 총 1호</div>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">DAILY AI BRIEFING · ARCHIVE</div>
+    <h1>매일의 AI를<br><span class="grad">아카이브합니다.</span></h1>
+    <p>매일 아침, 오늘의 AI 뉴스. 하루도 빠짐없이 기록되는 인공지능의 궤적 — 날짜별로 쌓이는 AI PULSE 전체 아카이브입니다.</p>
+    <div class="hero-meta">
+      <a class="cta" href="editions/2026-07-13.html">최신호 · 2026.07.13 보기 →</a>
+      <span class="chip"><b>1</b> 발행</span>
+      <span class="chip">최근 <b>07.13</b></span>
+    </div>
+  </section>
+  <section>
+    <div class="sect-head"><h2>발행 아카이브</h2><span>최신순 · 1개 호</span></div>
+    <div class="egrid">
+
+      <a class="ecard reveal" href="editions/2026-07-13.html" style="--i:0">
+        <span class="badge">최신호</span>
+        <div class="ecard-top">
+          <div class="edate"><span class="ym">2026.07</span><span class="dd">13</span><span class="wd">월</span></div>
+          <div class="ecount">15<span>건</span></div>
+        </div>
+        <h3>Gemini 3.5 Pro, 7월 17일 베일을 벗는다</h3>
+        <ul class="hl"><li>Gemini 3.5 Pro 7.17 출시 예고 · 200만 토큰</li><li>머스크 vs 알트먼, 애플 소송 위로 설전</li><li>구글·MS, Anthropic MCP에 맞설 공동 전선</li></ul>
+        <div class="ecard-foot"><span>전체 보기</span><span class="arw">↗</span></div>
+      </a>
+    </div>
+  </section>
+</main>
+<footer>
+  <b>AI&nbsp;PULSE</b><br>
+  매일 아침, 오늘의 AI 뉴스 · 매일 아침 08:00 KST 자동 발행<br>
+  Auto-published to GitHub Pages · Static-first HTML
+</footer>
+<script>
+(function(){
+  try{
+    if('IntersectionObserver'in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+        e.target.style.transitionDelay=((e.target.style.getPropertyValue('--i')||0)%3*0.05)+'s';
+        e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+      document.querySelectorAll('.reveal').forEach(function(e){io.observe(e);});
+    }else{document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in');});}
+  }catch(e){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+})();
+</script>
+</body>
+</html>
