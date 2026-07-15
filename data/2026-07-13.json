@@ -1,0 +1,146 @@
+{
+  "date": "2026-07-13",
+  "weekday": "월",
+  "dateLabel": "2026년 7월 13일 · 월요일",
+  "desc": "2026년 7월 13일, 세계를 움직인 AI 뉴스 15선. Gemini 3.5 Pro부터 머스크 vs 알트먼까지.",
+  "hero": ["오늘,", "프런티어가", "전선을 그었다."],
+  "heroSub": "<b>프런티어 모델 전쟁</b>부터 <b>에이전트 프로토콜 패권</b>, 그리고 실리콘밸리의 설전까지 — 하루 동안 세계를 흔든 열다섯 개의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "모델 출시, 인수, 규제 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "Gemini 3.5 Pro 7.17 출시 예고 · 200만 토큰",
+    "머스크 vs 알트먼, 애플 소송 위로 설전",
+    "구글·MS, Anthropic MCP에 맞설 공동 전선"
+  ],
+  "feature": {
+    "cat": "MODEL · 프런티어", "catClass": "c-model",
+    "title": "Gemini 3.5 Pro, 7월 17일 베일을 벗는다",
+    "body": "구글이 오는 목요일 <b>200만 토큰 컨텍스트</b>와 'Deep Think' 추론을 앞세운 Gemini 3.5 Pro를 공개한다. 경쟁 모델의 두 배에 달하는 컨텍스트에 더해, <b>정부 접근 제한이 없는 유일한 프런티어 모델</b>이라는 점을 내세운다.",
+    "detail": "구글이 7월 17일 Gemini 3.5 Pro를 공개한다. <b>200만 토큰 컨텍스트</b>와 'Deep Think' 추론을 앞세워 GPT-5.6·Grok 4.5·Claude Fable 5의 포위망을 정면 돌파하려는 시도다. 경쟁작의 두 배에 달하는 컨텍스트, 그리고 정부 접근 제한이 없는 유일한 프런티어 모델이라는 점을 차별화 포인트로 내세운다. 같은 날 상하이 세계AI대회가 겹치며 미·중 AI 서사가 하루에 응축된다.",
+    "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026",
+    "keys": [["2M", "컨텍스트 토큰"], ["$15/$60", "100만 토큰당"], ["07.17", "출시 예정"]]
+  },
+  "stories": [
+    {
+      "cat": "BIZ · 설전", "catClass": "c-biz",
+      "title": "머스크 vs 알트먼, 애플 소송 위로 불붙다",
+      "body": "애플이 OpenAI를 상대로 낸 영업비밀 소송을 두고 일론 머스크와 샘 알트먼이 X에서 정면 충돌했다. 머스크가 소송을 확대 인용하며 채용 관행을 비판하자 알트먼이 맞받았다.",
+      "detail": "애플이 OpenAI를 상대로 낸 영업비밀 소송이 실리콘밸리 최대 라이벌 구도로 번졌다. 머스크가 소송을 확대 인용하며 OpenAI의 인재 영입 관행을 저격하자 알트먼이 즉각 맞받아쳤다. 법적 다툼이 개인 간 공개 설전으로 비화하며, 프런티어 랩 사이의 인재·지식재산 전쟁이 얼마나 첨예한지를 드러냈다.",
+      "src": "X / Reuters", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "BIZ · 프로토콜", "catClass": "c-biz",
+      "title": "구글·MS, Anthropic MCP에 맞설 공동 전선",
+      "body": "구글·마이크로소프트·세일즈포스·스노우플레이크·서비스나우 5개사가 공통 에이전트 백엔드 프로토콜 지지에 합의했다. 엔터프라이즈 에이전트 인프라의 MCP 지배력에 대한 반격이다.",
+      "detail": "구글·MS·세일즈포스·스노우플레이크·서비스나우 5개사가 공통 에이전트 백엔드 프로토콜을 지지하기로 했다. Anthropic의 Model Context Protocol(MCP)이 사실상 표준으로 굳어지는 흐름에 대한 견제로, 엔터프라이즈 에이전트 인프라의 주도권을 놓고 진영이 갈리는 국면이다. 프로토콜 표준 전쟁은 향후 수년간 에이전트 생태계의 종속성을 결정한다.",
+      "src": "Enterprise", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "MODEL · 음성", "catClass": "c-model",
+      "title": "OpenAI 'GPT-Live', 듣고 말하기를 동시에",
+      "body": "듣기와 말하기를 동시에 처리하는 풀듀플렉스 음성 AI가 출시됐다. 대화 지연 없이 실시간 번역과 라이브 웹 검색을 수행한다.",
+      "detail": "OpenAI가 듣기와 말하기를 동시에 처리하는 풀듀플렉스 음성 모델 GPT-Live를 출시했다. 순차적 '녹음→응답' 구조를 벗어나 사람처럼 끼어들고 되받는 자연스러운 대화가 가능해졌고, 대화 지연 없이 실시간 번역과 라이브 웹 검색까지 수행한다. 음성 인터페이스가 텍스트를 대체할 킬러 UX로 부상하는 신호다.",
+      "src": "OpenAI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "MODEL · 에이전트", "catClass": "c-model",
+      "title": "Meta 'Muse Spark 1.1', 에이전트를 위해 태어나다",
+      "body": "자율 에이전트 전용으로 설계된 모델. 네이티브 서브에이전트 조율과 장기 작업 관리를 경쟁력 있는 가격에 제공한다.",
+      "detail": "Meta가 자율 에이전트 전용으로 설계한 Muse Spark 1.1을 공개했다. 서브에이전트를 네이티브로 조율하고 장기 작업을 관리하는 데 최적화됐으며, 공격적인 가격으로 개발자 채택을 노린다. '범용 챗봇'이 아니라 '에이전트 실행 엔진'을 겨냥한 특화 모델이라는 점에서 시장 분화를 보여준다.",
+      "src": "Meta", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "MODEL · 검증", "catClass": "c-model",
+      "title": "Mistral 'Leanstral 1.5', 코드에 수학적 증명을",
+      "body": "Lean 4로 형식 수학 증명을 생성해 항공·의료기기 등 안전필수 분야의 코드를 검증한다. 버그가 아닌 '증명 가능성'을 파는 모델.",
+      "detail": "Mistral이 Lean 4 형식 증명을 생성하는 Leanstral 1.5를 내놨다. 테스트로 버그를 '줄이는' 대신 코드의 정확성을 수학적으로 '증명'하는 접근으로, 항공·의료기기처럼 실패가 곧 인명 피해로 이어지는 안전필수 영역을 겨냥한다. AI 코드 생성이 신뢰성·검증 가능성이라는 새로운 축으로 확장되는 사례다.",
+      "src": "Mistral", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "SEC · 인프라", "catClass": "c-sec",
+      "title": "Anthropic 'Glasswing', 3배로 확장",
+      "body": "핵심 인프라의 소프트웨어 취약점을 찾아 패치하는 Project Glasswing이 50개에서 150개 조직으로, 15개국으로 확대됐다. 엔진은 Claude Mythos.",
+      "detail": "Anthropic이 핵심 인프라의 소프트웨어 취약점을 찾아 패치하는 Project Glasswing을 50개에서 150개 조직으로, 15개국으로 3배 확대했다. Claude Mythos 모델을 엔진으로 전력·통신 등 사회 기반 시설의 보안을 선제적으로 강화한다. 프런티어 AI가 공격이 아니라 방어의 도구로 국가 인프라에 투입되는 대표 사례다.",
+      "src": "Anthropic", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "BIZ · 인수", "catClass": "c-biz",
+      "title": "OpenAI, 포워드 배포 기업 Northslope 인수",
+      "body": "엔터프라이즈 AI 구현 역량을 강화하기 위해 포워드 배포 엔지니어링 기업 Northslope를 인수했다. 모델을 넘어 '현장'을 사는 전략.",
+      "detail": "OpenAI가 포워드 배포 엔지니어링 기업 Northslope를 인수했다. 뛰어난 모델만으로는 기업 현장의 실제 도입이 어렵다는 현실을 인정하고, 고객사에 상주하며 통합을 책임지는 인력을 확보한 것이다. '모델 판매'에서 '성과 보장'으로 경쟁이 이동하며 컨설팅형 역량이 새로운 해자가 되고 있다.",
+      "src": "OpenAI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "POLICY · 사회", "catClass": "c-policy",
+      "title": "'Claude Corps' 펠로우십, 학위는 필요없다",
+      "body": "비영리 조직에 초기 경력자를 배치하는 12개월 유급 펠로우십. 학위 요건 없이 AI 역량을 사회 전반으로 확산시키려는 시도.",
+      "detail": "Anthropic이 비영리 조직에 초기 경력자를 배치하는 12개월 유급 펠로우십 'Claude Corps'를 발표했다. 학위 요건을 없애고 사전 경력 상한을 두어, AI 역량을 엘리트 집단 너머 사회 전반으로 확산시키려는 시도다. AI 접근성과 인재 파이프라인을 넓히려는 공익적 실험이라는 점에서 주목된다.",
+      "src": "Anthropic", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "INFRA · 결제", "catClass": "c-infra",
+      "title": "Cloudflare, 에이전트가 스스로 결제한다",
+      "body": "x402 프로토콜 기반 머니타이제이션 게이트웨이 대기자 명단이 열렸다. AI 에이전트가 웹 리소스와 API에 프로그래매틱하게 비용을 지불한다.",
+      "detail": "Cloudflare가 x402 프로토콜 기반 머니타이제이션 게이트웨이의 대기자 명단을 열었다. AI 에이전트가 사람 개입 없이 웹 리소스·API에 프로그래매틱하게 소액 결제를 수행하도록 설계돼, '에이전트 경제'의 결제 인프라를 노린다. 자율 에이전트가 스스로 자원을 구매·소비하는 시대의 배관을 까는 움직임이다.",
+      "src": "Cloudflare", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "CREATE · 영상", "catClass": "c-create",
+      "title": "한 프레임을 고치면, 영상 전체가 바뀐다",
+      "body": "GPT Image 2와 Runway Aleph 2.0의 결합으로 단일 프레임 편집이 영상 전체로 전파된다. 시간적 일관성을 자동화한 프로 영상 워크플로.",
+      "detail": "OpenAI의 GPT Image 2와 Runway Aleph 2.0을 결합하면, 한 프레임만 편집해도 그 변화가 영상 전체로 자연스럽게 전파된다. 프로 영상 편집에서 가장 고된 작업인 시간적 일관성 유지를 자동화한 것으로, 후반 작업의 생산성을 근본적으로 바꾼다. 이미지·영상 생성이 '클립 생성'을 넘어 '편집 워크플로'로 진화하는 신호다.",
+      "src": "OpenAI · Runway", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "BIZ · 금융", "catClass": "c-biz",
+      "title": "골드만삭스, 고객에 '중국 AI'를 권하다",
+      "body": "DeepSeek·Qwen 등 특정 중국 모델을 고객에게 추천하는 가이던스를 발표했다. 오픈웨이트 중국 모델의 엔터프라이즈 주류 편입 신호.",
+      "detail": "골드만삭스가 DeepSeek·Qwen 등 특정 중국 오픈웨이트 모델을 고객에게 추천하는 가이던스를 냈다. 비용 대비 성능과 온프레미스 배포 가능성을 이유로, 중국 모델이 규제 민감 산업에서도 실사용 후보로 편입되는 흐름을 공식화한 셈이다. 지정학적 긴장에도 불구하고 '가성비'가 엔터프라이즈 선택을 움직인다는 방증이다.",
+      "src": "Goldman Sachs", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "중국, 해외 AI 접근 제한 검토",
+      "body": "당국이 알리바바·바이트댄스·Z.ai와 첨단 모델의 해외 접근 제한을 논의했다(미확인). 오픈웨이트 전략의 반전이라면 파장이 크다.",
+      "detail": "중국 당국이 알리바바·바이트댄스·Z.ai와 첨단 모델의 해외 접근 제한을 논의한 것으로 전해졌다(미확인). 사실이라면 그동안 개방적 오픈웨이트 배포로 글로벌 점유를 넓혀온 전략의 반전으로, AI를 전략 자산으로 재분류하는 신호다. 모델 확산과 국가 통제 사이의 긴장이 미국을 넘어 중국에서도 표면화되고 있다.",
+      "src": "Reuters", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "INFRA · API", "catClass": "c-infra",
+      "title": "DeepSeek API, 7월 24일의 함정",
+      "body": "deprecated 별칭 마이그레이션 마감이 7월 24일. 'deepseek-reasoner'가 V4-Pro가 아닌 V4-Flash로 매핑돼, 명시 호출을 놓치면 조용히 성능이 떨어진다.",
+      "detail": "DeepSeek API의 구형 별칭 마이그레이션 마감이 7월 24일로 다가왔다. 함정은 'deepseek-reasoner' 별칭이 최상위 V4-Pro가 아니라 V4-Flash로 매핑된다는 점으로, 모델을 명시 호출하지 않으면 코드는 그대로여도 응답 품질이 조용히 저하된다. 프로덕션에서 별칭에 의존해온 팀은 마감 전 명시적 모델 지정으로 전환해야 한다.",
+      "src": "DeepSeek", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    },
+    {
+      "cat": "POLICY · 경제", "catClass": "c-policy",
+      "title": "ECB, 'AI가 인플레 변동성 키운다' 경고",
+      "body": "AI발 생산성 향상과 알고리즘 가격 결정이 인플레이션 변동성을 키워 통화정책을 복잡하게 만들 수 있다고 경고했다.",
+      "detail": "유럽중앙은행(ECB) 정책위원이 AI가 인플레이션 변동성을 키울 수 있다고 경고했다. 생산성 향상은 물가를 낮추지만, 알고리즘 가격 결정이 시장 충격에 동시다발로 반응하면 가격이 더 급변할 수 있다는 것이다. AI가 실물 경제의 미시구조를 바꾸며 통화정책의 예측 가능성을 흔드는 새로운 변수로 떠오른다.",
+      "src": "ECB", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026"
+    }
+  ],
+  "stats": [
+    {"n": "2", "suf": "M", "lab": "Gemini 3.5 Pro 컨텍스트 토큰 — 경쟁 모델의 2배"},
+    {"n": "150", "suf": "", "lab": "Anthropic Glasswing 배포 조직 · 15개국 핵심 인프라"},
+    {"n": "5", "suf": "", "lab": "Anthropic MCP에 맞선 공동 에이전트 프로토콜 지지 기업"},
+    {"n": "24", "suf": "日", "lab": "DeepSeek API 마이그레이션 마감(7.24)까지 카운트다운"}
+  ],
+  "timeline": [
+    {"time": "07.13", "title": "머스크 vs 알트먼 설전", "desc": "애플 소송을 두고 X에서 공개 충돌"},
+    {"time": "07.13", "title": "5개사 공동 프로토콜 합의", "desc": "구글·MS·세일즈포스·스노우플레이크·서비스나우"},
+    {"time": "07.13", "title": "OpenAI, Northslope 인수", "desc": "포워드 배포 엔지니어링 역량 확보"},
+    {"time": "07.13", "title": "Anthropic Glasswing 3배 확대", "desc": "150개 조직·15개국으로"},
+    {"time": "07.17", "title": "Gemini 3.5 Pro 출시 예정", "desc": "200만 토큰 · Deep Think"},
+    {"time": "07.24", "title": "DeepSeek API 마이그레이션 마감", "desc": "별칭 매핑 주의 — V4-Pro 명시 호출"}
+  ],
+  "ticker": [
+    "Gemini 3.5 Pro <b>7.17 출시</b> · 200만 토큰",
+    "머스크 vs 알트먼 <b>X 설전</b>",
+    "OpenAI <b>GPT-Live</b> 풀듀플렉스 음성",
+    "구글·MS <b>공동 에이전트 프로토콜</b>",
+    "Anthropic <b>Glasswing 3배 확대</b>",
+    "골드만삭스 <b>중국 AI 추천</b>",
+    "Cloudflare <b>x402 결제 게이트웨이</b>",
+    "DeepSeek API <b>7.24 마감</b>"
+  ]
+}

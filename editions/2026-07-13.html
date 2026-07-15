@@ -212,6 +212,31 @@ footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,40px) 90px;m
 footer .fbrand{font-family:var(--disp);font-weight:800;font-size:22px}
 footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;max-width:420px}
 
+/* logo link */
+a.brand{cursor:pointer;text-decoration:none;transition:opacity .3s}
+a.brand:hover{opacity:.72}
+/* card interactivity + source link */
+.card,.feature[data-modal]{cursor:pointer}
+.foot a.src{color:var(--muted);transition:color .3s}
+.foot a.src:hover{color:var(--cyan)}
+.more{font-family:var(--mono);font-size:12px;color:var(--cyan);font-weight:700;letter-spacing:.03em;white-space:nowrap;transition:transform .3s var(--ease)}
+.card:hover .more,.feature:hover .more{transform:translateX(4px)}
+.feature .foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* modal (더 보기 팝업) */
+.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(3,4,8,.72);backdrop-filter:blur(10px)}
+.modal-panel{position:relative;max-width:640px;width:100%;max-height:85vh;overflow:auto;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(124,92,255,.18),rgba(34,224,214,.06) 55%,var(--bg2));padding:clamp(28px,5vw,46px);transform:translateY(30px) scale(.9);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font-size:15px;cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease);z-index:2}
+.modal-x:hover{border-color:var(--magenta);color:var(--magenta);transform:rotate(90deg)}
+.modal-cat{margin-bottom:18px}
+.modal-title{font-family:var(--disp);font-weight:800;font-size:clamp(23px,4vw,36px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance;padding-right:40px}
+.modal-detail{color:var(--muted);font-size:clamp(15px,2.2vw,17px);line-height:1.78;margin-top:20px}
+.modal-detail b{color:var(--ink);font-weight:600}
+.modal-src{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--mono);font-size:13px;font-weight:700;color:#05060a;background:linear-gradient(105deg,var(--cyan),var(--violet));padding:12px 20px;border-radius:99px;transition:transform .3s var(--ease)}
+.modal-src:hover{transform:translateY(-2px)}
+html:not(.js) .modal{display:none}
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .hero h1 .l>span{transform:none}
@@ -233,7 +258,7 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
 <div class="progress" id="prog"></div>
 
 <header class="nav" id="nav">
-  <div class="brand"><span class="dot"></span>AI&nbsp;PULSE</div>
+  <a class="brand" href="../index.html" aria-label="AI PULSE 아카이브 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
   <div class="nav-date" id="clock">2026 · 07 · 13 · MON</div>
 </header>
 
@@ -269,8 +294,8 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
     </div>
     <h1>
       <span class="l"><span>오늘,</span></span>
-      <span class="l"><span class="grad">인공지능이</span></span>
-      <span class="l"><span>움직였다.</span></span>
+      <span class="l"><span class="grad">프런티어가</span></span>
+      <span class="l"><span>전선을 그었다.</span></span>
     </h1>
     <p class="hero-sub"><b>프런티어 모델 전쟁</b>부터 <b>에이전트 프로토콜 패권</b>, 그리고 실리콘밸리의 설전까지 — 하루 동안 세계를 흔든 열다섯 개의 신호를 한 화면에 담았습니다.</p>
     <div class="hero-meta">
@@ -285,17 +310,16 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
   <!-- FEATURED -->
   <section id="top">
     <div class="eyebrow">오늘의 헤드라인</div>
-    <div class="feature reveal tilt">
-      <div class="rank">01</div>
-      <div class="cat c-model">MODEL · 프런티어</div>
-      <h3>Gemini 3.5 Pro, 7월 17일 베일을 벗는다</h3>
-      <p>구글이 오는 목요일 <b>200만 토큰 컨텍스트</b>와 'Deep Think' 추론을 앞세운 Gemini 3.5 Pro를 공개한다. 경쟁 모델의 두 배에 달하는 컨텍스트에 더해, <b>정부 접근 제한이 없는 유일한 프런티어 모델</b>이라는 점을 내세우며 GPT-5.6·Grok 4.5·Claude Fable 5의 포위망을 정면 돌파한다.</p>
-      <div class="keys">
-        <span class="kbig"><b>2M</b> 컨텍스트 토큰</span>
-        <span class="kbig"><b>$15/$60</b> 100만 토큰당</span>
-        <span class="kbig"><b>07.17</b> 출시 예정</span>
+          <div class="feature reveal tilt" data-modal data-cat="MODEL · 프런티어" data-catclass="c-model" data-title="Gemini 3.5 Pro, 7월 17일 베일을 벗는다" data-src="Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="구글이 7월 17일 Gemini 3.5 Pro를 공개한다. <b>200만 토큰 컨텍스트</b>와 'Deep Think' 추론을 앞세워 GPT-5.6·Grok 4.5·Claude Fable 5의 포위망을 정면 돌파하려는 시도다. 경쟁작의 두 배에 달하는 컨텍스트, 그리고 정부 접근 제한이 없는 유일한 프런티어 모델이라는 점을 차별화 포인트로 내세운다. 같은 날 상하이 세계AI대회가 겹치며 미·중 AI 서사가 하루에 응축된다.">
+        <div class="rank">01</div>
+        <div class="cat c-model">MODEL · 프런티어</div>
+        <h3>Gemini 3.5 Pro, 7월 17일 베일을 벗는다</h3>
+        <p>구글이 오는 목요일 <b>200만 토큰 컨텍스트</b>와 'Deep Think' 추론을 앞세운 Gemini 3.5 Pro를 공개한다. 경쟁 모델의 두 배에 달하는 컨텍스트에 더해, <b>정부 접근 제한이 없는 유일한 프런티어 모델</b>이라는 점을 내세운다.</p>
+        <div class="keys"><span class="kbig"><b>2M</b> 컨텍스트 토큰</span>
+          <span class="kbig"><b>$15/$60</b> 100만 토큰당</span>
+          <span class="kbig"><b>07.17</b> 출시 예정</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
       </div>
-    </div>
   </section>
 
   <!-- NEWS GRID -->
@@ -305,119 +329,117 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
       <p>모델·기업·정책·인프라·보안·크리에이티브 — 카테고리별로 읽는 오늘의 흐름.</p>
     </div>
     <div class="grid">
-
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 설전" data-catclass="c-biz" data-title="머스크 vs 알트먼, 애플 소송 위로 불붙다" data-src="X / Reuters" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="애플이 OpenAI를 상대로 낸 영업비밀 소송이 실리콘밸리 최대 라이벌 구도로 번졌다. 머스크가 소송을 확대 인용하며 OpenAI의 인재 영입 관행을 저격하자 알트먼이 즉각 맞받아쳤다. 법적 다툼이 개인 간 공개 설전으로 비화하며, 프런티어 랩 사이의 인재·지식재산 전쟁이 얼마나 첨예한지를 드러냈다."><span class="glowdot"></span>
         <div class="idx">/ 02</div>
         <div class="cat c-biz">BIZ · 설전</div>
         <h4>머스크 vs 알트먼, 애플 소송 위로 불붙다</h4>
         <p>애플이 OpenAI를 상대로 낸 영업비밀 소송을 두고 일론 머스크와 샘 알트먼이 X에서 정면 충돌했다. 머스크가 소송을 확대 인용하며 채용 관행을 비판하자 알트먼이 맞받았다.</p>
-        <div class="foot"><span class="src">SOURCE · X / Reuters</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · X / Reuters ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 프로토콜" data-catclass="c-biz" data-title="구글·MS, Anthropic MCP에 맞설 공동 전선" data-src="Enterprise" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="구글·MS·세일즈포스·스노우플레이크·서비스나우 5개사가 공통 에이전트 백엔드 프로토콜을 지지하기로 했다. Anthropic의 Model Context Protocol(MCP)이 사실상 표준으로 굳어지는 흐름에 대한 견제로, 엔터프라이즈 에이전트 인프라의 주도권을 놓고 진영이 갈리는 국면이다. 프로토콜 표준 전쟁은 향후 수년간 에이전트 생태계의 종속성을 결정한다."><span class="glowdot"></span>
         <div class="idx">/ 03</div>
         <div class="cat c-biz">BIZ · 프로토콜</div>
         <h4>구글·MS, Anthropic MCP에 맞설 공동 전선</h4>
         <p>구글·마이크로소프트·세일즈포스·스노우플레이크·서비스나우 5개사가 공통 에이전트 백엔드 프로토콜 지지에 합의했다. 엔터프라이즈 에이전트 인프라의 MCP 지배력에 대한 반격이다.</p>
-        <div class="foot"><span class="src">SOURCE · Enterprise</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Enterprise ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 음성" data-catclass="c-model" data-title="OpenAI 'GPT-Live', 듣고 말하기를 동시에" data-src="OpenAI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="OpenAI가 듣기와 말하기를 동시에 처리하는 풀듀플렉스 음성 모델 GPT-Live를 출시했다. 순차적 '녹음→응답' 구조를 벗어나 사람처럼 끼어들고 되받는 자연스러운 대화가 가능해졌고, 대화 지연 없이 실시간 번역과 라이브 웹 검색까지 수행한다. 음성 인터페이스가 텍스트를 대체할 킬러 UX로 부상하는 신호다."><span class="glowdot"></span>
         <div class="idx">/ 04</div>
         <div class="cat c-model">MODEL · 음성</div>
         <h4>OpenAI 'GPT-Live', 듣고 말하기를 동시에</h4>
         <p>듣기와 말하기를 동시에 처리하는 풀듀플렉스 음성 AI가 출시됐다. 대화 지연 없이 실시간 번역과 라이브 웹 검색을 수행한다.</p>
-        <div class="foot"><span class="src">SOURCE · OpenAI</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · OpenAI ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 에이전트" data-catclass="c-model" data-title="Meta 'Muse Spark 1.1', 에이전트를 위해 태어나다" data-src="Meta" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="Meta가 자율 에이전트 전용으로 설계한 Muse Spark 1.1을 공개했다. 서브에이전트를 네이티브로 조율하고 장기 작업을 관리하는 데 최적화됐으며, 공격적인 가격으로 개발자 채택을 노린다. '범용 챗봇'이 아니라 '에이전트 실행 엔진'을 겨냥한 특화 모델이라는 점에서 시장 분화를 보여준다."><span class="glowdot"></span>
         <div class="idx">/ 05</div>
         <div class="cat c-model">MODEL · 에이전트</div>
         <h4>Meta 'Muse Spark 1.1', 에이전트를 위해 태어나다</h4>
         <p>자율 에이전트 전용으로 설계된 모델. 네이티브 서브에이전트 조율과 장기 작업 관리를 경쟁력 있는 가격에 제공한다.</p>
-        <div class="foot"><span class="src">SOURCE · Meta</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Meta ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 검증" data-catclass="c-model" data-title="Mistral 'Leanstral 1.5', 코드에 수학적 증명을" data-src="Mistral" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="Mistral이 Lean 4 형식 증명을 생성하는 Leanstral 1.5를 내놨다. 테스트로 버그를 '줄이는' 대신 코드의 정확성을 수학적으로 '증명'하는 접근으로, 항공·의료기기처럼 실패가 곧 인명 피해로 이어지는 안전필수 영역을 겨냥한다. AI 코드 생성이 신뢰성·검증 가능성이라는 새로운 축으로 확장되는 사례다."><span class="glowdot"></span>
         <div class="idx">/ 06</div>
         <div class="cat c-model">MODEL · 검증</div>
         <h4>Mistral 'Leanstral 1.5', 코드에 수학적 증명을</h4>
         <p>Lean 4로 형식 수학 증명을 생성해 항공·의료기기 등 안전필수 분야의 코드를 검증한다. 버그가 아닌 '증명 가능성'을 파는 모델.</p>
-        <div class="foot"><span class="src">SOURCE · Mistral</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Mistral ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="SEC · 인프라" data-catclass="c-sec" data-title="Anthropic 'Glasswing', 3배로 확장" data-src="Anthropic" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="Anthropic이 핵심 인프라의 소프트웨어 취약점을 찾아 패치하는 Project Glasswing을 50개에서 150개 조직으로, 15개국으로 3배 확대했다. Claude Mythos 모델을 엔진으로 전력·통신 등 사회 기반 시설의 보안을 선제적으로 강화한다. 프런티어 AI가 공격이 아니라 방어의 도구로 국가 인프라에 투입되는 대표 사례다."><span class="glowdot"></span>
         <div class="idx">/ 07</div>
         <div class="cat c-sec">SEC · 인프라</div>
         <h4>Anthropic 'Glasswing', 3배로 확장</h4>
         <p>핵심 인프라의 소프트웨어 취약점을 찾아 패치하는 Project Glasswing이 50개에서 150개 조직으로, 15개국으로 확대됐다. 엔진은 Claude Mythos.</p>
-        <div class="foot"><span class="src">SOURCE · Anthropic</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Anthropic ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 인수" data-catclass="c-biz" data-title="OpenAI, 포워드 배포 기업 Northslope 인수" data-src="OpenAI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="OpenAI가 포워드 배포 엔지니어링 기업 Northslope를 인수했다. 뛰어난 모델만으로는 기업 현장의 실제 도입이 어렵다는 현실을 인정하고, 고객사에 상주하며 통합을 책임지는 인력을 확보한 것이다. '모델 판매'에서 '성과 보장'으로 경쟁이 이동하며 컨설팅형 역량이 새로운 해자가 되고 있다."><span class="glowdot"></span>
         <div class="idx">/ 08</div>
         <div class="cat c-biz">BIZ · 인수</div>
         <h4>OpenAI, 포워드 배포 기업 Northslope 인수</h4>
         <p>엔터프라이즈 AI 구현 역량을 강화하기 위해 포워드 배포 엔지니어링 기업 Northslope를 인수했다. 모델을 넘어 '현장'을 사는 전략.</p>
-        <div class="foot"><span class="src">SOURCE · OpenAI</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · OpenAI ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 사회" data-catclass="c-policy" data-title="'Claude Corps' 펠로우십, 학위는 필요없다" data-src="Anthropic" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="Anthropic이 비영리 조직에 초기 경력자를 배치하는 12개월 유급 펠로우십 'Claude Corps'를 발표했다. 학위 요건을 없애고 사전 경력 상한을 두어, AI 역량을 엘리트 집단 너머 사회 전반으로 확산시키려는 시도다. AI 접근성과 인재 파이프라인을 넓히려는 공익적 실험이라는 점에서 주목된다."><span class="glowdot"></span>
         <div class="idx">/ 09</div>
         <div class="cat c-policy">POLICY · 사회</div>
         <h4>'Claude Corps' 펠로우십, 학위는 필요없다</h4>
         <p>비영리 조직에 초기 경력자를 배치하는 12개월 유급 펠로우십. 학위 요건 없이 AI 역량을 사회 전반으로 확산시키려는 시도.</p>
-        <div class="foot"><span class="src">SOURCE · Anthropic</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Anthropic ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 결제" data-catclass="c-infra" data-title="Cloudflare, 에이전트가 스스로 결제한다" data-src="Cloudflare" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="Cloudflare가 x402 프로토콜 기반 머니타이제이션 게이트웨이의 대기자 명단을 열었다. AI 에이전트가 사람 개입 없이 웹 리소스·API에 프로그래매틱하게 소액 결제를 수행하도록 설계돼, '에이전트 경제'의 결제 인프라를 노린다. 자율 에이전트가 스스로 자원을 구매·소비하는 시대의 배관을 까는 움직임이다."><span class="glowdot"></span>
         <div class="idx">/ 10</div>
         <div class="cat c-infra">INFRA · 결제</div>
         <h4>Cloudflare, 에이전트가 스스로 결제한다</h4>
         <p>x402 프로토콜 기반 머니타이제이션 게이트웨이 대기자 명단이 열렸다. AI 에이전트가 웹 리소스와 API에 프로그래매틱하게 비용을 지불한다.</p>
-        <div class="foot"><span class="src">SOURCE · Cloudflare</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Cloudflare ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="CREATE · 영상" data-catclass="c-create" data-title="한 프레임을 고치면, 영상 전체가 바뀐다" data-src="OpenAI · Runway" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="OpenAI의 GPT Image 2와 Runway Aleph 2.0을 결합하면, 한 프레임만 편집해도 그 변화가 영상 전체로 자연스럽게 전파된다. 프로 영상 편집에서 가장 고된 작업인 시간적 일관성 유지를 자동화한 것으로, 후반 작업의 생산성을 근본적으로 바꾼다. 이미지·영상 생성이 '클립 생성'을 넘어 '편집 워크플로'로 진화하는 신호다."><span class="glowdot"></span>
         <div class="idx">/ 11</div>
         <div class="cat c-create">CREATE · 영상</div>
         <h4>한 프레임을 고치면, 영상 전체가 바뀐다</h4>
         <p>GPT Image 2와 Runway Aleph 2.0의 결합으로 단일 프레임 편집이 영상 전체로 전파된다. 시간적 일관성을 자동화한 프로 영상 워크플로.</p>
-        <div class="foot"><span class="src">SOURCE · OpenAI · Runway</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · OpenAI · Runway ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 금융" data-catclass="c-biz" data-title="골드만삭스, 고객에 '중국 AI'를 권하다" data-src="Goldman Sachs" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="골드만삭스가 DeepSeek·Qwen 등 특정 중국 오픈웨이트 모델을 고객에게 추천하는 가이던스를 냈다. 비용 대비 성능과 온프레미스 배포 가능성을 이유로, 중국 모델이 규제 민감 산업에서도 실사용 후보로 편입되는 흐름을 공식화한 셈이다. 지정학적 긴장에도 불구하고 '가성비'가 엔터프라이즈 선택을 움직인다는 방증이다."><span class="glowdot"></span>
         <div class="idx">/ 12</div>
         <div class="cat c-biz">BIZ · 금융</div>
         <h4>골드만삭스, 고객에 '중국 AI'를 권하다</h4>
         <p>DeepSeek·Qwen 등 특정 중국 모델을 고객에게 추천하는 가이던스를 발표했다. 오픈웨이트 중국 모델의 엔터프라이즈 주류 편입 신호.</p>
-        <div class="foot"><span class="src">SOURCE · Goldman Sachs</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Goldman Sachs ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 규제" data-catclass="c-policy" data-title="중국, 해외 AI 접근 제한 검토" data-src="Reuters" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="중국 당국이 알리바바·바이트댄스·Z.ai와 첨단 모델의 해외 접근 제한을 논의한 것으로 전해졌다(미확인). 사실이라면 그동안 개방적 오픈웨이트 배포로 글로벌 점유를 넓혀온 전략의 반전으로, AI를 전략 자산으로 재분류하는 신호다. 모델 확산과 국가 통제 사이의 긴장이 미국을 넘어 중국에서도 표면화되고 있다."><span class="glowdot"></span>
         <div class="idx">/ 13</div>
         <div class="cat c-policy">POLICY · 규제</div>
         <h4>중국, 해외 AI 접근 제한 검토</h4>
         <p>당국이 알리바바·바이트댄스·Z.ai와 첨단 모델의 해외 접근 제한을 논의했다(미확인). 오픈웨이트 전략의 반전이라면 파장이 크다.</p>
-        <div class="foot"><span class="src">SOURCE · Reuters</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reuters ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="INFRA · API" data-catclass="c-infra" data-title="DeepSeek API, 7월 24일의 함정" data-src="DeepSeek" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="DeepSeek API의 구형 별칭 마이그레이션 마감이 7월 24일로 다가왔다. 함정은 'deepseek-reasoner' 별칭이 최상위 V4-Pro가 아니라 V4-Flash로 매핑된다는 점으로, 모델을 명시 호출하지 않으면 코드는 그대로여도 응답 품질이 조용히 저하된다. 프로덕션에서 별칭에 의존해온 팀은 마감 전 명시적 모델 지정으로 전환해야 한다."><span class="glowdot"></span>
         <div class="idx">/ 14</div>
         <div class="cat c-infra">INFRA · API</div>
         <h4>DeepSeek API, 7월 24일의 함정</h4>
         <p>deprecated 별칭 마이그레이션 마감이 7월 24일. 'deepseek-reasoner'가 V4-Pro가 아닌 V4-Flash로 매핑돼, 명시 호출을 놓치면 조용히 성능이 떨어진다.</p>
-        <div class="foot"><span class="src">SOURCE · DeepSeek</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · DeepSeek ↗</a><span class="more">더 보기 →</span></div>
       </article>
 
-      <article class="card tilt reveal"><span class="glowdot"></span>
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 경제" data-catclass="c-policy" data-title="ECB, 'AI가 인플레 변동성 키운다' 경고" data-src="ECB" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" data-detail="유럽중앙은행(ECB) 정책위원이 AI가 인플레이션 변동성을 키울 수 있다고 경고했다. 생산성 향상은 물가를 낮추지만, 알고리즘 가격 결정이 시장 충격에 동시다발로 반응하면 가격이 더 급변할 수 있다는 것이다. AI가 실물 경제의 미시구조를 바꾸며 통화정책의 예측 가능성을 흔드는 새로운 변수로 떠오른다."><span class="glowdot"></span>
         <div class="idx">/ 15</div>
         <div class="cat c-policy">POLICY · 경제</div>
         <h4>ECB, 'AI가 인플레 변동성 키운다' 경고</h4>
         <p>AI발 생산성 향상과 알고리즘 가격 결정이 인플레이션 변동성을 키워 통화정책을 복잡하게 만들 수 있다고 경고했다.</p>
-        <div class="foot"><span class="src">SOURCE · ECB</span><span class="arrow">↗</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-13-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · ECB ↗</a><span class="more">더 보기 →</span></div>
       </article>
-
     </div>
   </section>
 
@@ -461,11 +483,22 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
     <p class="fmeta" style="margin-top:10px">2026.07.13 데일리 브리핑 · 오늘의 AI 뉴스 큐레이션</p>
   </div>
   <div class="fmeta">
-    출처 · Build Fast with AI, AIToolsRecap<br>
+    출처 · Build Fast with AI<br>
     HTML · CSS Scroll-driven Animations · Canvas · @property<br>
     <span style="color:var(--muted)">Crafted as a single living document.</span>
   </div>
 </footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <div class="modal-cat cat c-model" id="modalCat"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <div class="modal-detail" id="modalDetail"></div>
+    <a class="modal-src" id="modalSrc" target="_blank" rel="noopener"></a>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -521,6 +554,29 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
       });
       card.addEventListener('pointerleave',function(){card.style.transform='';});
     });
+  }catch(e){}
+
+  /* MODAL (더 보기 팝업) */
+  try{
+    var modal=document.getElementById('modal');
+    var mCat=document.getElementById('modalCat'),mTitle=document.getElementById('modalTitle'),
+        mDetail=document.getElementById('modalDetail'),mSrc=document.getElementById('modalSrc');
+    function openModal(el){
+      var d=el.dataset;
+      mCat.className='modal-cat cat '+(d.catclass||'c-model');
+      mCat.textContent=d.cat||'';
+      mTitle.textContent=d.title||'';
+      mDetail.innerHTML=d.detail||'';
+      if(d.url){mSrc.style.display='';mSrc.href=d.url;mSrc.textContent='출처 · '+(d.src||'열기')+' ↗';}else{mSrc.style.display='none';}
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+      try{if(navigator.vibrate)navigator.vibrate(6);}catch(e){}
+    }
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    document.querySelectorAll('[data-modal]').forEach(function(el){
+      el.addEventListener('click',function(ev){if(ev.target.closest('a.src'))return;openModal(el);});
+    });
+    modal.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',closeModal);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
   }catch(e){}
 
   /* SPOTLIGHT */
@@ -631,5 +687,6 @@ footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-hei
   }catch(e){}
 })();
 </script>
+
 </body>
 </html>

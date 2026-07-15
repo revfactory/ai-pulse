@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /*
  * build-index.js — AI PULSE 아카이브 허브 생성기
- * editions.json 을 읽어 날짜별 호(號)를 최신순으로 나열하는 index.html 을 생성한다.
+ * data/*.json 을 스캔해 날짜별 호(號)를 최신순으로 나열하는 index.html 을 생성한다.
  * 정적 우선(static-first): 생성된 index.html 은 JS 없이도 모든 콘텐츠가 보인다.
+ * 좌측 상단 로고를 누르면 최상단(홈)으로 이동한다.
  *
  * 사용법:  node tools/build-index.js        (리포 루트에서 실행)
  */
@@ -10,19 +11,32 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
-const dataPath = path.join(ROOT, 'editions.json');
-const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+const dataDir = path.join(ROOT, 'data');
 
 const esc = (s) => String(s == null ? '' : s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
   .replace(/"/g, '&quot;');
 
-// 최신순 정렬
-const editions = [...(data.editions || [])].sort((a, b) => (a.date < b.date ? 1 : -1));
+const site = 'AI PULSE';
+const tagline = '매일 아침, 오늘의 AI 뉴스';
+
+// data/*.json 스캔 → 아카이브 항목
+const files = fs.readdirSync(dataDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f));
+let editions = files.map((f) => {
+  const d = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf8'));
+  return {
+    date: d.date,
+    weekday: d.weekday || '',
+    file: `editions/${d.date}.html`,
+    storyCount: 1 + (Array.isArray(d.stories) ? d.stories.length : 0),
+    headline: d.feature ? d.feature.title : (d.headline || '오늘의 AI 브리핑'),
+    highlights: Array.isArray(d.highlights) ? d.highlights : [],
+  };
+});
+editions.sort((a, b) => (a.date < b.date ? 1 : -1)); // 최신순
+
 const latest = editions[0];
 const total = editions.length;
-const site = esc(data.site || 'AI PULSE');
-const tagline = esc(data.tagline || '매일 아침, 오늘의 AI 뉴스');
 
 const WD = ['일', '월', '화', '수', '목', '금', '토'];
 function fmt(dateStr) {
@@ -34,8 +48,7 @@ function fmt(dateStr) {
 const cards = editions.map((e, i) => {
   const f = fmt(e.date);
   const wd = e.weekday || f.wd;
-  const highlights = (e.highlights || []).slice(0, 3)
-    .map((h) => `<li>${esc(h)}</li>`).join('');
+  const highlights = (e.highlights || []).slice(0, 3).map((h) => `<li>${esc(h)}</li>`).join('');
   const isLatest = i === 0;
   return `
       <a class="ecard reveal" href="${esc(e.file)}" style="--i:${i}">
@@ -87,7 +100,8 @@ a{color:inherit;text-decoration:none}
 @keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0)}50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
 header.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
   padding:16px clamp(18px,5vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.72),transparent);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:18px}
+a.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:18px;cursor:pointer;transition:opacity .3s}
+a.brand:hover{opacity:.72}
 .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
 .nav-right{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.12em}
@@ -147,10 +161,10 @@ html.js .reveal.in{opacity:1;transform:none}
 <body>
 <div class="mesh"></div>
 <header class="nav">
-  <div class="brand"><span class="dot"></span>AI&nbsp;PULSE</div>
+  <a class="brand" href="#top" aria-label="AI PULSE 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
   <div class="nav-right">ARCHIVE · 총 ${total}호</div>
 </header>
-<main>
+<main id="top">
   <section class="hero">
     <div class="eyebrow">DAILY AI BRIEFING · ARCHIVE</div>
     <h1>매일의 AI를<br><span class="grad">아카이브합니다.</span></h1>

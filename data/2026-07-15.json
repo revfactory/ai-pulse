@@ -1,0 +1,146 @@
+{
+  "date": "2026-07-15",
+  "weekday": "수",
+  "dateLabel": "2026년 7월 15일 · 수요일",
+  "desc": "2026년 7월 15일, 세계를 움직인 AI 뉴스 15선. OpenAI의 426억 달러 정부 지분 제안부터 컴퓨트 병목까지.",
+  "hero": ["오늘,", "국가가", "AI의 주주가 됐다."],
+  "heroSub": "<b>OpenAI의 정부 지분 제안</b>부터 <b>컴퓨트 병목</b>, 그리고 실리콘 자립과 로보틱스까지 — 하루 동안 세계를 흔든 열다섯 개의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "지분·실적·실리콘·로보틱스 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "OpenAI, 미 정부에 $42.6B 지분 제안 (밸류 8,520억)",
+    "TSMC 분기 매출 사상 최대 · +36% YoY",
+    "Anthropic·삼성 커스텀 칩 협력 + 10월 IPO"
+  ],
+  "feature": {
+    "cat": "BIZ · 지분", "catClass": "c-biz",
+    "title": "OpenAI, 미 정부에 426억 달러 지분을 제안하다",
+    "body": "OpenAI가 <b>8,520억 달러 밸류에이션</b> 기준 5% 지분(약 426억 달러)을 미국 정부에 넘기는 방안을 제안했다. 알래스카 국부펀드 모델을 본뜬 이 카드는 규제 압박과 IPO를 앞둔 전략적 포석으로 읽힌다.",
+    "detail": "OpenAI가 8,520억 달러 밸류에이션 기준 5% 지분(약 426억 달러)을 미국 정부에 이전하는 방안을 제시했다. 알래스카 영구기금처럼 <b>'AI가 창출하는 부를 공공이 나눈다'</b>는 서사를 선점하려는 움직임으로, 노동자의 69%가 AI 기업의 지분 이전에 찬성한다는 여론과 맞물린다. 규제 리스크를 정치적 우군으로 바꾸고 IPO를 앞둔 정당성을 확보하려는 포석이라는 해석이 지배적이며, 실현되려면 의회 승인이라는 큰 관문을 넘어야 한다.",
+    "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026",
+    "keys": [["$42.6B", "제안 지분 가치"], ["$852B", "기업 가치"], ["5%", "정부 지분"]]
+  },
+  "stories": [
+    {
+      "cat": "INFRA · 반도체", "catClass": "c-infra",
+      "title": "TSMC, 사상 최대 분기 매출 — AI 칩 붐은 계속된다",
+      "body": "TSMC가 2분기 매출 1조 2,700억 대만달러(약 396억 달러, +36% YoY)로 사상 최대를 기록했다. 발표된 컴퓨트 계획들이 실제 하드웨어 주문으로 이어지고 있다는 방증.",
+      "detail": "TSMC의 2분기 매출이 전년 대비 36% 급증하며 분기 최대치를 새로 썼다. 엔비디아·구글·애플로 이어지는 AI 가속기 수요가 '발표'가 아니라 '실주문'으로 바뀌고 있음을 보여주는 지표로, AI 랠리의 실체를 뒷받침한다. 첨단 패키징(CoWoS) 병목이 여전한 가운데 증설 속도가 업계 전체 공급의 상한선을 결정하는 형국이다.",
+      "src": "TSMC", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "INFRA · 컴퓨트", "catClass": "c-infra",
+      "title": "구글, 컴퓨트 부족에 Meta의 Gemini 접근을 조인다",
+      "body": "구글이 연산 용량 부족을 이유로 Meta의 Gemini 모델 접근을 제한했다. 이제 대기업조차 모델 성능이 아니라 '원시 컴퓨트'가 최대 제약이 됐음을 보여준다.",
+      "detail": "구글이 자체 연산 용량 부족을 이유로 Meta의 Gemini 접근을 축소했다. 최전선 모델을 '가진' 기업조차 이를 '돌릴' GPU·TPU가 모자란다는 뜻으로, 경쟁의 병목이 알고리즘에서 전력·칩·데이터센터로 옮겨갔음을 상징한다. 각 사가 커스텀 실리콘과 자체 데이터센터에 수십조 원을 쏟아붓는 배경이기도 하다.",
+      "src": "Reports", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "BIZ · 칩/IPO", "catClass": "c-biz",
+      "title": "Anthropic, 삼성과 커스텀 칩 · 10월 IPO 준비",
+      "body": "Anthropic이 삼성과 자체 AI 실리콘을 개발하면서 10월 S-1 제출을 준비 중이다. 연환산 매출 470억 달러, 2026년 흑자 전환이 거론된다. 컴퓨트 비용과 리스크를 동시에 낮추는 이중 전략.",
+      "detail": "Anthropic이 삼성전자와 손잡고 추론 비용을 낮출 커스텀 AI 칩을 개발하는 한편, 이르면 10월 상장을 위한 S-1 제출을 준비하는 것으로 전해졌다. 연환산 매출 470억 달러와 2026년 흑자 가능성이 거론되며, 엔비디아 의존도와 컴퓨트 원가를 동시에 낮추려는 이중 포석이다. 프런티어 랩이 '모델 회사'를 넘어 '반도체·자본시장 플레이어'로 확장되는 신호다.",
+      "src": "Anthropic", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "BIZ · 엔터프라이즈", "catClass": "c-biz",
+      "title": "Google Cloud, 승부수는 'Gemini Enterprise 에이전트'",
+      "body": "구글이 조직 전반에서 AI 에이전트를 구축·거버넌스하는 확장형 Gemini Enterprise를 공개했다. OpenAI의 ChatGPT Work와 정면 대결 — 초점은 '강한 모델'에서 '관리 가능한 배포'로 이동했다.",
+      "detail": "구글 클라우드가 기업이 부서 단위로 AI 에이전트를 만들고 통제·감사할 수 있는 Gemini Enterprise를 내놨다. OpenAI의 ChatGPT Enterprise와 정면으로 부딪치는 제품으로, 승부처가 '누가 더 똑똑한 모델을 가졌나'에서 '누가 대규모 배포를 안전하게 운영하나'로 넘어갔음을 보여준다. 권한·감사 로그 같은 지루하지만 결정적인 기능이 계약을 가른다.",
+      "src": "Google Cloud", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "MODEL · 로보틱스", "catClass": "c-model",
+      "title": "보스턴 다이내믹스, Spot에 'Gemini Robotics'를 심다",
+      "body": "구글의 Gemini Robotics-ER 1.6을 Spot 로봇개에 통합해, 원격조종 없이 산업 점검을 위한 자율 판단과 공간 추론을 수행한다. 프런티어 AI와 체화 하드웨어의 융합.",
+      "detail": "보스턴 다이내믹스가 구글의 Gemini Robotics-ER 1.6을 Spot에 통합, 사람이 일일이 조종하지 않아도 발전소·공장 같은 현장을 스스로 순회·점검하도록 했다. 언어·시각 추론을 물리 로봇의 공간 이해와 결합한 사례로, '체화된 AI(embodied AI)'가 데모를 넘어 산업 현장으로 들어오고 있음을 보여준다. 로봇 하드웨어와 프런티어 모델의 수직 결합이 새로운 경쟁 축으로 부상한다.",
+      "src": "Boston Dynamics", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "CREATE · 이미지", "catClass": "c-create",
+      "title": "ByteDance 'Seedream 5.0 Pro', 중국 이미지 레이스 가열",
+      "body": "ByteDance가 Seedream 5.0 Pro를 출시하며 이미지 생성에서 중국의 우위를 굳혔다. 서구 경쟁작보다 낮은 가격에, 틱톡 수십억 사용자라는 유통망까지 등에 업었다.",
+      "detail": "ByteDance가 Seedream 5.0 Pro를 공개하며 텍스트-투-이미지 품질에서 선두권으로 올라섰다. 가격은 서구 모델보다 낮고, 틱톡·캡컷이라는 수십억 규모 배포 채널을 곧바로 붙일 수 있다는 점이 결정적 강점이다. 이미지·영상 생성에서 중국 모델의 가성비·유통 결합이 서구 진영을 실질적으로 위협하는 국면이다.",
+      "src": "ByteDance", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "BIZ · IPO", "catClass": "c-biz",
+      "title": "유니트리, 6.19억 달러 로봇 IPO 승인",
+      "body": "중국 유니트리 로보틱스가 상하이 STAR 마켓 상장을 승인받아 약 6.19억 달러를 조달한다. 원가 경쟁력을 앞세우며 상업 배포를 이끌 지능 역량 확보에 투자한다.",
+      "detail": "유니트리 로보틱스가 상하이 STAR 마켓 상장을 승인받아 약 6.19억 달러를 조달한다. 저가 4족·2족 로봇으로 이름을 알린 이 회사는 이번 자금으로 하드웨어 원가 우위에 'AI 두뇌'를 얹어 상업 배포를 확대하려 한다. 휴머노이드·4족 로봇 상용화 경쟁에서 중국의 제조 원가 경쟁력이 다시 부각된다.",
+      "src": "Reuters", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "BIZ · 투자", "catClass": "c-biz",
+      "title": "스타트업, 반년 만에 5,100억 달러 조달 — 대부분 AI",
+      "body": "2026년 상반기 글로벌 스타트업이 5,100억 달러를 조달했고, 그 대부분이 소수의 AI 프런티어 랩에 집중됐다. 생태계 분산이 아니라 자본 집중을 보여주는 기록.",
+      "detail": "2026년 상반기 글로벌 스타트업 조달액이 5,100억 달러에 달했지만, 자금은 소수의 AI 프런티어 랩과 인프라 기업에 극단적으로 쏠렸다. '벤처 붐'이라기보다 '초거대 베팅의 집중'에 가까우며, 나머지 생태계는 오히려 자금 가뭄을 겪는 양극화가 심화된다. 컴퓨트·인재·데이터를 가진 소수에게 승자독식이 굳어질 위험을 키운다.",
+      "src": "Reports", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "BIZ · 배포", "catClass": "c-biz",
+      "title": "MS 'Frontier Company', 엔지니어 6,000명을 고객사에",
+      "body": "마이크로소프트가 25억 달러를 들여 엔지니어 6,000명을 고객사 내부에 투입, AI 파일럿의 95% 실패율을 겨냥한다. '포워드 배포 엔지니어링'이 새로운 해자로 부상했다.",
+      "detail": "마이크로소프트가 25억 달러 규모의 'Frontier Company' 이니셔티브로 엔지니어 6,000명을 고객사 현장에 파견한다. 기업 AI 파일럿의 약 95%가 성과 없이 끝난다는 문제를 정면으로 겨냥한 것으로, 모델이 아니라 '현장 통합·운영'이 진짜 병목임을 인정한 셈이다. 포워드 배포 엔지니어링이 클라우드 계약을 지키는 새로운 해자로 자리 잡고 있다.",
+      "src": "Microsoft", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "POLICY · 노동", "catClass": "c-policy",
+      "title": "AI 부유세 논쟁, 노동자 69%가 지지",
+      "body": "미국 노동자의 69%가 AI 기업이 지분의 50%를 공공 국부펀드로 이전하도록 강제하는 데 찬성했다. OpenAI의 정부 지분 제안을 전략적 포석으로 읽게 만드는 여론 압력.",
+      "detail": "설문에서 미국 노동자의 69%가 'AI 기업 지분의 절반을 공공 국부펀드로 이전'하는 강제 조치에 찬성했다. AI가 일자리를 대체할 것이라는 불안이 재분배 요구로 표출된 것으로, 같은 날 나온 OpenAI의 정부 지분 제안을 '여론을 앞지른 선제적 방어'로 읽게 만든다. 향후 AI 규제 논쟁이 안전성뿐 아니라 '부의 분배'를 축으로 재편될 신호다.",
+      "src": "Survey", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "POLICY · 교육", "catClass": "c-policy",
+      "title": "시카고 로스쿨, 1학년 수업서 전자기기 금지",
+      "body": "프런티어 AI 접근이 소크라테스식 교수법을 위협하자, 시카고 로스쿨이 1학년 수업에서 전자기기를 전면 금지했다. AI 통합과 교육 목표 사이의 긴장을 보여주는 상징적 조치.",
+      "detail": "시카고대 로스쿨이 1학년 핵심 수업에서 노트북·태블릿 등 전자기기를 전면 금지했다. 학생이 실시간으로 프런티어 AI에 질문을 넘기면 스스로 사고하도록 훈련하는 소크라테스식 문답이 무력화된다는 우려에서다. AI를 교육에 통합하려는 흐름과 '스스로 사고하는 힘을 지키려는' 흐름이 정면충돌하는 상징적 장면이다.",
+      "src": "UChicago Law", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "美 상원, AI 특허 적격성을 심리하다",
+      "body": "상원 법사위가 AI가 만든 발명과 AI 시스템 자체에 지식재산권이 어떻게 적용되는지 심리했다. 특허 적격성 판단이 향후 10년 AI 경제의 가치가 어디에 쌓일지를 가른다.",
+      "detail": "미 상원 법사위 소위가 AI가 생성한 발명, 그리고 AI 시스템 자체의 특허 적격성을 다루는 청문회를 열었다. '누가 발명자인가', '어디까지 보호받는가'라는 근본 질문의 답이 향후 10년간 AI 가치사슬에서 이익이 어디에 축적될지를 좌우한다. 규칙이 정해지기 전까지 기업들은 영업비밀과 특허 사이에서 전략적 줄타기를 이어갈 전망이다.",
+      "src": "US Senate", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "POLICY · 사회", "catClass": "c-policy",
+      "title": "UNESCO, 남아시아 'AI 성별 격차' 경고",
+      "body": "UNESCO가 남아시아의 AI 교육·연구·창업 전반에서 여성의 심각한 과소대표를 지적했다. 지역을 위한 모델에 구조적 사각지대가 생길 위험이 있다.",
+      "detail": "UNESCO가 남아시아 지역의 AI 교육·연구·창업 전반에서 여성 참여가 심각하게 낮다고 경고했다. 데이터·개발자·의사결정에서 특정 집단이 빠지면 그 지역을 위한 AI에 구조적 편향과 사각지대가 새겨질 수밖에 없다. AI의 혜택과 위험이 성별·지역에 따라 불균등하게 배분되는 '포용성' 문제가 정책 의제로 떠오른다.",
+      "src": "UNESCO", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    },
+    {
+      "cat": "MODEL · 이벤트", "catClass": "c-model",
+      "title": "7/17 대격돌: Gemini 3.5 Pro가 세계AI대회를 만나다",
+      "body": "구글 Gemini 3.5 Pro가 7월 17일 출시되며, 같은 날 상하이 세계AI대회에 시진핑이 처음으로 직접 참석한다. 유출 스펙은 200만 토큰 컨텍스트와 'Deep Think' 추론.",
+      "detail": "7월 17일, 구글의 Gemini 3.5 Pro 출시와 상하이 세계인공지능대회(WAIC)가 같은 날 겹친다. 유출된 스펙은 200만 토큰 컨텍스트와 'Deep Think' 추론으로, 미국 프런티어 모델의 신무기다. 같은 날 시진핑 주석이 WAIC에 처음으로 직접 참석하는 것으로 알려져, AI 패권을 둘러싼 미·중의 상징적 격돌이 하루에 응축된다.",
+      "src": "Reports", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026"
+    }
+  ],
+  "stats": [
+    {"n": "42.6", "suf": "B$", "lab": "OpenAI가 미 정부에 제안한 지분 가치 · 밸류 8,520억 달러의 5%"},
+    {"n": "510", "suf": "B$", "lab": "2026 상반기 글로벌 스타트업 조달액 — 대부분 AI에 집중"},
+    {"n": "36", "suf": "%", "lab": "TSMC 2분기 매출 전년比 성장 · AI 칩 수요가 견인"},
+    {"n": "6000", "suf": "명", "lab": "MS 'Frontier Company'가 고객사에 투입하는 엔지니어"}
+  ],
+  "timeline": [
+    {"time": "07.14", "title": "OpenAI, 미 정부에 지분 제안", "desc": "8,520억 밸류의 5% = 426억 달러"},
+    {"time": "07.14", "title": "TSMC 사상 최대 분기 매출", "desc": "AI 칩 수요가 견인 · +36% YoY"},
+    {"time": "07.14", "title": "Anthropic·삼성 커스텀 칩 협의", "desc": "연환산 매출 470억 달러 · 10월 IPO"},
+    {"time": "07.14", "title": "MS 'Frontier Company' 출범", "desc": "고객사에 엔지니어 6,000명 투입"},
+    {"time": "07.17", "title": "Gemini 3.5 Pro 출시 + 세계AI대회", "desc": "상하이 · 시진핑 첫 직접 참석"},
+    {"time": "10월", "title": "Anthropic IPO 예정", "desc": "S-1 제출 · 2026년 흑자 거론"}
+  ],
+  "ticker": [
+    "OpenAI, 미 정부에 <b>$42.6B 지분</b> 제안",
+    "TSMC 분기 매출 <b>+36% YoY</b> 사상 최대",
+    "구글, 컴퓨트 부족에 <b>Meta의 Gemini 제한</b>",
+    "Anthropic·삼성 <b>커스텀 칩</b> + 10월 IPO",
+    "Boston Dynamics, Spot에 <b>Gemini Robotics</b>",
+    "ByteDance <b>Seedream 5.0 Pro</b> 공개",
+    "스타트업 상반기 <b>$510B 조달</b>",
+    "7/17 <b>Gemini 3.5 Pro</b> + 세계AI대회"
+  ]
+}

@@ -33,7 +33,8 @@ a{color:inherit;text-decoration:none}
 @keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0)}50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
 header.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
   padding:16px clamp(18px,5vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.72),transparent);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:18px}
+a.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:18px;cursor:pointer;transition:opacity .3s}
+a.brand:hover{opacity:.72}
 .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
 .nav-right{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.12em}
@@ -93,10 +94,10 @@ html.js .reveal.in{opacity:1;transform:none}
 <body>
 <div class="mesh"></div>
 <header class="nav">
-  <div class="brand"><span class="dot"></span>AI&nbsp;PULSE</div>
+  <a class="brand" href="#top" aria-label="AI PULSE 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
   <div class="nav-right">ARCHIVE · 총 2호</div>
 </header>
-<main>
+<main id="top">
   <section class="hero">
     <div class="eyebrow">DAILY AI BRIEFING · ARCHIVE</div>
     <h1>매일의 AI를<br><span class="grad">아카이브합니다.</span></h1>
