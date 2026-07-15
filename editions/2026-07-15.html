@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<title>AI PULSE · 2026.07.15 — 오늘의 AI 뉴스</title>
+<meta name="description" content="2026년 7월 15일, 세계를 움직인 AI 뉴스 15선. OpenAI의 426억 달러 정부 지분 제안부터 컴퓨트 병목까지.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@property --spin { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+:root{
+  --bg:#05060a;--bg2:#090b12;--ink:#eaf0ff;--muted:#8b93ab;--line:rgba(255,255,255,.08);
+  --cyan:#22e0d6;--violet:#7c5cff;--magenta:#ff4d8d;--amber:#ffcb47;--lime:#9bff5a;
+  --glass:rgba(255,255,255,.045);--maxw:1180px;--ease:cubic-bezier(.16,1,.3,1);
+  --font:"Pretendard","Space Grotesk",system-ui,sans-serif;--disp:"Syne","Pretendard",sans-serif;--mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;overflow-x:hidden;position:relative;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* BACKGROUND */
+#neural{position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(70px) saturate(140%);opacity:.6;
+  background:
+    radial-gradient(38vw 38vw at 15% 20%, color-mix(in oklab, var(--violet) 60%, transparent), transparent 60%),
+    radial-gradient(34vw 34vw at 85% 18%, color-mix(in oklab, var(--cyan) 55%, transparent), transparent 60%),
+    radial-gradient(40vw 40vw at 70% 85%, color-mix(in oklab, var(--magenta) 50%, transparent), transparent 62%),
+    radial-gradient(30vw 30vw at 25% 90%, color-mix(in oklab, var(--amber) 40%, transparent), transparent 60%);
+  animation:mesh 26s var(--ease) infinite alternate}
+@keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0deg)}
+  50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(320px 320px at var(--mx,50%) var(--my,-20%), color-mix(in oklab,var(--cyan) 22%, transparent), transparent 70%);
+  mix-blend-mode:screen}
+html:not(.js) .spotlight{display:none}
+
+/* LOADER — pure CSS, always auto-dismisses (never gets stuck) */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;
+  animation:loaderGone .7s var(--ease) 2.1s forwards}
+@keyframes loaderGone{to{opacity:0;visibility:hidden;pointer-events:none}}
+.load-inner{width:min(80vw,340px);text-align:center}
+.load-mark{font-family:var(--disp);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.load-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.1);margin-top:18px;overflow:hidden}
+.load-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  box-shadow:0 0 18px var(--cyan);animation:fillUp 1.9s var(--ease) forwards}
+@keyframes fillUp{to{width:100%}}
+.load-pct{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3em}
+html:not(.js) #loader{display:none} /* if no JS at all, don't risk any overlay */
+
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:0;left:0;height:3px;z-index:120;width:100%;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));box-shadow:0 0 14px color-mix(in oklab,var(--violet) 70%,transparent)}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.7),transparent);
+  transition:transform .5s var(--ease)}
+header.nav.hide{transform:translateY(-110%)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;letter-spacing:-.01em;font-size:18px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.nav-date{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.15em}
+@media(max-width:640px){.nav-date{display:none}}
+
+/* TICKER */
+.ticker{position:fixed;bottom:0;left:0;right:0;z-index:105;background:rgba(5,6,10,.72);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);overflow:hidden;padding:9px 0;display:flex;align-items:center}
+.ticker-tag{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--bg);
+  background:var(--magenta);padding:5px 12px;margin:0 14px;border-radius:5px;text-transform:uppercase;
+  box-shadow:0 0 18px color-mix(in oklab,var(--magenta) 60%,transparent)}
+.ticker-track{display:flex;gap:44px;white-space:nowrap;animation:slide 40s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track b{color:var(--cyan)}
+.ticker-track span{display:inline-flex;gap:8px;align-items:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* LAYOUT */
+main{position:relative;z-index:3}
+section{padding:clamp(70px,11vw,150px) clamp(18px,5vw,40px);max-width:var(--maxw);margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:120px;max-width:var(--maxw)}
+.hero-kick{font-family:var(--mono);font-size:clamp(12px,2.6vw,15px);letter-spacing:.3em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.hero-kick .live{color:var(--magenta);display:inline-flex;align-items:center;gap:7px}
+.hero-kick .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--magenta);box-shadow:0 0 10px var(--magenta);animation:pulse 1.4s infinite}
+.hero h1{font-family:var(--disp);font-weight:800;line-height:.94;letter-spacing:-.03em;font-size:clamp(52px,14vw,168px);margin-bottom:8px}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>span{display:block;animation:rise 1s var(--ease) both}
+.hero h1 .l:nth-child(1)>span{animation-delay:.15s}
+.hero h1 .l:nth-child(2)>span{animation-delay:.27s}
+.hero h1 .l:nth-child(3)>span{animation-delay:.39s}
+@keyframes rise{from{transform:translateY(110%)}to{transform:translateY(0)}}
+.grad{background:linear-gradient(105deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:200% 0}}
+.hero-sub{max-width:640px;color:var(--muted);font-size:clamp(15px,2.4vw,20px);margin-top:26px;animation:fade 1s var(--ease) .6s both}
+.hero-sub b{color:var(--ink);font-weight:600}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:fade 1s var(--ease) .8s both}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:9px 15px;border:1px solid var(--line);border-radius:99px;
+  background:var(--glass);color:var(--muted);backdrop-filter:blur(6px);transition:.4s var(--ease)}
+.chip b{color:var(--ink)}
+.chip:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+.scroll-cue{position:absolute;bottom:74px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+  letter-spacing:.3em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fade 1s 1.2s both}
+.scroll-cue .track{width:1px;height:44px;background:linear-gradient(var(--cyan),transparent);position:relative;overflow:hidden}
+.scroll-cue .track::after{content:"";position:absolute;top:0;left:0;width:100%;height:14px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-16px)}100%{transform:translateY(46px)}}
+@media(max-width:640px){.scroll-cue{display:none}}
+
+/* REVEAL — visible by default; only hidden/animated when JS present */
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .grid .card:nth-child(3n+2){transition-delay:.06s}
+html.js .grid .card:nth-child(3n+3){transition-delay:.12s}
+
+/* SECTION HEAD */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.section-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6vw,60px);letter-spacing:-.02em;line-height:1}
+.section-head p{color:var(--muted);font-size:14px;max-width:340px}
+
+/* FEATURED */
+.feature{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(124,92,255,.16),rgba(34,224,214,.06) 60%,transparent);
+  padding:clamp(26px,5vw,56px);isolation:isolate}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background:conic-gradient(from var(--spin),transparent,color-mix(in oklab,var(--violet) 40%,transparent),transparent 40%);
+  animation:sweep 12s linear infinite}
+@keyframes sweep{to{--spin:360deg}}
+.feature .rank{font-family:var(--disp);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:.8;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.12));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}
+.feature .cat{margin:20px 0 14px}
+.feature h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5vw,52px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;max-width:14ch}
+.feature p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:56ch;margin-top:18px}
+.feature .keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kbig{font-family:var(--mono);font-size:13px;color:var(--ink);border:1px solid var(--line);background:rgba(0,0,0,.25);
+  padding:10px 16px;border-radius:12px;display:flex;gap:8px;align-items:baseline}
+.kbig b{font-family:var(--disp);font-size:20px;color:var(--cyan)}
+
+.cat{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid currentColor}
+.cat::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.c-model{color:var(--cyan)}.c-biz{color:var(--violet)}.c-policy{color:var(--amber)}
+.c-infra{color:var(--lime)}.c-sec{color:var(--magenta)}.c-create{color:#ff8f5a}
+
+/* NEWS GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--glass);
+  backdrop-filter:blur(8px);overflow:hidden;transition:transform .5s var(--ease),border-color .5s}
+.card::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:linear-gradient(140deg,var(--cyan),transparent 40%,var(--magenta));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover{border-color:transparent;transform:translateY(-6px)}
+.card:hover::after{opacity:1}
+.card .glowdot{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(50px);opacity:0;transition:opacity .5s;
+  top:var(--gy,50%);left:var(--gx,50%);transform:translate(-50%,-50%);pointer-events:none;background:var(--cyan)}
+.card:hover .glowdot{opacity:.16}
+.card .idx{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.card h4{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.18;letter-spacing:-.01em;margin:16px 0 12px;text-wrap:balance}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.card .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.card .arrow{font-size:18px;transition:transform .4s var(--ease);color:var(--ink)}
+.card:hover .arrow{transform:translate(4px,-4px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--bg2);padding:clamp(28px,5vw,46px) 28px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width 1.4s var(--ease)}
+.stat.in::before{width:100%}
+html:not(.js) .stat::before{width:100%}
+.stat .num{font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#fff,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .num .u{font-size:.42em;color:var(--cyan);-webkit-text-fill-color:var(--cyan);margin-left:4px}
+.stat .lab{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.45}
+
+/* TIMELINE */
+.tl-row{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:start;transition:background .4s}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-row:hover{background:rgba(255,255,255,.02)}
+.tl-time{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:.05em;padding-top:2px}
+.tl-body h5{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.tl-body p{color:var(--muted);font-size:14px}
+
+/* OUTRO / FOOTER */
+.outro{text-align:center}
+.outro h2{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,86px);letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+.outro p{color:var(--muted);max-width:520px;margin:24px auto 0;font-size:16px}
+footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,40px) 90px;max-width:var(--maxw);margin-inline:auto;
+  display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;position:relative;z-index:3}
+footer .fbrand{font-family:var(--disp);font-weight:800;font-size:22px}
+footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;max-width:420px}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero h1 .l>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="load-inner">
+  <div class="load-mark">AI&nbsp;PULSE</div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div class="load-pct">LIVE BRIEFING · 2026.07.15</div>
+</div></div>
+
+<div class="mesh"></div>
+<canvas id="neural"></canvas>
+<div class="grain"></div>
+<div class="spotlight" id="spot"></div>
+<div class="progress" id="prog"></div>
+
+<header class="nav" id="nav">
+  <div class="brand"><span class="dot"></span>AI&nbsp;PULSE</div>
+  <div class="nav-date" id="clock">2026 · 07 · 13 · MON</div>
+</header>
+
+<div class="ticker">
+  <span class="ticker-tag">BREAKING</span>
+  <div class="ticker-track" id="ticker">
+    <span>◈ OpenAI, 미 정부에 <b>$42.6B 지분</b> 제안</span>
+    <span>◈ TSMC 분기 매출 <b>+36% YoY</b> 사상 최대</span>
+    <span>◈ 구글, 컴퓨트 부족에 <b>Meta의 Gemini 제한</b></span>
+    <span>◈ Anthropic·삼성 <b>커스텀 칩</b> + 10월 IPO</span>
+    <span>◈ Boston Dynamics, Spot에 <b>Gemini Robotics</b></span>
+    <span>◈ ByteDance <b>Seedream 5.0 Pro</b> 공개</span>
+    <span>◈ 스타트업 상반기 <b>$510B 조달</b></span>
+    <span>◈ 7/17 <b>Gemini 3.5 Pro</b> + 세계AI대회</span>
+    <span>◈ OpenAI, 미 정부에 <b>$42.6B 지분</b> 제안</span>
+    <span>◈ TSMC 분기 매출 <b>+36% YoY</b> 사상 최대</span>
+    <span>◈ 구글, 컴퓨트 부족에 <b>Meta의 Gemini 제한</b></span>
+    <span>◈ Anthropic·삼성 <b>커스텀 칩</b> + 10월 IPO</span>
+    <span>◈ Boston Dynamics, Spot에 <b>Gemini Robotics</b></span>
+    <span>◈ ByteDance <b>Seedream 5.0 Pro</b> 공개</span>
+    <span>◈ 스타트업 상반기 <b>$510B 조달</b></span>
+    <span>◈ 7/17 <b>Gemini 3.5 Pro</b> + 세계AI대회</span>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-kick">
+      <span class="live">LIVE BRIEFING</span>
+      <span>2026년 7월 15일 · 수요일</span>
+      <span>오늘의 AI 뉴스 15선</span>
+    </div>
+    <h1>
+      <span class="l"><span>오늘,</span></span>
+      <span class="l"><span class="grad">인공지능이</span></span>
+      <span class="l"><span>움직였다.</span></span>
+    </h1>
+    <p class="hero-sub"><b>OpenAI의 정부 지분 제안</b>부터 <b>컴퓨트 병목</b>, 그리고 실리콘 자립과 로보틱스까지 — 하루 동안 세계를 흔든 열다섯 개의 신호를 한 화면에 담았습니다.</p>
+    <div class="hero-meta">
+      <span class="chip"><b>15</b>&nbsp;STORIES</span>
+      <span class="chip"><b>6</b>&nbsp;CATEGORIES</span>
+      <span class="chip"><b>07.15</b>&nbsp;2026</span>
+      <span class="chip">SCROLL&nbsp;↓</span>
+    </div>
+    <div class="scroll-cue">SCROLL<div class="track"></div></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="top">
+    <div class="eyebrow">오늘의 헤드라인</div>
+    <div class="feature reveal tilt">
+      <div class="rank">01</div>
+      <div class="cat c-biz">BIZ · 지분</div>
+      <h3>OpenAI, 미 정부에 426억 달러 지분을 제안하다</h3>
+      <p>OpenAI가 <b>8,520억 달러 밸류에이션</b> 기준 5% 지분(약 426억 달러)을 미국 정부에 넘기는 방안을 제안했다. 알래스카 국부펀드 모델을 본뜬 이 카드는 규제 압박과 IPO를 앞둔 전략적 포석으로 읽히며, 실현되려면 의회 승인이 필요하다. 노동자의 <b>69%가 AI 기업의 지분 이전</b>에 찬성한다는 여론이 배경에 깔려 있다.</p>
+      <div class="keys">
+        <span class="kbig"><b>$42.6B</b> 제안 지분 가치</span>
+        <span class="kbig"><b>$852B</b> 기업 가치</span>
+        <span class="kbig"><b>5%</b> 정부 지분</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section id="stories">
+    <div class="section-head">
+      <div><div class="eyebrow">디스패치</div><h2>하루의 신호들</h2></div>
+      <p>모델·기업·정책·인프라·보안·크리에이티브 — 카테고리별로 읽는 오늘의 흐름.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 02</div>
+        <div class="cat c-infra">INFRA · 반도체</div>
+        <h4>TSMC, 사상 최대 분기 매출 — AI 칩 붐은 계속된다</h4>
+        <p>TSMC가 2분기 매출 1조 2,700억 대만달러(약 396억 달러, +36% YoY)로 사상 최대를 기록했다. 발표된 컴퓨트 계획들이 실제 하드웨어 주문으로 이어지고 있다는 방증.</p>
+        <div class="foot"><span class="src">SOURCE · TSMC</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 03</div>
+        <div class="cat c-infra">INFRA · 컴퓨트</div>
+        <h4>구글, 컴퓨트 부족에 Meta의 Gemini 접근을 조인다</h4>
+        <p>구글이 연산 용량 부족을 이유로 Meta의 Gemini 모델 접근을 제한했다. 이제 대기업조차 모델 성능이 아니라 '원시 컴퓨트'가 최대 제약이 됐음을 보여준다.</p>
+        <div class="foot"><span class="src">SOURCE · Reports</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 04</div>
+        <div class="cat c-biz">BIZ · 칩/IPO</div>
+        <h4>Anthropic, 삼성과 커스텀 칩 · 10월 IPO 준비</h4>
+        <p>Anthropic이 삼성과 자체 AI 실리콘을 개발하면서 10월 S-1 제출을 준비 중이다. 연환산 매출 470억 달러, 2026년 흑자 전환이 거론된다. 컴퓨트 비용과 리스크를 동시에 낮추는 이중 전략.</p>
+        <div class="foot"><span class="src">SOURCE · Anthropic</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 05</div>
+        <div class="cat c-biz">BIZ · 엔터프라이즈</div>
+        <h4>Google Cloud, 승부수는 'Gemini Enterprise 에이전트'</h4>
+        <p>구글이 조직 전반에서 AI 에이전트를 구축·거버넌스하는 확장형 Gemini Enterprise를 공개했다. OpenAI의 ChatGPT Work와 정면 대결 — 초점은 '강한 모델'에서 '관리 가능한 배포'로 이동했다.</p>
+        <div class="foot"><span class="src">SOURCE · Google Cloud</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 06</div>
+        <div class="cat c-model">MODEL · 로보틱스</div>
+        <h4>보스턴 다이내믹스, Spot에 'Gemini Robotics'를 심다</h4>
+        <p>구글의 Gemini Robotics-ER 1.6을 Spot 로봇개에 통합해, 원격조종 없이 산업 점검을 위한 자율 판단과 공간 추론을 수행한다. 프런티어 AI와 체화 하드웨어의 융합.</p>
+        <div class="foot"><span class="src">SOURCE · Boston Dynamics</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 07</div>
+        <div class="cat c-create">CREATE · 이미지</div>
+        <h4>ByteDance 'Seedream 5.0 Pro', 중국 이미지 레이스 가열</h4>
+        <p>ByteDance가 Seedream 5.0 Pro를 출시하며 이미지 생성에서 중국의 우위를 굳혔다. 서구 경쟁작보다 낮은 가격에, 틱톡 수십억 사용자라는 유통망까지 등에 업었다.</p>
+        <div class="foot"><span class="src">SOURCE · ByteDance</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 08</div>
+        <div class="cat c-biz">BIZ · IPO</div>
+        <h4>유니트리, 6.19억 달러 로봇 IPO 승인</h4>
+        <p>중국 유니트리 로보틱스가 상하이 STAR 마켓 상장을 승인받아 약 6.19억 달러를 조달한다. 원가 경쟁력을 앞세우며 상업 배포를 이끌 지능 역량 확보에 투자한다.</p>
+        <div class="foot"><span class="src">SOURCE · Reuters</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 09</div>
+        <div class="cat c-biz">BIZ · 투자</div>
+        <h4>스타트업, 반년 만에 5,100억 달러 조달 — 대부분 AI</h4>
+        <p>2026년 상반기 글로벌 스타트업이 5,100억 달러를 조달했고, 그 대부분이 소수의 AI 프런티어 랩에 집중됐다. 생태계 분산이 아니라 자본 집중을 보여주는 기록.</p>
+        <div class="foot"><span class="src">SOURCE · Reports</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 10</div>
+        <div class="cat c-biz">BIZ · 배포</div>
+        <h4>MS 'Frontier Company', 엔지니어 6,000명을 고객사에</h4>
+        <p>마이크로소프트가 25억 달러를 들여 엔지니어 6,000명을 고객사 내부에 투입, AI 파일럿의 95% 실패율을 겨냥한다. '포워드 배포 엔지니어링'이 새로운 해자로 부상했다.</p>
+        <div class="foot"><span class="src">SOURCE · Microsoft</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 11</div>
+        <div class="cat c-policy">POLICY · 노동</div>
+        <h4>AI 부유세 논쟁, 노동자 69%가 지지</h4>
+        <p>미국 노동자의 69%가 AI 기업이 지분의 50%를 공공 국부펀드로 이전하도록 강제하는 데 찬성했다. OpenAI의 정부 지분 제안을 전략적 포석으로 읽게 만드는 여론 압력.</p>
+        <div class="foot"><span class="src">SOURCE · Survey</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 12</div>
+        <div class="cat c-policy">POLICY · 교육</div>
+        <h4>시카고 로스쿨, 1학년 수업서 전자기기 금지</h4>
+        <p>프런티어 AI 접근이 소크라테스식 교수법을 위협하자, 시카고 로스쿨이 1학년 수업에서 전자기기를 전면 금지했다. AI 통합과 교육 목표 사이의 긴장을 보여주는 상징적 조치.</p>
+        <div class="foot"><span class="src">SOURCE · UChicago Law</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 13</div>
+        <div class="cat c-policy">POLICY · 규제</div>
+        <h4>美 상원, AI 특허 적격성을 심리하다</h4>
+        <p>상원 법사위가 AI가 만든 발명과 AI 시스템 자체에 지식재산권이 어떻게 적용되는지 심리했다. 특허 적격성 판단이 향후 10년 AI 경제의 가치가 어디에 쌓일지를 가른다.</p>
+        <div class="foot"><span class="src">SOURCE · US Senate</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 14</div>
+        <div class="cat c-policy">POLICY · 사회</div>
+        <h4>UNESCO, 남아시아 'AI 성별 격차' 경고</h4>
+        <p>UNESCO가 남아시아의 AI 교육·연구·창업 전반에서 여성의 심각한 과소대표를 지적했다. 지역을 위한 모델에 구조적 사각지대가 생길 위험이 있다.</p>
+        <div class="foot"><span class="src">SOURCE · UNESCO</span><span class="arrow">↗</span></div>
+      </article>
+
+      <article class="card tilt reveal"><span class="glowdot"></span>
+        <div class="idx">/ 15</div>
+        <div class="cat c-model">MODEL · 이벤트</div>
+        <h4>7/17 대격돌: Gemini 3.5 Pro가 세계AI대회를 만나다</h4>
+        <p>구글 Gemini 3.5 Pro가 7월 17일 출시되며, 같은 날 상하이 세계AI대회에 시진핑이 처음으로 직접 참석한다. 유출 스펙은 200만 토큰 컨텍스트와 'Deep Think' 추론.</p>
+        <div class="foot"><span class="src">SOURCE · Reports</span><span class="arrow">↗</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="numbers">
+    <div class="eyebrow">숫자로 보는 오늘</div>
+    <div class="section-head"><h2>By the Numbers</h2></div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-n="42.6" data-suf="B$">42.6<span class="u">B$</span></div><div class="lab">OpenAI가 미 정부에 제안한 지분 가치 · 밸류 8,520억 달러의 5%</div></div>
+      <div class="stat reveal"><div class="num" data-n="510" data-suf="B$">510<span class="u">B$</span></div><div class="lab">2026 상반기 글로벌 스타트업 조달액 — 대부분 AI에 집중</div></div>
+      <div class="stat reveal"><div class="num" data-n="36" data-suf="%">36<span class="u">%</span></div><div class="lab">TSMC 2분기 매출 전년比 성장 · AI 칩 수요가 견인</div></div>
+      <div class="stat reveal"><div class="num" data-n="6000" data-suf="명">6000<span class="u">명</span></div><div class="lab">MS 'Frontier Company'가 고객사에 투입하는 엔지니어</div></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="eyebrow">타임라인</div>
+    <div class="section-head"><h2>07.15의 궤적</h2><p>지분·실적·실리콘·로보틱스 — 하루를 관통한 사건의 순서.</p></div>
+    <div class="tl">
+      <div class="tl-row reveal"><div class="tl-time">07.14</div><div class="tl-body"><h5>OpenAI, 미 정부에 지분 제안</h5><p>8,520억 밸류의 5% = 426억 달러</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.14</div><div class="tl-body"><h5>TSMC 사상 최대 분기 매출</h5><p>AI 칩 수요가 견인 · +36% YoY</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.14</div><div class="tl-body"><h5>Anthropic·삼성 커스텀 칩 협의</h5><p>연환산 매출 470억 달러 · 10월 IPO</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.14</div><div class="tl-body"><h5>MS 'Frontier Company' 출범</h5><p>고객사에 엔지니어 6,000명 투입</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.17</div><div class="tl-body"><h5>Gemini 3.5 Pro 출시 + 세계AI대회</h5><p>상하이 · 시진핑 첫 직접 참석</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">10월</div><div class="tl-body"><h5>Anthropic IPO 예정</h5><p>S-1 제출 · 2026년 흑자 거론</p></div></div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="eyebrow" style="justify-content:center">내일, 다시</div>
+    <h2>가속은 <span class="grad">멈추지 않는다.</span></h2>
+    <p>AI PULSE는 매일의 인공지능 신호를 가장 임팩트 있게 압축합니다. 오늘의 15선은 여기까지 — 내일의 헤드라인은 이미 쓰이고 있습니다.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="fbrand">AI&nbsp;PULSE</div>
+    <p class="fmeta" style="margin-top:10px">2026.07.15 데일리 브리핑 · 오늘의 AI 뉴스 큐레이션</p>
+  </div>
+  <div class="fmeta">
+    출처 · Build Fast with AI<br>
+    HTML · CSS Scroll-driven Animations · Canvas · @property<br>
+    <span style="color:var(--muted)">Crafted as a single living document.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=false;
+  try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+
+  /* REVEAL via IntersectionObserver */
+  try{
+    if('IntersectionObserver'in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            if(e.target.classList.contains('stat'))countUp(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.16});
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){io.observe(e);});
+    }else{
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){e.classList.add('in');});
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal,.stat').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* COUNTERS */
+  function countUp(stat){
+    try{
+      var el=stat.querySelector('.num');if(!el)return;
+      var n=+el.getAttribute('data-n'),suf=el.getAttribute('data-suf')||'';
+      var t0=null,dur=1400;
+      function tick(now){
+        if(t0===null)t0=now;
+        var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
+        var v=n<10?(Math.round(n*e*10)/10):Math.floor(n*e);
+        el.innerHTML=v+'<span class="u">'+suf+'</span>';
+        if(k<1)requestAnimationFrame(tick);else el.innerHTML=n+'<span class="u">'+suf+'</span>';
+      }
+      requestAnimationFrame(tick);
+    }catch(e){}
+  }
+
+  /* TILT + GLOW */
+  try{
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove',function(ev){
+        var r=card.getBoundingClientRect();
+        var px=(ev.clientX-r.left)/r.width,py=(ev.clientY-r.top)/r.height;
+        if(!reduce)card.style.transform='perspective(900px) rotateY('+((px-.5)*8)+'deg) rotateX('+((.5-py)*8)+'deg) translateY(-6px)';
+        card.style.setProperty('--gx',px*100+'%');card.style.setProperty('--gy',py*100+'%');
+      });
+      card.addEventListener('pointerleave',function(){card.style.transform='';});
+    });
+  }catch(e){}
+
+  /* SPOTLIGHT */
+  try{
+    var spot=document.getElementById('spot');
+    window.addEventListener('pointermove',function(e){
+      spot.style.setProperty('--mx',e.clientX+'px');spot.style.setProperty('--my',e.clientY+'px');
+    },{passive:true});
+  }catch(e){}
+
+  /* NAV HIDE + SCROLL PROGRESS FALLBACK */
+  try{
+    var nav=document.getElementById('nav'),prog=document.getElementById('prog'),lastY=0;
+    var supportsSDA=false;try{supportsSDA=CSS.supports('animation-timeline: scroll()');}catch(e){}
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY||window.pageYOffset;
+      if(!supportsSDA&&prog){var max=document.documentElement.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(max>0?y/max:0)+')';}
+      if(nav)nav.classList.toggle('hide',y>lastY&&y>240);
+      lastY=y;
+    },{passive:true});
+  }catch(e){}
+
+  /* MOBILE: HAPTICS + RIPPLE + DEVICE TILT */
+  try{
+    var isTouch='ontouchstart'in window;
+    document.querySelectorAll('.card,.chip,.kbig').forEach(function(el){
+      el.addEventListener('touchstart',function(){try{if(navigator.vibrate)navigator.vibrate(8);}catch(e){}},{passive:true});
+      el.addEventListener('pointerdown',function(ev){
+        try{
+          var b=el.getBoundingClientRect(),r=document.createElement('span');
+          r.style.cssText='position:absolute;left:'+(ev.clientX-b.left)+'px;top:'+(ev.clientY-b.top)+'px;width:8px;height:8px;border-radius:50%;background:rgba(34,224,214,.5);transform:translate(-50%,-50%) scale(1);pointer-events:none;transition:transform .6s ease-out,opacity .6s;opacity:1;z-index:5';
+          el.appendChild(r);
+          requestAnimationFrame(function(){r.style.transform='translate(-50%,-50%) scale(26)';r.style.opacity='0';});
+          setTimeout(function(){r.remove();},650);
+        }catch(e){}
+      });
+    });
+    if(window.DeviceOrientationEvent&&isTouch){
+      var mesh=document.querySelector('.mesh'),feat=document.querySelector('.feature');
+      window.addEventListener('deviceorientation',function(e){
+        if(e.beta==null)return;
+        var g=Math.max(-14,Math.min(14,(e.gamma||0))),b=Math.max(-14,Math.min(14,((e.beta||0)-40)));
+        if(mesh)mesh.style.transform='translate3d('+(g*0.4)+'%,'+(b*0.3)+'%,0) scale(1.1)';
+        if(feat)feat.style.transform='perspective(1000px) rotateY('+(g*0.35)+'deg) rotateX('+(-b*0.25)+'deg)';
+      });
+    }
+  }catch(e){}
+
+  /* TEXT SCRAMBLE on hero */
+  try{
+    if(!reduce){
+      var target=document.querySelector('.hero h1 .grad');
+      if(target){
+        var final=target.textContent,chars='アイウエオ01ンΞΔΣ人工知能<>/AI#*',frame=0;
+        setTimeout(function(){
+          var iv=setInterval(function(){
+            var out='';for(var i=0;i<final.length;i++){out+=(i<frame/2)?final[i]:chars[Math.floor(Math.random()*chars.length)];}
+            target.textContent=out;frame++;
+            if(frame>final.length*2+2){clearInterval(iv);target.textContent=final;}
+          },46);
+        },520);
+      }
+    }
+  }catch(e){}
+
+  /* CLOCK */
+  try{
+    var clock=document.getElementById('clock');
+    function upd(){
+      var d=new Date();
+      var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2),ss=('0'+d.getSeconds()).slice(-2);
+      clock.textContent='2026·07·15·WED — '+hh+':'+mm+':'+ss;
+    }
+    upd();setInterval(upd,1000);
+  }catch(e){}
+
+  /* NEURAL CANVAS */
+  try{
+    var cv=document.getElementById('neural'),ctx=cv.getContext('2d');
+    var w,h,dpr,nodes=[],mouse={x:-999,y:-999},isMobile=window.innerWidth<720;
+    function size(){dpr=Math.min(2,window.devicePixelRatio||1);w=cv.width=window.innerWidth*dpr;h=cv.height=window.innerHeight*dpr;
+      cv.style.width=window.innerWidth+'px';cv.style.height=window.innerHeight+'px';}
+    function init(){size();var count=isMobile?30:Math.min(88,Math.floor(window.innerWidth*window.innerHeight/16000));
+      nodes=[];for(var i=0;i<count;i++){nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28*dpr,vy:(Math.random()-.5)*.28*dpr,r:(Math.random()*1.6+.6)*dpr});}}
+    var cols=[[34,224,214],[124,92,255],[255,77,141]];
+    function draw(){
+      ctx.clearRect(0,0,w,h);var maxd=(isMobile?110:140)*dpr;
+      for(var i=0;i<nodes.length;i++){
+        var a=nodes[i];a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+        var mdx=a.x-mouse.x,mdy=a.y-mouse.y,md=Math.hypot(mdx,mdy);
+        if(md<120*dpr&&md>0){a.x+=mdx/md*1.4;a.y+=mdy/md*1.4;}
+        for(var j=i+1;j<nodes.length;j++){
+          var b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+          if(d<maxd){var o=(1-d/maxd),c=cols[(i+j)%3];
+            ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(o*0.32)+')';ctx.lineWidth=dpr*.6;
+            ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+        }
+        var cc=cols[i%3];ctx.fillStyle='rgba('+cc[0]+','+cc[1]+','+cc[2]+',.9)';
+        ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,7);ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('pointermove',function(e){mouse.x=e.clientX*dpr;mouse.y=e.clientY*dpr;},{passive:true});
+    window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,180);});
+    init();draw();
+  }catch(e){}
+})();
+</script>
+</body>
+</html>

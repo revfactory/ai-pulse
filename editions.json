@@ -3,6 +3,18 @@
   "tagline": "매일 아침, 오늘의 AI 뉴스",
   "editions": [
     {
+      "date": "2026-07-15",
+      "weekday": "수",
+      "file": "editions/2026-07-15.html",
+      "storyCount": 15,
+      "headline": "OpenAI, 미 정부에 426억 달러 지분을 제안하다",
+      "highlights": [
+        "OpenAI, 미 정부에 $42.6B 지분 제안 (밸류 8,520억)",
+        "TSMC 분기 매출 사상 최대 · +36% YoY",
+        "Anthropic·삼성 커스텀 칩 협력 + 10월 IPO"
+      ]
+    },
+    {
       "date": "2026-07-13",
       "weekday": "월",
       "file": "editions/2026-07-13.html",
