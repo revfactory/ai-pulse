@@ -1,0 +1,139 @@
+{
+  "date": "2026-07-20",
+  "weekday": "월",
+  "dateLabel": "2026년 7월 20일 · 월요일",
+  "desc": "2026년 7월 20일, 세계를 움직인 AI 뉴스 14선. 시진핑의 29개국 'WAICO' 출범과 OpenAI 실시간 음성 'GPT-Live'부터, 딥마인드의 비전 연구와 신입 일자리 재편까지.",
+  "hero": ["미국이 모델을 만드는 사이,", "중국은 '질서'를", "만들기 시작했다."],
+  "heroSub": "<b>시진핑이 29개국과 함께 '세계AI협력기구(WAICO)'</b>를 상하이에 세우며 미국 주도 질서에 맞선 사이, <b>OpenAI는 실시간 음성 모델 'GPT-Live'</b>로 제품 전선을 넓혔습니다 — 규칙·자본·기술이 동시에 재편된 월요일의 신호 열네 개를 한 화면에 담았습니다.",
+  "timelineSub": "질서·제품·자본 — 주말을 지나 월요일로 이어진 사건의 순서.",
+  "highlights": [
+    "시진핑, 29개국 '세계AI협력기구(WAICO)' 상하이 출범",
+    "OpenAI, 실시간 풀듀플렉스 음성 모델 'GPT-Live' 공개",
+    "Microsoft 'Project Perception'으로 Anthropic 보안 우위 정조준"
+  ],
+  "feature": {
+    "cat": "POLICY · 거버넌스", "catClass": "c-policy",
+    "title": "시진핑, 29개국 '세계AI협력기구' 상하이 출범 — AI 질서 양분",
+    "body": "시진핑 중국 국가주석이 상하이 세계AI대회(WAIC)에서 <b>29개 창설 회원국과 '세계AI협력기구(WAICO)'</b>를 발족하고 본부를 상하이에 두기로 했다. 오픈소스·글로벌사우스 접근을 앞세워 <b>미국 주도의 AI 질서에 정면으로 맞서는</b> 다자 블록이 등장했다.",
+    "detail": "시진핑 국가주석이 상하이 세계AI대회에서 파키스탄·러시아·카자흐스탄 등 29개국과 함께 '세계AI협력기구(WAICO)' 창설을 선언하고, 본부를 상하이에 두기로 했다. 오픈소스 개방과 글로벌사우스의 AI 접근 확대를 기치로 내세워, 미국 빅테크·폐쇄모델 중심의 질서에 맞서는 다자 블록을 표방한다. 같은 주 Kimi K3·DeepSeek 등 중국발 오픈모델이 벤치마크 정상에 오른 흐름과 맞물리며, 기술뿐 아니라 '규칙'을 둘러싼 미·중 경쟁이 새 국면에 접어들었다.",
+    "src": "Reuters", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026",
+    "keys": [["29", "개국 · WAICO 창설 회원"], ["상하이", "기구 본부 소재지"], ["오픈소스", "글로벌사우스 접근 기치"]]
+  },
+  "stories": [
+    {
+      "cat": "MODEL · 음성", "catClass": "c-model",
+      "title": "OpenAI, 실시간 풀듀플렉스 음성 모델 'GPT-Live' 공개",
+      "body": "OpenAI가 듣기와 말하기를 동시에 처리하는 <b>풀듀플렉스(full-duplex) 음성 모델 'GPT-Live'</b>를 선보였다. 사용자의 말을 끊지 않고 실시간으로 반응해, 통화하듯 자연스러운 대화형 에이전트를 겨냥한다.",
+      "detail": "OpenAI가 발표한 GPT-Live는 입력을 듣는 동시에 발화할 수 있는 풀듀플렉스 구조로, 기존 '순차 응답' 음성 비서의 어색한 지연을 없앤다. 실시간 통역·고객 응대·음성 에이전트 등 대화가 곧 제품인 영역을 정조준한 것으로, 폐쇄모델의 강점을 '경험'에서 찾겠다는 전략으로 읽힌다. 오픈웨이트 진영이 벤치마크로 치고 올라오는 국면에서, OpenAI는 제품 완성도로 차별화를 시도하고 있다.",
+      "src": "Reuters", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "MODEL · 릴리스", "catClass": "c-model",
+      "title": "xAI, 'Grok 4.5' 출시 — 주말 오픈 모델 러시에 가세",
+      "body": "일론 머스크의 xAI가 <b>Grok 4.5</b>를 내놓으며 주말 모델 릴리스 경쟁에 합류했다. Kimi K3·Inkling 등 대형 공개 모델이 쏟아진 같은 주에 등장해, 프런티어 경쟁의 밀도가 한층 높아졌다.",
+      "detail": "xAI가 Grok 4.5를 공개하며 추론·코딩 성능을 끌어올렸다고 밝혔다. Moonshot Kimi K3와 Thinking Machines Inkling이 같은 주 오픈웨이트로 공개된 가운데 나온 릴리스로, 상위 모델 간 성능 격차가 빠르게 좁혀지고 있음을 보여준다. 다만 Grok은 느슨한 가드레일을 둘러싼 안전·법적 논란이 병행되고 있어, 성능과 신뢰의 균형이 과제로 남는다.",
+      "src": "llm-stats", "url": "https://llm-stats.com/llm-updates"
+    },
+    {
+      "cat": "MODEL · 연구", "catClass": "c-model",
+      "title": "구글 딥마인드 'GenCeption' — 영상 생성기를 비전 과제에 재활용",
+      "body": "구글 딥마인드가 <b>영상 생성 모델을 깊이 추정 같은 고전 비전 과제로 전용하는 'GenCeption'</b>을 공개했다. 훨씬 적은 학습 데이터로 최첨단 시스템에 필적하는 성능을 냈다.",
+      "detail": "GenCeption은 대규모 영상 생성 모델이 내부에 학습한 물리·기하 지식을 깊이 추정 등 전통적 컴퓨터비전 과제에 재활용하는 기법이다. 별도의 대규모 라벨 데이터 없이도 SOTA급 정확도를 달성해, '생성 모델이 곧 범용 시각 표현 학습기'라는 방향성을 뒷받침한다. 데이터 수집·라벨링 비용이 병목인 산업 비전 응용에 파급이 클 것으로 보인다.",
+      "src": "The Decoder", "url": "https://llm-stats.com/ai-news"
+    },
+    {
+      "cat": "SEC · 보안", "catClass": "c-sec",
+      "title": "Microsoft 'Project Perception' — Anthropic 보안 우위 정조준",
+      "body": "Microsoft가 자사·OpenAI·Anthropic 모델을 과제별로 라우팅하는 <b>사이버보안 툴 'Project Perception'</b>을 이달 출시할 예정이다. 보안 분야에서 앞서온 Anthropic의 우위를 직접 겨냥한다.",
+      "detail": "The Information에 따르면 Microsoft는 여러 벤더의 모델을 작업 특성에 맞춰 배분하는 멀티모델 보안 플랫폼 Project Perception을 준비 중이다. 위협 탐지·대응에서 강점을 보여온 Anthropic에 맞서, '단일 모델이 아닌 최적 조합'을 내세운 것이 특징이다. 보안이 AI 기업의 핵심 수익원으로 부상하면서, 빅테크 간 모델 오케스트레이션 경쟁이 본격화되고 있다.",
+      "src": "The Information", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "SEC · 탐지", "catClass": "c-sec",
+      "title": "AI 텍스트 탐지기, 문체 모방에 뚫린다 — 최대 18% 미탐지",
+      "body": "언어모델이 특정 저자의 <b>문체를 흉내 내면 AI 생성문의 최대 18%가 탐지되지 않는다</b>는 연구가 나왔다. 표절·부정행위 적발에 쓰이는 탐지기의 신뢰성에 물음표가 붙었다.",
+      "detail": "새 연구에 따르면 LLM에 특정 인물의 글쓰기 스타일을 모방하도록 지시하면, 기존 AI 탐지기가 생성문을 사람 글로 오판하는 비율이 크게 높아진다. 최대 18%의 AI 문장이 탐지를 통과해, 학계·채용·언론에서 탐지기에 의존한 판정이 위험할 수 있음을 시사한다. 탐지-회피의 군비경쟁이 심화되면서, '탐지'보다 '출처 증명(워터마킹·프로버넌스)'으로 무게가 옮겨갈 전망이다.",
+      "src": "The Decoder", "url": "https://llm-stats.com/ai-news"
+    },
+    {
+      "cat": "SEC · 소송", "catClass": "c-sec",
+      "title": "Apple, OpenAI로 옮긴 전직원 ~40명에 영업비밀 경고",
+      "body": "Apple이 <b>OpenAI로 이직한 전직 직원 약 40명에게 영업비밀 유출 관련 경고장</b>을 보냈다. 하드웨어 IP를 둘러싼 두 회사의 갈등이 격화되고 있다.",
+      "detail": "파이낸셜타임스에 따르면 Apple은 OpenAI로 자리를 옮긴 전 직원 약 40명에게 기밀·영업비밀 준수를 상기시키는 법적 경고를 발송했다. AI 하드웨어(웨어러블·디바이스) 인재를 놓고 두 회사가 정면충돌하는 국면으로, 인재 이동이 곧 기술 이전이라는 우려가 깔려 있다. 온디바이스 AI 경쟁이 격화될수록 인재·IP 분쟁도 함께 커질 전망이다.",
+      "src": "Financial Times", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "BIZ · 인프라", "catClass": "c-biz",
+      "title": "Anthropic, Meta에서 $100억 컴퓨트 임대 협상",
+      "body": "Anthropic이 <b>Meta로부터 약 100억 달러 규모의 AI 컴퓨트를 임대</b>하는 방안을 초기 협의 중인 것으로 전해졌다. 경쟁사이면서 동시에 서로의 인프라 고객이 되는 '적과의 동침'이 확산되고 있다.",
+      "detail": "Anthropic이 Meta의 데이터센터 용량을 약 100억 달러에 빌려 쓰는 방안을 논의 중이라는 보도가 나왔다. 프런티어 랩의 컴퓨트 수요가 자체 조달 한계를 넘어서면서, 빅테크가 모델 경쟁자이자 인프라 공급자라는 이중 역할을 맡는 구조가 굳어지고 있다. 1조 달러 IPO를 준비 중인 Anthropic에게 안정적 컴퓨트 확보는 성장의 핵심 전제다.",
+      "src": "The Information", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "BIZ · 노동", "catClass": "c-biz",
+      "title": "FT \"AI가 신입 전문직 재편\" — 주니어 채용·교육 다시 짠다",
+      "body": "AI가 회계·법률·컨설팅 등 <b>전문직의 초급 업무를 대체하며 신입 채용·교육 구조 자체를 바꾸고 있다</b>고 파이낸셜타임스가 보도했다. 단순 감원이 아니라 직무 재설계가 화두다.",
+      "detail": "FT에 따르면 주요 전문서비스 기업들은 AI가 리서치·초안 작성 같은 주니어 업무를 흡수하자, 신입 자리를 줄이는 대신 역할을 재정의하고 있다. 초급자가 처음부터 검토·판단·고객 대면 같은 고부가 업무를 맡도록 교육 경로를 재설계하는 흐름이다. 다만 '경력 사다리의 첫 칸'이 사라지면 중간 관리자 공급이 끊길 수 있다는 구조적 우려도 커지고 있다.",
+      "src": "Financial Times", "url": "https://llm-stats.com/ai-news"
+    },
+    {
+      "cat": "INFRA · 인재", "catClass": "c-infra",
+      "title": "Meta, AWS 임원 데이브 브라운 영입 — 클라우드 진출 시사",
+      "body": "Meta가 <b>AWS 인프라 총괄 데이브 브라운을 영입</b>하며 데이터센터 확장에 속도를 낸다. 자체 클라우드 서비스로 아마존·MS·구글과 경쟁할 수 있다는 관측도 나온다.",
+      "detail": "Meta가 AWS의 핵심 인프라 임원 데이브 브라운을 인프라 책임자로 데려왔다. 올해 자본지출을 1,250억~1,450억 달러로 잡은 Meta는 급증하는 AI 학습·추론 수요를 감당할 데이터센터를 대거 짓고 있다. 클라우드 사업 진출까지 시야에 두면서, '모델·앱·인프라'를 아우르는 수직 통합 전략이 뚜렷해지고 있다.",
+      "src": "Wall Street Journal", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "INFRA · 로보틱스", "catClass": "c-infra",
+      "title": "휴머노이드 로봇 투자 러시 — Humanoid·Walden·Microagi",
+      "body": "물리적 AI로 자본이 몰리며 <b>영국 Humanoid가 12억 달러 밸류에 1.5억 달러, Walden Robotics가 3억 달러</b>를 조달했다. 소프트웨어에서 '움직이는 기계'로 벤처 자금이 이동 중이다.",
+      "detail": "휴머노이드·산업용 로봇 스타트업에 대규모 투자가 잇따르고 있다. 영국 Humanoid는 12억 달러 기업가치에 1억 5,000만 달러를, Walden Robotics는 3억 달러를, 독일 Microagi는 자국 최대 규모인 5,500만 달러 시드를 유치했다. 아직 단위 경제성은 입증되지 않았지만, 대형 언어·행동 모델과 결합한 범용 로봇에 대한 기대가 물리 세계로 자본을 끌어당기고 있다.",
+      "src": "Axios", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "Anthropic, 주(州) 차원 프런티어 AI 규제·독립 감사 추진",
+      "body": "Anthropic이 <b>대형 랩을 겨냥한 독립 감사 의무를 골자로 한 주 단위 프런티어 AI 규제</b>를 밀고 있다. 연방 입법을 기다리기보다 주 정부를 통해 안전 기준을 세우려는 행보다.",
+      "detail": "WIRED에 따르면 Anthropic은 가장 큰 프런티어 랩에 초점을 맞춘 규제 프레임을 여러 주에 제안하고 있다. 독립 기관의 안전 감사와 위험 공개 의무를 핵심으로 삼아, '역량이 큰 소수'에게 책임을 지우는 방식이다. 자율 규제와 정당성 확보를 동시에 노린 포석으로, AI 규제의 무게추가 연방에서 주로 옮겨가는 흐름을 보여준다.",
+      "src": "WIRED", "url": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
+    },
+    {
+      "cat": "POLICY · 정치", "catClass": "c-policy",
+      "title": "OpenAI·Anthropic 직원, 이례적 정치 기부 급증",
+      "body": "OpenAI와 Anthropic 임직원이 <b>과거 빅테크 상장 직후보다도 높은 규모로 정치 캠페인에 기부</b>하고 있다는 분석이 나왔다. AI 기업의 정치적 영향력 확대가 가시화되고 있다.",
+      "detail": "샌프란시스코 스탠더드에 따르면 OpenAI·Anthropic 직원들의 정치 기부가 과거 대형 테크기업 상장 이후의 패턴을 뛰어넘는 수준으로 늘고 있다. 규제 지형이 산업의 사활을 좌우하는 만큼, 개인 차원의 정치 참여가 로비·PAC과 함께 영향력의 새 통로가 되고 있다. AI 규제 입법이 본격화되는 시점에 업계의 정치적 발자국이 커진다는 점에서 이해상충 우려도 제기된다.",
+      "src": "The San Francisco Standard", "url": "https://llm-stats.com/ai-news"
+    },
+    {
+      "cat": "BIZ · 투자", "catClass": "c-biz",
+      "title": "DeepSeek, 740억 달러 밸류 겨냥 · 상하이 상장 준비",
+      "body": "중국 DeepSeek이 <b>740억 달러 기업가치를 목표로 700억 달러 이상 조달</b>에 나서며 2027년 상하이 상장을 준비 중이다. 경쟁사 대비 75% 낮은 가격으로 존재감을 키워왔다.",
+      "detail": "DeepSeek이 이전 약 500억 달러에서 740억 달러로 몸값을 올려 700억 달러 이상을 조달하려는 것으로 전해졌다. 연 매출은 4억~5억 달러 수준으로 추정되며, 경쟁 모델보다 75%가량 저렴한 가격을 무기로 삼아왔다. 미국의 컴퓨트 규제 속에서도 오픈모델로 입지를 다진 이 회사는 자국 자본시장을 발판으로 실탄과 정당성을 함께 확보하려 한다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-18-2026"
+    }
+  ],
+  "stats": [
+    {"n": "29", "suf": "개국", "lab": "시진핑 '세계AI협력기구(WAICO)' 창설 회원국 · 본부 상하이"},
+    {"n": "18", "suf": "%", "lab": "문체 모방 시 미탐지되는 AI 생성문 비율 — 탐지기 신뢰도 흔들"},
+    {"n": "10", "suf": "B$", "lab": "Anthropic이 Meta에서 임대 논의 중인 컴퓨트 규모"},
+    {"n": "145", "suf": "B$", "lab": "Meta 2026년 최대 capex 전망 — AWS 임원 영입·클라우드 진출"}
+  ],
+  "timeline": [
+    {"time": "07.16", "title": "Grok 4.5 · Kimi K3 출시", "desc": "xAI·Moonshot 잇단 릴리스"},
+    {"time": "07.17", "title": "OpenAI 'GPT-Live' 음성 공개", "desc": "풀듀플렉스 실시간 대화"},
+    {"time": "07.17", "title": "MS 'Project Perception'", "desc": "멀티모델 보안 · Anthropic 겨냥"},
+    {"time": "07.18", "title": "WAICO 29개국 출범", "desc": "시진핑 · 상하이 본부"},
+    {"time": "07.19", "title": "딥마인드 'GenCeption' 공개", "desc": "영상 생성기 → 비전 과제 전용"},
+    {"time": "07.19", "title": "FT '신입 일자리 재편' 보도", "desc": "주니어 채용·교육 재설계"}
+  ],
+  "ticker": [
+    "시진핑 <b>WAICO 29개국</b> 출범 · 본부 상하이",
+    "OpenAI <b>'GPT-Live'</b> 풀듀플렉스 음성 공개",
+    "MS <b>'Project Perception'</b> · Anthropic 보안 우위 겨냥",
+    "딥마인드 <b>'GenCeption'</b> · 적은 데이터로 비전 SOTA",
+    "AI 텍스트 탐지기 <b>문체 모방에 18% 뚫려</b>",
+    "Apple, OpenAI 이직자 <b>~40명 영업비밀 경고</b>",
+    "Anthropic–Meta <b>$100억 컴퓨트</b> 임대 협상",
+    "휴머노이드 투자 러시 <b>Humanoid $150M·Walden $300M</b>"
+  ]
+}
