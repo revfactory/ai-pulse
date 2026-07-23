@@ -1,0 +1,146 @@
+{
+  "date": "2026-07-24",
+  "weekday": "금",
+  "dateLabel": "2026년 7월 24일 · 금요일",
+  "desc": "2026년 7월 24일, 세계를 움직인 AI 뉴스 14선. 구글의 20년 만 첫 현금 소진과 AI 자본지출 공포부터, 오늘 출시된 DeepSeek V4와 미·중 모델 증류 공방까지.",
+  "hero": ["월가가 물었다,", "AI 지출은 언제 돈이 되나", "— 구글마저 현금이 말랐다."],
+  "heroSub": "구글이 <b>상장 20여 년 만에 처음으로 분기 잉여현금흐름이 마이너스</b>로 돌아섰고, 테슬라의 잉여현금도 꺾였습니다. 같은 날 <b>DeepSeek V4 안정판</b>이 100만 출력 토큰 $0.44에 출시되고, 백악관은 중국 Moonshot의 <b>모델 증류 의혹</b>을 정면으로 겨냥했습니다 — 하루 동안 세계를 흔든 열네 개의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "실적 쇼크·모델 출시·증류 공방 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "구글, 상장 후 첫 분기 현금 소진 — AI 자본지출 2배에 시장 '거품' 경계",
+    "DeepSeek V4 안정판 오늘 출시 — 100만 출력 토큰 $0.44",
+    "백악관, 中 Moonshot의 Anthropic Fable 증류 의혹 정면 제기"
+  ],
+  "feature": {
+    "cat": "BIZ · 자본지출", "catClass": "c-biz",
+    "title": "구글, 상장 20여 년 만에 첫 '현금 소진' — AI 투자 공포가 시장을 흔들다",
+    "body": "알파벳이 2분기에 <b>잉여현금흐름 −58.5억 달러</b>를 기록하며 상장 이후 처음으로 분기 현금흐름이 마이너스로 돌아섰다. 매출은 24% 늘어 사상 최대였지만, <b>자본지출이 전년의 두 배인 449억 달러</b>로 불어나 시장은 실적이 아니라 'AI 지출이 언제 회수되나'에 주목했다.",
+    "detail": "알파벳의 2분기 매출은 1,198억 달러(전년比 +24%)로 신기록을 세웠지만, 영업현금흐름 390억 달러를 자본지출 449억 달러가 넘어서며 잉여현금흐름이 −58.5억 달러로 돌아섰다. 회사는 2026년 연간 자본지출 전망을 1,800~1,900억 달러로 제시했는데 이는 2022년의 여섯 배 규모이며, 부족분을 메우기 위해 496억 달러 규모의 주식까지 발행했다. 같은 날 테슬라의 잉여현금도 마이너스로 꺾이면서 '누가 AI에 얼마를 태우는가'가 실적보다 주가를 좌우하는 국면이 뚜렷해졌다.",
+    "src": "Alphabet / Search Engine Journal", "url": "https://www.searchenginejournal.com/google-q2-earnings-show-5-85-billion-negative-free-cash-flow/583259/",
+    "keys": [["−$5.85B", "알파벳 2분기 잉여현금흐름 — 상장 후 첫 마이너스"], ["$44.9B", "2분기 자본지출 — 전년比 2배"], ["$180~190B", "2026 연간 자본지출 전망 — 2022比 6배"]]
+  },
+  "stories": [
+    {
+      "cat": "MODEL · 출시", "catClass": "c-model",
+      "title": "DeepSeek V4 안정판 오늘 출시 — 100만 출력 토큰 $0.44 승부수",
+      "body": "DeepSeek가 오늘(7월 24일) V4 안정판을 공개했다. 조 단위 MoE·100만 토큰 컨텍스트를 갖추고도 <b>100만 출력 토큰당 $0.44</b>라는 공격적 가격을 앞세워 상용 티어를 아래에서 압박한다.",
+      "detail": "DeepSeek는 7월 24일 V4 안정판을 정식 출시하며, 이전 세대 대비 추론·코드 생성 능력을 끌어올리면서도 특유의 비용 효율을 유지했다. 트릴리언급 MoE 구조와 100만 토큰 컨텍스트를 제공하면서 100만 출력 토큰당 $0.44 수준의 가격을 제시해, '90% 성능을 절반 비용에 파는 쪽이 실고객을 가져간다'는 회사의 전략을 그대로 구현했다. 상용 Flash 티어가 위에서 경쟁하는 사이 오픈·저가 모델이 아래에서 가격을 압박하는 협공 구도가 굳어진다.",
+      "src": "DeepSeek", "url": "https://api-docs.deepseek.com/news/news260424/"
+    },
+    {
+      "cat": "BIZ · 실적", "catClass": "c-biz",
+      "title": "테슬라도 잉여현금 마이너스 — 로보택시 실망에 주가 급락",
+      "body": "테슬라가 2분기 잉여현금흐름 −11억 달러로 2년여 만에 첫 감소를 기록했다. AI·로보틱스 투자 확대와 로보택시의 부진한 성과가 겹치며 알파벳과 함께 주가가 크게 흔들렸다.",
+      "detail": "테슬라는 2분기에 잉여현금흐름이 약 −11억 달러로 돌아서며 2년여 만에 처음으로 마이너스를 기록했는데, 이는 AI와 로보틱스에 대한 투자 확대와 축소된 이익이 맞물린 결과다. 기대를 모았던 로보택시 사업이 시장 눈높이를 밑돌면서 실망이 커졌고, 같은 날 알파벳의 현금 소진 소식과 겹쳐 'AI 지출 공포'가 빅테크 전반의 주가를 끌어내렸다. 성장 서사가 아니라 현금 회수 시점이 밸류에이션의 잣대가 되는 흐름이 분명해졌다.",
+      "src": "CNBC", "url": "https://www.cnbc.com/2026/07/23/tesla-tsla-alphabet-googl-stock-today.html"
+    },
+    {
+      "cat": "POLICY · 지정학", "catClass": "c-policy",
+      "title": "백악관, 中 Moonshot이 Anthropic 'Fable' 증류했다 정면 비난",
+      "body": "백악관 OSTP 국장 마이클 크라치오스가 Moonshot이 증류 기법으로 Anthropic의 Fable 모델을 베껴 Kimi K3를 만들었다고 공개 주장했다. 미 고위 당국자가 특정 중국 랩의 특정 미국 모델 도용을 직접 지목한 첫 사례다.",
+      "detail": "백악관 과학기술정책실(OSTP) 국장 마이클 크라치오스는 Moonshot AI가 지식 증류(distillation)를 이용해 Anthropic의 Fable 모델을 복제, Kimi K3 개발에 활용했다고 공개적으로 비난했다. 이는 미국 고위 당국자가 특정 중국 연구소의 특정 미국 모델 전용(專用)을 직접 겨냥한 첫 사례로, 모델 출처를 둘러싼 미·중 공방이 정부 차원으로 격상됐음을 보여준다. 정작 당사자로 지목된 Anthropic은 직접 비난에 나서지 않은 채 정부 지원을 얻으며 규제 강화 논리와 IPO를 앞두고 유리한 위치를 확보했다.",
+      "src": "The White House / Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "SEC · 포렌식", "catClass": "c-sec",
+      "title": "Redwood Research, 교차엔트로피로 'Kimi=Claude' 정황 제시",
+      "body": "Redwood Research가 Kimi K3가 여러 프롬프트에서 자신을 Claude라고 지칭하는 빈도가 비정상적으로 높다는 통계 분석을 내놨다. 특정 텍스트 패턴에 대한 모델의 '놀람 정도'를 비교해 공유된 학습 계보를 탐지하는 포렌식 기법이다.",
+      "detail": "Redwood Research는 Kimi K3가 다양한 프롬프트에서 스스로를 'Claude'로 식별하는 사례가 유의미하게 많다는 통계 증거를 공개했다. 이들이 쓴 교차엔트로피 분석은 두 모델이 동일한 텍스트에 대해 얼마나 놀라는지를 비교해, 공유된 학습 데이터·계보를 역추적하는 방식이다. 워터마크나 직접 증거 없이 증류를 입증하기는 여전히 어렵지만, 이런 포렌식 기법은 출처 논쟁에서 정황 근거로 무게를 더한다.",
+      "src": "Redwood Research / Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "POLICY · 수출통제", "catClass": "c-policy",
+      "title": "Moonshot, 태국 경유로 Nvidia GB300 확보 의혹",
+      "body": "백악관은 Moonshot이 태국을 경유해 Nvidia GB300 서버에 접근, 미국의 첨단 AI 하드웨어 수출 규제를 우회했다고 주장했다. 2.8조 파라미터 모델 훈련에 필요한 컴퓨트를 어떻게 확보했는지를 겨냥한 지적이다.",
+      "detail": "백악관은 Moonshot이 제3국인 태국을 통해 Nvidia GB300 서버를 조달·이용함으로써 첨단 AI 칩에 대한 미국의 수출통제를 회피했다고 주장했다. 이는 2.8조 파라미터 규모의 Kimi K3를 훈련할 만한 컴퓨트를 중국 랩이 어떻게 마련했는지에 대한 핵심 질문을 건드린다. 칩이 허용국에 합법적으로 팔리고 클라우드로 임대될 수 있는 한, 하드웨어만 막는 통제는 구조적 허점을 안고 있다는 지적이 뒤따랐다.",
+      "src": "The White House / Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "INFRA · 에이전트", "catClass": "c-infra",
+      "title": "OpenAI, 기업용 에이전트 플랫폼 'Presence' 공개",
+      "body": "OpenAI가 AI 에이전트를 내부 시스템에 연결하고 거버넌스·권한·평가를 내장한 기업용 플랫폼 Presence를 선보였다. BBVA·소프트뱅크·IAG 등이 고객지원·영업 워크플로에 도입을 검토 중이다.",
+      "detail": "OpenAI는 에이전트를 사내 시스템에 붙이면서 접근 권한, 거버넌스, 성능 평가를 함께 제공하는 엔터프라이즈 플랫폼 Presence를 출시했다. BBVA, 소프트뱅크, IAG 같은 대기업이 고객 응대와 영업 프로세스에 이를 적용하는 방안을 탐색하고 있다. 셀프서브 소프트웨어가 아니라 제한적 정식출시(GA)와 엔터프라이즈 서비스 가격으로 제공되는 점에서, 성능이 아니라 '통합과 정책'이 병목이라는 시장 인식이 읽힌다.",
+      "src": "OpenAI / Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "INFRA · 데이터센터", "catClass": "c-infra",
+      "title": "OpenAI, 조지아에 $30B·3.2GW 'Project Camellia' 데이터센터",
+      "body": "OpenAI가 조지아주 에핑엄 카운티 1,400에이커 부지에 3.2기가와트 규모 AI 데이터센터를 짓겠다고 밝혔다. 예상 투자액은 300억 달러를 넘고, 전력은 2028~2032년 단계적으로 공급된다.",
+      "detail": "OpenAI는 조지아주 에핑엄 카운티의 1,400에이커 부지에 3.2GW급 AI 데이터센터 'Project Camellia'를 건설한다고 공개했으며, 예상 지출은 300억 달러를 웃돈다. 조지아 파워가 2028년부터 2032년까지 단계적으로 전력을 공급하고, 필요한 인프라 비용은 OpenAI가 전액 부담한다. 전력 공급 일정이 수년에 걸쳐 있다는 사실은 현재의 컴퓨트 부족이 왜 발생하는지를 그대로 드러낸다.",
+      "src": "OpenAI / Georgia Power", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "BIZ · 경쟁", "catClass": "c-biz",
+      "title": "엔터프라이즈 에이전트 '4파전' 격화 — OpenAI·구글·Meta·Nvidia",
+      "body": "OpenAI의 Presence가 구글 클라우드 Gemini Enterprise, Meta 비즈니스 에이전트, Nvidia-ServiceNow 'Project Arc'와 함께 기업 에이전트 시장의 4강 구도를 형성했다. 경쟁의 축은 모델 성능이 아니라 거버넌스·통합 깊이·신뢰다.",
+      "detail": "OpenAI Presence의 등장으로 기업용 에이전트 배포 시장은 구글 클라우드 Gemini Enterprise, Meta Business Agent Platform, Nvidia-ServiceNow Project Arc를 포함한 4파전으로 재편됐다. 이들 플랫폼의 승부처는 원시 모델 역량이 아니라 권한 관리·데이터 연결·감사 같은 거버넌스와 통합 깊이, 그리고 조직의 신뢰다. 기업 AI 파일럿의 약 95%가 역량 부족이 아니라 통합·정책 문제로 실패한다는 진단이 이 경쟁의 배경에 깔려 있다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "INFRA · 전력", "catClass": "c-infra",
+      "title": "전력이 AI 인프라의 진짜 병목 — 실리콘보다 그리드가 한계",
+      "body": "Project Camellia의 3.2GW 요구는 AI 인프라 확장의 한계를 규정하는 것이 실리콘 공급이 아니라 전력 가용성임을 보여준다. 2028~2032년에 걸친 전력 공급 일정이 현재의 컴퓨트 희소성을 설명한다.",
+      "detail": "OpenAI 조지아 캠퍼스의 3.2기가와트 전력 수요는 AI 확장의 진짜 제약이 칩이 아니라 전력이라는 사실을 상징적으로 드러낸다. 발전·송전 용량 확보에 수년이 걸리는 탓에 전력 공급 일정이 2028년에서 2032년까지 이어지고, 이것이 지금의 컴퓨트 부족과 모든 대형 랩이 그리드 용량을 두고 경쟁하는 이유를 설명한다. 앞으로 데이터센터 입지 경쟁은 '전기를 언제 얼마나 끌어올 수 있는가'로 수렴할 전망이다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "MODEL · 오픈웨이트", "catClass": "c-model",
+      "title": "Kimi K3 오픈웨이트 27일 공개 — 출처 논란 속 채택 주저",
+      "body": "Moonshot의 Kimi K3 오픈웨이트가 7월 27일 공개된다. 백악관의 증류 비난 나흘 뒤 풀리는 탓에, 기술 성능은 검증됐음에도 다운로드·셀프호스팅을 계획하던 조직들이 출처 논란에 망설이고 있다.",
+      "detail": "Kimi K3의 자유 가중치 배포는 7월 27일로 예정돼 있는데, 이는 백악관이 증류 의혹을 제기한 지 나흘 만이라 기업들에 모호한 상황을 안긴다. 독립 검증에서 K3의 강력한 기술 성능이 확인됐음에도, 다투어지는 출처(provenance) 탓에 사내 법무팀이 도입을 주저할 수 있다. 전문가들은 기술 성능 평가와 출처·리스크 판단을 분리하고, 상황 변화에 대비해 모델 비종속 아키텍처를 갖추라고 권한다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "BIZ · 전략", "catClass": "c-biz",
+      "title": "DeepSeek 창업자 \"이익보다 AGI 우선…최상위 모델 오픈소스 유지\"",
+      "body": "DeepSeek 창업자가 회사가 이익보다 AGI를 우선하며 최상위 모델을 계속 오픈소스로 공개할 가능성이 크다고 밝혔다고 Yicai가 전했다. 저가·개방 전략이 단기 수익이 아니라 장기 목표에 맞춰져 있음을 재확인한 발언이다.",
+      "detail": "중국 매체 Yicai 보도에 따르면 DeepSeek 창업자는 회사가 수익성보다 AGI 실현을 앞세우며, 최고 성능 모델도 계속 오픈소스로 배포할 공산이 크다고 말했다. 이는 100만 토큰 $0.44 같은 공격적 가격과 오픈웨이트 전략이 시장 점유가 아니라 장기 연구 목표에서 비롯됐음을 시사한다. 상용 랩들이 마진 회수 시점을 압박받는 국면에서, 개방·저가를 앞세운 도전자의 전략적 여유가 대비를 이룬다.",
+      "src": "Yicai / Reuters", "url": "https://finance.yahoo.com/news/founder-says-deepseek-prioritises-agi-092047290.html"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "美 수출통제 신뢰성 시험대 — '클라우드 임대'까지 감독 확대 전망",
+      "body": "Moonshot 사례는 칩이 허용국에 합법 판매되고 클라우드로 임대될 때 하드웨어 규제만으로는 접근을 막기 어렵다는 구조적 약점을 드러냈다. 향후 정책은 하드웨어를 넘어 클라우드 컴퓨트 임대 감독으로 확대될 가능성이 크다.",
+      "detail": "Moonshot의 GB300 우회 의혹은 첨단 AI 칩이 제3국에 합법적으로 팔리고 클라우드로 임대될 수 있는 한, 물리적 하드웨어 통제만으로는 실효를 거두기 어렵다는 점을 부각시켰다. 이에 미국의 수출통제 신뢰성 자체가 시험대에 올랐고, 정책 대응은 칩 판매 제한을 넘어 클라우드 기반 컴퓨트 임대에 대한 감독으로 넓어질 공산이 크다. 규칙의 경계가 '기기'에서 '접근'으로 옮겨가는 셈이다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "SEC · 지식재산", "catClass": "c-sec",
+      "title": "모델 증류, 입증은 왜 어려운가 — 방어는 '요율제한·약관'으로",
+      "body": "증류는 작은 모델이 큰 모델의 출력에서 배우는 합법적 기법이지만, 워터마크나 직접 증거 없이는 무단 증류를 입증하기 어렵다. 업계는 확정적 증명 대신 요율 제한과 금지 조항 같은 방어로 무게를 옮겨 왔다.",
+      "detail": "모델 증류는 소형 모델이 대형 모델의 출력을 학습하는 정당한 기법이지만, 워터마크나 명확한 증거가 없으면 '무단' 증류를 법적으로 증명하기가 매우 까다롭다. 이 때문에 프런티어 랩들은 완벽한 입증을 노리기보다 API 요율 제한, 강력한 이용약관, 접근 통제 같은 사전 방어로 대응 방식을 바꿔 왔다. Kimi K3 논쟁은 이런 '증명 불가능성'이 정책·계약의 설계로 이어지는 전형적 사례가 됐다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    },
+    {
+      "cat": "CREATE · 자동화", "catClass": "c-create",
+      "title": "OpenAI Presence, '컨설팅형' 배포로 — 기업 파일럿 95% 실패가 배경",
+      "body": "Presence는 셀프서브 소프트웨어가 아니라 제한적 GA와 엔터프라이즈 서비스 가격으로 제공된다. 기업 AI 파일럿의 95%가 역량이 아닌 통합·정책 문제로 실패한다는 현실이, OpenAI를 사실상 '컨설팅'에 가까운 모델로 이끌었다.",
+      "detail": "OpenAI는 Presence를 자유롭게 가입해 쓰는 소프트웨어가 아니라 제한적 정식출시(limited GA)와 엔터프라이즈 서비스 요금으로 내놨는데, 이는 마이크로소프트 Frontier Company의 접근과 닮았다. 배경에는 기업 AI 파일럿의 약 95%가 모델 성능이 아니라 통합·정책·거버넌스 문제로 좌초한다는 진단이 있다. 프런티어 랩이 순수 모델 제공자를 넘어 배포·운영을 함께 설계하는 '컨설팅형' 비즈니스로 이동하는 흐름이 뚜렷하다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-23-2026"
+    }
+  ],
+  "stats": [
+    {"n": "-5.85", "suf": "B$", "lab": "알파벳 2분기 잉여현금흐름 — 상장 후 첫 마이너스"},
+    {"n": "44.9", "suf": "B$", "lab": "알파벳 2분기 자본지출 — 전년比 약 2배"},
+    {"n": "190", "suf": "B$", "lab": "알파벳 2026 연간 자본지출 전망 상단 — 2022比 6배"},
+    {"n": "0.44", "suf": "$", "lab": "DeepSeek V4 안정판 100만 출력 토큰당 가격"}
+  ],
+  "timeline": [
+    {"time": "07.22", "title": "테슬라·알파벳 실적 발표", "desc": "AI 지출 공포로 빅테크 주가 급락"},
+    {"time": "07.23", "title": "백악관, Moonshot 증류 의혹 제기", "desc": "Anthropic Fable 복제·GB300 우회 지목"},
+    {"time": "07.23", "title": "OpenAI, Presence·조지아 데이터센터 공개", "desc": "기업 에이전트 + $30B·3.2GW 캠퍼스"},
+    {"time": "07.24", "title": "DeepSeek V4 안정판 출시 (오늘)", "desc": "100만 출력 토큰 $0.44·조 단위 MoE"},
+    {"time": "07.27", "title": "Kimi K3 오픈웨이트 공개 예정", "desc": "출처 논란 속 셀프호스팅 주저"},
+    {"time": "08.01", "title": "백악관 프런티어 AI 프레임워크(예상)", "desc": "규제 문안 앞둔 로비전 가열"}
+  ],
+  "ticker": [
+    "구글, 상장 후 <b>첫 분기 현금 소진</b> — AI 지출 공포",
+    "<b>DeepSeek V4</b> 안정판 오늘 출시 · 100만 토큰 $0.44",
+    "백악관, Moonshot의 <b>Fable 증류 의혹</b> 제기",
+    "테슬라 <b>잉여현금 마이너스</b> · 로보택시 실망",
+    "OpenAI, 기업용 에이전트 <b>Presence</b> 출시",
+    "OpenAI 조지아 <b>$30B · 3.2GW</b> 데이터센터",
+    "Kimi K3 <b>오픈웨이트 27일</b> — 출처 논란",
+    "엔터프라이즈 에이전트 <b>4파전</b> 격화"
+  ]
+}
