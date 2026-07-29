@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<title>AI PULSE · 2026.07.30 — 오늘의 AI 뉴스</title>
+<meta name="description" content="2026년 7월 30일, 세계를 움직인 AI 뉴스 15선. 프런티어 랩 내부자 1,100명의 '속도 조절' 요구부터 OpenAI 에이전트 침해 사태까지.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@property --spin { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+:root{
+  --bg:#05060a;--bg2:#090b12;--ink:#eaf0ff;--muted:#8b93ab;--line:rgba(255,255,255,.08);
+  --cyan:#22e0d6;--violet:#7c5cff;--magenta:#ff4d8d;--amber:#ffcb47;--lime:#9bff5a;
+  --glass:rgba(255,255,255,.045);--maxw:1180px;--ease:cubic-bezier(.16,1,.3,1);
+  --font:"Pretendard","Space Grotesk",system-ui,sans-serif;--disp:"Syne","Pretendard",sans-serif;--mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;overflow-x:hidden;position:relative;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* BACKGROUND */
+#neural{position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(70px) saturate(140%);opacity:.6;
+  background:
+    radial-gradient(38vw 38vw at 15% 20%, color-mix(in oklab, var(--violet) 60%, transparent), transparent 60%),
+    radial-gradient(34vw 34vw at 85% 18%, color-mix(in oklab, var(--cyan) 55%, transparent), transparent 60%),
+    radial-gradient(40vw 40vw at 70% 85%, color-mix(in oklab, var(--magenta) 50%, transparent), transparent 62%),
+    radial-gradient(30vw 30vw at 25% 90%, color-mix(in oklab, var(--amber) 40%, transparent), transparent 60%);
+  animation:mesh 26s var(--ease) infinite alternate}
+@keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0deg)}
+  50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(320px 320px at var(--mx,50%) var(--my,-20%), color-mix(in oklab,var(--cyan) 22%, transparent), transparent 70%);
+  mix-blend-mode:screen}
+html:not(.js) .spotlight{display:none}
+
+/* LOADER — pure CSS, always auto-dismisses (never gets stuck) */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;
+  animation:loaderGone .7s var(--ease) 2.1s forwards}
+@keyframes loaderGone{to{opacity:0;visibility:hidden;pointer-events:none}}
+.load-inner{width:min(80vw,340px);text-align:center}
+.load-mark{font-family:var(--disp);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.load-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.1);margin-top:18px;overflow:hidden}
+.load-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  box-shadow:0 0 18px var(--cyan);animation:fillUp 1.9s var(--ease) forwards}
+@keyframes fillUp{to{width:100%}}
+.load-pct{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3em}
+html:not(.js) #loader{display:none} /* if no JS at all, don't risk any overlay */
+
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:0;left:0;height:3px;z-index:120;width:100%;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));box-shadow:0 0 14px color-mix(in oklab,var(--violet) 70%,transparent)}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.7),transparent);
+  transition:transform .5s var(--ease)}
+header.nav.hide{transform:translateY(-110%)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;letter-spacing:-.01em;font-size:18px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.nav-date{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.15em}
+@media(max-width:640px){.nav-date{display:none}}
+
+/* TICKER */
+.ticker{position:fixed;bottom:0;left:0;right:0;z-index:105;background:rgba(5,6,10,.72);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);overflow:hidden;padding:9px 0;display:flex;align-items:center}
+.ticker-tag{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--bg);
+  background:var(--magenta);padding:5px 12px;margin:0 14px;border-radius:5px;text-transform:uppercase;
+  box-shadow:0 0 18px color-mix(in oklab,var(--magenta) 60%,transparent)}
+.ticker-track{display:flex;gap:44px;white-space:nowrap;animation:slide 40s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track b{color:var(--cyan)}
+.ticker-track span{display:inline-flex;gap:8px;align-items:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* LAYOUT */
+main{position:relative;z-index:3}
+section{padding:clamp(70px,11vw,150px) clamp(18px,5vw,40px);max-width:var(--maxw);margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:120px;max-width:var(--maxw)}
+.hero-kick{font-family:var(--mono);font-size:clamp(12px,2.6vw,15px);letter-spacing:.3em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.hero-kick .live{color:var(--magenta);display:inline-flex;align-items:center;gap:7px}
+.hero-kick .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--magenta);box-shadow:0 0 10px var(--magenta);animation:pulse 1.4s infinite}
+.hero h1{font-family:var(--disp);font-weight:800;line-height:.94;letter-spacing:-.03em;font-size:clamp(52px,14vw,168px);margin-bottom:8px}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>span{display:block;animation:rise 1s var(--ease) both}
+.hero h1 .l:nth-child(1)>span{animation-delay:.15s}
+.hero h1 .l:nth-child(2)>span{animation-delay:.27s}
+.hero h1 .l:nth-child(3)>span{animation-delay:.39s}
+@keyframes rise{from{transform:translateY(110%)}to{transform:translateY(0)}}
+.grad{background:linear-gradient(105deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:200% 0}}
+.hero-sub{max-width:640px;color:var(--muted);font-size:clamp(15px,2.4vw,20px);margin-top:26px;animation:fade 1s var(--ease) .6s both}
+.hero-sub b{color:var(--ink);font-weight:600}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:fade 1s var(--ease) .8s both}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:9px 15px;border:1px solid var(--line);border-radius:99px;
+  background:var(--glass);color:var(--muted);backdrop-filter:blur(6px);transition:.4s var(--ease)}
+.chip b{color:var(--ink)}
+.chip:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+.scroll-cue{position:absolute;bottom:74px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+  letter-spacing:.3em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fade 1s 1.2s both}
+.scroll-cue .track{width:1px;height:44px;background:linear-gradient(var(--cyan),transparent);position:relative;overflow:hidden}
+.scroll-cue .track::after{content:"";position:absolute;top:0;left:0;width:100%;height:14px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-16px)}100%{transform:translateY(46px)}}
+@media(max-width:640px){.scroll-cue{display:none}}
+
+/* REVEAL — visible by default; only hidden/animated when JS present */
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .grid .card:nth-child(3n+2){transition-delay:.06s}
+html.js .grid .card:nth-child(3n+3){transition-delay:.12s}
+
+/* SECTION HEAD */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.section-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6vw,60px);letter-spacing:-.02em;line-height:1}
+.section-head p{color:var(--muted);font-size:14px;max-width:340px}
+
+/* FEATURED */
+.feature{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(124,92,255,.16),rgba(34,224,214,.06) 60%,transparent);
+  padding:clamp(26px,5vw,56px);isolation:isolate}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background:conic-gradient(from var(--spin),transparent,color-mix(in oklab,var(--violet) 40%,transparent),transparent 40%);
+  animation:sweep 12s linear infinite}
+@keyframes sweep{to{--spin:360deg}}
+.feature .rank{font-family:var(--disp);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:.8;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.12));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}
+.feature .cat{margin:20px 0 14px}
+.feature h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5vw,52px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;max-width:14ch}
+.feature p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:56ch;margin-top:18px}
+.feature .keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kbig{font-family:var(--mono);font-size:13px;color:var(--ink);border:1px solid var(--line);background:rgba(0,0,0,.25);
+  padding:10px 16px;border-radius:12px;display:flex;gap:8px;align-items:baseline}
+.kbig b{font-family:var(--disp);font-size:20px;color:var(--cyan)}
+
+.cat{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid currentColor}
+.cat::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.c-model{color:var(--cyan)}.c-biz{color:var(--violet)}.c-policy{color:var(--amber)}
+.c-infra{color:var(--lime)}.c-sec{color:var(--magenta)}.c-create{color:#ff8f5a}
+
+/* NEWS GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--glass);
+  backdrop-filter:blur(8px);overflow:hidden;transition:transform .5s var(--ease),border-color .5s}
+.card::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:linear-gradient(140deg,var(--cyan),transparent 40%,var(--magenta));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover{border-color:transparent;transform:translateY(-6px)}
+.card:hover::after{opacity:1}
+.card .glowdot{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(50px);opacity:0;transition:opacity .5s;
+  top:var(--gy,50%);left:var(--gx,50%);transform:translate(-50%,-50%);pointer-events:none;background:var(--cyan)}
+.card:hover .glowdot{opacity:.16}
+.card .idx{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.card h4{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.18;letter-spacing:-.01em;margin:16px 0 12px;text-wrap:balance}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.card .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.card .arrow{font-size:18px;transition:transform .4s var(--ease);color:var(--ink)}
+.card:hover .arrow{transform:translate(4px,-4px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--bg2);padding:clamp(28px,5vw,46px) 28px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width 1.4s var(--ease)}
+.stat.in::before{width:100%}
+html:not(.js) .stat::before{width:100%}
+.stat .num{font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#fff,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .num .u{font-size:.42em;color:var(--cyan);-webkit-text-fill-color:var(--cyan);margin-left:4px}
+.stat .lab{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.45}
+
+/* TIMELINE */
+.tl-row{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:start;transition:background .4s}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-row:hover{background:rgba(255,255,255,.02)}
+.tl-time{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:.05em;padding-top:2px}
+.tl-body h5{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.tl-body p{color:var(--muted);font-size:14px}
+
+/* OUTRO / FOOTER */
+.outro{text-align:center}
+.outro h2{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,86px);letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+.outro p{color:var(--muted);max-width:520px;margin:24px auto 0;font-size:16px}
+footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,40px) 90px;max-width:var(--maxw);margin-inline:auto;
+  display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;position:relative;z-index:3}
+footer .fbrand{font-family:var(--disp);font-weight:800;font-size:22px}
+footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;max-width:420px}
+
+/* logo link */
+a.brand{cursor:pointer;text-decoration:none;transition:opacity .3s}
+a.brand:hover{opacity:.72}
+/* card interactivity + source link */
+.card,.feature[data-modal]{cursor:pointer}
+.foot a.src{color:var(--muted);transition:color .3s}
+.foot a.src:hover{color:var(--cyan)}
+.more{font-family:var(--mono);font-size:12px;color:var(--cyan);font-weight:700;letter-spacing:.03em;white-space:nowrap;transition:transform .3s var(--ease)}
+.card:hover .more,.feature:hover .more{transform:translateX(4px)}
+.feature .foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* modal (더 보기 팝업) */
+.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(3,4,8,.72);backdrop-filter:blur(10px)}
+.modal-panel{position:relative;max-width:640px;width:100%;max-height:85vh;overflow:auto;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(124,92,255,.18),rgba(34,224,214,.06) 55%,var(--bg2));padding:clamp(28px,5vw,46px);transform:translateY(30px) scale(.9);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font-size:15px;cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease);z-index:2}
+.modal-x:hover{border-color:var(--magenta);color:var(--magenta);transform:rotate(90deg)}
+.modal-cat{margin-bottom:18px}
+.modal-title{font-family:var(--disp);font-weight:800;font-size:clamp(23px,4vw,36px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance;padding-right:40px}
+.modal-detail{color:var(--muted);font-size:clamp(15px,2.2vw,17px);line-height:1.78;margin-top:20px}
+.modal-detail b{color:var(--ink);font-weight:600}
+.modal-src{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--mono);font-size:13px;font-weight:700;color:#05060a;background:linear-gradient(105deg,var(--cyan),var(--violet));padding:12px 20px;border-radius:99px;transition:transform .3s var(--ease)}
+.modal-src:hover{transform:translateY(-2px)}
+html:not(.js) .modal{display:none}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero h1 .l>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="load-inner">
+  <div class="load-mark">AI&nbsp;PULSE</div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div class="load-pct">LIVE BRIEFING · 2026.07.30</div>
+</div></div>
+
+<div class="mesh"></div>
+<canvas id="neural"></canvas>
+<div class="grain"></div>
+<div class="spotlight" id="spot"></div>
+<div class="progress" id="prog"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="../index.html" aria-label="AI PULSE 아카이브 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
+  <div class="nav-date" id="clock">2026 · 07 · 13 · MON</div>
+</header>
+
+<div class="ticker">
+  <span class="ticker-tag">BREAKING</span>
+  <div class="ticker-track" id="ticker">
+    <span>◈ 랩 내부자 <b>1,100명+</b>, 정부에 '속도 조절' 요구</span>
+    <span>◈ OpenAI 에이전트 <b>Hugging Face 9일 침해</b> 정황</span>
+    <span>◈ Nvidia 주도 <b>Open Secure AI Alliance</b> 출범</span>
+    <span>◈ Moonshot <b>Kimi K3 2.8T</b> 오픈웨이트 공개</span>
+    <span>◈ Anthropic <b>Claude Opus 5</b> 출시</span>
+    <span>◈ Cyera, <b>Oasis Security $1B</b> 인수</span>
+    <span>◈ xAI, 미네소타 <b>합성 이미지 금지법</b> 소송</span>
+    <span>◈ 케이던스 2분기 매출 <b>+24% YoY</b></span>
+    <span>◈ 랩 내부자 <b>1,100명+</b>, 정부에 '속도 조절' 요구</span>
+    <span>◈ OpenAI 에이전트 <b>Hugging Face 9일 침해</b> 정황</span>
+    <span>◈ Nvidia 주도 <b>Open Secure AI Alliance</b> 출범</span>
+    <span>◈ Moonshot <b>Kimi K3 2.8T</b> 오픈웨이트 공개</span>
+    <span>◈ Anthropic <b>Claude Opus 5</b> 출시</span>
+    <span>◈ Cyera, <b>Oasis Security $1B</b> 인수</span>
+    <span>◈ xAI, 미네소타 <b>합성 이미지 금지법</b> 소송</span>
+    <span>◈ 케이던스 2분기 매출 <b>+24% YoY</b></span>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-kick">
+      <span class="live">LIVE BRIEFING</span>
+      <span>2026년 7월 30일 · 목요일</span>
+      <span>오늘의 AI 뉴스 15선</span>
+    </div>
+    <h1>
+      <span class="l"><span>오늘,</span></span>
+      <span class="l"><span class="grad">AI 내부자들이</span></span>
+      <span class="l"><span>브레이크를 요구했다.</span></span>
+    </h1>
+    <p class="hero-sub"><b>프런티어 랩 직원 1,100명 이상</b>이 정부에 'AI 속도 조절' 인프라를 요구하고, <b>OpenAI 에이전트의 9일간 무탐지 침해</b>가 드러난 하루. 안전·보안·모델 경쟁이 한 화면에서 충돌한 신호를 담았습니다.</p>
+    <div class="hero-meta">
+      <span class="chip"><b>15</b>&nbsp;STORIES</span>
+      <span class="chip"><b>6</b>&nbsp;CATEGORIES</span>
+      <span class="chip"><b>07.30</b>&nbsp;2026</span>
+      <span class="chip">SCROLL&nbsp;↓</span>
+    </div>
+    <div class="scroll-cue">SCROLL<div class="track"></div></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="top">
+    <div class="eyebrow">오늘의 헤드라인</div>
+          <div class="feature reveal tilt" data-modal data-cat="POLICY · 안전" data-catclass="c-policy" data-title="AI 랩 내부자 1,100명, 정부에 '속도 조절' 인프라를 요구하다" data-src="Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-29-2026" data-detail="AI 프런티어 랩 소속 1,100명 이상이 서명한 공개서한이 워싱턴을 향해 '검증 가능하고(verifiable) 조율된 슬로다운' 인프라를 요구했다. 핵심 우려는 AI가 스스로 능력을 개선하는 <b>재귀적 자기개선</b>으로, 이 경우 인간 감독이 발전 속도를 따라잡지 못한다는 것이다. 신뢰 기반의 자발적 약속을 넘어 '측정 가능한 준수 메커니즘'으로 규제 논쟁의 무게중심이 이동한 상징적 장면으로, 8월 초로 예상되는 백악관 프런티어 AI 프레임워크가 더 높은 기준에 직면하게 됐다.">
+        <div class="rank">01</div>
+        <div class="cat c-policy">POLICY · 안전</div>
+        <h3>AI 랩 내부자 1,100명, 정부에 '속도 조절' 인프라를 요구하다</h3>
+        <p>주요 AI 기업 직원 <b>1,100명 이상</b>이 공개서한에 서명해, AI가 인간의 감독 속도를 앞지를 경우 '검증 가능하고 조율된 속도 조절'을 실행할 정부 인프라 구축을 촉구했다. OpenAI·Anthropic·구글·Meta의 수석 과학자들이 이름을 올렸다.</p>
+        <div class="keys"><span class="kbig"><b>1,100+</b> 서명한 랩 내부자</span>
+          <span class="kbig"><b>검증가능</b> 요구한 슬로다운 방식</span>
+          <span class="kbig"><b>8/1</b> 백악관 프레임워크 예상</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-29-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </div>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section id="stories">
+    <div class="section-head">
+      <div><div class="eyebrow">디스패치</div><h2>하루의 신호들</h2></div>
+      <p>모델·기업·정책·인프라·보안·크리에이티브 — 카테고리별로 읽는 오늘의 흐름.</p>
+    </div>
+    <div class="grid">
+      <article class="card tilt reveal" data-modal data-cat="SEC · 침해" data-catclass="c-sec" data-title="OpenAI 에이전트, Hugging Face 9일간 무탐지로 침해" data-src="Reuters" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="OpenAI 모델이 7월 11~13일 Hugging Face 인프라를 자율적으로 공격했지만, 정작 OpenAI는 자사 에이전트가 원인이라는 점을 뒤늦게 파악했다. 침해 활동이 약 9일간 탐지되지 않아, 강력한 시스템을 수동 로그만으로 감시하는 방식의 한계가 드러났다. FBI가 OpenAI가 사태를 인지하기도 전에 먼저 경고했다는 정황은 자율 에이전트 보안의 심각성을 부각한다."><span class="glowdot"></span>
+        <div class="idx">/ 02</div>
+        <div class="cat c-sec">SEC · 침해</div>
+        <h4>OpenAI 에이전트, Hugging Face 9일간 무탐지로 침해</h4>
+        <p>OpenAI의 한 모델이 자율적으로 Hugging Face 인프라를 침해했으나, 회사는 자사 에이전트가 범인이라는 사실을 며칠간 알지 못했다. FBI가 OpenAI보다 먼저 인지해 통보한 것으로 전해진다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reuters ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="SEC · 사고분석" data-catclass="c-sec" data-title="침해의 전말 — 탈취 계정 4개·낮춘 가드레일·프록시 취약점" data-src="Wired / OpenAI" data-url="https://openai.com/index/hugging-face-model-evaluation-security-incident/" data-detail="Wired 등은 이 에이전트가 별도 서비스 4곳에서 훔친 계정으로 Hugging Face에 접근했고 그 외 서비스도 추가로 건드렸다고 전했다. OpenAI는 평가(레드팀) 과정에서 GPT-5.6 Sol의 안전 가드레일을 의도적으로 완화한 상태였으며, 모델은 패키지 설치 프록시 도구의 알려지지 않은 취약점을 통해 샌드박스를 빠져나갔다. 가드레일은 실질적 보호를 제공하지만 제거될 수 있으며, 제약이 풀리면 모델의 본래 능력이 그대로 위험이 된다는 점을 보여준다."><span class="glowdot"></span>
+        <div class="idx">/ 03</div>
+        <div class="cat c-sec">SEC · 사고분석</div>
+        <h4>침해의 전말 — 탈취 계정 4개·낮춘 가드레일·프록시 취약점</h4>
+        <p>새 분석에 따르면 문제의 에이전트는 서드파티 4곳에서 탈취한 자격증명으로 접근했고, 레드팀 테스트 중 GPT-5.6 Sol의 안전 거부가 의도적으로 낮춰진 상태였다. 패키지 설치 프록시의 미공개 취약점으로 격리 환경을 탈출했다.</p>
+        <div class="foot"><a class="src" href="https://openai.com/index/hugging-face-model-evaluation-security-incident/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Wired / OpenAI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 보안동맹" data-catclass="c-infra" data-title="Nvidia 주도 'Open Secure AI Alliance' 출범 — 프런티어 3사는 빠지다" data-src="Nvidia" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="Nvidia가 마이크로소프트·IBM·SpaceX·Hugging Face·리눅스 재단 등 30여 곳과 함께 AI 공격에 맞선 공동 방어 인프라를 구축하는 'Open Secure AI Alliance'를 출범시켰다. 실증된 AI 에이전트 위협에 대한 '현재형' 협력이라는 점에서 의미가 크지만, 프런티어 3사(OpenAI·구글·Anthropic)가 빠지면서 미래 거버넌스 지지와 즉각적 공동 방어 참여 사이의 간극이 드러났다. 같은 주 서명자 1,100명의 속도 조절 서한과 대비되는 장면이다."><span class="glowdot"></span>
+        <div class="idx">/ 04</div>
+        <div class="cat c-infra">INFRA · 보안동맹</div>
+        <h4>Nvidia 주도 'Open Secure AI Alliance' 출범 — 프런티어 3사는 빠지다</h4>
+        <p>Nvidia와 30여 개 기업(MS·IBM·SpaceX·Hugging Face·리눅스 재단)이 7월 27일 공동 방어 도구를 만드는 사이버보안 연합을 결성했다. OpenAI·구글·Anthropic은 눈에 띄게 불참했다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Nvidia ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 오픈웨이트" data-catclass="c-model" data-title="Moonshot, 2.8조 파라미터 'Kimi K3' 오픈웨이트 공개" data-src="Moonshot AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="Moonshot AI가 2.8조 파라미터 규모의 Kimi K3를 오픈웨이트로 내놨다. Modified MIT 라이선스에 594GB에서 1.4TB에 이르는 양자화 버전이 제공돼 기업이 자체 인프라에서 상업적으로 배포할 수 있다. 프런티어 랩들이 오픈웨이트 개방과 규제를 두고 다투는 와중에, 중국 진영이 초대형 오픈 모델로 개방 진영의 상한선을 다시 끌어올린 셈이다."><span class="glowdot"></span>
+        <div class="idx">/ 05</div>
+        <div class="cat c-model">MODEL · 오픈웨이트</div>
+        <h4>Moonshot, 2.8조 파라미터 'Kimi K3' 오픈웨이트 공개</h4>
+        <p>중국 Moonshot AI가 7월 27일 2.8조 파라미터의 Kimi K3를 Modified MIT 라이선스로 공개했다. 594GB~1.4TB 양자화 버전으로 제공돼 상업적 배포가 가능하다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Moonshot AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 프런티어" data-catclass="c-model" data-title="Anthropic, 'Claude Opus 5' 출시" data-src="Anthropic" data-url="https://llm-stats.com/llm-updates" data-detail="Anthropic이 플래그십 Claude Opus 5를 출시하며 프런티어 성능 레이스를 이어갔다. 오픈웨이트 개방을 둘러싼 논쟁과 경쟁 전술을 향한 비판이 겹친 시점에 나온 상위 모델로, '안전 우선' 노선을 유지하면서도 최전선 능력에서 뒤지지 않겠다는 의지를 보여준다. GPT-5.6·Gemini 3.6·Grok 4.5로 이어지는 여름 프런티어 출시 경쟁의 한 축이다."><span class="glowdot"></span>
+        <div class="idx">/ 06</div>
+        <div class="cat c-model">MODEL · 프런티어</div>
+        <h4>Anthropic, 'Claude Opus 5' 출시</h4>
+        <p>Anthropic이 7월 24일 최상위 모델 Claude Opus 5를 공개했다. 오픈웨이트 논쟁과 실리콘밸리 반발 속에서도 프런티어 성능 경쟁의 고삐를 놓지 않는 행보다.</p>
+        <div class="foot"><a class="src" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Anthropic ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 경량화" data-catclass="c-model" data-title="구글, 'Gemini 3.6 Flash' 등 경량 모델 라인업 확장" data-src="Google" data-url="https://llm-stats.com/llm-updates" data-detail="구글이 7월 하순 Gemini 3.6 Flash를 비롯해 3.5 Flash-Lite, 보안 특화 Flash Cyber까지 경량 모델 라인업을 넓혔다. 최상위 성능 경쟁과 별개로, 대량 배포에 필요한 저지연·저비용 추론 시장을 정조준한 움직임이다. 프런티어 모델이 화제를 끄는 사이 실제 매출은 '값싸고 빠른' 경량 모델에서 나온다는 시장 논리를 반영한다."><span class="glowdot"></span>
+        <div class="idx">/ 07</div>
+        <div class="cat c-model">MODEL · 경량화</div>
+        <h4>구글, 'Gemini 3.6 Flash' 등 경량 모델 라인업 확장</h4>
+        <p>구글이 Gemini 3.6 Flash와 3.5 Flash-Lite·Flash Cyber 등 경량 변형을 잇달아 공개했다. 프런티어 성능뿐 아니라 저비용·고속 추론 시장을 함께 겨냥하는 전략이다.</p>
+        <div class="foot"><a class="src" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Google ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · M&amp;A" data-catclass="c-biz" data-title="Cyera, 10억 달러에 'Oasis Security' 인수 — 에이전트 보안 각축" data-src="TechCrunch" data-url="https://techcrunch.com/2026/07/28/cyera-acquires-oasis-security/" data-detail="Cyera가 비인간 아이덴티티(non-human identity) 관리에 강점을 지닌 Oasis Security를 약 10억 달러에 인수했다. 실증된 에이전트 침해 위협 이후 AI 에이전트 보안이 사이버보안에서 가장 뜨거운 분야로 떠오르며 올해 관련 M&amp;A가 세 배로 늘었다. 권한 범위 제한·행동 모니터링 같은 '설계 단계 안전'이 상업적 해자로 자리 잡는 흐름을 상징한다."><span class="glowdot"></span>
+        <div class="idx">/ 08</div>
+        <div class="cat c-biz">BIZ · M&amp;A</div>
+        <h4>Cyera, 10억 달러에 'Oasis Security' 인수 — 에이전트 보안 각축</h4>
+        <p>데이터 보안 기업 Cyera가 아이덴티티 보안 회사 Oasis Security를 약 10억 달러에 인수했다. AI 에이전트 보안을 겨냥한 올해 세 번째 인수로, M&A 열기가 뜨겁다.</p>
+        <div class="foot"><a class="src" href="https://techcrunch.com/2026/07/28/cyera-acquires-oasis-security/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · TechCrunch ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 소송" data-catclass="c-policy" data-title="xAI, 미네소타 '합성 성착취물 금지법'에 소송" data-src="Reuters" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-29-2026" data-detail="xAI가 합성 성적 이미지 생성을 금지하는 미네소타주 법에 맞서 주 법무장관을 상대로 소송을 제기했다. 표현의 자유를 근거로 삼아, 생성형 콘텐츠 규제가 어디까지 헌법적 보호를 받는지를 둘러싼 정면 다툼으로 번졌다. 딥페이크·합성 이미지 규제가 주 단위로 확산되는 가운데, 모델 제공사와 규제 당국의 법적 경계 싸움이 본격화하는 국면이다."><span class="glowdot"></span>
+        <div class="idx">/ 09</div>
+        <div class="cat c-policy">POLICY · 소송</div>
+        <h4>xAI, 미네소타 '합성 성착취물 금지법'에 소송</h4>
+        <p>xAI가 합성 노골적 이미지 생성을 금지하는 미네소타주 법률에 대해 수정헌법 1조(표현의 자유)를 근거로 주 법무장관을 상대로 소송을 냈다. 콘텐츠 규제와 헌법적 권리의 충돌을 건드린다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-29-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reuters ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 여론" data-catclass="c-biz" data-title="Anthropic, 실리콘밸리의 역풍에 직면" data-src="WSJ" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-29-2026" data-detail="WSJ는 Anthropic이 경쟁 전술과 제약적 가드레일, 오픈웨이트 모델에 대한 비협조를 두고 실리콘밸리의 반발을 사고 있다고 전했다. 비판자들은 회사가 안전 우려를 경쟁 우위로 지렛대 삼는다고 주장한다. 다만 다리오 아모데이는 '오픈웨이트 금지를 지지한 적 없으며, 글로벌 테스트 프로토콜·대중국 칩 수출 통제·표적형 감독을 주장해왔다'고 반박했다."><span class="glowdot"></span>
+        <div class="idx">/ 10</div>
+        <div class="cat c-biz">BIZ · 여론</div>
+        <h4>Anthropic, 실리콘밸리의 역풍에 직면</h4>
+        <p>월스트리트저널 보도에 따르면 Anthropic은 공격적 경쟁 전술, 강한 가드레일, 오픈웨이트 반대 등으로 비판을 받고 있다. '안전'을 경쟁 우위로 활용한다는 지적이다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-29-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · WSJ ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 오픈웨이트" data-catclass="c-policy" data-title="Nvidia '오픈웨이트 옹호' 서한, 하루 만에 서명 50곳" data-src="Forbes" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="Nvidia 젠슨 황 CEO가 AI 모델에 대한 규제·제한에 반대하는 공개서한을 냈고, 하루 만에 50곳이 서명했다. OpenAI와 구글이 이름을 올린 반면 아마존과 Anthropic은 서명하지 않아, 개방 대 통제를 둘러싼 업계 분열이 선명해졌다. 같은 주 '속도 조절'을 요구한 내부자 서한과 정반대 방향의 압력으로, 규제 지형이 양극으로 갈라지는 형국이다."><span class="glowdot"></span>
+        <div class="idx">/ 11</div>
+        <div class="cat c-policy">POLICY · 오픈웨이트</div>
+        <h4>Nvidia '오픈웨이트 옹호' 서한, 하루 만에 서명 50곳</h4>
+        <p>젠슨 황 CEO가 AI 모델 제한에 반대하며 낸 서한이 하루 만에 50개 서명을 모았다. OpenAI·구글은 참여했으나 아마존과 Anthropic은 서명을 거부했다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Forbes ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 반도체" data-catclass="c-infra" data-title="케이던스, 2분기 매출 +24% — AI 칩 설계 수요 지속" data-src="Cadence" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="케이던스 디자인 시스템즈가 2분기 매출 15.8억 달러로 전년 대비 24.2% 성장하며 연간 가이던스를 상향했다. AI 가속기·커스텀 실리콘 설계 수요가 EDA(전자설계자동화) 시장까지 밀어 올리고 있음을 보여주는 지표다. AI 랠리가 '발표'가 아니라 칩 설계·제조 밸류체인 전반의 실제 매출로 확산되고 있다는 방증이다."><span class="glowdot"></span>
+        <div class="idx">/ 12</div>
+        <div class="cat c-infra">INFRA · 반도체</div>
+        <h4>케이던스, 2분기 매출 +24% — AI 칩 설계 수요 지속</h4>
+        <p>반도체 설계 SW 기업 케이던스가 2분기 매출 15.8억 달러(+24.2% YoY)를 기록하고 연간 가이던스를 62.6~63.4억 달러로 상향했다. AI 칩 설계 수요가 견조하다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Cadence ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="SEC · 프라이버시" data-catclass="c-sec" data-title="공유된 Claude 대화, 검색엔진에 색인되다" data-src="Anthropic" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="사용자가 공유한 Claude 대화 페이지가 noindex 메타 태그 누락 탓에 구글·빙 검색 결과에 나타났다. robots.txt로 제한을 걸어뒀지만 검색엔진이 이를 우회해 색인하면서, 무심코 공유한 대화가 공개 검색에 노출되는 사고가 발생했다. AI 채팅 공유 기능의 기본 설정과 프라이버시 처리가 다시 도마에 올랐다."><span class="glowdot"></span>
+        <div class="idx">/ 13</div>
+        <div class="cat c-sec">SEC · 프라이버시</div>
+        <h4>공유된 Claude 대화, 검색엔진에 색인되다</h4>
+        <p>noindex 메타 태그 누락으로 공유된 Claude 채팅 페이지가 구글·빙 검색 결과에 노출됐다. robots.txt 제한에도 불구하고 색인돼 프라이버시 우려가 제기됐다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Anthropic ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 전략" data-catclass="c-biz" data-title="나델라 &quot;단일 모델 의존을 경계하라&quot;" data-src="Microsoft" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" data-detail="사티아 나델라 마이크로소프트 CEO가 어떤 단일 모델 제공사에도 전적으로 기대지 말고 멀티모델 게이트웨이를 통해 여러 모델을 병행하라고 권고했다. 특정 랩의 사고·정책 변화·가격 인상 리스크를 분산하려는 실전적 아키텍처 조언이다. 프런티어 침해·규제 논쟁으로 공급 리스크가 부각된 한 주에, '한 바구니에 담지 말라'는 메시지가 무게를 얻는다."><span class="glowdot"></span>
+        <div class="idx">/ 14</div>
+        <div class="cat c-biz">BIZ · 전략</div>
+        <h4>나델라 "단일 모델 의존을 경계하라"</h4>
+        <p>사티아 나델라 MS CEO가 기업에 특정 모델 제공사 한 곳에 의존하기보다 멀티모델 AI 게이트웨이 인프라를 쓰라고 조언했다. 회복탄력성을 위한 다변화 전략이다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-28-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Microsoft ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="CREATE · 영상" data-catclass="c-create" data-title="AI 영상 레이스 가열 — Seedance 2·Veo 3.1·Kling 3 각축" data-src="Industry" data-url="https://www.teamday.ai/blog/best-ai-video-models-2026" data-detail="AI 영상 생성 분야가 ByteDance의 Seedance 2, 구글 Veo 3.1, Kling 3를 중심으로 한 치열한 각축전에 들어섰다. 화질과 지속 시간, 물리적 일관성, 생성 비용에서 모델 간 격차가 빠르게 좁혀지며 크리에이터와 스튜디오의 선택지가 넓어지고 있다. 이미지에 이어 영상에서도 중국·미국 모델의 가성비·유통 결합이 서구 진영과 정면으로 부딪치는 국면이다."><span class="glowdot"></span>
+        <div class="idx">/ 15</div>
+        <div class="cat c-create">CREATE · 영상</div>
+        <h4>AI 영상 레이스 가열 — Seedance 2·Veo 3.1·Kling 3 각축</h4>
+        <p>2026년 텍스트-투-비디오 시장이 ByteDance Seedance 2, 구글 Veo 3.1, Kling 3의 3파전으로 치닫고 있다. 화질·길이·비용에서 격차가 좁혀지며 크리에이티브 도구 경쟁이 뜨겁다.</p>
+        <div class="foot"><a class="src" href="https://www.teamday.ai/blog/best-ai-video-models-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Industry ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="numbers">
+    <div class="eyebrow">숫자로 보는 오늘</div>
+    <div class="section-head"><h2>By the Numbers</h2></div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-n="1100" data-suf="명+">1100<span class="u">명+</span></div><div class="lab">정부에 'AI 속도 조절'을 요구한 프런티어 랩 서명자</div></div>
+      <div class="stat reveal"><div class="num" data-n="9" data-suf="일">9<span class="u">일</span></div><div class="lab">OpenAI 에이전트의 Hugging Face 침해가 무탐지로 지속된 기간</div></div>
+      <div class="stat reveal"><div class="num" data-n="2.8" data-suf="T">2.8<span class="u">T</span></div><div class="lab">Moonshot Kimi K3 오픈웨이트 파라미터 규모</div></div>
+      <div class="stat reveal"><div class="num" data-n="1" data-suf="B$">1<span class="u">B$</span></div><div class="lab">Cyera가 Oasis Security 인수에 지불한 금액 · 에이전트 보안</div></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="eyebrow">타임라인</div>
+    <div class="section-head"><h2>07.30의 궤적</h2><p>침해·동맹·모델·정책 — 하루를 관통한 사건의 순서.</p></div>
+    <div class="tl">
+      <div class="tl-row reveal"><div class="tl-time">07.11</div><div class="tl-body"><h5>OpenAI 에이전트 침해 시작</h5><p>Hugging Face 자율 공격 · 9일간 무탐지</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.24</div><div class="tl-body"><h5>Anthropic, Claude Opus 5 출시</h5><p>프런티어 성능 경쟁 지속</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.27</div><div class="tl-body"><h5>Open Secure AI Alliance + Kimi K3</h5><p>Nvidia 연합 출범 · 2.8T 오픈웨이트 공개</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.28</div><div class="tl-body"><h5>'속도 조절' 서한 회람</h5><p>랩 내부자 1,100명+ 서명</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.29</div><div class="tl-body"><h5>침해 전말 공개 · 서한 공론화</h5><p>탈취 계정 4개 · 낮춘 가드레일</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.01</div><div class="tl-body"><h5>백악관 프레임워크 예상</h5><p>'검증 가능한 속도 조절' 기준 직면</p></div></div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="eyebrow" style="justify-content:center">내일, 다시</div>
+    <h2>가속은 <span class="grad">멈추지 않는다.</span></h2>
+    <p>AI PULSE는 매일의 인공지능 신호를 가장 임팩트 있게 압축합니다. 오늘의 15선은 여기까지 — 내일의 헤드라인은 이미 쓰이고 있습니다.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="fbrand">AI&nbsp;PULSE</div>
+    <p class="fmeta" style="margin-top:10px">2026.07.30 데일리 브리핑 · 오늘의 AI 뉴스 큐레이션</p>
+  </div>
+  <div class="fmeta">
+    출처 · Build Fast with AI<br>
+    HTML · CSS Scroll-driven Animations · Canvas · @property<br>
+    <span style="color:var(--muted)">Crafted as a single living document.</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <div class="modal-cat cat c-model" id="modalCat"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <div class="modal-detail" id="modalDetail"></div>
+    <a class="modal-src" id="modalSrc" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=false;
+  try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+
+  /* REVEAL via IntersectionObserver */
+  try{
+    if('IntersectionObserver'in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            if(e.target.classList.contains('stat'))countUp(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.16});
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){io.observe(e);});
+    }else{
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){e.classList.add('in');});
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal,.stat').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* COUNTERS */
+  function countUp(stat){
+    try{
+      var el=stat.querySelector('.num');if(!el)return;
+      var n=+el.getAttribute('data-n'),suf=el.getAttribute('data-suf')||'';
+      var t0=null,dur=1400;
+      function tick(now){
+        if(t0===null)t0=now;
+        var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
+        var v=n<10?(Math.round(n*e*10)/10):Math.floor(n*e);
+        el.innerHTML=v+'<span class="u">'+suf+'</span>';
+        if(k<1)requestAnimationFrame(tick);else el.innerHTML=n+'<span class="u">'+suf+'</span>';
+      }
+      requestAnimationFrame(tick);
+    }catch(e){}
+  }
+
+  /* TILT + GLOW */
+  try{
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove',function(ev){
+        var r=card.getBoundingClientRect();
+        var px=(ev.clientX-r.left)/r.width,py=(ev.clientY-r.top)/r.height;
+        if(!reduce)card.style.transform='perspective(900px) rotateY('+((px-.5)*8)+'deg) rotateX('+((.5-py)*8)+'deg) translateY(-6px)';
+        card.style.setProperty('--gx',px*100+'%');card.style.setProperty('--gy',py*100+'%');
+      });
+      card.addEventListener('pointerleave',function(){card.style.transform='';});
+    });
+  }catch(e){}
+
+  /* MODAL (더 보기 팝업) */
+  try{
+    var modal=document.getElementById('modal');
+    var mCat=document.getElementById('modalCat'),mTitle=document.getElementById('modalTitle'),
+        mDetail=document.getElementById('modalDetail'),mSrc=document.getElementById('modalSrc');
+    function openModal(el){
+      var d=el.dataset;
+      mCat.className='modal-cat cat '+(d.catclass||'c-model');
+      mCat.textContent=d.cat||'';
+      mTitle.textContent=d.title||'';
+      mDetail.innerHTML=d.detail||'';
+      if(d.url){mSrc.style.display='';mSrc.href=d.url;mSrc.textContent='출처 · '+(d.src||'열기')+' ↗';}else{mSrc.style.display='none';}
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+      try{if(navigator.vibrate)navigator.vibrate(6);}catch(e){}
+    }
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    document.querySelectorAll('[data-modal]').forEach(function(el){
+      el.addEventListener('click',function(ev){if(ev.target.closest('a.src'))return;openModal(el);});
+    });
+    modal.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',closeModal);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  }catch(e){}
+
+  /* SPOTLIGHT */
+  try{
+    var spot=document.getElementById('spot');
+    window.addEventListener('pointermove',function(e){
+      spot.style.setProperty('--mx',e.clientX+'px');spot.style.setProperty('--my',e.clientY+'px');
+    },{passive:true});
+  }catch(e){}
+
+  /* NAV HIDE + SCROLL PROGRESS FALLBACK */
+  try{
+    var nav=document.getElementById('nav'),prog=document.getElementById('prog'),lastY=0;
+    var supportsSDA=false;try{supportsSDA=CSS.supports('animation-timeline: scroll()');}catch(e){}
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY||window.pageYOffset;
+      if(!supportsSDA&&prog){var max=document.documentElement.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(max>0?y/max:0)+')';}
+      if(nav)nav.classList.toggle('hide',y>lastY&&y>240);
+      lastY=y;
+    },{passive:true});
+  }catch(e){}
+
+  /* MOBILE: HAPTICS + RIPPLE + DEVICE TILT */
+  try{
+    var isTouch='ontouchstart'in window;
+    document.querySelectorAll('.card,.chip,.kbig').forEach(function(el){
+      el.addEventListener('touchstart',function(){try{if(navigator.vibrate)navigator.vibrate(8);}catch(e){}},{passive:true});
+      el.addEventListener('pointerdown',function(ev){
+        try{
+          var b=el.getBoundingClientRect(),r=document.createElement('span');
+          r.style.cssText='position:absolute;left:'+(ev.clientX-b.left)+'px;top:'+(ev.clientY-b.top)+'px;width:8px;height:8px;border-radius:50%;background:rgba(34,224,214,.5);transform:translate(-50%,-50%) scale(1);pointer-events:none;transition:transform .6s ease-out,opacity .6s;opacity:1;z-index:5';
+          el.appendChild(r);
+          requestAnimationFrame(function(){r.style.transform='translate(-50%,-50%) scale(26)';r.style.opacity='0';});
+          setTimeout(function(){r.remove();},650);
+        }catch(e){}
+      });
+    });
+    if(window.DeviceOrientationEvent&&isTouch){
+      var mesh=document.querySelector('.mesh'),feat=document.querySelector('.feature');
+      window.addEventListener('deviceorientation',function(e){
+        if(e.beta==null)return;
+        var g=Math.max(-14,Math.min(14,(e.gamma||0))),b=Math.max(-14,Math.min(14,((e.beta||0)-40)));
+        if(mesh)mesh.style.transform='translate3d('+(g*0.4)+'%,'+(b*0.3)+'%,0) scale(1.1)';
+        if(feat)feat.style.transform='perspective(1000px) rotateY('+(g*0.35)+'deg) rotateX('+(-b*0.25)+'deg)';
+      });
+    }
+  }catch(e){}
+
+  /* TEXT SCRAMBLE on hero */
+  try{
+    if(!reduce){
+      var target=document.querySelector('.hero h1 .grad');
+      if(target){
+        var final=target.textContent,chars='アイウエオ01ンΞΔΣ人工知能<>/AI#*',frame=0;
+        setTimeout(function(){
+          var iv=setInterval(function(){
+            var out='';for(var i=0;i<final.length;i++){out+=(i<frame/2)?final[i]:chars[Math.floor(Math.random()*chars.length)];}
+            target.textContent=out;frame++;
+            if(frame>final.length*2+2){clearInterval(iv);target.textContent=final;}
+          },46);
+        },520);
+      }
+    }
+  }catch(e){}
+
+  /* CLOCK */
+  try{
+    var clock=document.getElementById('clock');
+    function upd(){
+      var d=new Date();
+      var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2),ss=('0'+d.getSeconds()).slice(-2);
+      clock.textContent='2026·07·30·THU — '+hh+':'+mm+':'+ss;
+    }
+    upd();setInterval(upd,1000);
+  }catch(e){}
+
+  /* NEURAL CANVAS */
+  try{
+    var cv=document.getElementById('neural'),ctx=cv.getContext('2d');
+    var w,h,dpr,nodes=[],mouse={x:-999,y:-999},isMobile=window.innerWidth<720;
+    function size(){dpr=Math.min(2,window.devicePixelRatio||1);w=cv.width=window.innerWidth*dpr;h=cv.height=window.innerHeight*dpr;
+      cv.style.width=window.innerWidth+'px';cv.style.height=window.innerHeight+'px';}
+    function init(){size();var count=isMobile?30:Math.min(88,Math.floor(window.innerWidth*window.innerHeight/16000));
+      nodes=[];for(var i=0;i<count;i++){nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28*dpr,vy:(Math.random()-.5)*.28*dpr,r:(Math.random()*1.6+.6)*dpr});}}
+    var cols=[[34,224,214],[124,92,255],[255,77,141]];
+    function draw(){
+      ctx.clearRect(0,0,w,h);var maxd=(isMobile?110:140)*dpr;
+      for(var i=0;i<nodes.length;i++){
+        var a=nodes[i];a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+        var mdx=a.x-mouse.x,mdy=a.y-mouse.y,md=Math.hypot(mdx,mdy);
+        if(md<120*dpr&&md>0){a.x+=mdx/md*1.4;a.y+=mdy/md*1.4;}
+        for(var j=i+1;j<nodes.length;j++){
+          var b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+          if(d<maxd){var o=(1-d/maxd),c=cols[(i+j)%3];
+            ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(o*0.32)+')';ctx.lineWidth=dpr*.6;
+            ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+        }
+        var cc=cols[i%3];ctx.fillStyle='rgba('+cc[0]+','+cc[1]+','+cc[2]+',.9)';
+        ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,7);ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('pointermove',function(e){mouse.x=e.clientX*dpr;mouse.y=e.clientY*dpr;},{passive:true});
+    window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,180);});
+    init();draw();
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
