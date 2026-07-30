@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<title>AI PULSE · 2026.07.31 — 오늘의 AI 뉴스</title>
+<meta name="description" content="2026년 7월 31일, 빅테크 2분기 실적이 확인한 AI 자본지출 슈퍼사이클. Azure의 첫 1,000억 달러 돌파부터 팀 쿡의 마지막 실적 콜까지, 하루를 흔든 15선.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@property --spin { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+:root{
+  --bg:#05060a;--bg2:#090b12;--ink:#eaf0ff;--muted:#8b93ab;--line:rgba(255,255,255,.08);
+  --cyan:#22e0d6;--violet:#7c5cff;--magenta:#ff4d8d;--amber:#ffcb47;--lime:#9bff5a;
+  --glass:rgba(255,255,255,.045);--maxw:1180px;--ease:cubic-bezier(.16,1,.3,1);
+  --font:"Pretendard","Space Grotesk",system-ui,sans-serif;--disp:"Syne","Pretendard",sans-serif;--mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;overflow-x:hidden;position:relative;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* BACKGROUND */
+#neural{position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(70px) saturate(140%);opacity:.6;
+  background:
+    radial-gradient(38vw 38vw at 15% 20%, color-mix(in oklab, var(--violet) 60%, transparent), transparent 60%),
+    radial-gradient(34vw 34vw at 85% 18%, color-mix(in oklab, var(--cyan) 55%, transparent), transparent 60%),
+    radial-gradient(40vw 40vw at 70% 85%, color-mix(in oklab, var(--magenta) 50%, transparent), transparent 62%),
+    radial-gradient(30vw 30vw at 25% 90%, color-mix(in oklab, var(--amber) 40%, transparent), transparent 60%);
+  animation:mesh 26s var(--ease) infinite alternate}
+@keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0deg)}
+  50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(320px 320px at var(--mx,50%) var(--my,-20%), color-mix(in oklab,var(--cyan) 22%, transparent), transparent 70%);
+  mix-blend-mode:screen}
+html:not(.js) .spotlight{display:none}
+
+/* LOADER — pure CSS, always auto-dismisses (never gets stuck) */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;
+  animation:loaderGone .7s var(--ease) 2.1s forwards}
+@keyframes loaderGone{to{opacity:0;visibility:hidden;pointer-events:none}}
+.load-inner{width:min(80vw,340px);text-align:center}
+.load-mark{font-family:var(--disp);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.load-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.1);margin-top:18px;overflow:hidden}
+.load-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  box-shadow:0 0 18px var(--cyan);animation:fillUp 1.9s var(--ease) forwards}
+@keyframes fillUp{to{width:100%}}
+.load-pct{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3em}
+html:not(.js) #loader{display:none} /* if no JS at all, don't risk any overlay */
+
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:0;left:0;height:3px;z-index:120;width:100%;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));box-shadow:0 0 14px color-mix(in oklab,var(--violet) 70%,transparent)}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.7),transparent);
+  transition:transform .5s var(--ease)}
+header.nav.hide{transform:translateY(-110%)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;letter-spacing:-.01em;font-size:18px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.nav-date{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.15em}
+@media(max-width:640px){.nav-date{display:none}}
+
+/* TICKER */
+.ticker{position:fixed;bottom:0;left:0;right:0;z-index:105;background:rgba(5,6,10,.72);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);overflow:hidden;padding:9px 0;display:flex;align-items:center}
+.ticker-tag{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--bg);
+  background:var(--magenta);padding:5px 12px;margin:0 14px;border-radius:5px;text-transform:uppercase;
+  box-shadow:0 0 18px color-mix(in oklab,var(--magenta) 60%,transparent)}
+.ticker-track{display:flex;gap:44px;white-space:nowrap;animation:slide 40s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track b{color:var(--cyan)}
+.ticker-track span{display:inline-flex;gap:8px;align-items:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* LAYOUT */
+main{position:relative;z-index:3}
+section{padding:clamp(70px,11vw,150px) clamp(18px,5vw,40px);max-width:var(--maxw);margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:120px;max-width:var(--maxw)}
+.hero-kick{font-family:var(--mono);font-size:clamp(12px,2.6vw,15px);letter-spacing:.3em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.hero-kick .live{color:var(--magenta);display:inline-flex;align-items:center;gap:7px}
+.hero-kick .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--magenta);box-shadow:0 0 10px var(--magenta);animation:pulse 1.4s infinite}
+.hero h1{font-family:var(--disp);font-weight:800;line-height:.94;letter-spacing:-.03em;font-size:clamp(52px,14vw,168px);margin-bottom:8px}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>span{display:block;animation:rise 1s var(--ease) both}
+.hero h1 .l:nth-child(1)>span{animation-delay:.15s}
+.hero h1 .l:nth-child(2)>span{animation-delay:.27s}
+.hero h1 .l:nth-child(3)>span{animation-delay:.39s}
+@keyframes rise{from{transform:translateY(110%)}to{transform:translateY(0)}}
+.grad{background:linear-gradient(105deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:200% 0}}
+.hero-sub{max-width:640px;color:var(--muted);font-size:clamp(15px,2.4vw,20px);margin-top:26px;animation:fade 1s var(--ease) .6s both}
+.hero-sub b{color:var(--ink);font-weight:600}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:fade 1s var(--ease) .8s both}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:9px 15px;border:1px solid var(--line);border-radius:99px;
+  background:var(--glass);color:var(--muted);backdrop-filter:blur(6px);transition:.4s var(--ease)}
+.chip b{color:var(--ink)}
+.chip:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+.scroll-cue{position:absolute;bottom:74px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+  letter-spacing:.3em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fade 1s 1.2s both}
+.scroll-cue .track{width:1px;height:44px;background:linear-gradient(var(--cyan),transparent);position:relative;overflow:hidden}
+.scroll-cue .track::after{content:"";position:absolute;top:0;left:0;width:100%;height:14px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-16px)}100%{transform:translateY(46px)}}
+@media(max-width:640px){.scroll-cue{display:none}}
+
+/* REVEAL — visible by default; only hidden/animated when JS present */
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .grid .card:nth-child(3n+2){transition-delay:.06s}
+html.js .grid .card:nth-child(3n+3){transition-delay:.12s}
+
+/* SECTION HEAD */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.section-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6vw,60px);letter-spacing:-.02em;line-height:1}
+.section-head p{color:var(--muted);font-size:14px;max-width:340px}
+
+/* FEATURED */
+.feature{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(124,92,255,.16),rgba(34,224,214,.06) 60%,transparent);
+  padding:clamp(26px,5vw,56px);isolation:isolate}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background:conic-gradient(from var(--spin),transparent,color-mix(in oklab,var(--violet) 40%,transparent),transparent 40%);
+  animation:sweep 12s linear infinite}
+@keyframes sweep{to{--spin:360deg}}
+.feature .rank{font-family:var(--disp);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:.8;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.12));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}
+.feature .cat{margin:20px 0 14px}
+.feature h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5vw,52px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;max-width:14ch}
+.feature p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:56ch;margin-top:18px}
+.feature .keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kbig{font-family:var(--mono);font-size:13px;color:var(--ink);border:1px solid var(--line);background:rgba(0,0,0,.25);
+  padding:10px 16px;border-radius:12px;display:flex;gap:8px;align-items:baseline}
+.kbig b{font-family:var(--disp);font-size:20px;color:var(--cyan)}
+
+.cat{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid currentColor}
+.cat::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.c-model{color:var(--cyan)}.c-biz{color:var(--violet)}.c-policy{color:var(--amber)}
+.c-infra{color:var(--lime)}.c-sec{color:var(--magenta)}.c-create{color:#ff8f5a}
+
+/* NEWS GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--glass);
+  backdrop-filter:blur(8px);overflow:hidden;transition:transform .5s var(--ease),border-color .5s}
+.card::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:linear-gradient(140deg,var(--cyan),transparent 40%,var(--magenta));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover{border-color:transparent;transform:translateY(-6px)}
+.card:hover::after{opacity:1}
+.card .glowdot{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(50px);opacity:0;transition:opacity .5s;
+  top:var(--gy,50%);left:var(--gx,50%);transform:translate(-50%,-50%);pointer-events:none;background:var(--cyan)}
+.card:hover .glowdot{opacity:.16}
+.card .idx{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.card h4{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.18;letter-spacing:-.01em;margin:16px 0 12px;text-wrap:balance}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.card .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.card .arrow{font-size:18px;transition:transform .4s var(--ease);color:var(--ink)}
+.card:hover .arrow{transform:translate(4px,-4px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--bg2);padding:clamp(28px,5vw,46px) 28px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width 1.4s var(--ease)}
+.stat.in::before{width:100%}
+html:not(.js) .stat::before{width:100%}
+.stat .num{font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#fff,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .num .u{font-size:.42em;color:var(--cyan);-webkit-text-fill-color:var(--cyan);margin-left:4px}
+.stat .lab{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.45}
+
+/* TIMELINE */
+.tl-row{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:start;transition:background .4s}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-row:hover{background:rgba(255,255,255,.02)}
+.tl-time{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:.05em;padding-top:2px}
+.tl-body h5{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.tl-body p{color:var(--muted);font-size:14px}
+
+/* OUTRO / FOOTER */
+.outro{text-align:center}
+.outro h2{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,86px);letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+.outro p{color:var(--muted);max-width:520px;margin:24px auto 0;font-size:16px}
+footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,40px) 90px;max-width:var(--maxw);margin-inline:auto;
+  display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;position:relative;z-index:3}
+footer .fbrand{font-family:var(--disp);font-weight:800;font-size:22px}
+footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;max-width:420px}
+
+/* logo link */
+a.brand{cursor:pointer;text-decoration:none;transition:opacity .3s}
+a.brand:hover{opacity:.72}
+/* card interactivity + source link */
+.card,.feature[data-modal]{cursor:pointer}
+.foot a.src{color:var(--muted);transition:color .3s}
+.foot a.src:hover{color:var(--cyan)}
+.more{font-family:var(--mono);font-size:12px;color:var(--cyan);font-weight:700;letter-spacing:.03em;white-space:nowrap;transition:transform .3s var(--ease)}
+.card:hover .more,.feature:hover .more{transform:translateX(4px)}
+.feature .foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* modal (더 보기 팝업) */
+.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(3,4,8,.72);backdrop-filter:blur(10px)}
+.modal-panel{position:relative;max-width:640px;width:100%;max-height:85vh;overflow:auto;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(124,92,255,.18),rgba(34,224,214,.06) 55%,var(--bg2));padding:clamp(28px,5vw,46px);transform:translateY(30px) scale(.9);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font-size:15px;cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease);z-index:2}
+.modal-x:hover{border-color:var(--magenta);color:var(--magenta);transform:rotate(90deg)}
+.modal-cat{margin-bottom:18px}
+.modal-title{font-family:var(--disp);font-weight:800;font-size:clamp(23px,4vw,36px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance;padding-right:40px}
+.modal-detail{color:var(--muted);font-size:clamp(15px,2.2vw,17px);line-height:1.78;margin-top:20px}
+.modal-detail b{color:var(--ink);font-weight:600}
+.modal-src{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--mono);font-size:13px;font-weight:700;color:#05060a;background:linear-gradient(105deg,var(--cyan),var(--violet));padding:12px 20px;border-radius:99px;transition:transform .3s var(--ease)}
+.modal-src:hover{transform:translateY(-2px)}
+html:not(.js) .modal{display:none}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero h1 .l>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="load-inner">
+  <div class="load-mark">AI&nbsp;PULSE</div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div class="load-pct">LIVE BRIEFING · 2026.07.31</div>
+</div></div>
+
+<div class="mesh"></div>
+<canvas id="neural"></canvas>
+<div class="grain"></div>
+<div class="spotlight" id="spot"></div>
+<div class="progress" id="prog"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="../index.html" aria-label="AI PULSE 아카이브 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
+  <div class="nav-date" id="clock">2026 · 07 · 13 · MON</div>
+</header>
+
+<div class="ticker">
+  <span class="ticker-tag">BREAKING</span>
+  <div class="ticker-track" id="ticker">
+    <span>◈ MS <b>Azure $100B</b> 첫 돌파 · +43%</span>
+    <span>◈ Amazon <b>AWS +37%</b> · 18분기 최고 성장</span>
+    <span>◈ Meta 자본지출 <b>$130~145B</b>로 상향</span>
+    <span>◈ Apple Q3 <b>$109.4B</b> · 팀 쿡 고별 콜</span>
+    <span>◈ Arm 데이터센터 <b>로열티 2배</b></span>
+    <span>◈ Brookfield·NextEra <b>켄터키 $100B</b> AI 캠퍼스</span>
+    <span>◈ EU <b>AI 기가팩토리 7곳</b> · 공공 €10B</span>
+    <span>◈ <b>EU AI Act</b> GPAI 의무 8/2 발효</span>
+    <span>◈ MS <b>Azure $100B</b> 첫 돌파 · +43%</span>
+    <span>◈ Amazon <b>AWS +37%</b> · 18분기 최고 성장</span>
+    <span>◈ Meta 자본지출 <b>$130~145B</b>로 상향</span>
+    <span>◈ Apple Q3 <b>$109.4B</b> · 팀 쿡 고별 콜</span>
+    <span>◈ Arm 데이터센터 <b>로열티 2배</b></span>
+    <span>◈ Brookfield·NextEra <b>켄터키 $100B</b> AI 캠퍼스</span>
+    <span>◈ EU <b>AI 기가팩토리 7곳</b> · 공공 €10B</span>
+    <span>◈ <b>EU AI Act</b> GPAI 의무 8/2 발효</span>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-kick">
+      <span class="live">LIVE BRIEFING</span>
+      <span>2026년 7월 31일 · 금요일</span>
+      <span>오늘의 AI 뉴스 15선</span>
+    </div>
+    <h1>
+      <span class="l"><span>오늘,</span></span>
+      <span class="l"><span class="grad">AI 자본지출이</span></span>
+      <span class="l"><span>슈퍼사이클에 올라탔다.</span></span>
+    </h1>
+    <p class="hero-sub"><b>Azure 첫 연매출 1,000억 달러 돌파</b>부터 <b>AWS 18분기 만의 최고 성장</b>, <b>Meta 1,300억 달러 자본지출</b>, 그리고 팀 쿡의 마지막 실적 콜까지 — 빅테크 2분기 실적이 하루 만에 그린 AI 인프라 지형도를 한 화면에 담았습니다.</p>
+    <div class="hero-meta">
+      <span class="chip"><b>15</b>&nbsp;STORIES</span>
+      <span class="chip"><b>6</b>&nbsp;CATEGORIES</span>
+      <span class="chip"><b>07.31</b>&nbsp;2026</span>
+      <span class="chip">SCROLL&nbsp;↓</span>
+    </div>
+    <div class="scroll-cue">SCROLL<div class="track"></div></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="top">
+    <div class="eyebrow">오늘의 헤드라인</div>
+          <div class="feature reveal tilt" data-modal data-cat="BIZ · 실적" data-catclass="c-biz" data-title="빅테크 2분기 실적, AI 자본지출 슈퍼사이클을 증명하다" data-src="Fortune" data-url="https://fortune.com/2026/07/29/microsoft-azure-100-billion-annual-revenue-earnings-revenue-cloud-ai/" data-detail="7월 29~30일 발표된 빅테크 2분기 실적은 AI 자본지출이 '비용'이 아니라 '성장 엔진'으로 되돌아오고 있음을 한꺼번에 보여줬다. 마이크로소프트 Azure는 연매출 1,000억 달러를 처음 돌파하며 43% 성장했고, 아마존 AWS는 37% 성장으로 18분기 만에 가장 빠른 속도를 기록했으며, 두 회사 모두 실적 발표 뒤 주가가 9% 안팎 급등했다. 동시에 Meta는 2026년 자본지출 하한을 1,300억 달러(최대 1,450억)로 상향하고 아마존은 분기 설비투자가 전년보다 660억 달러 늘며 잉여현금흐름이 적자로 돌아서, 승자가 되려면 천문학적 선투자가 불가피하다는 '군비 경쟁'의 실체도 함께 드러났다.">
+        <div class="rank">01</div>
+        <div class="cat c-biz">BIZ · 실적</div>
+        <h3>빅테크 2분기 실적, AI 자본지출 슈퍼사이클을 증명하다</h3>
+        <p>마이크로소프트 <b>Azure가 첫 연매출 1,000억 달러</b>를 넘었고, 아마존 <b>AWS는 37% 성장</b>으로 18분기 만의 최고치를 찍었다. Meta는 2026년 자본지출 하한을 <b>1,300억 달러</b>로 끌어올렸다. 3대 클라우드의 숫자가 한날 쏟아지며 'AI 인프라 베팅이 매출로 회수되고 있다'는 서사가 확인됐다.</p>
+        <div class="keys"><span class="kbig"><b>$100B</b> Azure 첫 연매출 돌파</span>
+          <span class="kbig"><b>+37%</b> AWS 성장 · 18분기 최고</span>
+          <span class="kbig"><b>$130B+</b> Meta 2026 capex 하한</span></div>
+        <div class="foot"><a class="src" href="https://fortune.com/2026/07/29/microsoft-azure-100-billion-annual-revenue-earnings-revenue-cloud-ai/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Fortune ↗</a><span class="more">더 보기 →</span></div>
+      </div>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section id="stories">
+    <div class="section-head">
+      <div><div class="eyebrow">디스패치</div><h2>하루의 신호들</h2></div>
+      <p>모델·기업·정책·인프라·보안·크리에이티브 — 카테고리별로 읽는 오늘의 흐름.</p>
+    </div>
+    <div class="grid">
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 실적" data-catclass="c-biz" data-title="MS Azure, 첫 연매출 1,000억 달러 돌파 — +43%" data-src="Microsoft" data-url="https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/" data-detail="마이크로소프트의 회계 4분기 실적에서 Azure가 연 환산 매출 1,000억 달러를 사상 처음 돌파하며 43% 성장했다. 아직 인식되지 않은 계약 잔고(commercial RPO)가 전년비 84% 늘어난 6,780억 달러에 달해, 향후 몇 년간 클라우드·AI 수요가 이미 계약으로 잠겨 있음을 보여줬다. 시장은 'AI 투자 회수 가시성'에 화답해 주가를 9% 안팎 끌어올렸고, 다수 증권사가 목표주가를 상향했다."><span class="glowdot"></span>
+        <div class="idx">/ 02</div>
+        <div class="cat c-biz">BIZ · 실적</div>
+        <h4>MS Azure, 첫 연매출 1,000억 달러 돌파 — +43%</h4>
+        <p>마이크로소프트 FY26 4분기 실적에서 Azure가 처음으로 연매출 1,000억 달러를 넘겼다(+43% YoY). 남은 계약 잔고(RPO)는 84% 급증한 6,780억 달러, 발표 뒤 주가는 약 9% 상승했다.</p>
+        <div class="foot"><a class="src" href="https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Microsoft ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 실적" data-catclass="c-biz" data-title="Amazon AWS +37% — 18분기 만의 최고 성장" data-src="Amazon" data-url="https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html" data-detail="아마존이 2분기 매출 2,006억 달러, 주당순이익 5.75달러로 '더블 비트'를 기록했다. 핵심 동력인 AWS는 37% 성장해 앤디 재시 CEO가 '18분기 만의 최고 성장'이라 밝혔고, 광고 부문도 사상 최대를 경신했다. 다만 설비투자가 전년비 660억 달러 급증하며 잉여현금흐름이 마이너스 76억 달러로 돌아서, AI 인프라 확충의 청구서도 함께 커지고 있음을 보여줬다."><span class="glowdot"></span>
+        <div class="idx">/ 03</div>
+        <div class="cat c-biz">BIZ · 실적</div>
+        <h4>Amazon AWS +37% — 18분기 만의 최고 성장</h4>
+        <p>아마존 2분기 매출이 2,006억 달러(+20%)로 컨센서스를 웃돌았고, AWS는 37% 성장하며 18분기 만에 가장 빠른 속도를 냈다. 주당순이익 5.75달러로 예상(1.82달러)을 크게 상회, 주가는 시간외 9% 급등했다.</p>
+        <div class="foot"><a class="src" href="https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Amazon ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 자본지출" data-catclass="c-infra" data-title="Meta, 2026 자본지출 하한을 1,300억 달러로 상향" data-src="Meta" data-url="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx" data-detail="Meta가 2분기 매출 608억 달러(+28%)를 발표하며 광고 실적 호조를 이어갔다. 동시에 2026년 자본지출 가이던스 하한을 1,300억 달러로 상향(최대 1,450억)해, 초거대 AI 데이터센터와 자체 실리콘 투자를 더욱 공격적으로 밀어붙이겠다는 뜻을 분명히 했다. '슈퍼인텔리전스' 조직에 인재와 컴퓨트를 몰아온 저커버그의 베팅이 재무제표에 그대로 반영되는 국면이다."><span class="glowdot"></span>
+        <div class="idx">/ 04</div>
+        <div class="cat c-infra">INFRA · 자본지출</div>
+        <h4>Meta, 2026 자본지출 하한을 1,300억 달러로 상향</h4>
+        <p>Meta 2분기 매출은 608억 달러(+28%)를 기록했고, 회사는 연간 설비투자 범위를 1,300억~1,450억 달러로 끌어올렸다. AI 데이터센터 구축에 실탄을 더 쏟겠다는 신호다.</p>
+        <div class="foot"><a class="src" href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Meta ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 실적" data-catclass="c-biz" data-title="Apple 회계 3분기 매출 1,094억 달러 — +16%" data-src="Apple" data-url="https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/" data-detail="애플이 회계 3분기 매출 1,094억 달러로 16% 성장하며 시장 기대를 넘어섰다. 주당순이익은 29% 뛴 강한 수익성을 보였고, 서비스 매출이 또 한 번 사상 최대를 경신하며 하드웨어 이후 성장 축으로 자리를 굳혔다. 다만 온디바이스 AI(Apple Intelligence)와 차세대 시리의 지연 논란은 여전한 숙제로 남아, 실적 호조 속에서도 'AI 서사'는 상대적으로 약하다는 평가가 나온다."><span class="glowdot"></span>
+        <div class="idx">/ 05</div>
+        <div class="cat c-biz">BIZ · 실적</div>
+        <h4>Apple 회계 3분기 매출 1,094억 달러 — +16%</h4>
+        <p>애플이 3분기 매출 1,094억 달러(+16%), 순이익 298억 달러, EPS +29%를 기록하며 예상을 상회했다. 서비스 부문이 사상 최대를 다시 썼고, 아이폰 판매도 견조했다.</p>
+        <div class="foot"><a class="src" href="https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Apple ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 리더십" data-catclass="c-biz" data-title="팀 쿡, CEO로서 마지막 실적 콜 — 터너스가 잇는다" data-src="9to5Mac" data-url="https://9to5mac.com/2026/07/30/tim-cook-marks-final-earnings-call-as-apple-ceo-confirms-ternus-will-take-over-calls/" data-detail="팀 쿡이 애플 회계 3분기 실적 콜을 CEO로서 마지막으로 주재하고 15년 임기를 마무리하는 소회를 밝혔다. 애플은 하드웨어 엔지니어링 수석부사장 존 터너스가 차기 CEO로서 앞으로의 실적 콜을 맡을 것이라 확인했다. 사상 최고가 부근의 주가와 AI 전환이라는 과제가 겹친 시점의 리더십 교체라, 애플의 다음 장(章)이 어떤 색을 띨지 시장의 관심이 쏠린다."><span class="glowdot"></span>
+        <div class="idx">/ 06</div>
+        <div class="cat c-biz">BIZ · 리더십</div>
+        <h4>팀 쿡, CEO로서 마지막 실적 콜 — 터너스가 잇는다</h4>
+        <p>팀 쿡이 이번 3분기 콜을 애플 CEO로서 마지막으로 진행하며 주주·애널리스트에게 작별을 고했다. 향후 실적 콜은 차기 CEO로 지명된 존 터너스가 맡는다.</p>
+        <div class="foot"><a class="src" href="https://9to5mac.com/2026/07/30/tim-cook-marks-final-earnings-call-as-apple-ceo-confirms-ternus-will-take-over-calls/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · 9to5Mac ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 반도체" data-catclass="c-infra" data-title="Arm, 데이터센터 로열티 두 배 — 분기 매출 사상 최대" data-src="Arm" data-url="https://www.benzinga.com/markets/earnings/26/07/60782135/arm-delivers-a-record-q1-earnings-revenues-beat-estimates" data-detail="Arm이 회계 1분기 매출 12.9억 달러로 사상 최대이자 컨센서스를 웃도는 실적을 냈다. 특히 데이터센터용 로열티가 전년 대비 두 배 넘게 뛰며, 클라우드 사업자들이 x86 대신 Arm 기반 커스텀 서버 칩(Neoverse·Armv9)으로 빠르게 이동하고 있음을 확인시켰다. 엔비디아·아마존·구글이 자체 설계 칩에 Arm IP를 얹는 흐름이 로열티라는 '숨은 통행세'로 되돌아오는 구조다."><span class="glowdot"></span>
+        <div class="idx">/ 07</div>
+        <div class="cat c-infra">INFRA · 반도체</div>
+        <h4>Arm, 데이터센터 로열티 두 배 — 분기 매출 사상 최대</h4>
+        <p>Arm이 FY27 1분기 매출 12.9억 달러로 사상 최대를 기록했다. 하이퍼스케일러의 Neoverse·Armv9 채택 확대로 데이터센터 로열티가 전년비 두 배 이상 늘었다.</p>
+        <div class="foot"><a class="src" href="https://www.benzinga.com/markets/earnings/26/07/60782135/arm-delivers-a-record-q1-earnings-revenues-beat-estimates" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Arm ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 데이터센터" data-catclass="c-infra" data-title="Brookfield·NextEra, 켄터키에 1,000억 달러 AI 캠퍼스" data-src="Data Center Knowledge" data-url="https://www.datacenterknowledge.com/data-center-construction/brookfield-nextera-launch-100b-ai-campus-at-doe-s-paducah-site" data-detail="브룩필드와 넥스트에라가 켄터키주 파두카의 옛 미 에너지부 부지에 약 1,000억 달러 규모 AI 데이터센터 캠퍼스를 조성한다. 초기 1.2기가와트로 가동을 시작해 2032년까지 1.8기가와트로 늘리는 계획으로, AI 시대의 진짜 병목이 칩이 아니라 '전력과 부지'임을 보여주는 초대형 프로젝트다. 유휴 산업 부지를 컴퓨트 허브로 되살리는 흐름이 미 전역으로 번지고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 08</div>
+        <div class="cat c-infra">INFRA · 데이터센터</div>
+        <h4>Brookfield·NextEra, 켄터키에 1,000억 달러 AI 캠퍼스</h4>
+        <p>브룩필드와 넥스트에라가 켄터키 파두카 옛 부지에 약 1,000억 달러 규모의 AI 인프라를 개발한다. 초기 1.2GW로 시작해 2032년 1.8GW까지 컴퓨트 용량을 확장한다.</p>
+        <div class="foot"><a class="src" href="https://www.datacenterknowledge.com/data-center-construction/brookfield-nextera-launch-100b-ai-campus-at-doe-s-paducah-site" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Data Center Knowledge ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 인프라" data-catclass="c-policy" data-title="EU, AI 기가팩토리 7곳에 공공 100억 유로 투입" data-src="European Commission" data-url="https://www.news4jax.com/business/2026/07/30/eu-lays-out-114-billion-for-7-ai-gigafactories-as-it-aims-to-catch-up-with-us-and-china/" data-detail="유럽연합 집행위가 7개 대형 'AI 기가팩토리'를 위한 입찰을 개시하고 100억 유로의 공공 자금을 투입한다. 민간 자본을 끌어들여 총 300억 유로 규모 투자를 목표로, 미국·중국에 뒤진 유럽의 AI 인프라를 약 4배로 확장한다는 구상이다. 클라우드·모델뿐 아니라 '연산 주권'을 정책의 핵심 축으로 끌어올린 조치로, 산업정책과 AI 경쟁이 정면으로 맞물리는 장면이다."><span class="glowdot"></span>
+        <div class="idx">/ 09</div>
+        <div class="cat c-policy">POLICY · 인프라</div>
+        <h4>EU, AI 기가팩토리 7곳에 공공 100억 유로 투입</h4>
+        <p>유럽연합 집행위가 7개 AI 기가팩토리 부지 입찰을 열고 100억 유로(약 114억 달러) 공공 자금을 배정했다. 총 300억 유로 투자를 유도해 유럽의 AI 칩·컴퓨트 역량을 약 4배로 키운다는 목표다.</p>
+        <div class="foot"><a class="src" href="https://www.news4jax.com/business/2026/07/30/eu-lays-out-114-billion-for-7-ai-gigafactories-as-it-aims-to-catch-up-with-us-and-china/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · European Commission ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 규제" data-catclass="c-policy" data-title="EU AI Act, 범용 AI(GPAI) 의무 발효 초읽기" data-src="EU AI Act" data-url="https://www.lumenova.ai/blog/eu-ai-act-delays-july-2026/" data-detail="EU AI Act의 단계적 시행에서 8월 2일은 범용 AI(GPAI) 모델 제공자에 대한 의무가 본격화되는 분기점이다. 학습 데이터 요약 공개, 저작권 정책, 시스템 리스크 평가·문서화 같은 요건이 프런티어 랩에 직접 부과되며, EU 시장에 모델을 공급하는 미국·중국 기업도 예외가 아니다. 일부 조항의 유예·지연 논의가 이어지는 가운데, 글로벌 모델 사업자들의 '컴플라이언스 비용' 계산이 본격 시작됐다."><span class="glowdot"></span>
+        <div class="idx">/ 10</div>
+        <div class="cat c-policy">POLICY · 규제</div>
+        <h4>EU AI Act, 범용 AI(GPAI) 의무 발효 초읽기</h4>
+        <p>8월 2일부터 EU AI Act의 범용 AI(GPAI) 제공자 의무가 본격 적용된다. 투명성·저작권·시스템 리스크 문서화 요건이 프런티어 모델 사업자에게 부과되며, 규정 준수 부담이 현실화된다.</p>
+        <div class="foot"><a class="src" href="https://www.lumenova.ai/blog/eu-ai-act-delays-july-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · EU AI Act ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 모델" data-catclass="c-model" data-title="OpenAI, 고성능 GPT-5.6 모델 일반 공개 확대" data-src="OpenAI" data-url="https://www.nextgov.com/artificial-intelligence/2026/07/openais-advanced-gpt-56-models-be-available-public/414651/" data-detail="OpenAI가 이달 초 발표한 GPT-5.6 계열(Sol·Luna)의 일반 접근을 넓히며, 프리뷰를 넘어 광범위한 공공·기업 배포 단계로 이동하고 있다. '야망에 맞춰 확장되는 프런티어 지능'을 표방한 이 모델군은 강화된 추론과 에이전트 작업 성능을 앞세운다. 빅테크가 실적으로 인프라 투자를 정당화하는 동안, 그 인프라 위에서 돌아갈 '최신 모델의 대중화'도 나란히 진행되는 셈이다."><span class="glowdot"></span>
+        <div class="idx">/ 11</div>
+        <div class="cat c-model">MODEL · 모델</div>
+        <h4>OpenAI, 고성능 GPT-5.6 모델 일반 공개 확대</h4>
+        <p>OpenAI가 7월 초 공개한 GPT-5.6(Sol·Luna) 계열의 일반 이용 확대에 나섰다. 공공·기업 사용자를 대상으로 프런티어 추론 모델의 접근성을 넓히며 배포 국면으로 전환하고 있다.</p>
+        <div class="foot"><a class="src" href="https://www.nextgov.com/artificial-intelligence/2026/07/openais-advanced-gpt-56-models-be-available-public/414651/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · OpenAI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 엔터프라이즈" data-catclass="c-biz" data-title="MS 365 Copilot, 유료 시트 3,000만 돌파" data-src="Microsoft" data-url="https://www.techtimes.com/articles/322143/20260729/azure-tops-100b-copilot-paid-seats-jump-30m-microsoft-blowout-quarter.htm" data-detail="마이크로소프트가 이번 실적에서 365 Copilot의 유료 시트가 3,000만 개를 넘었다고 공개했다. 생산성 스위트에 내장된 AI가 조직 단위 계약으로 빠르게 확산되며, Azure 매출과 더불어 'AI가 실제 지출로 전환되는' 두 번째 증거가 됐다. 관건은 도입 기업에서의 실제 사용률과 업무 성과인데, 시트 수 급증은 최소한 구매 의사결정 단계의 저항이 크게 낮아졌음을 시사한다."><span class="glowdot"></span>
+        <div class="idx">/ 12</div>
+        <div class="cat c-biz">BIZ · 엔터프라이즈</div>
+        <h4>MS 365 Copilot, 유료 시트 3,000만 돌파</h4>
+        <p>마이크로소프트가 365 Copilot 유료 시트 3,000만 개를 넘겼다고 밝혔다. 엔터프라이즈 AI 어시스턴트가 '실험'을 넘어 대규모 유료 채택 단계로 넘어가고 있음을 보여주는 지표다.</p>
+        <div class="foot"><a class="src" href="https://www.techtimes.com/articles/322143/20260729/azure-tops-100b-copilot-paid-seats-jump-30m-microsoft-blowout-quarter.htm" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Microsoft ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 실리콘" data-catclass="c-infra" data-title="Amazon, AI·커스텀 칩 사업 각각 런레이트 250억 달러 돌파" data-src="Amazon" data-url="https://www.benzinga.com/markets/earnings/26/07/60822702/amazon-posts-double-beat-in-q2-fastest-aws-growth-in-18-quarters" data-detail="아마존이 실적 콜에서 AI 관련 사업과 자체 칩(Trainium 등) 사업이 각각 연 환산 250억 달러 이상 규모에 도달했다고 공개했다. 커스텀 실리콘이 '비용 절감용 실험'을 넘어 독립적 매출원으로 성장했음을 보여주는 수치로, 엔비디아 GPU 의존도를 낮추려는 하이퍼스케일러 전략이 결실을 맺는 국면이다. 구글 TPU, 마이크로소프트 Maia와 함께 '클라우드 3사의 자체 칩 삼국지'가 본격화된다."><span class="glowdot"></span>
+        <div class="idx">/ 13</div>
+        <div class="cat c-infra">INFRA · 실리콘</div>
+        <h4>Amazon, AI·커스텀 칩 사업 각각 런레이트 250억 달러 돌파</h4>
+        <p>앤디 재시 CEO가 실적 콜에서 '아마존의 AI 사업과 칩(Trainium) 사업이 각각 연 250억 달러 이상 런레이트에 올라섰다'고 밝혔다. 자체 실리콘이 엔비디아 의존을 줄이는 실질 매출로 자리 잡았다.</p>
+        <div class="foot"><a class="src" href="https://www.benzinga.com/markets/earnings/26/07/60822702/amazon-posts-double-beat-in-q2-fastest-aws-growth-in-18-quarters" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Amazon ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 자본지출" data-catclass="c-infra" data-title="빅테크 합산 AI 설비투자, 사상 최대 국면 진입" data-src="Reports" data-url="https://phemex.com/blogs/microsoft-amazon-earnings-ai-capex-selloff" data-detail="이번 실적 시즌은 매출 호조만큼이나 '설비투자 경쟁'을 부각시켰다. 마이크로소프트·아마존·메타·구글이 제시한 2026년 자본지출 가이던스를 합산하면 역사상 유례없는 규모로, 대부분 AI용 데이터센터·가속기·전력 확보에 투입된다. 시장은 당장의 매출 성장에 환호했지만, 잉여현금흐름 악화와 감가상각 부담이 언제 실적을 짓누를지가 다음 국면의 핵심 쟁점으로 떠오른다."><span class="glowdot"></span>
+        <div class="idx">/ 14</div>
+        <div class="cat c-infra">INFRA · 자본지출</div>
+        <h4>빅테크 합산 AI 설비투자, 사상 최대 국면 진입</h4>
+        <p>마이크로소프트·아마존·메타·구글의 2026년 자본지출 가이던스를 합치면 사상 최대 규모로 치솟는다. 실적 랠리의 이면에는 '누가 더 많이 투자하느냐'의 군비 경쟁이 자리한다.</p>
+        <div class="foot"><a class="src" href="https://phemex.com/blogs/microsoft-amazon-earnings-ai-capex-selloff" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reports ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 온디바이스" data-catclass="c-model" data-title="애플, 'Apple Intelligence·차세대 시리' 진척 재확인" data-src="Apple" data-url="https://www.macrumors.com/2026/07/30/apple-3q-2026-earnings/" data-detail="애플이 3분기 실적 발표에서 Apple Intelligence 기능 확대와 대대적으로 재설계 중인 시리의 진행 상황을 언급하며 AI 전략에 대한 시장의 우려를 달래려 했다. 프라이버시 중심의 온디바이스 처리라는 차별화를 재확인했지만, 경쟁사 대비 늦은 속도와 반복된 지연 탓에 구체적 로드맵에는 여전히 말을 아꼈다. 팀 쿡에서 존 터너스로 넘어가는 리더십 전환기에, 애플의 AI 실행력이 다음 CEO의 시험대가 될 전망이다."><span class="glowdot"></span>
+        <div class="idx">/ 15</div>
+        <div class="cat c-model">MODEL · 온디바이스</div>
+        <h4>애플, 'Apple Intelligence·차세대 시리' 진척 재확인</h4>
+        <p>애플은 실적과 함께 온디바이스 AI(Apple Intelligence)와 개편된 시리의 개발 진척을 강조했다. 다만 구체적 출시 시점은 여전히 신중한 태도를 유지했다.</p>
+        <div class="foot"><a class="src" href="https://www.macrumors.com/2026/07/30/apple-3q-2026-earnings/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Apple ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 시장" data-catclass="c-biz" data-title="실적 랠리에 빅테크 시총 급등 — AI 랠리 재점화" data-src="Reports" data-url="https://247wallst.com/investing/2026/07/30/microsoft-surges-9-as-azure-tops-100b-and-q4-beat-lifts-most-price-targets/" data-detail="마이크로소프트와 아마존이 실적 발표 직후 나란히 9% 안팎 뛰며 나스닥 전반의 AI 랠리를 재점화했다. 그동안 시장을 짓눌렀던 '천문학적 AI 자본지출이 언제 회수되느냐'는 불안이, Azure·AWS의 성장 가속이라는 실적 앞에서 크게 완화됐다. 다만 밸류에이션이 이미 높은 만큼, 향후 몇 분기 안에 투자 대비 수익률(ROIC)을 입증하지 못하면 반작용이 클 수 있다는 경계론도 함께 커졌다."><span class="glowdot"></span>
+        <div class="idx">/ 16</div>
+        <div class="cat c-biz">BIZ · 시장</div>
+        <h4>실적 랠리에 빅테크 시총 급등 — AI 랠리 재점화</h4>
+        <p>마이크로소프트와 아마존이 실적 발표 뒤 각각 9% 안팎 급등하며 AI 관련주 랠리에 다시 불을 붙였다. '자본지출 우려'가 '매출 확인'으로 반전된 하루였다.</p>
+        <div class="foot"><a class="src" href="https://247wallst.com/investing/2026/07/30/microsoft-surges-9-as-azure-tops-100b-and-q4-beat-lifts-most-price-targets/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reports ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="numbers">
+    <div class="eyebrow">숫자로 보는 오늘</div>
+    <div class="section-head"><h2>By the Numbers</h2></div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-n="100" data-suf="B$">100<span class="u">B$</span></div><div class="lab">Microsoft Azure 첫 연매출 1,000억 달러 돌파 · +43% YoY</div></div>
+      <div class="stat reveal"><div class="num" data-n="37" data-suf="%">37<span class="u">%</span></div><div class="lab">Amazon AWS 성장률 — 18분기 만의 최고 · 매출 $200B 돌파</div></div>
+      <div class="stat reveal"><div class="num" data-n="130" data-suf="B$">130<span class="u">B$</span></div><div class="lab">Meta가 상향한 2026 자본지출 하한 (최대 $145B)</div></div>
+      <div class="stat reveal"><div class="num" data-n="109" data-suf="B$">109<span class="u">B$</span></div><div class="lab">Apple 회계 3분기 매출 · +16% · 팀 쿡 마지막 실적 콜</div></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="eyebrow">타임라인</div>
+    <div class="section-head"><h2>07.31의 궤적</h2><p>실적·자본지출·리더십 — 하루를 관통한 AI 슈퍼사이클의 순서.</p></div>
+    <div class="tl">
+      <div class="tl-row reveal"><div class="tl-time">07.29</div><div class="tl-body"><h5>Microsoft FY26 Q4 실적</h5><p>Azure $100B 돌파 · Copilot 3,000만 시트</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.30</div><div class="tl-body"><h5>Amazon·Apple·Meta 실적 발표</h5><p>AWS +37% · Apple $109B · Meta capex 상향</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.30</div><div class="tl-body"><h5>팀 쿡, 마지막 실적 콜</h5><p>차기 CEO 존 터너스 승계 확인</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.30</div><div class="tl-body"><h5>EU, AI 기가팩토리 7곳 입찰</h5><p>공공 €10B 투입 · 칩 생산 4배 목표</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">07.30</div><div class="tl-body"><h5>Brookfield·NextEra 켄터키 $100B</h5><p>AI 캠퍼스 1.2GW→1.8GW</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.02</div><div class="tl-body"><h5>EU AI Act GPAI 의무 발효</h5><p>범용 AI 투명성·저작권 규정 적용</p></div></div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="eyebrow" style="justify-content:center">내일, 다시</div>
+    <h2>가속은 <span class="grad">멈추지 않는다.</span></h2>
+    <p>AI PULSE는 매일의 인공지능 신호를 가장 임팩트 있게 압축합니다. 오늘의 15선은 여기까지 — 내일의 헤드라인은 이미 쓰이고 있습니다.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="fbrand">AI&nbsp;PULSE</div>
+    <p class="fmeta" style="margin-top:10px">2026.07.31 데일리 브리핑 · 오늘의 AI 뉴스 큐레이션</p>
+  </div>
+  <div class="fmeta">
+    출처 · Build Fast with AI<br>
+    HTML · CSS Scroll-driven Animations · Canvas · @property<br>
+    <span style="color:var(--muted)">Crafted as a single living document.</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <div class="modal-cat cat c-model" id="modalCat"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <div class="modal-detail" id="modalDetail"></div>
+    <a class="modal-src" id="modalSrc" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=false;
+  try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+
+  /* REVEAL via IntersectionObserver */
+  try{
+    if('IntersectionObserver'in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            if(e.target.classList.contains('stat'))countUp(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.16});
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){io.observe(e);});
+    }else{
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){e.classList.add('in');});
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal,.stat').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* COUNTERS */
+  function countUp(stat){
+    try{
+      var el=stat.querySelector('.num');if(!el)return;
+      var n=+el.getAttribute('data-n'),suf=el.getAttribute('data-suf')||'';
+      var t0=null,dur=1400;
+      function tick(now){
+        if(t0===null)t0=now;
+        var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
+        var v=n<10?(Math.round(n*e*10)/10):Math.floor(n*e);
+        el.innerHTML=v+'<span class="u">'+suf+'</span>';
+        if(k<1)requestAnimationFrame(tick);else el.innerHTML=n+'<span class="u">'+suf+'</span>';
+      }
+      requestAnimationFrame(tick);
+    }catch(e){}
+  }
+
+  /* TILT + GLOW */
+  try{
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove',function(ev){
+        var r=card.getBoundingClientRect();
+        var px=(ev.clientX-r.left)/r.width,py=(ev.clientY-r.top)/r.height;
+        if(!reduce)card.style.transform='perspective(900px) rotateY('+((px-.5)*8)+'deg) rotateX('+((.5-py)*8)+'deg) translateY(-6px)';
+        card.style.setProperty('--gx',px*100+'%');card.style.setProperty('--gy',py*100+'%');
+      });
+      card.addEventListener('pointerleave',function(){card.style.transform='';});
+    });
+  }catch(e){}
+
+  /* MODAL (더 보기 팝업) */
+  try{
+    var modal=document.getElementById('modal');
+    var mCat=document.getElementById('modalCat'),mTitle=document.getElementById('modalTitle'),
+        mDetail=document.getElementById('modalDetail'),mSrc=document.getElementById('modalSrc');
+    function openModal(el){
+      var d=el.dataset;
+      mCat.className='modal-cat cat '+(d.catclass||'c-model');
+      mCat.textContent=d.cat||'';
+      mTitle.textContent=d.title||'';
+      mDetail.innerHTML=d.detail||'';
+      if(d.url){mSrc.style.display='';mSrc.href=d.url;mSrc.textContent='출처 · '+(d.src||'열기')+' ↗';}else{mSrc.style.display='none';}
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+      try{if(navigator.vibrate)navigator.vibrate(6);}catch(e){}
+    }
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    document.querySelectorAll('[data-modal]').forEach(function(el){
+      el.addEventListener('click',function(ev){if(ev.target.closest('a.src'))return;openModal(el);});
+    });
+    modal.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',closeModal);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  }catch(e){}
+
+  /* SPOTLIGHT */
+  try{
+    var spot=document.getElementById('spot');
+    window.addEventListener('pointermove',function(e){
+      spot.style.setProperty('--mx',e.clientX+'px');spot.style.setProperty('--my',e.clientY+'px');
+    },{passive:true});
+  }catch(e){}
+
+  /* NAV HIDE + SCROLL PROGRESS FALLBACK */
+  try{
+    var nav=document.getElementById('nav'),prog=document.getElementById('prog'),lastY=0;
+    var supportsSDA=false;try{supportsSDA=CSS.supports('animation-timeline: scroll()');}catch(e){}
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY||window.pageYOffset;
+      if(!supportsSDA&&prog){var max=document.documentElement.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(max>0?y/max:0)+')';}
+      if(nav)nav.classList.toggle('hide',y>lastY&&y>240);
+      lastY=y;
+    },{passive:true});
+  }catch(e){}
+
+  /* MOBILE: HAPTICS + RIPPLE + DEVICE TILT */
+  try{
+    var isTouch='ontouchstart'in window;
+    document.querySelectorAll('.card,.chip,.kbig').forEach(function(el){
+      el.addEventListener('touchstart',function(){try{if(navigator.vibrate)navigator.vibrate(8);}catch(e){}},{passive:true});
+      el.addEventListener('pointerdown',function(ev){
+        try{
+          var b=el.getBoundingClientRect(),r=document.createElement('span');
+          r.style.cssText='position:absolute;left:'+(ev.clientX-b.left)+'px;top:'+(ev.clientY-b.top)+'px;width:8px;height:8px;border-radius:50%;background:rgba(34,224,214,.5);transform:translate(-50%,-50%) scale(1);pointer-events:none;transition:transform .6s ease-out,opacity .6s;opacity:1;z-index:5';
+          el.appendChild(r);
+          requestAnimationFrame(function(){r.style.transform='translate(-50%,-50%) scale(26)';r.style.opacity='0';});
+          setTimeout(function(){r.remove();},650);
+        }catch(e){}
+      });
+    });
+    if(window.DeviceOrientationEvent&&isTouch){
+      var mesh=document.querySelector('.mesh'),feat=document.querySelector('.feature');
+      window.addEventListener('deviceorientation',function(e){
+        if(e.beta==null)return;
+        var g=Math.max(-14,Math.min(14,(e.gamma||0))),b=Math.max(-14,Math.min(14,((e.beta||0)-40)));
+        if(mesh)mesh.style.transform='translate3d('+(g*0.4)+'%,'+(b*0.3)+'%,0) scale(1.1)';
+        if(feat)feat.style.transform='perspective(1000px) rotateY('+(g*0.35)+'deg) rotateX('+(-b*0.25)+'deg)';
+      });
+    }
+  }catch(e){}
+
+  /* TEXT SCRAMBLE on hero */
+  try{
+    if(!reduce){
+      var target=document.querySelector('.hero h1 .grad');
+      if(target){
+        var final=target.textContent,chars='アイウエオ01ンΞΔΣ人工知能<>/AI#*',frame=0;
+        setTimeout(function(){
+          var iv=setInterval(function(){
+            var out='';for(var i=0;i<final.length;i++){out+=(i<frame/2)?final[i]:chars[Math.floor(Math.random()*chars.length)];}
+            target.textContent=out;frame++;
+            if(frame>final.length*2+2){clearInterval(iv);target.textContent=final;}
+          },46);
+        },520);
+      }
+    }
+  }catch(e){}
+
+  /* CLOCK */
+  try{
+    var clock=document.getElementById('clock');
+    function upd(){
+      var d=new Date();
+      var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2),ss=('0'+d.getSeconds()).slice(-2);
+      clock.textContent='2026·07·31·FRI — '+hh+':'+mm+':'+ss;
+    }
+    upd();setInterval(upd,1000);
+  }catch(e){}
+
+  /* NEURAL CANVAS */
+  try{
+    var cv=document.getElementById('neural'),ctx=cv.getContext('2d');
+    var w,h,dpr,nodes=[],mouse={x:-999,y:-999},isMobile=window.innerWidth<720;
+    function size(){dpr=Math.min(2,window.devicePixelRatio||1);w=cv.width=window.innerWidth*dpr;h=cv.height=window.innerHeight*dpr;
+      cv.style.width=window.innerWidth+'px';cv.style.height=window.innerHeight+'px';}
+    function init(){size();var count=isMobile?30:Math.min(88,Math.floor(window.innerWidth*window.innerHeight/16000));
+      nodes=[];for(var i=0;i<count;i++){nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28*dpr,vy:(Math.random()-.5)*.28*dpr,r:(Math.random()*1.6+.6)*dpr});}}
+    var cols=[[34,224,214],[124,92,255],[255,77,141]];
+    function draw(){
+      ctx.clearRect(0,0,w,h);var maxd=(isMobile?110:140)*dpr;
+      for(var i=0;i<nodes.length;i++){
+        var a=nodes[i];a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+        var mdx=a.x-mouse.x,mdy=a.y-mouse.y,md=Math.hypot(mdx,mdy);
+        if(md<120*dpr&&md>0){a.x+=mdx/md*1.4;a.y+=mdy/md*1.4;}
+        for(var j=i+1;j<nodes.length;j++){
+          var b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+          if(d<maxd){var o=(1-d/maxd),c=cols[(i+j)%3];
+            ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(o*0.32)+')';ctx.lineWidth=dpr*.6;
+            ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+        }
+        var cc=cols[i%3];ctx.fillStyle='rgba('+cc[0]+','+cc[1]+','+cc[2]+',.9)';
+        ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,7);ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('pointermove',function(e){mouse.x=e.clientX*dpr;mouse.y=e.clientY*dpr;},{passive:true});
+    window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,180);});
+    init();draw();
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+{
+  "date": "2026-07-31",
+  "weekday": "금",
+  "dateLabel": "2026년 7월 31일 · 금요일",
+  "desc": "2026년 7월 31일, 빅테크 2분기 실적이 확인한 AI 자본지출 슈퍼사이클. Azure의 첫 1,000억 달러 돌파부터 팀 쿡의 마지막 실적 콜까지, 하루를 흔든 15선.",
+  "hero": ["오늘,", "AI 자본지출이", "슈퍼사이클에 올라탔다."],
+  "heroSub": "<b>Azure 첫 연매출 1,000억 달러 돌파</b>부터 <b>AWS 18분기 만의 최고 성장</b>, <b>Meta 1,300억 달러 자본지출</b>, 그리고 팀 쿡의 마지막 실적 콜까지 — 빅테크 2분기 실적이 하루 만에 그린 AI 인프라 지형도를 한 화면에 담았습니다.",
+  "timelineSub": "실적·자본지출·리더십 — 하루를 관통한 AI 슈퍼사이클의 순서.",
+  "highlights": [
+    "MS Azure 첫 연매출 $100B 돌파 · +43% (Copilot 3,000만 시트)",
+    "Amazon AWS +37% — 18분기 만의 최고 성장 · 매출 $200B 돌파",
+    "Meta 2026 자본지출 하한 $130B로 상향 · 애플 팀 쿡 고별 실적 콜"
+  ],
+  "feature": {
+    "cat": "BIZ · 실적", "catClass": "c-biz",
+    "title": "빅테크 2분기 실적, AI 자본지출 슈퍼사이클을 증명하다",
+    "body": "마이크로소프트 <b>Azure가 첫 연매출 1,000억 달러</b>를 넘었고, 아마존 <b>AWS는 37% 성장</b>으로 18분기 만의 최고치를 찍었다. Meta는 2026년 자본지출 하한을 <b>1,300억 달러</b>로 끌어올렸다. 3대 클라우드의 숫자가 한날 쏟아지며 'AI 인프라 베팅이 매출로 회수되고 있다'는 서사가 확인됐다.",
+    "detail": "7월 29~30일 발표된 빅테크 2분기 실적은 AI 자본지출이 '비용'이 아니라 '성장 엔진'으로 되돌아오고 있음을 한꺼번에 보여줬다. 마이크로소프트 Azure는 연매출 1,000억 달러를 처음 돌파하며 43% 성장했고, 아마존 AWS는 37% 성장으로 18분기 만에 가장 빠른 속도를 기록했으며, 두 회사 모두 실적 발표 뒤 주가가 9% 안팎 급등했다. 동시에 Meta는 2026년 자본지출 하한을 1,300억 달러(최대 1,450억)로 상향하고 아마존은 분기 설비투자가 전년보다 660억 달러 늘며 잉여현금흐름이 적자로 돌아서, 승자가 되려면 천문학적 선투자가 불가피하다는 '군비 경쟁'의 실체도 함께 드러났다.",
+    "src": "Fortune", "url": "https://fortune.com/2026/07/29/microsoft-azure-100-billion-annual-revenue-earnings-revenue-cloud-ai/",
+    "keys": [["$100B", "Azure 첫 연매출 돌파"], ["+37%", "AWS 성장 · 18분기 최고"], ["$130B+", "Meta 2026 capex 하한"]]
+  },
+  "stories": [
+    {
+      "cat": "BIZ · 실적", "catClass": "c-biz",
+      "title": "MS Azure, 첫 연매출 1,000억 달러 돌파 — +43%",
+      "body": "마이크로소프트 FY26 4분기 실적에서 Azure가 처음으로 연매출 1,000억 달러를 넘겼다(+43% YoY). 남은 계약 잔고(RPO)는 84% 급증한 6,780억 달러, 발표 뒤 주가는 약 9% 상승했다.",
+      "detail": "마이크로소프트의 회계 4분기 실적에서 Azure가 연 환산 매출 1,000억 달러를 사상 처음 돌파하며 43% 성장했다. 아직 인식되지 않은 계약 잔고(commercial RPO)가 전년비 84% 늘어난 6,780억 달러에 달해, 향후 몇 년간 클라우드·AI 수요가 이미 계약으로 잠겨 있음을 보여줬다. 시장은 'AI 투자 회수 가시성'에 화답해 주가를 9% 안팎 끌어올렸고, 다수 증권사가 목표주가를 상향했다.",
+      "src": "Microsoft", "url": "https://news.microsoft.com/source/2026/07/29/microsoft-cloud-and-ai-strength-fuels-fourth-quarter-results-4/"
+    },
+    {
+      "cat": "BIZ · 실적", "catClass": "c-biz",
+      "title": "Amazon AWS +37% — 18분기 만의 최고 성장",
+      "body": "아마존 2분기 매출이 2,006억 달러(+20%)로 컨센서스를 웃돌았고, AWS는 37% 성장하며 18분기 만에 가장 빠른 속도를 냈다. 주당순이익 5.75달러로 예상(1.82달러)을 크게 상회, 주가는 시간외 9% 급등했다.",
+      "detail": "아마존이 2분기 매출 2,006억 달러, 주당순이익 5.75달러로 '더블 비트'를 기록했다. 핵심 동력인 AWS는 37% 성장해 앤디 재시 CEO가 '18분기 만의 최고 성장'이라 밝혔고, 광고 부문도 사상 최대를 경신했다. 다만 설비투자가 전년비 660억 달러 급증하며 잉여현금흐름이 마이너스 76억 달러로 돌아서, AI 인프라 확충의 청구서도 함께 커지고 있음을 보여줬다.",
+      "src": "Amazon", "url": "https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html"
+    },
+    {
+      "cat": "INFRA · 자본지출", "catClass": "c-infra",
+      "title": "Meta, 2026 자본지출 하한을 1,300억 달러로 상향",
+      "body": "Meta 2분기 매출은 608억 달러(+28%)를 기록했고, 회사는 연간 설비투자 범위를 1,300억~1,450억 달러로 끌어올렸다. AI 데이터센터 구축에 실탄을 더 쏟겠다는 신호다.",
+      "detail": "Meta가 2분기 매출 608억 달러(+28%)를 발표하며 광고 실적 호조를 이어갔다. 동시에 2026년 자본지출 가이던스 하한을 1,300억 달러로 상향(최대 1,450억)해, 초거대 AI 데이터센터와 자체 실리콘 투자를 더욱 공격적으로 밀어붙이겠다는 뜻을 분명히 했다. '슈퍼인텔리전스' 조직에 인재와 컴퓨트를 몰아온 저커버그의 베팅이 재무제표에 그대로 반영되는 국면이다.",
+      "src": "Meta", "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "cat": "BIZ · 실적", "catClass": "c-biz",
+      "title": "Apple 회계 3분기 매출 1,094억 달러 — +16%",
+      "body": "애플이 3분기 매출 1,094억 달러(+16%), 순이익 298억 달러, EPS +29%를 기록하며 예상을 상회했다. 서비스 부문이 사상 최대를 다시 썼고, 아이폰 판매도 견조했다.",
+      "detail": "애플이 회계 3분기 매출 1,094억 달러로 16% 성장하며 시장 기대를 넘어섰다. 주당순이익은 29% 뛴 강한 수익성을 보였고, 서비스 매출이 또 한 번 사상 최대를 경신하며 하드웨어 이후 성장 축으로 자리를 굳혔다. 다만 온디바이스 AI(Apple Intelligence)와 차세대 시리의 지연 논란은 여전한 숙제로 남아, 실적 호조 속에서도 'AI 서사'는 상대적으로 약하다는 평가가 나온다.",
+      "src": "Apple", "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/"
+    },
+    {
+      "cat": "BIZ · 리더십", "catClass": "c-biz",
+      "title": "팀 쿡, CEO로서 마지막 실적 콜 — 터너스가 잇는다",
+      "body": "팀 쿡이 이번 3분기 콜을 애플 CEO로서 마지막으로 진행하며 주주·애널리스트에게 작별을 고했다. 향후 실적 콜은 차기 CEO로 지명된 존 터너스가 맡는다.",
+      "detail": "팀 쿡이 애플 회계 3분기 실적 콜을 CEO로서 마지막으로 주재하고 15년 임기를 마무리하는 소회를 밝혔다. 애플은 하드웨어 엔지니어링 수석부사장 존 터너스가 차기 CEO로서 앞으로의 실적 콜을 맡을 것이라 확인했다. 사상 최고가 부근의 주가와 AI 전환이라는 과제가 겹친 시점의 리더십 교체라, 애플의 다음 장(章)이 어떤 색을 띨지 시장의 관심이 쏠린다.",
+      "src": "9to5Mac", "url": "https://9to5mac.com/2026/07/30/tim-cook-marks-final-earnings-call-as-apple-ceo-confirms-ternus-will-take-over-calls/"
+    },
+    {
+      "cat": "INFRA · 반도체", "catClass": "c-infra",
+      "title": "Arm, 데이터센터 로열티 두 배 — 분기 매출 사상 최대",
+      "body": "Arm이 FY27 1분기 매출 12.9억 달러로 사상 최대를 기록했다. 하이퍼스케일러의 Neoverse·Armv9 채택 확대로 데이터센터 로열티가 전년비 두 배 이상 늘었다.",
+      "detail": "Arm이 회계 1분기 매출 12.9억 달러로 사상 최대이자 컨센서스를 웃도는 실적을 냈다. 특히 데이터센터용 로열티가 전년 대비 두 배 넘게 뛰며, 클라우드 사업자들이 x86 대신 Arm 기반 커스텀 서버 칩(Neoverse·Armv9)으로 빠르게 이동하고 있음을 확인시켰다. 엔비디아·아마존·구글이 자체 설계 칩에 Arm IP를 얹는 흐름이 로열티라는 '숨은 통행세'로 되돌아오는 구조다.",
+      "src": "Arm", "url": "https://www.benzinga.com/markets/earnings/26/07/60782135/arm-delivers-a-record-q1-earnings-revenues-beat-estimates"
+    },
+    {
+      "cat": "INFRA · 데이터센터", "catClass": "c-infra",
+      "title": "Brookfield·NextEra, 켄터키에 1,000억 달러 AI 캠퍼스",
+      "body": "브룩필드와 넥스트에라가 켄터키 파두카 옛 부지에 약 1,000억 달러 규모의 AI 인프라를 개발한다. 초기 1.2GW로 시작해 2032년 1.8GW까지 컴퓨트 용량을 확장한다.",
+      "detail": "브룩필드와 넥스트에라가 켄터키주 파두카의 옛 미 에너지부 부지에 약 1,000억 달러 규모 AI 데이터센터 캠퍼스를 조성한다. 초기 1.2기가와트로 가동을 시작해 2032년까지 1.8기가와트로 늘리는 계획으로, AI 시대의 진짜 병목이 칩이 아니라 '전력과 부지'임을 보여주는 초대형 프로젝트다. 유휴 산업 부지를 컴퓨트 허브로 되살리는 흐름이 미 전역으로 번지고 있다.",
+      "src": "Data Center Knowledge", "url": "https://www.datacenterknowledge.com/data-center-construction/brookfield-nextera-launch-100b-ai-campus-at-doe-s-paducah-site"
+    },
+    {
+      "cat": "POLICY · 인프라", "catClass": "c-policy",
+      "title": "EU, AI 기가팩토리 7곳에 공공 100억 유로 투입",
+      "body": "유럽연합 집행위가 7개 AI 기가팩토리 부지 입찰을 열고 100억 유로(약 114억 달러) 공공 자금을 배정했다. 총 300억 유로 투자를 유도해 유럽의 AI 칩·컴퓨트 역량을 약 4배로 키운다는 목표다.",
+      "detail": "유럽연합 집행위가 7개 대형 'AI 기가팩토리'를 위한 입찰을 개시하고 100억 유로의 공공 자금을 투입한다. 민간 자본을 끌어들여 총 300억 유로 규모 투자를 목표로, 미국·중국에 뒤진 유럽의 AI 인프라를 약 4배로 확장한다는 구상이다. 클라우드·모델뿐 아니라 '연산 주권'을 정책의 핵심 축으로 끌어올린 조치로, 산업정책과 AI 경쟁이 정면으로 맞물리는 장면이다.",
+      "src": "European Commission", "url": "https://www.news4jax.com/business/2026/07/30/eu-lays-out-114-billion-for-7-ai-gigafactories-as-it-aims-to-catch-up-with-us-and-china/"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "EU AI Act, 범용 AI(GPAI) 의무 발효 초읽기",
+      "body": "8월 2일부터 EU AI Act의 범용 AI(GPAI) 제공자 의무가 본격 적용된다. 투명성·저작권·시스템 리스크 문서화 요건이 프런티어 모델 사업자에게 부과되며, 규정 준수 부담이 현실화된다.",
+      "detail": "EU AI Act의 단계적 시행에서 8월 2일은 범용 AI(GPAI) 모델 제공자에 대한 의무가 본격화되는 분기점이다. 학습 데이터 요약 공개, 저작권 정책, 시스템 리스크 평가·문서화 같은 요건이 프런티어 랩에 직접 부과되며, EU 시장에 모델을 공급하는 미국·중국 기업도 예외가 아니다. 일부 조항의 유예·지연 논의가 이어지는 가운데, 글로벌 모델 사업자들의 '컴플라이언스 비용' 계산이 본격 시작됐다.",
+      "src": "EU AI Act", "url": "https://www.lumenova.ai/blog/eu-ai-act-delays-july-2026/"
+    },
+    {
+      "cat": "MODEL · 모델", "catClass": "c-model",
+      "title": "OpenAI, 고성능 GPT-5.6 모델 일반 공개 확대",
+      "body": "OpenAI가 7월 초 공개한 GPT-5.6(Sol·Luna) 계열의 일반 이용 확대에 나섰다. 공공·기업 사용자를 대상으로 프런티어 추론 모델의 접근성을 넓히며 배포 국면으로 전환하고 있다.",
+      "detail": "OpenAI가 이달 초 발표한 GPT-5.6 계열(Sol·Luna)의 일반 접근을 넓히며, 프리뷰를 넘어 광범위한 공공·기업 배포 단계로 이동하고 있다. '야망에 맞춰 확장되는 프런티어 지능'을 표방한 이 모델군은 강화된 추론과 에이전트 작업 성능을 앞세운다. 빅테크가 실적으로 인프라 투자를 정당화하는 동안, 그 인프라 위에서 돌아갈 '최신 모델의 대중화'도 나란히 진행되는 셈이다.",
+      "src": "OpenAI", "url": "https://www.nextgov.com/artificial-intelligence/2026/07/openais-advanced-gpt-56-models-be-available-public/414651/"
+    },
+    {
+      "cat": "BIZ · 엔터프라이즈", "catClass": "c-biz",
+      "title": "MS 365 Copilot, 유료 시트 3,000만 돌파",
+      "body": "마이크로소프트가 365 Copilot 유료 시트 3,000만 개를 넘겼다고 밝혔다. 엔터프라이즈 AI 어시스턴트가 '실험'을 넘어 대규모 유료 채택 단계로 넘어가고 있음을 보여주는 지표다.",
+      "detail": "마이크로소프트가 이번 실적에서 365 Copilot의 유료 시트가 3,000만 개를 넘었다고 공개했다. 생산성 스위트에 내장된 AI가 조직 단위 계약으로 빠르게 확산되며, Azure 매출과 더불어 'AI가 실제 지출로 전환되는' 두 번째 증거가 됐다. 관건은 도입 기업에서의 실제 사용률과 업무 성과인데, 시트 수 급증은 최소한 구매 의사결정 단계의 저항이 크게 낮아졌음을 시사한다.",
+      "src": "Microsoft", "url": "https://www.techtimes.com/articles/322143/20260729/azure-tops-100b-copilot-paid-seats-jump-30m-microsoft-blowout-quarter.htm"
+    },
+    {
+      "cat": "INFRA · 실리콘", "catClass": "c-infra",
+      "title": "Amazon, AI·커스텀 칩 사업 각각 런레이트 250억 달러 돌파",
+      "body": "앤디 재시 CEO가 실적 콜에서 '아마존의 AI 사업과 칩(Trainium) 사업이 각각 연 250억 달러 이상 런레이트에 올라섰다'고 밝혔다. 자체 실리콘이 엔비디아 의존을 줄이는 실질 매출로 자리 잡았다.",
+      "detail": "아마존이 실적 콜에서 AI 관련 사업과 자체 칩(Trainium 등) 사업이 각각 연 환산 250억 달러 이상 규모에 도달했다고 공개했다. 커스텀 실리콘이 '비용 절감용 실험'을 넘어 독립적 매출원으로 성장했음을 보여주는 수치로, 엔비디아 GPU 의존도를 낮추려는 하이퍼스케일러 전략이 결실을 맺는 국면이다. 구글 TPU, 마이크로소프트 Maia와 함께 '클라우드 3사의 자체 칩 삼국지'가 본격화된다.",
+      "src": "Amazon", "url": "https://www.benzinga.com/markets/earnings/26/07/60822702/amazon-posts-double-beat-in-q2-fastest-aws-growth-in-18-quarters"
+    },
+    {
+      "cat": "INFRA · 자본지출", "catClass": "c-infra",
+      "title": "빅테크 합산 AI 설비투자, 사상 최대 국면 진입",
+      "body": "마이크로소프트·아마존·메타·구글의 2026년 자본지출 가이던스를 합치면 사상 최대 규모로 치솟는다. 실적 랠리의 이면에는 '누가 더 많이 투자하느냐'의 군비 경쟁이 자리한다.",
+      "detail": "이번 실적 시즌은 매출 호조만큼이나 '설비투자 경쟁'을 부각시켰다. 마이크로소프트·아마존·메타·구글이 제시한 2026년 자본지출 가이던스를 합산하면 역사상 유례없는 규모로, 대부분 AI용 데이터센터·가속기·전력 확보에 투입된다. 시장은 당장의 매출 성장에 환호했지만, 잉여현금흐름 악화와 감가상각 부담이 언제 실적을 짓누를지가 다음 국면의 핵심 쟁점으로 떠오른다.",
+      "src": "Reports", "url": "https://phemex.com/blogs/microsoft-amazon-earnings-ai-capex-selloff"
+    },
+    {
+      "cat": "MODEL · 온디바이스", "catClass": "c-model",
+      "title": "애플, 'Apple Intelligence·차세대 시리' 진척 재확인",
+      "body": "애플은 실적과 함께 온디바이스 AI(Apple Intelligence)와 개편된 시리의 개발 진척을 강조했다. 다만 구체적 출시 시점은 여전히 신중한 태도를 유지했다.",
+      "detail": "애플이 3분기 실적 발표에서 Apple Intelligence 기능 확대와 대대적으로 재설계 중인 시리의 진행 상황을 언급하며 AI 전략에 대한 시장의 우려를 달래려 했다. 프라이버시 중심의 온디바이스 처리라는 차별화를 재확인했지만, 경쟁사 대비 늦은 속도와 반복된 지연 탓에 구체적 로드맵에는 여전히 말을 아꼈다. 팀 쿡에서 존 터너스로 넘어가는 리더십 전환기에, 애플의 AI 실행력이 다음 CEO의 시험대가 될 전망이다.",
+      "src": "Apple", "url": "https://www.macrumors.com/2026/07/30/apple-3q-2026-earnings/"
+    },
+    {
+      "cat": "BIZ · 시장", "catClass": "c-biz",
+      "title": "실적 랠리에 빅테크 시총 급등 — AI 랠리 재점화",
+      "body": "마이크로소프트와 아마존이 실적 발표 뒤 각각 9% 안팎 급등하며 AI 관련주 랠리에 다시 불을 붙였다. '자본지출 우려'가 '매출 확인'으로 반전된 하루였다.",
+      "detail": "마이크로소프트와 아마존이 실적 발표 직후 나란히 9% 안팎 뛰며 나스닥 전반의 AI 랠리를 재점화했다. 그동안 시장을 짓눌렀던 '천문학적 AI 자본지출이 언제 회수되느냐'는 불안이, Azure·AWS의 성장 가속이라는 실적 앞에서 크게 완화됐다. 다만 밸류에이션이 이미 높은 만큼, 향후 몇 분기 안에 투자 대비 수익률(ROIC)을 입증하지 못하면 반작용이 클 수 있다는 경계론도 함께 커졌다.",
+      "src": "Reports", "url": "https://247wallst.com/investing/2026/07/30/microsoft-surges-9-as-azure-tops-100b-and-q4-beat-lifts-most-price-targets/"
+    }
+  ],
+  "stats": [
+    {"n": "100", "suf": "B$", "lab": "Microsoft Azure 첫 연매출 1,000억 달러 돌파 · +43% YoY"},
+    {"n": "37", "suf": "%", "lab": "Amazon AWS 성장률 — 18분기 만의 최고 · 매출 $200B 돌파"},
+    {"n": "130", "suf": "B$", "lab": "Meta가 상향한 2026 자본지출 하한 (최대 $145B)"},
+    {"n": "109", "suf": "B$", "lab": "Apple 회계 3분기 매출 · +16% · 팀 쿡 마지막 실적 콜"}
+  ],
+  "timeline": [
+    {"time": "07.29", "title": "Microsoft FY26 Q4 실적", "desc": "Azure $100B 돌파 · Copilot 3,000만 시트"},
+    {"time": "07.30", "title": "Amazon·Apple·Meta 실적 발표", "desc": "AWS +37% · Apple $109B · Meta capex 상향"},
+    {"time": "07.30", "title": "팀 쿡, 마지막 실적 콜", "desc": "차기 CEO 존 터너스 승계 확인"},
+    {"time": "07.30", "title": "EU, AI 기가팩토리 7곳 입찰", "desc": "공공 €10B 투입 · 칩 생산 4배 목표"},
+    {"time": "07.30", "title": "Brookfield·NextEra 켄터키 $100B", "desc": "AI 캠퍼스 1.2GW→1.8GW"},
+    {"time": "08.02", "title": "EU AI Act GPAI 의무 발효", "desc": "범용 AI 투명성·저작권 규정 적용"}
+  ],
+  "ticker": [
+    "MS <b>Azure $100B</b> 첫 돌파 · +43%",
+    "Amazon <b>AWS +37%</b> · 18분기 최고 성장",
+    "Meta 자본지출 <b>$130~145B</b>로 상향",
+    "Apple Q3 <b>$109.4B</b> · 팀 쿡 고별 콜",
+    "Arm 데이터센터 <b>로열티 2배</b>",
+    "Brookfield·NextEra <b>켄터키 $100B</b> AI 캠퍼스",
+    "EU <b>AI 기가팩토리 7곳</b> · 공공 €10B",
+    "<b>EU AI Act</b> GPAI 의무 8/2 발효"
+  ]
+}
