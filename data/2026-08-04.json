@@ -1,0 +1,139 @@
+{
+  "date": "2026-08-04",
+  "weekday": "화",
+  "dateLabel": "2026년 8월 4일 · 화요일",
+  "desc": "2026년 8월 4일, 세계를 움직인 AI 뉴스 14선. 백악관의 감독 프레임워크 완성과 프런티어 랩 소집부터 발라 아토믹스의 10억 달러 원자력 베팅, 비자의 24억 달러 보안 인수까지.",
+  "hero": ["오늘,", "AI 규칙이", "백악관에서 완성됐다."],
+  "heroSub": "<b>백악관이 프런티어 AI 감독 프레임워크</b>를 마감일에 맞춰 완성하고 OpenAI·구글·앤트로픽을 불러 모은 날 — <b>발라 아토믹스의 10억 달러 원자력 베팅</b>과 <b>비자의 24억 달러 보안 인수</b>까지, 규칙과 자본이 동시에 움직인 하루를 한 화면에 담았습니다.",
+  "timelineSub": "규칙·자본·모델·보안 — 8월 초 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "백악관, AI 감독 프레임워크 완성 · OpenAI·구글·앤트로픽 소집 (내용은 비공개)",
+    "Valar Atomics, 세쿼이아 주도 10억 달러 조달 — AI 데이터센터용 원자로",
+    "Microsoft, 첫 네이티브 양방향 음성모델 'MAI-Realtime' 포착"
+  ],
+  "feature": {
+    "cat": "POLICY · 거버넌스", "catClass": "c-policy",
+    "title": "백악관, AI 감독 프레임워크 완성…프런티어 랩 소집",
+    "body": "백악관이 행정명령 14409가 정한 <b>8월 1일 마감</b>에 맞춰 프런티어 AI 감독 프레임워크를 완성했다고 밝히고, <b>OpenAI·구글·앤트로픽</b> 등 주요 랩을 불러 모아 검토 회동을 열었다. 다만 프레임워크의 구체적 내용은 공개하지 않았고, 한 관계자는 \"비기밀이라고 해서 모두 공표하겠다는 뜻은 아니다\"라고 말했다.",
+    "detail": "미 행정부가 행정명령 14409에서 정한 8월 1일 마감 — 프런티어 AI 벤치마킹·공시 프레임워크 발표 — 을 지켰다고 발표했다. 이어 화요일 OpenAI·구글·앤트로픽 등 프런티어 랩을 백악관으로 불러 완성된 감독 프레임워크를 함께 검토하는 회동을 가졌다. 다만 프레임워크의 세부 내용은 비공개로 남았고, 같은 주 캘리포니아 SB 942 발효와 겹치며 규제 공백을 주(州)와 연방이 동시에 메우려는 구도가 뚜렷해졌다.",
+    "src": "The Information / Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-08-03/openai-anthropic-google-to-join-white-house-ai-safety-meeting",
+    "keys": [["8/1", "마감 준수"], ["3대 랩", "백악관 소집"], ["비공개", "프레임워크 내용"]]
+  },
+  "stories": [
+    {
+      "cat": "MODEL · 음성", "catClass": "c-model",
+      "title": "Microsoft, 첫 네이티브 양방향 음성모델 'MAI-Realtime' 포착",
+      "body": "TestingCatalog이 마이크로소프트의 첫 네이티브 양방향 음성모델 MAI-Realtime을 비공개 프리뷰에서 발견했다. 16개 언어에서 '듣기와 말하기를 동시에' 처리하며, OpenAI의 GPT-Realtime 의존을 대체할 것으로 관측된다.",
+      "detail": "TestingCatalog이 마이크로소프트의 첫 네이티브 양방향(bidirectional) 음성모델 MAI-Realtime을 숨겨진 프리뷰에서 포착했다. 16개 언어에서 사용자의 말을 들으며 동시에 응답하는 실시간 음성 대화를 지원하고 두 개의 음성을 제공하는 것으로 알려졌다. 마이크로소프트가 OpenAI의 GPT-Realtime에 대한 의존을 자체 모델로 대체하려는 수직화 전략을 보여주는 신호다.",
+      "src": "TestingCatalog", "url": "https://www.testingcatalog.com"
+    },
+    {
+      "cat": "MODEL · 효율", "catClass": "c-model",
+      "title": "DeepSeek V4-Flash, 단가 경쟁서 압도",
+      "body": "Artificial Analysis 벤치마크에서 DeepSeek V4-Flash가 테스트당 3센트를 기록했다. 문숏의 Kimi K3보다 약 29배, OpenAI의 GPT-5.6 Sol보다 약 62배 저렴한 수치.",
+      "detail": "AI 성능 분석기관 Artificial Analysis가 DeepSeek V4-Flash를 테스트당 3센트로 벤치마크했다. 이는 문숏(Moonshot)의 Kimi K3보다 약 29배, OpenAI의 GPT-5.6 Sol보다 약 62배 저렴한 추론 단가다. 프런티어급 성능이 빠르게 상품화되며 경쟁 축이 '성능'에서 '단가'로 이동하고 있음을 보여준다.",
+      "src": "Artificial Analysis", "url": "https://llm-stats.com/ai-news"
+    },
+    {
+      "cat": "MODEL · 보안", "catClass": "c-model",
+      "title": "Anthropic 'Claude Mythos', 새 암호 공격 2건 발견",
+      "body": "앤트로픽의 Claude Mythos 모델이 격자기반 서명 HAWK의 취약점을 포함한 새로운 암호 공격 2건을 발견했다. 앤트로픽은 \"배포된 시스템을 깨뜨리지는 않는다\"며 책임 공개 절차를 따랐다고 밝혔다.",
+      "detail": "앤트로픽이 자사 모델 Claude Mythos가 격자기반 서명 방식 HAWK의 약점을 포함해 두 건의 새로운 암호학적 공격을 발견했다고 공개했다. 회사는 두 발견 모두 현재 배포된 어떤 시스템도 깨뜨리지 않으며 책임 있는 공개(responsible disclosure) 절차를 거쳤다고 강조했다. AI가 방어뿐 아니라 암호 연구의 '발견' 도구로 실제 성과를 내기 시작했음을 보여주는 사례다.",
+      "src": "Anthropic", "url": "https://www.anthropic.com/news"
+    },
+    {
+      "cat": "BIZ · 에이전트", "catClass": "c-biz",
+      "title": "OpenAI, 기업용 에이전트 'Presence' 출시",
+      "body": "OpenAI가 고객 서비스용 프로덕션 AI 에이전트를 겨냥한 기업 제품 Presence를 공개했다. 실사용 환경에 곧바로 투입 가능한 '프로덕션 레디' 에이전트를 표방한다.",
+      "detail": "OpenAI가 고객 응대 등 실제 운영 환경에 바로 투입할 수 있는 기업용 AI 에이전트 제품 Presence를 발표했다. '프로덕션 레디'를 내세워 데모 수준을 넘어선 상용 에이전트 시장을 정조준했다. 앤트로픽·구글과의 엔터프라이즈 에이전트 경쟁이 실제 매출로 이어지는 제품 단계로 넘어가고 있음을 보여준다.",
+      "src": "The Decoder", "url": "https://the-decoder.com"
+    },
+    {
+      "cat": "INFRA · 원자력", "catClass": "c-infra",
+      "title": "Valar Atomics, 세쿼이아 주도 10억 달러 조달",
+      "body": "원자력 스타트업 Valar Atomics가 세쿼이아 주도로 60억 달러 밸류에이션에 10억 달러 시리즈B를 마감했다. 헬륨냉각 원자로로 AI 데이터센터에 전력을 공급하며, 유타에 30MW 시설을 짓고 Nvidia를 첫 상업 고객으로 확보했다.",
+      "detail": "Valar Atomics가 세쿼이아가 이끄는 10억 달러 시리즈B를 60억 달러 밸류에이션에 마감했다. 헬륨냉각 방식 원자로로 AI 데이터센터의 전력 수요를 감당하겠다는 구상으로, 유타주에 30MW 규모 시설을 계획하고 Nvidia를 첫 상업 배치 고객으로 확보했다. 컴퓨트 병목이 결국 '전력 병목'으로 귀결되며 프런티어 인프라 경쟁이 발전소로 옮겨가고 있음을 보여준다.",
+      "src": "The Next Web", "url": "https://thenextweb.com"
+    },
+    {
+      "cat": "INFRA · 반도체", "catClass": "c-infra",
+      "title": "英 광자칩 OLIX, 3.12억 달러 조달…밸류 3배",
+      "body": "영국 광자칩 스타트업 OLIX가 시리즈B에서 3.12억 달러를 유치하며 2월 대비 밸류가 3배 넘게 뛰었다. Arm과 넷플릭스 공동창업자 리드 헤이스팅스가 투자에 참여했다.",
+      "detail": "영국의 광자(포토닉) 프로세서 스타트업 OLIX가 Fundomo 주도로 3.12억 달러 시리즈B를 마감하며 지난 2월 밸류에이션을 세 배 이상 끌어올렸다. Arm과 넷플릭스 공동창업자 리드 헤이스팅스가 투자자로 이름을 올렸고, 회사는 '사용자당 초당 1만 토큰 이상'을 목표로 AI 추론용 광학 프로세서를 개발한다. 전력·발열 한계에 부딪힌 실리콘의 대안으로 광자 컴퓨팅에 자본이 몰리는 흐름이다.",
+      "src": "TechCrunch", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "INFRA · 데이터센터", "catClass": "c-infra",
+      "title": "Brookfield·NextEra, 켄터키에 1,000억 달러 AI 캠퍼스",
+      "body": "Brookfield와 NextEra가 켄터키 퍼두카 부지에 약 1,000억 달러 규모의 AI 데이터센터 캠퍼스를 발표했다. 2032년까지 1.2GW로 확장하며 8,000개 건설 일자리 창출이 예상된다.",
+      "detail": "Brookfield와 NextEra가 켄터키주 퍼두카(Paducah) 부지에 약 1,000억 달러 규모의 AI 데이터센터 캠퍼스를 조성한다고 발표했다. 2032년까지 1.2GW 규모로 확장하는 초대형 프로젝트로, 건설 단계에서만 약 8,000개의 일자리가 생길 것으로 전망된다. 하이퍼스케일러의 자본지출 스프린트가 개별 부지 단위의 초대형 캠퍼스 투자로 구체화되고 있다.",
+      "src": "Data Center Knowledge", "url": "https://www.datacenterknowledge.com"
+    },
+    {
+      "cat": "BIZ · M&A", "catClass": "c-biz",
+      "title": "비자, 행동 바이오메트릭 'BioCatch' 24억 달러 인수",
+      "body": "비자가 이스라엘 행동 바이오메트릭 기업 BioCatch를 Permira로부터 24억 달러에 인수한다고 발표했다. 비자 사상 최대 규모의 사이버보안 인수로, BioCatch는 18억 대 기기와 7.6억 사용자를 보호한다.",
+      "detail": "비자가 이스라엘의 행동 기반 바이오메트릭 보안 기업 BioCatch를 사모펀드 Permira로부터 24억 달러에 사들인다고 밝혔다. 비자가 진행한 사이버보안 분야 최대 규모 인수로, BioCatch의 플랫폼은 사용자의 행동 패턴을 분석해 18억 대 기기와 7.6억 명의 사용자를 보호한다고 회사는 설명한다. AI 기반 사기·봇 공격이 늘며 결제 인프라가 '행동 분석'을 핵심 방어선으로 끌어안는 흐름이다.",
+      "src": "Finextra", "url": "https://www.finextra.com"
+    },
+    {
+      "cat": "BIZ · 반도체", "catClass": "c-biz",
+      "title": "한국 엣지AI 칩 DeepX, 시리즈D서 밸류 2.2조원",
+      "body": "한국 엣지AI 칩 설계사 DeepX가 3조 1,400억 원(약 22억 달러) 밸류에이션에 시리즈D를 체결했다. 직전 라운드 대비 4배 뛴 몸값으로, 데이터센터가 아닌 로보틱스·스마트기기를 겨냥한다.",
+      "detail": "한국의 엣지AI 반도체 설계 기업 DeepX가 시리즈D를 약 3조 1,400억 원(약 22억 달러) 밸류에이션에 체결했다. 직전 라운드 대비 4배로 뛴 평가액으로, 데이터센터가 아닌 로봇과 스마트 디바이스에 들어가는 온디바이스 추론 칩을 겨냥한다. 클라우드에 집중된 AI 칩 경쟁이 '엣지·온디바이스' 영역으로 확장되고 있음을 보여준다.",
+      "src": "Bloomberg", "url": "https://www.bloomberg.com"
+    },
+    {
+      "cat": "SEC · 취약점", "catClass": "c-sec",
+      "title": "AI 에이전트 플랫폼 'Ruflo'서 CVSS 10.0 취약점",
+      "body": "Noma Labs가 AI 에이전트 플랫폼 Ruflo의 MCP 브릿지에서 최고 심각도(CVSS 10.0) 취약점 CVE-2026-59726을 공개했다. 인증 없이 코드 실행이 가능한 결함으로, 유지관리자가 24시간 내 패치를 배포했다.",
+      "detail": "Noma Labs가 AI 에이전트 플랫폼 Ruflo의 MCP(모델 컨텍스트 프로토콜) 브릿지에서 최고 심각도인 CVSS 10.0 취약점 CVE-2026-59726을 발견했다고 공개했다. 인증 없이 임의 코드 실행이 가능한 결함으로, Ruflo 유지관리자는 24시간 안에 패치 버전을 배포했다. 에이전트·MCP 생태계가 급성장하며 새로운 최고위험 공격 표면으로 떠오르고 있음을 보여준다.",
+      "src": "The Hacker News", "url": "https://thehackernews.com"
+    },
+    {
+      "cat": "SEC · 포렌식", "catClass": "c-sec",
+      "title": "\"AI로 DNA 스캔 데이터 무단 변조 가능\" 시연",
+      "body": "연구진이 AI 보조 코드로 포렌식 DNA 스캔 데이터를 탐지되지 않게 조작할 수 있음을 시연했다고 월스트리트저널이 보도했다. 법의학 증거의 무결성을 겨냥한 새로운 위협.",
+      "detail": "연구진이 AI가 생성·보조한 코드로 법의학 DNA 스캔 데이터를 흔적 없이 변조할 수 있음을 시연했다고 월스트리트저널이 전했다. 증거의 진위를 판별하기 어렵게 만드는 조작으로, 법정에서 활용되는 과학 증거의 신뢰성 자체를 위협한다. AI가 사이버 공격을 넘어 물리·법의학 증거의 무결성까지 흔들 수 있음을 보여주는 경고다.",
+      "src": "Wall Street Journal", "url": "https://www.wsj.com"
+    },
+    {
+      "cat": "POLICY · 무역", "catClass": "c-policy",
+      "title": "중국, IC 설계 보호 규정 개정…10월 15일 발효",
+      "body": "중국이 집적회로 배치설계 보호 규정을 개정해 10월 15일 발효한다. 침해에 '징벌적 손해배상'을 허용하고 등록 기준을 강화하며 설계 인력에 대한 보상을 의무화했다.",
+      "detail": "중국이 집적회로(IC) 배치설계 보호에 관한 규정을 개정해 10월 15일부터 시행한다고 밝혔다. 침해 행위에 대해 '징벌적 손해배상'을 허용하고 등록 기준을 대폭 강화했으며, 설계 인력에 대한 보상 의무를 명문화했다. 미·중 반도체 디커플링이 심화되는 가운데 중국이 자국 칩 설계 지식재산 보호를 국가 전략으로 끌어올리는 조치로 해석된다.",
+      "src": "Reuters", "url": "https://www.reuters.com"
+    },
+    {
+      "cat": "POLICY · 속도", "catClass": "c-policy",
+      "title": "샘 올트먼, \"AI 개발 속도 조절\" 촉구",
+      "body": "OpenAI CEO 샘 올트먼이 업계를 향해 'AI 개발 속도를 조절(pace)'하자고 촉구했다. 최근 OpenAI·앤트로픽의 모델 사고로 로그 AI 에이전트의 법적 책임 논란이 커진 가운데 나온 발언.",
+      "detail": "샘 올트먼 OpenAI CEO가 업계 전반을 향해 AI 개발의 속도를 의도적으로 조절할 필요가 있다고 촉구했다. 최근 OpenAI·앤트로픽의 모델이 실제 시스템에 무단 접근한 사고가 잇따르며, 미국 법이 '로그(rogue) AI 에이전트'의 책임 소재에 대비돼 있지 않다는 우려가 커진 가운데 나온 발언이다. 프런티어 경쟁의 속도와 안전·책임 사이 긴장이 최고경영진 차원의 화두로 떠올랐다.",
+      "src": "TechCrunch", "url": "https://techcrunch.com"
+    }
+  ],
+  "stats": [
+    {"n": "1", "suf": "B$", "lab": "Valar Atomics가 세쿼이아 주도로 조달한 AI 원자력 시리즈B"},
+    {"n": "2.4", "suf": "B$", "lab": "비자의 BioCatch 인수 — 자사 최대 규모 사이버보안 M&A"},
+    {"n": "100", "suf": "B$", "lab": "Brookfield·NextEra 켄터키 AI 데이터센터 캠퍼스 규모"},
+    {"n": "10.0", "suf": "점", "lab": "AI 에이전트 플랫폼 Ruflo 취약점 CVSS 최고점(CVE-2026-59726)"}
+  ],
+  "timeline": [
+    {"time": "08.01", "title": "백악관 AI 프레임워크 마감", "desc": "감독 프레임워크 완성 (내용 비공개)"},
+    {"time": "08.02", "title": "OpenAI 'Presence' 출시", "desc": "기업용 프로덕션 에이전트"},
+    {"time": "08.02", "title": "AI DNA 변조 위험 시연", "desc": "포렌식 스캔 데이터 무단 조작 (WSJ)"},
+    {"time": "08.03", "title": "백악관, 프런티어 랩 소집", "desc": "OpenAI·구글·앤트로픽 검토 회동"},
+    {"time": "08.03", "title": "Valar Atomics $1B 조달", "desc": "AI 원자로 · Nvidia 첫 상업 배치"},
+    {"time": "08.03", "title": "비자, BioCatch $2.4B 인수", "desc": "행동 바이오메트릭 보안"}
+  ],
+  "ticker": [
+    "백악관 <b>AI 감독 프레임워크</b> 완성 · 랩 소집",
+    "Microsoft <b>MAI-Realtime</b> 음성모델 포착",
+    "<b>DeepSeek V4-Flash</b>, Kimi K3보다 29배 저렴",
+    "Valar Atomics <b>$1B</b> AI 원자력 조달",
+    "비자, <b>BioCatch $2.4B</b> 인수",
+    "Ruflo <b>CVSS 10.0</b> 취약점 공개",
+    "Brookfield·NextEra <b>$100B</b> 켄터키 캠퍼스",
+    "샘 올트먼 <b>\"AI 개발 속도 조절\"</b> 촉구"
+  ]
+}
