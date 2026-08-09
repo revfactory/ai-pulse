@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<title>AI PULSE · 2026.08.10 — 오늘의 AI 뉴스</title>
+<meta name="description" content="2026년 8월 10일, 세계를 움직인 AI 뉴스 14선. 일본의 AI 음성복제 규제부터 xAI Grok Imagine 2.0, 중국 반도체 IPO 러시까지.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@property --spin { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+:root{
+  --bg:#05060a;--bg2:#090b12;--ink:#eaf0ff;--muted:#8b93ab;--line:rgba(255,255,255,.08);
+  --cyan:#22e0d6;--violet:#7c5cff;--magenta:#ff4d8d;--amber:#ffcb47;--lime:#9bff5a;
+  --glass:rgba(255,255,255,.045);--maxw:1180px;--ease:cubic-bezier(.16,1,.3,1);
+  --font:"Pretendard","Space Grotesk",system-ui,sans-serif;--disp:"Syne","Pretendard",sans-serif;--mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;overflow-x:hidden;position:relative;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* BACKGROUND */
+#neural{position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(70px) saturate(140%);opacity:.6;
+  background:
+    radial-gradient(38vw 38vw at 15% 20%, color-mix(in oklab, var(--violet) 60%, transparent), transparent 60%),
+    radial-gradient(34vw 34vw at 85% 18%, color-mix(in oklab, var(--cyan) 55%, transparent), transparent 60%),
+    radial-gradient(40vw 40vw at 70% 85%, color-mix(in oklab, var(--magenta) 50%, transparent), transparent 62%),
+    radial-gradient(30vw 30vw at 25% 90%, color-mix(in oklab, var(--amber) 40%, transparent), transparent 60%);
+  animation:mesh 26s var(--ease) infinite alternate}
+@keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0deg)}
+  50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(320px 320px at var(--mx,50%) var(--my,-20%), color-mix(in oklab,var(--cyan) 22%, transparent), transparent 70%);
+  mix-blend-mode:screen}
+html:not(.js) .spotlight{display:none}
+
+/* LOADER — pure CSS, always auto-dismisses (never gets stuck) */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;
+  animation:loaderGone .7s var(--ease) 2.1s forwards}
+@keyframes loaderGone{to{opacity:0;visibility:hidden;pointer-events:none}}
+.load-inner{width:min(80vw,340px);text-align:center}
+.load-mark{font-family:var(--disp);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.load-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.1);margin-top:18px;overflow:hidden}
+.load-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  box-shadow:0 0 18px var(--cyan);animation:fillUp 1.9s var(--ease) forwards}
+@keyframes fillUp{to{width:100%}}
+.load-pct{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3em}
+html:not(.js) #loader{display:none} /* if no JS at all, don't risk any overlay */
+
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:0;left:0;height:3px;z-index:120;width:100%;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));box-shadow:0 0 14px color-mix(in oklab,var(--violet) 70%,transparent)}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.7),transparent);
+  transition:transform .5s var(--ease)}
+header.nav.hide{transform:translateY(-110%)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;letter-spacing:-.01em;font-size:18px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.nav-date{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.15em}
+@media(max-width:640px){.nav-date{display:none}}
+
+/* TICKER */
+.ticker{position:fixed;bottom:0;left:0;right:0;z-index:105;background:rgba(5,6,10,.72);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);overflow:hidden;padding:9px 0;display:flex;align-items:center}
+.ticker-tag{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--bg);
+  background:var(--magenta);padding:5px 12px;margin:0 14px;border-radius:5px;text-transform:uppercase;
+  box-shadow:0 0 18px color-mix(in oklab,var(--magenta) 60%,transparent)}
+.ticker-track{display:flex;gap:44px;white-space:nowrap;animation:slide 40s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track b{color:var(--cyan)}
+.ticker-track span{display:inline-flex;gap:8px;align-items:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* LAYOUT */
+main{position:relative;z-index:3}
+section{padding:clamp(70px,11vw,150px) clamp(18px,5vw,40px);max-width:var(--maxw);margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:120px;max-width:var(--maxw)}
+.hero-kick{font-family:var(--mono);font-size:clamp(12px,2.6vw,15px);letter-spacing:.3em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.hero-kick .live{color:var(--magenta);display:inline-flex;align-items:center;gap:7px}
+.hero-kick .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--magenta);box-shadow:0 0 10px var(--magenta);animation:pulse 1.4s infinite}
+.hero h1{font-family:var(--disp);font-weight:800;line-height:.94;letter-spacing:-.03em;font-size:clamp(52px,14vw,168px);margin-bottom:8px}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>span{display:block;animation:rise 1s var(--ease) both}
+.hero h1 .l:nth-child(1)>span{animation-delay:.15s}
+.hero h1 .l:nth-child(2)>span{animation-delay:.27s}
+.hero h1 .l:nth-child(3)>span{animation-delay:.39s}
+@keyframes rise{from{transform:translateY(110%)}to{transform:translateY(0)}}
+.grad{background:linear-gradient(105deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:200% 0}}
+.hero-sub{max-width:640px;color:var(--muted);font-size:clamp(15px,2.4vw,20px);margin-top:26px;animation:fade 1s var(--ease) .6s both}
+.hero-sub b{color:var(--ink);font-weight:600}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:fade 1s var(--ease) .8s both}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:9px 15px;border:1px solid var(--line);border-radius:99px;
+  background:var(--glass);color:var(--muted);backdrop-filter:blur(6px);transition:.4s var(--ease)}
+.chip b{color:var(--ink)}
+.chip:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+.scroll-cue{position:absolute;bottom:74px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+  letter-spacing:.3em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fade 1s 1.2s both}
+.scroll-cue .track{width:1px;height:44px;background:linear-gradient(var(--cyan),transparent);position:relative;overflow:hidden}
+.scroll-cue .track::after{content:"";position:absolute;top:0;left:0;width:100%;height:14px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-16px)}100%{transform:translateY(46px)}}
+@media(max-width:640px){.scroll-cue{display:none}}
+
+/* REVEAL — visible by default; only hidden/animated when JS present */
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .grid .card:nth-child(3n+2){transition-delay:.06s}
+html.js .grid .card:nth-child(3n+3){transition-delay:.12s}
+
+/* SECTION HEAD */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.section-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6vw,60px);letter-spacing:-.02em;line-height:1}
+.section-head p{color:var(--muted);font-size:14px;max-width:340px}
+
+/* FEATURED */
+.feature{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(124,92,255,.16),rgba(34,224,214,.06) 60%,transparent);
+  padding:clamp(26px,5vw,56px);isolation:isolate}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background:conic-gradient(from var(--spin),transparent,color-mix(in oklab,var(--violet) 40%,transparent),transparent 40%);
+  animation:sweep 12s linear infinite}
+@keyframes sweep{to{--spin:360deg}}
+.feature .rank{font-family:var(--disp);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:.8;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.12));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}
+.feature .cat{margin:20px 0 14px}
+.feature h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5vw,52px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;max-width:14ch}
+.feature p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:56ch;margin-top:18px}
+.feature .keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kbig{font-family:var(--mono);font-size:13px;color:var(--ink);border:1px solid var(--line);background:rgba(0,0,0,.25);
+  padding:10px 16px;border-radius:12px;display:flex;gap:8px;align-items:baseline}
+.kbig b{font-family:var(--disp);font-size:20px;color:var(--cyan)}
+
+.cat{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid currentColor}
+.cat::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.c-model{color:var(--cyan)}.c-biz{color:var(--violet)}.c-policy{color:var(--amber)}
+.c-infra{color:var(--lime)}.c-sec{color:var(--magenta)}.c-create{color:#ff8f5a}
+
+/* NEWS GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--glass);
+  backdrop-filter:blur(8px);overflow:hidden;transition:transform .5s var(--ease),border-color .5s}
+.card::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:linear-gradient(140deg,var(--cyan),transparent 40%,var(--magenta));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover{border-color:transparent;transform:translateY(-6px)}
+.card:hover::after{opacity:1}
+.card .glowdot{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(50px);opacity:0;transition:opacity .5s;
+  top:var(--gy,50%);left:var(--gx,50%);transform:translate(-50%,-50%);pointer-events:none;background:var(--cyan)}
+.card:hover .glowdot{opacity:.16}
+.card .idx{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.card h4{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.18;letter-spacing:-.01em;margin:16px 0 12px;text-wrap:balance}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.card .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.card .arrow{font-size:18px;transition:transform .4s var(--ease);color:var(--ink)}
+.card:hover .arrow{transform:translate(4px,-4px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--bg2);padding:clamp(28px,5vw,46px) 28px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width 1.4s var(--ease)}
+.stat.in::before{width:100%}
+html:not(.js) .stat::before{width:100%}
+.stat .num{font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#fff,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .num .u{font-size:.42em;color:var(--cyan);-webkit-text-fill-color:var(--cyan);margin-left:4px}
+.stat .lab{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.45}
+
+/* TIMELINE */
+.tl-row{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:start;transition:background .4s}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-row:hover{background:rgba(255,255,255,.02)}
+.tl-time{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:.05em;padding-top:2px}
+.tl-body h5{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.tl-body p{color:var(--muted);font-size:14px}
+
+/* OUTRO / FOOTER */
+.outro{text-align:center}
+.outro h2{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,86px);letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+.outro p{color:var(--muted);max-width:520px;margin:24px auto 0;font-size:16px}
+footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,40px) 90px;max-width:var(--maxw);margin-inline:auto;
+  display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;position:relative;z-index:3}
+footer .fbrand{font-family:var(--disp);font-weight:800;font-size:22px}
+footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;max-width:420px}
+
+/* logo link */
+a.brand{cursor:pointer;text-decoration:none;transition:opacity .3s}
+a.brand:hover{opacity:.72}
+/* card interactivity + source link */
+.card,.feature[data-modal]{cursor:pointer}
+.foot a.src{color:var(--muted);transition:color .3s}
+.foot a.src:hover{color:var(--cyan)}
+.more{font-family:var(--mono);font-size:12px;color:var(--cyan);font-weight:700;letter-spacing:.03em;white-space:nowrap;transition:transform .3s var(--ease)}
+.card:hover .more,.feature:hover .more{transform:translateX(4px)}
+.feature .foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* modal (더 보기 팝업) */
+.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(3,4,8,.72);backdrop-filter:blur(10px)}
+.modal-panel{position:relative;max-width:640px;width:100%;max-height:85vh;overflow:auto;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(124,92,255,.18),rgba(34,224,214,.06) 55%,var(--bg2));padding:clamp(28px,5vw,46px);transform:translateY(30px) scale(.9);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font-size:15px;cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease);z-index:2}
+.modal-x:hover{border-color:var(--magenta);color:var(--magenta);transform:rotate(90deg)}
+.modal-cat{margin-bottom:18px}
+.modal-title{font-family:var(--disp);font-weight:800;font-size:clamp(23px,4vw,36px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance;padding-right:40px}
+.modal-detail{color:var(--muted);font-size:clamp(15px,2.2vw,17px);line-height:1.78;margin-top:20px}
+.modal-detail b{color:var(--ink);font-weight:600}
+.modal-src{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--mono);font-size:13px;font-weight:700;color:#05060a;background:linear-gradient(105deg,var(--cyan),var(--violet));padding:12px 20px;border-radius:99px;transition:transform .3s var(--ease)}
+.modal-src:hover{transform:translateY(-2px)}
+html:not(.js) .modal{display:none}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero h1 .l>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="load-inner">
+  <div class="load-mark">AI&nbsp;PULSE</div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div class="load-pct">LIVE BRIEFING · 2026.08.10</div>
+</div></div>
+
+<div class="mesh"></div>
+<canvas id="neural"></canvas>
+<div class="grain"></div>
+<div class="spotlight" id="spot"></div>
+<div class="progress" id="prog"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="../index.html" aria-label="AI PULSE 아카이브 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
+  <div class="nav-date" id="clock">2026 · 07 · 13 · MON</div>
+</header>
+
+<div class="ticker">
+  <span class="ticker-tag">BREAKING</span>
+  <div class="ticker-track" id="ticker">
+    <span>◈ 일본, <b>AI 음성복제 무단사용은 인격권 침해</b> — 아시아 첫 정부 지침</span>
+    <span>◈ xAI <b>Grok Imagine 2.0</b> 공개 · Arena 이미지 2위</span>
+    <span>◈ 중국 <b>CXMT $8.6B 상하이 IPO</b> — CICC發 칩 상장 러시</span>
+    <span>◈ 애플, <b>중국 CXMT D램</b> 아이폰·맥북 테스트</span>
+    <span>◈ OpenAI, 무료 사용자에 <b>무제한 텍스트 + Think 버튼</b></span>
+    <span>◈ 사운드하운드, <b>라이브퍼슨 인수</b> — 음성+메시징 CX</span>
+    <span>◈ 메타, <b>AI 코딩 앱</b>으로 오픈AI·앤스로픽 추격</span>
+    <span>◈ 알리바바 <b>Qwen3.8-Max 오픈웨이트</b> 임박</span>
+    <span>◈ 일본, <b>AI 음성복제 무단사용은 인격권 침해</b> — 아시아 첫 정부 지침</span>
+    <span>◈ xAI <b>Grok Imagine 2.0</b> 공개 · Arena 이미지 2위</span>
+    <span>◈ 중국 <b>CXMT $8.6B 상하이 IPO</b> — CICC發 칩 상장 러시</span>
+    <span>◈ 애플, <b>중국 CXMT D램</b> 아이폰·맥북 테스트</span>
+    <span>◈ OpenAI, 무료 사용자에 <b>무제한 텍스트 + Think 버튼</b></span>
+    <span>◈ 사운드하운드, <b>라이브퍼슨 인수</b> — 음성+메시징 CX</span>
+    <span>◈ 메타, <b>AI 코딩 앱</b>으로 오픈AI·앤스로픽 추격</span>
+    <span>◈ 알리바바 <b>Qwen3.8-Max 오픈웨이트</b> 임박</span>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-kick">
+      <span class="live">LIVE BRIEFING</span>
+      <span>2026년 8월 10일 · 월요일</span>
+      <span>오늘의 AI 뉴스 15선</span>
+    </div>
+    <h1>
+      <span class="l"><span>오늘,</span></span>
+      <span class="l"><span class="grad">당신의 목소리가</span></span>
+      <span class="l"><span>권리가 되었다.</span></span>
+    </h1>
+    <p class="hero-sub">일본이 <b>AI 음성복제</b>를 인격권 침해로 규정하며 아시아 주요국 중 처음으로 정부 지침을 냈다 — 규제·이미지 생성·반도체 상장까지, 주말 사이 지형을 바꾼 신호를 한 화면에 담았습니다.</p>
+    <div class="hero-meta">
+      <span class="chip"><b>15</b>&nbsp;STORIES</span>
+      <span class="chip"><b>6</b>&nbsp;CATEGORIES</span>
+      <span class="chip"><b>08.10</b>&nbsp;2026</span>
+      <span class="chip">SCROLL&nbsp;↓</span>
+    </div>
+    <div class="scroll-cue">SCROLL<div class="track"></div></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="top">
+    <div class="eyebrow">오늘의 헤드라인</div>
+          <div class="feature reveal tilt" data-modal data-cat="POLICY · 규제" data-catclass="c-policy" data-title="일본, AI 음성복제에 '인격권' 빗장 — 아시아 첫 정부 지침" data-src="Tech Times" data-url="https://www.techtimes.com/articles/323616/20260808/japan-rules-ai-voice-cloning-requires-consent-developers-face-civil-liability.htm" data-detail="일본 법무성이 AI 음성복제에 대한 정부 차원의 구속력 있는 가이드라인을 발표했다. 핵심은 본인 동의 없이 특정인의 목소리를 모방한 AI 음성을 만드는 행위 자체를 민사상 인격권 침해로 본다는 것으로, 아시아 주요 경제국 중 이 문제에 정부가 명시적 기준을 제시한 첫 사례다. 이에 따라 성우·가수·배우 등은 자신의 목소리가 무단 복제·활용됐을 때 손해배상을 청구할 근거를 갖게 됐고, 개발사는 데이터·서비스 설계 단계에서 동의 확보와 책임 소재를 다시 점검해야 하는 상황이 됐다. 생성형 오디오가 광고·더빙·콘텐츠로 빠르게 번지는 가운데, '목소리도 권리'라는 원칙이 규제 전선의 새 화두로 떠올랐다.">
+        <div class="rank">01</div>
+        <div class="cat c-policy">POLICY · 규제</div>
+        <h3>일본, AI 음성복제에 '인격권' 빗장 — 아시아 첫 정부 지침</h3>
+        <p>일본 법무성이 동의 없이 특정인의 목소리를 흉내 내 만든 <b>AI 생성 음성은 민사상 인격권 침해</b>라는 구속력 있는 지침을 냈다. 아시아 주요 경제국 중 정부 차원에서 AI 음성복제에 명확한 선을 그은 첫 사례로, 성우·연예인 등은 무단 복제 시 배상을 청구할 수 있게 됐다.</p>
+        <div class="keys"><span class="kbig"><b>1호</b> AI 음성복제 구속 지침을 낸 아시아 주요국</span>
+          <span class="kbig"><b>인격권</b> 무단 음성복제를 민사상 침해로 규정</span>
+          <span class="kbig"><b>배상</b> 성우·유명인, 무단 복제 시 청구 가능</span></div>
+        <div class="foot"><a class="src" href="https://www.techtimes.com/articles/323616/20260808/japan-rules-ai-voice-cloning-requires-consent-developers-face-civil-liability.htm" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Tech Times ↗</a><span class="more">더 보기 →</span></div>
+      </div>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section id="stories">
+    <div class="section-head">
+      <div><div class="eyebrow">디스패치</div><h2>하루의 신호들</h2></div>
+      <p>모델·기업·정책·인프라·보안·크리에이티브 — 카테고리별로 읽는 오늘의 흐름.</p>
+    </div>
+    <div class="grid">
+      <article class="card tilt reveal" data-modal data-cat="CREATE · 이미지" data-catclass="c-create" data-title="xAI, Grok Imagine 2.0 공개 — Arena 이미지 세계 2위" data-src="Unite.AI" data-url="https://www.unite.ai/xai-ships-grok-imagine-image-2-0-with-precise-editing-and-a-top-arena-ranking/" data-detail="xAI가 8월 7일 Grok Imagine 이미지 2.0을 정식 출시하며 이를 새 '퀄리티 모드'로 배치했다. 매직완드와 세그멘테이션을 활용한 영역 단위 편집, 한 번에 최대 5장까지 넣는 멀티 레퍼런스 생성, 배경 제거·투명 배경 내보내기, 9종 비율 스마트 리사이즈, 제품·헤드샷·이커머스용 프리셋 템플릿까지 담았다. xAI는 8월 7일 기준 Arena 텍스트→이미지와 이미지 편집 두 부문에서 모두 세계 2위(1위 OpenAI GPT-Image-2)라고 밝혔으며, API는 곧 공개될 예정이다."><span class="glowdot"></span>
+        <div class="idx">/ 02</div>
+        <div class="cat c-create">CREATE · 이미지</div>
+        <h4>xAI, Grok Imagine 2.0 공개 — Arena 이미지 세계 2위</h4>
+        <p>xAI가 Grok Imagine 이미지 2.0을 새 '퀄리티 모드'로 내놨다. 매직완드 영역 편집, <b>최대 5장 멀티 레퍼런스</b>, 9종 비율 스마트 리사이즈를 갖췄고 Arena 텍스트→이미지·편집 부문에서 GPT-Image-2에 이어 2위에 올랐다.</p>
+        <div class="foot"><a class="src" href="https://www.unite.ai/xai-ships-grok-imagine-image-2-0-with-precise-editing-and-a-top-arena-ranking/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Unite.AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 반도체" data-catclass="c-biz" data-title="중국 CICC發 AI 칩 IPO 러시 — CXMT $8.6B 상장" data-src="Financial Times" data-url="https://www.ft.com/content/657249de-f5bd-4648-9a1c-77315cd5a1c9" data-detail="파이낸셜타임스는 중국국제금융공사(CICC)가 자국 AI 반도체 대표 기업들의 수십억 달러 규모 상장을 연달아 주관하고 있다고 보도했다. D램 업체 CXMT는 상하이 증시에서 86억 달러를, 광통신 모듈 강자 중지이노라이트(中际旭创)는 홍콩에서 68억 달러를 조달하며 대규모 자금을 빨아들였다. 미국의 수출 통제 속에서 국영 금융이 반도체 자립을 뒷받침하는 구조로, AI 인프라 경쟁이 '모델'에서 '칩과 이를 떠받치는 자본시장'으로 확산되고 있음을 보여준다."><span class="glowdot"></span>
+        <div class="idx">/ 03</div>
+        <div class="cat c-biz">BIZ · 반도체</div>
+        <h4>중국 CICC發 AI 칩 IPO 러시 — CXMT $8.6B 상장</h4>
+        <p>국영 투자은행 CICC가 중국 AI 반도체 기업들의 대형 상장을 잇달아 주관하고 있다. 메모리 업체 <b>CXMT가 상하이에서 86억 달러</b>, 광모듈 기업 중지이노라이트가 홍콩에서 68억 달러를 조달하며 '칩 IPO 러시'가 본격화됐다.</p>
+        <div class="foot"><a class="src" href="https://www.ft.com/content/657249de-f5bd-4648-9a1c-77315cd5a1c9" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Financial Times ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 공급망" data-catclass="c-infra" data-title="애플, 중국 CXMT D램 테스트 — AI發 메모리 품귀" data-src="WSJ" data-url="https://aiweekly.co/ai-news-today" data-detail="월스트리트저널은 애플이 중국에서 유통되는 아이폰·맥북용 D램으로 중국 CXMT 제품을 테스트하고 있다고 보도했다. 이미 HP와 에이서가 CXMT 메모리 채택을 검토·확대하는 가운데, 프리미엄 브랜드인 애플까지 합류했다는 점이 상징적이다. AI 데이터센터가 HBM·D램을 대규모로 빨아들이면서 촉발된 세계적 메모리 품귀가 완제품 공급망까지 밀어올리고 있으며, 기업들은 공급 안정과 지정학 리스크 사이에서 조달선을 다변화하고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 04</div>
+        <div class="cat c-infra">INFRA · 공급망</div>
+        <h4>애플, 중국 CXMT D램 테스트 — AI發 메모리 품귀</h4>
+        <p>월스트리트저널에 따르면 애플이 중국 시장용 아이폰·맥북에 쓸 <b>중국 CXMT의 D램</b>을 평가하고 있다. HP·에이서에 이어 애플까지 가세하며, AI 인프라 수요가 촉발한 세계적 메모리 공급난의 파장이 확산되고 있다.</p>
+        <div class="foot"><a class="src" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · WSJ ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 챗봇" data-catclass="c-model" data-title="OpenAI, 무료 사용자에 무제한 텍스트 + 'Think' 버튼" data-src="TechCrunch" data-url="https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/" data-detail="OpenAI가 무료·Go 요금제 사용자를 대상으로 텍스트 대화 무제한 이용과, 필요할 때 더 깊이 추론하도록 켜는 'Think' 버튼을 8월 10일 주간부터 순차 배포한다. 기본 모델은 소형 GPT-5.6 Luna로 자체 평가에서 사실 오류가 이전 버전 대비 크게 개선됐다. 다만 파일 업로드·이미지 등 고급 기능은 여전히 제한되며, 무제한 혜택은 텍스트 대화에 한정된다. '한계비용 제로'를 내세운 접근성 확대 카드로, 경쟁 챗봇의 무료 정책에 압박을 더한다."><span class="glowdot"></span>
+        <div class="idx">/ 05</div>
+        <div class="cat c-model">MODEL · 챗봇</div>
+        <h4>OpenAI, 무료 사용자에 무제한 텍스트 + 'Think' 버튼</h4>
+        <p>OpenAI가 무료·Go 요금제 사용자에게 <b>무제한 텍스트 대화</b>와 추론 강화용 'Think' 버튼을 이번 주부터 순차 개방한다. 기본 모델은 소형 GPT-5.6 Luna로, 사실 오류가 이전 대비 크게 줄었다.</p>
+        <div class="foot"><a class="src" href="https://techcrunch.com/2026/08/06/openai-brings-unlimited-chatgpt-text-chats-to-free-users/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · TechCrunch ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 코딩" data-catclass="c-model" data-title="메타, AI 코딩 앱으로 오픈AI·앤스로픽 추격" data-src="TechXplore" data-url="https://techxplore.com/news/2026-08-meta-openai-anthropic-ai-coding.html" data-detail="메타가 새로운 AI 코딩 애플리케이션을 공개하며 OpenAI와 Anthropic이 주도해 온 코딩 어시스턴트 시장에 정면으로 진입했다. 코드 생성과 리팩터링, 에이전트형 자동화 작업을 지원하는 방향으로, 개발 생산성 도구를 자사 생태계의 핵심 진입점으로 삼으려는 포석이다. 프런티어 랩들이 앞다퉈 코딩 에이전트를 강화하는 가운데 빅테크 간 경쟁이 더 치열해지면서, 개발자들이 고를 수 있는 선택지도 빠르게 늘고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 06</div>
+        <div class="cat c-model">MODEL · 코딩</div>
+        <h4>메타, AI 코딩 앱으로 오픈AI·앤스로픽 추격</h4>
+        <p>메타가 개발자용 <b>AI 코딩 앱</b>을 새로 선보이며 OpenAI·Anthropic의 코딩 도구 시장에 뛰어들었다. 코드 생성·수정·에이전트형 작업을 겨냥해, 코딩 어시스턴트 경쟁의 전선이 한층 넓어졌다.</p>
+        <div class="foot"><a class="src" href="https://techxplore.com/news/2026-08-meta-openai-anthropic-ai-coding.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · TechXplore ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 거버넌스" data-catclass="c-policy" data-title="백악관, 주요 AI 기업 소집 — 모델 평가 프레임워크 논의" data-src="Fortune" data-url="https://fortune.com/2026/08/04/baffling-white-house-wont-publicly-release-ai-model-evaluation-framework-it-reviewed-today-with-openai-anthropic-microsoft-and-others/" data-detail="백악관이 OpenAI, Anthropic, 메타, 엔비디아, 마이크로소프트와 다수의 중소 기업을 불러 AI 모델 평가 프레임워크를 함께 검토하며 본격적인 규제 드라이브의 첫발을 뗐다. 프런티어 모델의 위험을 어떤 기준으로 측정·관리할지에 대한 공통 틀을 마련하려는 시도다. 그러나 정부가 이날 검토한 프레임워크 자체를 공개하지 않기로 하면서, 안전 기준을 논의하면서도 투명성은 확보하지 못했다는 비판이 뒤따랐다."><span class="glowdot"></span>
+        <div class="idx">/ 07</div>
+        <div class="cat c-policy">POLICY · 거버넌스</div>
+        <h4>백악관, 주요 AI 기업 소집 — 모델 평가 프레임워크 논의</h4>
+        <p>백악관이 OpenAI·Anthropic·메타·엔비디아·MS 등과 <b>AI 모델 평가 프레임워크</b>를 검토하며 규제 논의에 시동을 걸었다. 다만 검토한 프레임워크를 공개하지 않기로 해 투명성 논란도 함께 불거졌다.</p>
+        <div class="foot"><a class="src" href="https://fortune.com/2026/08/04/baffling-white-house-wont-publicly-release-ai-model-evaluation-framework-it-reviewed-today-with-openai-anthropic-microsoft-and-others/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Fortune ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · M&amp;A" data-catclass="c-biz" data-title="사운드하운드, 라이브퍼슨 인수 — 음성+메시징 CX 결합" data-src="Mean CEO" data-url="https://blog.mean.ceo/latest-ai-announcements-news-august-2026/" data-detail="사운드하운드 AI가 고객 메시징 플랫폼 라이브퍼슨을 인수하며 음성과 텍스트 채널을 아우르는 통합 고객경험(CX) AI로 몸집을 키운다. 회사는 두 고객 기반을 엮은 교차판매 기회를 5억 달러 규모로 추산하고, 합병 법인의 2027년 매출 목표를 3억 5,000만~4억 달러로 제시했다. 콜센터·상담을 음성과 메시징에서 동시에 자동화하려는 수요가 커지는 가운데, 전용 CX AI 기업 간 통합이 가속되는 흐름을 보여준다."><span class="glowdot"></span>
+        <div class="idx">/ 08</div>
+        <div class="cat c-biz">BIZ · M&amp;A</div>
+        <h4>사운드하운드, 라이브퍼슨 인수 — 음성+메시징 CX 결합</h4>
+        <p>음성 AI 기업 사운드하운드가 대화형 메시징 플랫폼 라이브퍼슨을 인수한다. 음성 인식과 디지털 메시징을 묶어, <b>5억 달러 규모</b>의 교차판매 기회와 2027년 매출 3.5억~4억 달러를 노린다.</p>
+        <div class="foot"><a class="src" href="https://blog.mean.ceo/latest-ai-announcements-news-august-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Mean CEO ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 오픈웨이트" data-catclass="c-model" data-title="알리바바, Qwen3.8-Max 오픈웨이트 임박" data-src="Digital Applied" data-url="https://www.digitalapplied.com/blog/ai-model-releases-august-2026-tracker" data-detail="알리바바가 Qwen3.8-27B 신모델과 더불어 플래그십 Qwen3.8-Max의 오픈웨이트 버전을 내놓겠다고 예고했다. 배포는 허깅페이스와 모델스코프를 통할 예정이며, 라이선스 조건은 아직 공개되지 않았다. 트래커들은 발표된 일정을 '아직 미출시'로 신중히 다루라고 조언하지만, 프런티어급 성능을 무료 가중치로 푸는 흐름이 이어지면서 폐쇄형과 오픈 진영의 격차 논쟁이 다시 불붙고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 09</div>
+        <div class="cat c-model">MODEL · 오픈웨이트</div>
+        <h4>알리바바, Qwen3.8-Max 오픈웨이트 임박</h4>
+        <p>알리바바가 신형 <b>Qwen3.8-27B</b>와 함께 Qwen3.8-Max의 오픈웨이트 공개를 예고했다. 허깅페이스·모델스코프 배포가 이번 주로 점쳐지며, 프런티어급 오픈 모델 경쟁이 다시 달아오른다.</p>
+        <div class="foot"><a class="src" href="https://www.digitalapplied.com/blog/ai-model-releases-august-2026-tracker" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Digital Applied ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 헬스케어" data-catclass="c-model" data-title="임상 병리 AI 'PRISM2', 진단 정확도 끌어올려" data-src="Mean CEO" data-url="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" data-detail="임상 대화형 병리 모델 PRISM2가 영상 판독에 환자 텍스트 정보를 함께 반영해 진단 정확도를 끌어올리고 있다는 보고가 나왔다. 이미지 단독 분석의 한계를 언어 맥락으로 보완하는 접근으로, 병리·영상의학처럼 판단 근거가 복합적인 분야에서 특히 효과가 크다. 헬스케어 AI가 논문 속 잠재력을 넘어 실제 임상 워크플로에 스며드는 단계로 넘어가고 있음을 보여주는 사례다."><span class="glowdot"></span>
+        <div class="idx">/ 10</div>
+        <div class="cat c-model">MODEL · 헬스케어</div>
+        <h4>임상 병리 AI 'PRISM2', 진단 정확도 끌어올려</h4>
+        <p>이미지 분석에 <b>텍스트 맥락</b>을 결합한 임상 대화형 병리 모델 PRISM2가 진단 정확도를 높이고 있다. 헬스케어 AI가 이론적 약속을 넘어 실제 임상 워크플로로 들어서는 신호.</p>
+        <div class="foot"><a class="src" href="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Mean CEO ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 가격경쟁" data-catclass="c-biz" data-title="엔터프라이즈 토큰 가격전쟁 격화 — 원가 하락 압력" data-src="Mean CEO" data-url="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" data-detail="주요 AI 제공사들이 기업용 API의 토큰 단가와 모델 이용료를 경쟁적으로 낮추면서 엔터프라이즈 가격전쟁이 격화되고 있다. 구글·OpenAI·Anthropic·xAI에 문샷·딥시크·알리바바 같은 오픈 진영까지 가담해 선택지가 넓어졌고, 그만큼 AI 인프라 비용에 지속적인 하방 압력이 걸린다. 도입 원가가 내려가면서 스타트업과 일반 기업의 AI 채택 문턱이 빠르게 낮아지는 반면, 제공사들은 마진 방어를 위해 효율·차별화 경쟁에 내몰리고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 11</div>
+        <div class="cat c-biz">BIZ · 가격경쟁</div>
+        <h4>엔터프라이즈 토큰 가격전쟁 격화 — 원가 하락 압력</h4>
+        <p>구글·OpenAI·앤스로픽·xAI에 문샷·딥시크·알리바바까지 가세하며 <b>기업용 토큰 가격</b> 경쟁이 뜨겁다. AI 인프라 비용에 하방 압력이 커지며 스타트업·기업의 도입 문턱이 낮아지고 있다.</p>
+        <div class="foot"><a class="src" href="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Mean CEO ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="SEC · 거버넌스" data-catclass="c-sec" data-title="레드햇·엔비디아·IBM, '정책의 코드화' 밀어붙인다" data-src="Mean CEO" data-url="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" data-detail="레드햇·엔비디아·IBM 등 인프라 기업들이 정책을 코드로 바꾸는(policy-to-code) AI 거버넌스 이니셔티브를 뒷받침하고 있다. 규정과 안전 요구사항을 사람이 사후에 검토하는 문서가 아니라, 제품의 실행 워크플로와 의사결정 로직 안에 직접 내장하려는 접근이다. 컴플라이언스가 별도 절차가 아니라 개발·배포 파이프라인의 기본 옵션으로 편입되는 방향으로, AI 안전·규제 대응이 엔지니어링 문제로 재정의되고 있음을 보여준다."><span class="glowdot"></span>
+        <div class="idx">/ 12</div>
+        <div class="cat c-sec">SEC · 거버넌스</div>
+        <h4>레드햇·엔비디아·IBM, '정책의 코드화' 밀어붙인다</h4>
+        <p>레드햇·엔비디아·IBM이 <b>policy-to-code</b> AI 거버넌스를 지원하며, 컴플라이언스를 문서가 아닌 제품 워크플로와 판단 로직에 직접 심는 흐름을 주도한다. 규제 대응이 개발 스택의 기본값으로.</p>
+        <div class="foot"><a class="src" href="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Mean CEO ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 로보틱스" data-catclass="c-model" data-title="Claude, 로봇개 프로그래밍 '20배' 가속" data-src="Crescendo.ai" data-url="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" data-detail="Anthropic의 Claude가 사족보행 로봇, 이른바 '로봇개' 프로그래밍에서 기존 개발 팀 벤치마크 대비 약 20배 빠른 속도로 코드 작성을 도왔다는 보고가 전해졌다. 물리 하드웨어 제어처럼 문맥과 안전 제약이 까다로운 영역까지 AI 코딩 어시스턴트가 실효를 내기 시작했다는 의미다. 소프트웨어 개발에 머물던 생성형 코딩의 무대가 로보틱스 엔지니어링으로 확장되면서, 체화 AI 개발 주기 자체가 짧아질 가능성을 시사한다."><span class="glowdot"></span>
+        <div class="idx">/ 13</div>
+        <div class="cat c-model">MODEL · 로보틱스</div>
+        <h4>Claude, 로봇개 프로그래밍 '20배' 가속</h4>
+        <p>Anthropic Claude가 로봇개(robodog) 프로그래밍에서 기존 인력 팀 대비 <b>약 20배 빠른</b> 지원을 보여줬다는 보고가 나왔다. AI 코딩 능력이 소프트웨어를 넘어 로보틱스 엔지니어링으로 번지고 있다.</p>
+        <div class="foot"><a class="src" href="https://blog.mean.ceo/latest-ai-developments-news-august-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Crescendo.ai ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 에이전트" data-catclass="c-model" data-title="구글 Gemini 3.6 Flash, 저비용 기업 에이전트 겨냥" data-src="Mean CEO" data-url="https://blog.mean.ceo/latest-ai-announcements-news-august-2026/" data-detail="구글이 Gemini 3.6 Flash를 통해 기업 자동화 업무의 토큰 비용을 낮추는 데 집중하고 있다. 고객지원, 리서치, 코딩, 지식 검색처럼 대량으로 반복되는 에이전트형 워크로드를 이전보다 저렴하게 처리하도록 최적화한 모델 라인업이다. 최고 성능보다 '충분히 좋은 성능을 낮은 원가로'를 앞세워, 대규모로 에이전트를 굴려야 하는 기업 시장에서 비용 효율을 무기로 경쟁하려는 전략이다."><span class="glowdot"></span>
+        <div class="idx">/ 14</div>
+        <div class="cat c-model">MODEL · 에이전트</div>
+        <h4>구글 Gemini 3.6 Flash, 저비용 기업 에이전트 겨냥</h4>
+        <p>구글이 <b>토큰 비용을 낮춘</b> Gemini 3.6 Flash로 기업용 에이전트 업무를 정조준했다. 고객지원·리서치·코딩·지식검색 등 반복 자동화 워크로드를 더 싸게 돌리는 데 초점을 맞췄다.</p>
+        <div class="foot"><a class="src" href="https://blog.mean.ceo/latest-ai-announcements-news-august-2026/" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Mean CEO ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="numbers">
+    <div class="eyebrow">숫자로 보는 오늘</div>
+    <div class="section-head"><h2>By the Numbers</h2></div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-n="2" data-suf="위">2<span class="u">위</span></div><div class="lab">xAI Grok Imagine 2.0 — Arena 이미지 생성·편집 세계 순위(1위 GPT-Image-2)</div></div>
+      <div class="stat reveal"><div class="num" data-n="8.6" data-suf="B$">8.6<span class="u">B$</span></div><div class="lab">중국 CXMT 상하이 IPO 규모 — CICC 주관 AI 반도체 상장 러시</div></div>
+      <div class="stat reveal"><div class="num" data-n="500" data-suf="M$">500<span class="u">M$</span></div><div class="lab">사운드하운드·라이브퍼슨 합병이 노리는 교차판매 기회</div></div>
+      <div class="stat reveal"><div class="num" data-n="20" data-suf="배">20<span class="u">배</span></div><div class="lab">Claude 활용 로봇개 프로그래밍 속도 향상(기존 팀 대비)</div></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="eyebrow">타임라인</div>
+    <div class="section-head"><h2>08.10의 궤적</h2><p>규제·이미지·반도체 — 한 주를 관통한 사건의 순서.</p></div>
+    <div class="tl">
+      <div class="tl-row reveal"><div class="tl-time">08.04</div><div class="tl-body"><h5>백악관, 주요 AI 기업 소집</h5><p>모델 평가 프레임워크 검토 — 규제 첫발</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.06</div><div class="tl-body"><h5>OpenAI, 무료 무제한 대화 확대</h5><p>GPT-5.6 Luna 기본 + Think 버튼</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.07</div><div class="tl-body"><h5>xAI, Grok Imagine 2.0 공개</h5><p>영역 편집·멀티레퍼런스 · Arena 2위</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.08</div><div class="tl-body"><h5>일본, AI 음성복제 규제 발표</h5><p>무단 복제는 인격권 침해 — 아시아 첫 지침</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.08</div><div class="tl-body"><h5>중국 CICC發 AI 칩 IPO 러시</h5><p>CXMT $8.6B · 중지이노라이트 $6.8B</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.08</div><div class="tl-body"><h5>애플, 중국 CXMT D램 테스트</h5><p>AI發 메모리 공급난 대응</p></div></div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="eyebrow" style="justify-content:center">내일, 다시</div>
+    <h2>가속은 <span class="grad">멈추지 않는다.</span></h2>
+    <p>AI PULSE는 매일의 인공지능 신호를 가장 임팩트 있게 압축합니다. 오늘의 15선은 여기까지 — 내일의 헤드라인은 이미 쓰이고 있습니다.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="fbrand">AI&nbsp;PULSE</div>
+    <p class="fmeta" style="margin-top:10px">2026.08.10 데일리 브리핑 · 오늘의 AI 뉴스 큐레이션</p>
+  </div>
+  <div class="fmeta">
+    출처 · Build Fast with AI<br>
+    HTML · CSS Scroll-driven Animations · Canvas · @property<br>
+    <span style="color:var(--muted)">Crafted as a single living document.</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <div class="modal-cat cat c-model" id="modalCat"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <div class="modal-detail" id="modalDetail"></div>
+    <a class="modal-src" id="modalSrc" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=false;
+  try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+
+  /* REVEAL via IntersectionObserver */
+  try{
+    if('IntersectionObserver'in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            if(e.target.classList.contains('stat'))countUp(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.16});
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){io.observe(e);});
+    }else{
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){e.classList.add('in');});
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal,.stat').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* COUNTERS */
+  function countUp(stat){
+    try{
+      var el=stat.querySelector('.num');if(!el)return;
+      var n=+el.getAttribute('data-n'),suf=el.getAttribute('data-suf')||'';
+      var t0=null,dur=1400;
+      function tick(now){
+        if(t0===null)t0=now;
+        var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
+        var v=n<10?(Math.round(n*e*10)/10):Math.floor(n*e);
+        el.innerHTML=v+'<span class="u">'+suf+'</span>';
+        if(k<1)requestAnimationFrame(tick);else el.innerHTML=n+'<span class="u">'+suf+'</span>';
+      }
+      requestAnimationFrame(tick);
+    }catch(e){}
+  }
+
+  /* TILT + GLOW */
+  try{
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove',function(ev){
+        var r=card.getBoundingClientRect();
+        var px=(ev.clientX-r.left)/r.width,py=(ev.clientY-r.top)/r.height;
+        if(!reduce)card.style.transform='perspective(900px) rotateY('+((px-.5)*8)+'deg) rotateX('+((.5-py)*8)+'deg) translateY(-6px)';
+        card.style.setProperty('--gx',px*100+'%');card.style.setProperty('--gy',py*100+'%');
+      });
+      card.addEventListener('pointerleave',function(){card.style.transform='';});
+    });
+  }catch(e){}
+
+  /* MODAL (더 보기 팝업) */
+  try{
+    var modal=document.getElementById('modal');
+    var mCat=document.getElementById('modalCat'),mTitle=document.getElementById('modalTitle'),
+        mDetail=document.getElementById('modalDetail'),mSrc=document.getElementById('modalSrc');
+    function openModal(el){
+      var d=el.dataset;
+      mCat.className='modal-cat cat '+(d.catclass||'c-model');
+      mCat.textContent=d.cat||'';
+      mTitle.textContent=d.title||'';
+      mDetail.innerHTML=d.detail||'';
+      if(d.url){mSrc.style.display='';mSrc.href=d.url;mSrc.textContent='출처 · '+(d.src||'열기')+' ↗';}else{mSrc.style.display='none';}
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+      try{if(navigator.vibrate)navigator.vibrate(6);}catch(e){}
+    }
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    document.querySelectorAll('[data-modal]').forEach(function(el){
+      el.addEventListener('click',function(ev){if(ev.target.closest('a.src'))return;openModal(el);});
+    });
+    modal.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',closeModal);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  }catch(e){}
+
+  /* SPOTLIGHT */
+  try{
+    var spot=document.getElementById('spot');
+    window.addEventListener('pointermove',function(e){
+      spot.style.setProperty('--mx',e.clientX+'px');spot.style.setProperty('--my',e.clientY+'px');
+    },{passive:true});
+  }catch(e){}
+
+  /* NAV HIDE + SCROLL PROGRESS FALLBACK */
+  try{
+    var nav=document.getElementById('nav'),prog=document.getElementById('prog'),lastY=0;
+    var supportsSDA=false;try{supportsSDA=CSS.supports('animation-timeline: scroll()');}catch(e){}
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY||window.pageYOffset;
+      if(!supportsSDA&&prog){var max=document.documentElement.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(max>0?y/max:0)+')';}
+      if(nav)nav.classList.toggle('hide',y>lastY&&y>240);
+      lastY=y;
+    },{passive:true});
+  }catch(e){}
+
+  /* MOBILE: HAPTICS + RIPPLE + DEVICE TILT */
+  try{
+    var isTouch='ontouchstart'in window;
+    document.querySelectorAll('.card,.chip,.kbig').forEach(function(el){
+      el.addEventListener('touchstart',function(){try{if(navigator.vibrate)navigator.vibrate(8);}catch(e){}},{passive:true});
+      el.addEventListener('pointerdown',function(ev){
+        try{
+          var b=el.getBoundingClientRect(),r=document.createElement('span');
+          r.style.cssText='position:absolute;left:'+(ev.clientX-b.left)+'px;top:'+(ev.clientY-b.top)+'px;width:8px;height:8px;border-radius:50%;background:rgba(34,224,214,.5);transform:translate(-50%,-50%) scale(1);pointer-events:none;transition:transform .6s ease-out,opacity .6s;opacity:1;z-index:5';
+          el.appendChild(r);
+          requestAnimationFrame(function(){r.style.transform='translate(-50%,-50%) scale(26)';r.style.opacity='0';});
+          setTimeout(function(){r.remove();},650);
+        }catch(e){}
+      });
+    });
+    if(window.DeviceOrientationEvent&&isTouch){
+      var mesh=document.querySelector('.mesh'),feat=document.querySelector('.feature');
+      window.addEventListener('deviceorientation',function(e){
+        if(e.beta==null)return;
+        var g=Math.max(-14,Math.min(14,(e.gamma||0))),b=Math.max(-14,Math.min(14,((e.beta||0)-40)));
+        if(mesh)mesh.style.transform='translate3d('+(g*0.4)+'%,'+(b*0.3)+'%,0) scale(1.1)';
+        if(feat)feat.style.transform='perspective(1000px) rotateY('+(g*0.35)+'deg) rotateX('+(-b*0.25)+'deg)';
+      });
+    }
+  }catch(e){}
+
+  /* TEXT SCRAMBLE on hero */
+  try{
+    if(!reduce){
+      var target=document.querySelector('.hero h1 .grad');
+      if(target){
+        var final=target.textContent,chars='アイウエオ01ンΞΔΣ人工知能<>/AI#*',frame=0;
+        setTimeout(function(){
+          var iv=setInterval(function(){
+            var out='';for(var i=0;i<final.length;i++){out+=(i<frame/2)?final[i]:chars[Math.floor(Math.random()*chars.length)];}
+            target.textContent=out;frame++;
+            if(frame>final.length*2+2){clearInterval(iv);target.textContent=final;}
+          },46);
+        },520);
+      }
+    }
+  }catch(e){}
+
+  /* CLOCK */
+  try{
+    var clock=document.getElementById('clock');
+    function upd(){
+      var d=new Date();
+      var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2),ss=('0'+d.getSeconds()).slice(-2);
+      clock.textContent='2026·08·10·MON — '+hh+':'+mm+':'+ss;
+    }
+    upd();setInterval(upd,1000);
+  }catch(e){}
+
+  /* NEURAL CANVAS */
+  try{
+    var cv=document.getElementById('neural'),ctx=cv.getContext('2d');
+    var w,h,dpr,nodes=[],mouse={x:-999,y:-999},isMobile=window.innerWidth<720;
+    function size(){dpr=Math.min(2,window.devicePixelRatio||1);w=cv.width=window.innerWidth*dpr;h=cv.height=window.innerHeight*dpr;
+      cv.style.width=window.innerWidth+'px';cv.style.height=window.innerHeight+'px';}
+    function init(){size();var count=isMobile?30:Math.min(88,Math.floor(window.innerWidth*window.innerHeight/16000));
+      nodes=[];for(var i=0;i<count;i++){nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28*dpr,vy:(Math.random()-.5)*.28*dpr,r:(Math.random()*1.6+.6)*dpr});}}
+    var cols=[[34,224,214],[124,92,255],[255,77,141]];
+    function draw(){
+      ctx.clearRect(0,0,w,h);var maxd=(isMobile?110:140)*dpr;
+      for(var i=0;i<nodes.length;i++){
+        var a=nodes[i];a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+        var mdx=a.x-mouse.x,mdy=a.y-mouse.y,md=Math.hypot(mdx,mdy);
+        if(md<120*dpr&&md>0){a.x+=mdx/md*1.4;a.y+=mdy/md*1.4;}
+        for(var j=i+1;j<nodes.length;j++){
+          var b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+          if(d<maxd){var o=(1-d/maxd),c=cols[(i+j)%3];
+            ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(o*0.32)+')';ctx.lineWidth=dpr*.6;
+            ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+        }
+        var cc=cols[i%3];ctx.fillStyle='rgba('+cc[0]+','+cc[1]+','+cc[2]+',.9)';
+        ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,7);ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('pointermove',function(e){mouse.x=e.clientX*dpr;mouse.y=e.clientY*dpr;},{passive:true});
+    window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,180);});
+    init();draw();
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
