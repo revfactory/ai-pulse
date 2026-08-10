@@ -1,0 +1,146 @@
+{
+  "date": "2026-08-11",
+  "weekday": "화",
+  "dateLabel": "2026년 8월 11일 · 화요일",
+  "desc": "2026년 8월 11일, 세계를 움직인 AI 뉴스 14선. Meta의 온디바이스 오픈웨이트 모델부터 반도체 증설 경쟁, OpenAI IPO 임박까지.",
+  "hero": ["오늘,", "프런티어 AI가", "당신의 노트북으로 왔다."],
+  "heroSub": "<b>Meta의 오픈웨이트 Muse Glimmer</b>가 단일 GPU에서 돌아가고, <b>TSMC·Intel·한국</b>이 칩 증설에 수십조를 쏟는다 — 하루 동안 세계를 흔든 열네 개의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "오픈웨이트·실리콘·자본시장 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "Meta, 온디바이스 오픈웨이트 'Muse Glimmer' 30B 공개",
+    "TSMC 7월 매출 +45% YoY · AI 칩 수요 가속",
+    "OpenAI IPO S-1 제출 임박 (8월 중하순)"
+  ],
+  "feature": {
+    "cat": "MODEL · 오픈웨이트", "catClass": "c-model",
+    "title": "Meta, 노트북에서 돌아가는 오픈 에이전트 'Muse Glimmer'를 풀다",
+    "body": "Meta가 <b>300억 파라미터 오픈웨이트</b> 에이전트 모델 Muse Glimmer를 공개했다. 단일 소비자 GPU에서 구동되며 Apache 2.0 라이선스로 허깅페이스에 올랐다. 코딩·함수 호출·일정 관리 같은 실무형 작업에 최적화됐다.",
+    "detail": "Meta가 300억 파라미터급 오픈웨이트 에이전트 모델 Muse Glimmer를 공개했다. 클라우드가 아니라 <b>단일 소비자 GPU가 달린 노트북·PC에서 로컬로 구동</b>되도록 설계됐고, Apache 2.0 라이선스로 허깅페이스에서 자유롭게 내려받을 수 있다. 코딩·함수 호출·파일 정리·스케줄링 등 다단계 실무 작업에 초점을 맞춰, 데이터를 밖으로 내보내지 않는 '개인 지능(personal intelligence)' 비전을 겨냥한다. 저커버그는 동시에 더 강력한 프런티어 모델 Muse Spark 1.2도 오픈소스로 공개하겠다고 예고하며, OpenAI·Anthropic의 폐쇄형 전략과 정면으로 갈라섰다.",
+    "src": "CNBC", "url": "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html",
+    "keys": [["30B", "파라미터 규모"], ["1 GPU", "단일 소비자 GPU 로컬 구동"], ["Apache 2.0", "오픈 라이선스 · 허깅페이스 배포"]]
+  },
+  "stories": [
+    {
+      "cat": "INFRA · 반도체", "catClass": "c-infra",
+      "title": "TSMC 7월 매출 +45% — AI 칩 수요는 식지 않는다",
+      "body": "TSMC의 7월 매출이 4,675억 대만달러(약 145억 달러)로 전년 대비 45% 급증했다. 2026년 달러 매출 성장 전망도 40% 이상으로 상향됐다. 발표가 아니라 '실주문'이 이어지고 있다는 증거.",
+      "detail": "TSMC가 7월 매출 4,675억 대만달러(약 145억 달러, +45% YoY)를 기록하며 AI 칩 붐의 실체를 다시 확인했다. 엔비디아·애플·AMD·퀄컴으로 이어지는 가속기 수요가 '계획'이 아니라 '실주문'으로 굳어지고 있다는 방증이다. 첨단 패키징(CoWoS) 증설이 여전히 업계 전체 공급의 상한선을 좌우하는 가운데, 회사는 올해 달러 매출 성장 전망을 40% 이상으로 올려 잡았다.",
+      "src": "Barron's", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "INFRA · 파운드리", "catClass": "c-infra",
+      "title": "Intel, 150억 달러 보통주 발행 — 파운드리에 베팅",
+      "body": "Intel이 AI 수요 급증 속에 150억 달러 규모 보통주 발행을 발표했다. 조달금은 '물리적 AI'와 첨단 패키징을 위한 파운드리 증설·운전자본에 투입된다. 희석 우려로 주가는 3% 하락.",
+      "detail": "Intel이 150억 달러 규모의 보통주 발행 계획을 내놨다. 조달 자금은 파운드리 확장과 '물리적 AI(physical AI)'·첨단 패키징을 위한 설비투자·운전자본에 쓰인다. 올해 주가가 두 배로 뛴 뒤라 희석 우려에 발표 직후 3%가량 밀렸지만, TSMC·삼성과의 파운드리 경쟁에서 자본력으로 승부를 걸겠다는 신호로 읽힌다. J.P.모건·골드만삭스·모건스탠리·씨티가 인수단으로 참여했다.",
+      "src": "Reuters", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "POLICY · 반도체", "catClass": "c-policy",
+      "title": "한국, 3.5조원 규모 AI 칩 공급망 펀드 출범",
+      "body": "한국 정부가 소재·장비·부품·팹리스를 지원하는 5조원 펀드를 조성하고, 수출기업에 5조원 무역금융을 추가 투입한다. 5,760억 달러 규모 반도체 투자를 풀어내는 마중물.",
+      "detail": "한국 정부가 국내 반도체 공급망을 강화하기 위해 5조원 규모의 기술 펀드를 출범시켰다. 소재·장비·부품과 팹리스 설계사를 겨냥한 자금으로, 수출기업을 위한 5조원 무역금융이 별도로 얹혔다. 글로벌 AI 인프라 공급 경쟁 속에서 자국 제조 기반을 지키려는 '기술 주권' 전략의 일환으로, 정부는 이 마중물이 최대 5,760억 달러 규모의 반도체 제조 투자를 끌어낼 것으로 기대한다.",
+      "src": "Reuters", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "MODEL · 프런티어", "catClass": "c-model",
+      "title": "저커버그, 프런티어 모델 'Muse Spark 1.2'도 오픈소스 예고",
+      "body": "Meta가 온디바이스 Glimmer에 이어 더 강력한 프런티어 모델 Muse Spark 1.2까지 오픈소스로 풀겠다고 밝혔다. 폐쇄형 프런티어 랩과 갈라서는 '개인 지능' 비전의 신호탄.",
+      "detail": "저커버그는 Muse Glimmer 공개와 함께 훨씬 강력한 프런티어 모델 Muse Spark 1.2를 오픈소스로 배포하겠다고 예고했다. 클라우드에 데이터를 넘기지 않고 개인 기기에서 도는 '개인 지능'을 표준으로 만들겠다는 구상으로, 폐쇄형 API에 의존하는 OpenAI·Anthropic과 전략적으로 정면 대치한다. 오픈웨이트가 곧 미국의 경쟁력이라는 서사를 앞세워 개발자 생태계와 정책 지형을 동시에 흔들려는 포석이다.",
+      "src": "TechCrunch", "url": "https://techcrunch.com/2026/08/10/metas-new-glimmer-ai-model-offers-a-hint-at-zuckerbergs-personal-intelligence-vision/"
+    },
+    {
+      "cat": "POLICY · 오픈소스", "catClass": "c-policy",
+      "title": "저커버그 \"美, 오픈소스 AI 걸림돌 걷어내야\"",
+      "body": "저커버그는 오픈웨이트 AI 개발을 중국에 맞선 미국 경쟁력 이슈로 규정하며 규제 완화를 촉구했다. 모델 공개가 '안보 리스크'가 아니라 '전략 자산'이라는 프레임 전환.",
+      "detail": "Meta의 저커버그가 워싱턴을 향해 오픈소스 AI의 걸림돌을 제거하라고 압박했다. 그는 다운로드 가능한 오픈웨이트 모델을 중국 랩과의 경쟁에서 미국이 앞서기 위한 필수 자산으로 규정하며, 국내 오픈소스 개발자에 유리한 정책을 요구했다. 오픈 vs 폐쇄 논쟁이 단순한 기술 선택을 넘어 '누가 AI 표준과 유통망을 쥐느냐'라는 지정학·산업정책 의제로 격상되는 국면이다.",
+      "src": "CNBC", "url": "https://techstartups.com/2026/08/10/meta-launches-new-ai-model-muse-glimmer-as-zuckerberg-urges-u-s-to-remove-barriers-to-open-source-ai/"
+    },
+    {
+      "cat": "BIZ · IPO", "catClass": "c-biz",
+      "title": "OpenAI, IPO S-1 제출 임박 — 8월 중하순 전망",
+      "body": "OpenAI의 공개 상장 신청서(S-1) 제출이 8월 중하순으로 관측된다. 감사받은 재무제표와 마이크로소프트 매출 배분 조건, 리스크 요인이 처음으로 공개돼 AI 기업 밸류의 기준점이 될 전망.",
+      "detail": "OpenAI가 이르면 8월 중하순 IPO를 위한 S-1(증권신고서)을 제출할 것으로 전해졌다. 이 서류에는 감사받은 재무제표, 마이크로소프트와의 매출 배분 계약 세부, 그리고 그동안 베일에 싸였던 리스크 요인이 처음으로 담긴다. 시장은 이를 향후 AI 기업 밸류에이션의 '기준 가격표'로 보고 있어, 공개되는 숫자 하나하나가 업계 전체의 자금조달 조건을 재설정할 수 있다.",
+      "src": "Tech Journal", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-august-11-2026"
+    },
+    {
+      "cat": "BIZ · 에이전트", "catClass": "c-biz",
+      "title": "'ChatGPT Work' 사용자 1,000만 돌파",
+      "body": "GPT-5.6 기반 업무용 에이전트 ChatGPT Work가 7월 중순 출시 이후 빠르게 1,000만 사용자를 넘었다. 다단계 업무 자동화에 대한 실수요를 입증한 지표.",
+      "detail": "OpenAI의 업무용 에이전트 제품 ChatGPT Work가 7월 중순 출시 이후 사용자 1,000만 명을 돌파했다. GPT-5.6를 엔진으로 삼아 이메일 정리부터 문서 작성, 다단계 리서치까지 사람을 대신해 '일을 끝내는' 데 초점을 맞춘 제품이다. 빠른 채택은 기업 현장에서 대화형 챗봇을 넘어 '실제 업무를 대신 수행하는 에이전트'에 대한 수요가 실재함을 보여준다.",
+      "src": "OpenAI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-august-11-2026"
+    },
+    {
+      "cat": "BIZ · 로보틱스", "catClass": "c-biz",
+      "title": "유니트리, 9억 달러 상하이 IPO 추진 — 휴머노이드 자본시장 진입",
+      "body": "중국 유니트리가 상하이에서 약 61억 위안(9억 400만 달러) 규모 IPO를 추진한다. 2025년 매출 17억 위안, 40% 이상이 해외. 텐센트·알리바바·메이투안이 뒷배.",
+      "detail": "중국 유니트리 로보틱스가 상하이 증시에서 약 61억 위안(9억 400만 달러)을 조달하는 IPO를 추진한다. G1·H1·R1 휴머노이드로 이름을 알린 이 회사는 2025년 매출 17억 위안을 기록했고 그중 40% 이상이 해외 매출이다. 텐센트·알리바바·메이투안과 국가 연계 투자자가 뒷배로 참여해, 휴머노이드 로봇 경쟁이 데모 단계를 지나 자본시장에서 '누가 먼저 규모의 경제를 확보하느냐'로 이동하고 있음을 보여준다.",
+      "src": "Reuters", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "BIZ · 금융", "catClass": "c-biz",
+      "title": "무디스 \"은행의 AI 질주, 빅테크 의존 키운다\" 경고",
+      "body": "무디스가 은행들이 소수 클라우드·AI 공급자에 쏠리며 집중 리스크가 커지고 있다고 경고했다. 장애·보안 실패·가격 압박에 취약해질 수 있다는 진단.",
+      "detail": "무디스가 은행권의 공격적인 AI 도입이 소수 클라우드·AI 공급자에 대한 의존을 심화시키고 있다고 경고했다. 신용 심사·사기 탐지·업무 자동화에 AI를 붙일수록, 공급자 한두 곳의 장애·사이버 사고·가격 인상이 금융 시스템 전체의 취약점으로 번질 수 있다는 것이다. 로이즈뱅킹그룹이 수십억 파운드를 AI 전환에 투입하는 등 도입 속도는 빨라지지만, 규제당국은 '집중 리스크'를 새로운 시스템 위험으로 주시하기 시작했다.",
+      "src": "The Guardian", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "INFRA · 데이터센터", "catClass": "c-infra",
+      "title": "美 데이터센터 반발, 초당적 정치 문제로 번지다",
+      "body": "텍사스·플로리다·펜실베이니아·네브래스카·오하이오에서 AI 데이터센터 반대가 확산됐다. 전기요금·물·소음·인프라 부담이 쟁점. 2026 중간선거를 앞두고 인허가 압박이 커진다.",
+      "detail": "AI 데이터센터를 둘러싼 지역사회 반발이 텍사스·플로리다·펜실베이니아·네브래스카·오하이오 등지로 확산되며 초당적 정치 이슈가 됐다. 전기요금 상승, 물 소비, 소음, 지역 인프라 과부하가 핵심 불만으로, 마이크로소프트·메타·아마존·구글·OpenAI·오라클의 증설 계획이 잇달아 인허가 벽에 부딪히고 있다. 2026년 중간선거를 앞두고 '컴퓨트 확장'과 '지역 수용성' 사이의 긴장이 정책 전면에 등장했다.",
+      "src": "Business Insider", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "SEC · 인프라", "catClass": "c-sec",
+      "title": "美 의원들, 중요 인프라 사이버공격에 CISA 예산 증액 요구",
+      "body": "7개 주 이상 상수도 시설을 노린 공격이 이어지자, 의원들이 CISA 예산·인력 확충을 촉구했다. 생성형 AI가 정찰·취약점 탐색 비용을 낮추며 위협을 키우고 있다.",
+      "detail": "미국 여러 주의 상수도 등 중요 인프라를 겨냥한 사이버공격이 잇따르자, 의원들이 사이버·인프라보안청(CISA)의 예산과 인력 증액을 요구하고 나섰다. 생성형 AI가 정찰과 취약점 탐색 비용을 극적으로 낮추면서 공격 빈도와 정교함이 함께 오르는 국면이다. 그러나 CISA의 예산·인력은 오히려 줄어든 상태여서, '공격은 AI로 싸지고 방어는 예산으로 비싸지는' 비대칭이 안보 공백으로 지적된다.",
+      "src": "The Wall Street Journal", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "호주, AI 왕립위원회 설치 — 노동·교육 영향 정면 조사",
+      "body": "남호주가 AI가 사회에 미치는 영향을 조사하는 왕립위원회를 출범시켰다. 뉴사우스웨일스는 감독 없는 재택 평가 폐지를 논의 중. 정부 차원의 공식 검증이 본격화됐다.",
+      "detail": "호주 남호주주가 AI가 노동·교육·사회에 미치는 영향을 조사하는 왕립위원회(Royal Commission)를 설치했다. 어떤 정책 대응이 필요한지를 정부 차원에서 공식적으로 따지겠다는 것으로, 뉴사우스웨일스에서는 학생의 AI 사용을 우려해 감독 없는 재택 과제 평가를 폐지하는 방안이 논의된다. AI를 '규제할 것인가'를 넘어 '어떻게 사회 제도에 녹일 것인가'라는 질문이 각국 정부의 의제로 올라서고 있다.",
+      "src": "The Guardian", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "POLICY · 경제", "catClass": "c-policy",
+      "title": "美 연준, 실시간 경제분석에 AI 도입 실험",
+      "body": "케빈 워시 체제의 연준이 경제 데이터를 더 빠르게 처리하기 위해 AI를 검토 중이다. 공식 통계보다 이른 경기 변화 포착이 목표. 불투명 모델이 인간 판단을 대체하지 않도록 하는 게 과제.",
+      "detail": "케빈 워시가 이끄는 미 연방준비제도가 경제 데이터를 실시간에 가깝게 처리하기 위해 AI 활용을 검토하고 있다. 공식 통계가 나오기 전에 경기 국면 변화를 더 일찍 감지해 통화정책의 시차를 줄이겠다는 구상이다. 다만 블랙박스형 모델이 정책결정자의 판단을 대체해선 안 된다는 점이 핵심 과제로, 중앙은행조차 'AI를 어디까지 믿을 것인가'라는 질문 앞에 서게 됐다.",
+      "src": "Axios", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "BIZ · 하드웨어", "catClass": "c-biz",
+      "title": "구글, 8/12 'Made by Google' — Pixel 11에 AI 전면 배치",
+      "body": "구글이 8월 12일 뉴욕에서 Made by Google 행사를 연다. Pixel 11 시리즈가 확장된 AI 통합과 함께 공개될 전망. 안드로이드·Gemini·Tensor 실리콘을 한 스택으로 묶는 승부수.",
+      "detail": "구글이 8월 12일 뉴욕에서 'Made by Google' 행사를 열고 Pixel 11 시리즈를 공개한다. AI가 스마트폰 교체 주기의 핵심 동인이 된 가운데, 구글은 안드로이드·Gemini 모델·자체 Tensor 칩·하드웨어를 하나의 수직 스택으로 묶어 온디바이스 AI 경험을 차별화하려 한다. 모델·OS 기능·전용 실리콘을 어떻게 연결하느냐가 애플과의 경쟁에서 승부처가 될 전망이다.",
+      "src": "Times of India", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    }
+  ],
+  "stats": [
+    {"n": "30", "suf": "B", "lab": "Meta Muse Glimmer 파라미터 — 단일 소비자 GPU로 구동되는 오픈 에이전트 모델"},
+    {"n": "45", "suf": "%", "lab": "TSMC 7월 매출 전년比 성장 · AI 칩 수요 가속"},
+    {"n": "15", "suf": "B$", "lab": "Intel 보통주 발행 규모 — 파운드리·물리적 AI 인프라 증설 재원"},
+    {"n": "904", "suf": "M$", "lab": "유니트리 상하이 IPO 조달 목표 — 휴머노이드 자본시장 진입"}
+  ],
+  "timeline": [
+    {"time": "08.10", "title": "Meta 'Muse Glimmer' 공개", "desc": "온디바이스 오픈웨이트 30B · Apache 2.0"},
+    {"time": "08.10", "title": "TSMC 7월 매출 +45% YoY", "desc": "AI 칩 실주문 지속 · 성장전망 40%↑ 상향"},
+    {"time": "08.10", "title": "Intel $15B 보통주 발행", "desc": "파운드리·첨단 패키징 증설 재원"},
+    {"time": "08.10", "title": "한국 5조원 반도체 펀드", "desc": "소재·장비·팹리스 + 5조원 무역금융"},
+    {"time": "08.11", "title": "OpenAI IPO S-1 제출 임박", "desc": "8월 중하순 · MS 매출배분·재무 첫 공개"},
+    {"time": "08.12", "title": "구글 'Made by Google'", "desc": "Pixel 11 · AI 전면 통합 예고"}
+  ],
+  "ticker": [
+    "Meta, 온디바이스 <b>Muse Glimmer 30B</b> 오픈 공개",
+    "TSMC 7월 매출 <b>+45% YoY</b>",
+    "Intel <b>$15B 보통주</b> 발행 · 파운드리 증설",
+    "한국 <b>5조원 반도체 펀드</b> 조성",
+    "OpenAI <b>IPO S-1</b> 제출 임박",
+    "유니트리 <b>$904M</b> 상하이 IPO 추진",
+    "Moody's <b>은행의 빅테크 AI 의존</b> 경고",
+    "美 데이터센터 <b>초당적 반발</b> 확산"
+  ]
+}
