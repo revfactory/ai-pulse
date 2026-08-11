@@ -1,0 +1,146 @@
+{
+  "date": "2026-08-12",
+  "weekday": "수",
+  "dateLabel": "2026년 8월 12일 · 수요일",
+  "desc": "2026년 8월 12일, 세계를 움직인 AI 뉴스 14선. 엔비디아의 5,000억 달러 AI 금융 벤처부터 구글 Pixel 11의 온디바이스 Gemini, 오픈웨이트 확산과 생성형 바이오까지.",
+  "hero": ["오늘,", "AI 인프라가", "월가의 자산이 되다."],
+  "heroSub": "<b>엔비디아가 월가 6개사와 5,000억 달러</b> AI 금융 벤처를 띄우고, 오늘 밤 <b>구글은 Pixel 11에 Gemini Intelligence</b>를 심는다 — 자본과 실리콘이 동시에 움직인 하루의 신호 열네 개를 한 화면에 담았습니다.",
+  "timelineSub": "자본·실리콘·오픈웨이트 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "엔비디아, 월가 6개사와 5,000억 달러 AI 인프라 금융 벤처 출범",
+    "구글 'Made by Google' — Pixel 11에 'Gemini Intelligence' 탑재",
+    "스탠퍼드 Evo 2, 생성 DNA로 박테리오파지 300종 합성"
+  ],
+  "feature": {
+    "cat": "INFRA · 자본", "catClass": "c-infra",
+    "title": "엔비디아, AI 데이터센터를 '투자 자산'으로 — 월가와 5,000억 달러 금융 벤처",
+    "body": "엔비디아가 아폴로·블랙록·블랙스톤·브룩필드·골드만삭스·KKR 등 월가 6개사와 손잡고 <b>5,000억 달러</b> 규모 AI 인프라 전용 금융을 조성한다. 컴퓨트 파워 자체를 담보로 삼아, 젠슨 황은 데이터센터를 '투자 가능한 자산(investable asset)'이라 못박았다.",
+    "detail": "엔비디아가 8월 11일 아폴로·블랙록·블랙스톤·브룩필드·골드만삭스·KKR 여섯 곳과 함께 5,000억 달러 규모의 AI 인프라 전용 금융 벤처를 발표했다. 이들은 엔비디아 고객이 GPU·데이터센터를 지을 때 낮은 금리로 부채를 대고, <b>컴퓨트 파워를 담보</b>로 특수목적법인(SPV)을 통해 채권을 발행하는 구조로, 엔비디아는 건별 최대 25%까지 자금을 보탤 수 있다. 그동안 '자기 칩 수요를 스스로 떠받친다'는 순환출자 비판을 받아온 엔비디아가, 이번엔 외부 자본시장을 끌어들여 AI 데이터센터를 하나의 자산 클래스로 규격화하려는 시도로 읽힌다.",
+    "src": "Fortune", "url": "https://fortune.com/2026/08/11/nvidia-500-billion-ai-financing/",
+    "keys": [["$500B", "월가 6개사와 조성한 전용 금융 규모"], ["담보 = 컴퓨트", "GPU·데이터센터를 부채 담보로"], ["≤25%", "엔비디아 건별 자금 지원 상한"]]
+  },
+  "stories": [
+    {
+      "cat": "MODEL · 온디바이스", "catClass": "c-model",
+      "title": "구글 'Made by Google' 오늘 밤 — Pixel 11에 'Gemini Intelligence'",
+      "body": "구글이 한국시간 8월 13일 새벽 'Made by Google' 행사에서 Pixel 11 시리즈를 공개한다. <b>2nm Tensor G6</b> 위에서 도는 'Gemini Intelligence'가 다단계 작업을 대신 수행하는 에이전트 기능을 앞세운다.",
+      "detail": "구글이 8월 12일(현지) 뉴욕에서 'Made by Google 2026' 키노트를 열고 Pixel 11 시리즈와 Pixel Watch 5를 공개한다. 핵심은 TSMC <b>2nm 공정의 Tensor G6</b> 위에서 구동되는 'Gemini Intelligence'로, 위젯 자동 생성·앱과 웹 탐색 자동화 등 사용자를 대신해 실제 행동을 수행하는 에이전트 기능이 전면에 나온다. 구글은 128GB 저가 옵션을 없애고 기본가를 899달러로 올리며 '안드로이드는 이제 운영체제가 아니라 지능 시스템'이라는 서사로 애플과의 온디바이스 AI 경쟁에 승부를 건다.",
+      "src": "Android Central", "url": "https://www.androidcentral.com/phones/live/made-by-google-2026-launch-live-pixel-11-pixel-11-pro-fold-pixel-watch-5-gemini-and-all-the-news"
+    },
+    {
+      "cat": "INFRA · 데이터센터", "catClass": "c-infra",
+      "title": "엔비디아, OpenAI 데이터센터에 2,500억 달러+ 자금 백스톱",
+      "body": "이번 금융 벤처는 OpenAI의 대규모 데이터센터 구축에 <b>2,500~3,500억 달러</b>를 뒷받침하는 방안과 맞물린다. 컴퓨트 조달이 곧 신용시장에 의존하는 시대의 개막.",
+      "detail": "엔비디아의 5,000억 달러 금융 벤처는 OpenAI가 추진하는 초대형 데이터센터 프로젝트에 2,500억~3,500억 달러를 백스톱하는 그림과 직접 이어진다. 앞서 두 회사는 10GW 규모 데이터센터 구축을 위한 1,000억 달러 전략적 파트너십도 발표한 바 있어, AI 인프라 확장이 '누가 더 많은 자본을 조달하느냐'의 게임으로 굳어지고 있다. 컴퓨트가 담보이자 통화가 되는 구조에서, 향후 성장은 GPU 성능만큼이나 신용시장의 문이 얼마나 열려 있느냐에 좌우된다.",
+      "src": "Al Jazeera", "url": "https://www.aljazeera.com/economy/2026/7/27/nvidia-plans-250bn-push-to-bolster-openais-infrastructure-ambitions"
+    },
+    {
+      "cat": "MODEL · 오픈웨이트", "catClass": "c-model",
+      "title": "Meta 'Muse Glimmer', 노트북에서 도는 오픈 에이전트로 확산",
+      "body": "Meta의 300억 파라미터 오픈웨이트 에이전트 Muse Glimmer가 Apache 2.0으로 풀린 뒤 개발자 생태계로 빠르게 번지고 있다. <b>단일 소비자 GPU</b>에서 코딩·함수호출을 로컬 처리한다.",
+      "detail": "Meta가 지난 8월 10일 공개한 300억 파라미터 오픈웨이트 에이전트 모델 Muse Glimmer가 허깅페이스를 통해 개발자 사이로 빠르게 퍼지고 있다. 클라우드 없이 단일 소비자 GPU가 달린 노트북에서 코딩·함수 호출·파일 정리 같은 실무 작업을 로컬로 처리해, 데이터를 밖으로 내보내지 않는 '개인 지능' 흐름을 대표한다. 저커버그는 더 강력한 프런티어 모델 Muse Spark 1.2까지 오픈소스로 풀겠다고 예고하며 OpenAI·Anthropic의 폐쇄형 전략과 정면으로 갈라섰다.",
+      "src": "WBUR", "url": "https://www.wbur.org/hereandnow/2026/08/11/meta-open-source-ai"
+    },
+    {
+      "cat": "BIZ · IPO", "catClass": "c-biz",
+      "title": "OpenAI, IPO S-1 제출 임박 — 8월 중하순 관측",
+      "body": "OpenAI의 증권신고서(S-1) 제출이 8월 중하순으로 관측된다. 감사 재무제표와 <b>마이크로소프트 매출 배분</b> 조건이 처음으로 공개돼 AI 밸류의 기준점이 될 전망.",
+      "detail": "OpenAI가 이르면 8월 중하순 IPO를 위한 S-1을 제출할 것으로 전해졌다. 이 서류에는 그동안 베일에 싸였던 감사 재무제표, 마이크로소프트와의 매출 배분 계약, 리스크 요인이 처음 담긴다. 시장은 이를 향후 AI 기업 밸류에이션의 '기준 가격표'로 보고 있어, 공개되는 숫자 하나하나가 업계 전체의 자금조달 조건을 재설정할 수 있다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/collection/ai-industry-news-trends"
+    },
+    {
+      "cat": "CREATE · 바이오", "catClass": "c-create",
+      "title": "스탠퍼드 Evo 2, 생성 DNA로 박테리오파지 300종 합성",
+      "body": "연구진이 Evo 2가 생성한 DNA 서열로 <b>약 300종의 박테리오파지</b>를 합성해 대장균 퇴치에 성공했다. 생성형 AI가 합성생물학·항생제 내성 대응으로 넘어간 실증.",
+      "detail": "스탠퍼드의 게놈 파운데이션 모델 Evo 2가 생성한 DNA 서열을 바탕으로 연구진이 약 300종의 박테리오파지를 실제로 합성해 대장균(E. coli)을 겨냥하는 데 성공했다. 텍스트·이미지 생성을 넘어 생명의 설계도까지 모델이 써내는 단계로, 항생제 내성 문제에 맞설 새로운 도구가 될 가능성을 보여준다. 동시에 생성형 바이오가 열어젖힐 이중용도(dual-use) 위험과 바이오 안전 거버넌스 논쟁도 함께 커지고 있다.",
+      "src": "AI News", "url": "https://www.artificialintelligence-news.com/"
+    },
+    {
+      "cat": "BIZ · 오픈소스", "catClass": "c-biz",
+      "title": "알리바바, Qwen에 '수익 배분' 도입 — 오픈소스 수익화 실험",
+      "body": "알리바바가 오픈소스 Qwen 플랫폼에 새로운 <b>수익 배분(revenue-sharing)</b> 모델을 도입했다. 라이선스를 넘어선 오픈웨이트 수익화의 대안 실험.",
+      "detail": "알리바바가 오픈소스 AI 플랫폼 Qwen에 새로운 수익 배분형 비즈니스 모델을 도입했다. 단순 라이선스 판매를 넘어, 모델을 활용해 창출된 가치를 개발자·플랫폼이 나눠 갖는 구조로 오픈웨이트 생태계의 지속가능한 수익화를 실험한다. Meta의 오픈웨이트 공세와 맞물려, '오픈소스를 어떻게 돈으로 바꿀 것인가'가 AI 경쟁의 새로운 전선으로 떠오르고 있다.",
+      "src": "AI News", "url": "https://www.artificialintelligence-news.com/"
+    },
+    {
+      "cat": "INFRA · 산업AI", "catClass": "c-infra",
+      "title": "지멘스 \"물리 기반 AI, 인간이 최종 통제권 쥐어야\"",
+      "body": "지멘스가 시뮬레이션·엔지니어링용 물리 기반 AI의 한계를 지적하며 <b>'인간이 책임진다'</b>는 원칙을 재확인했다. 산업 현장에서 AI 자율성의 경계를 긋는 발언.",
+      "detail": "지멘스가 시뮬레이션·엔지니어링에 쓰이는 물리 기반(physics-based) AI의 한계를 짚으며, 중대한 판단에는 여전히 '인간이 최종 통제권을 쥐어야 한다'고 강조했다. AI가 설계·제조 전 과정을 자동화하는 흐름 속에서도, 오류가 물리적 사고로 직결되는 산업 영역에서는 완전 자율이 아니라 인간 감독을 전제로 한 협업이 표준이 돼야 한다는 것이다. 에이전트 열풍이 '어디까지 맡길 것인가'라는 신뢰·책임 문제로 옮겨가는 신호다.",
+      "src": "AI News", "url": "https://www.artificialintelligence-news.com/"
+    },
+    {
+      "cat": "POLICY · 거버넌스", "catClass": "c-policy",
+      "title": "레드햇·엔비디아·IBM, AI 규제를 '코드'로 — 'Asago' 출범",
+      "body": "세 회사가 EU AI법 등 정책 프레임워크를 <b>배포 가능한 코드</b>로 변환하는 Asago 프로젝트를 시작했다. 규제 준수를 자동화하려는 시도.",
+      "detail": "레드햇·엔비디아·IBM이 AI 정책 프레임워크를 실제 배포 가능한 코드로 바꾸는 오픈 프로젝트 'Asago'를 출범시켰다. EU AI법(EU AI Act) 준수를 사람이 문서로 점검하는 대신, 정책 요건을 소프트웨어에 내장해 자동으로 검증·집행하겠다는 구상이다. 규제가 문서에서 인프라로 내려오는 'compliance-as-code' 흐름은, 글로벌 AI 규제가 본격 시행 국면에 들어섰음을 보여준다.",
+      "src": "AI News", "url": "https://www.artificialintelligence-news.com/"
+    },
+    {
+      "cat": "BIZ · 투자", "catClass": "c-biz",
+      "title": "상반기 글로벌 스타트업 투자 5,100억 달러 — AI가 끌어올린 사상 최대",
+      "body": "크런치베이스 집계로 2026년 상반기 글로벌 스타트업 투자가 <b>5,100억 달러</b>로 사상 최대를 찍었다. AI 붐이 자금과 엑시트를 동시에 가속.",
+      "detail": "크런치베이스 데이터에 따르면 2026년 상반기 글로벌 스타트업 투자 총액이 5,100억 달러에 달해 반기 기준 사상 최대를 기록했다. AI 붐이 대형 라운드와 M&A·IPO 같은 엑시트를 동시에 밀어올리며 벤처 시장 전체를 재점화한 결과다. 자금이 소수의 AI 인프라·모델 기업에 집중되는 쏠림도 뚜렷해, '거품이냐 재편이냐'를 두고 시장의 시선이 엇갈린다.",
+      "src": "Crunchbase News", "url": "https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/"
+    },
+    {
+      "cat": "POLICY · 헬스", "catClass": "c-policy",
+      "title": "MIT \"의료 AI 설명가능성, 쓰는 사람 따라 결과 달라진다\"",
+      "body": "MIT 연구가 의료용 AI 설명 도구가 <b>사용자 전문성에 따라 결과가 크게 갈린다</b>고 밝혔다. 같은 설명도 누가 보느냐에 따라 오독될 수 있다는 경고.",
+      "detail": "MIT 연구진은 의료 현장에서 쓰이는 AI 설명가능성(explainability) 도구가 '누가 사용하느냐에 따라 완전히 다른 결과를 낳을 수 있다'는 점을 실증했다. 같은 설명이라도 임상의·간호사·환자의 전문성 수준에 따라 해석이 갈려, 잘못된 확신이나 오독으로 이어질 수 있다는 것이다. 연구진은 AI의 '투명성'이 곧 '이해'를 보장하지 않는다며, 사용자 역량에 맞춘 적응형 인터페이스가 필요하다고 제언했다.",
+      "src": "AI News", "url": "https://www.artificialintelligence-news.com/"
+    },
+    {
+      "cat": "INFRA · 반도체", "catClass": "c-infra",
+      "title": "2nm 양산 경쟁, 소비자 기기로 — Pixel·애플·엔비디아 차세대 칩의 심장",
+      "body": "구글 Tensor G6가 TSMC <b>2nm 공정</b>에 올라타며 최첨단 노드 경쟁이 소비자 제품으로 내려왔다. 온디바이스 AI의 병목은 다시 파운드리.",
+      "detail": "구글 Pixel 11의 Tensor G6가 TSMC 2nm 공정으로 제작되는 것으로 알려지며, 애플·엔비디아로 이어지는 최첨단 노드 경쟁이 소비자 기기 단계로 확산됐다. 온디바이스 AI의 성능·전력 효율이 결국 실리콘 공정에서 갈리는 만큼, 2nm 양산 능력과 첨단 패키징(CoWoS) 공급이 다시 업계 전체의 병목으로 지목된다. 파운드리를 쥔 쪽이 온디바이스 AI 경험의 상한선을 정하는 구도가 굳어지고 있다.",
+      "src": "BigGo Finance", "url": "https://finance.biggo.com/news/202608092050_Google-Pixel-11-event-Aug-12-launch"
+    },
+    {
+      "cat": "MODEL · 경쟁", "catClass": "c-model",
+      "title": "프런티어 모델 4파전 — ChatGPT·Claude·Gemini·Grok 격차 좁혀져",
+      "body": "2026년 여름 프런티어 모델 판도가 다시 흔들린다. GPT-5 계열·Claude 5·Gemini·Grok이 코딩·에이전트·멀티모달에서 <b>선두를 다투며</b> 격차가 줄었다.",
+      "detail": "2026년 8월 현재 최상위 모델 경쟁은 OpenAI GPT-5 계열, Anthropic Claude 5, 구글 Gemini, xAI Grok의 4파전으로 압축됐다. 코딩·에이전트 실행·멀티모달 이해에서 각 모델의 우열이 벤치마크마다 엇갈리며, '단일 최강 모델'보다 '작업별 최적 모델'을 고르는 시대로 넘어가고 있다. 오픈웨이트(Meta·Alibaba)의 추격까지 겹치며, 폐쇄형 프런티어 랩들은 속도와 가격 양쪽에서 동시에 압박받는 국면이다.",
+      "src": "Fello AI", "url": "https://felloai.com/best-ai-models/"
+    },
+    {
+      "cat": "POLICY · 인프라", "catClass": "c-policy",
+      "title": "美 데이터센터 반발 확산 — 전기요금·물 부담이 정치 쟁점으로",
+      "body": "텍사스·오하이오 등에서 AI 데이터센터 반대가 커지며 <b>전기요금·물·소음</b>이 지역 정치 쟁점이 됐다. 컴퓨트 확장과 지역 수용성의 충돌.",
+      "detail": "AI 데이터센터를 둘러싼 지역사회 반발이 텍사스·오하이오·펜실베이니아 등지로 번지며 초당적 정치 이슈로 커지고 있다. 전기요금 상승, 물 소비, 소음, 지역 인프라 과부하가 핵심 불만으로, 마이크로소프트·메타·구글·OpenAI·오라클의 증설 계획이 잇달아 인허가 벽에 부딪힌다. 엔비디아발 대규모 자본이 데이터센터로 쏟아지는 것과 동시에, '어디에 지을 것인가'라는 지역 정치가 확장 속도의 새로운 변수로 떠올랐다.",
+      "src": "Tech Startups", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    },
+    {
+      "cat": "SEC · 사이버", "catClass": "c-sec",
+      "title": "생성형 AI가 낮춘 공격 비용 — 중요 인프라 방어 비대칭 심화",
+      "body": "생성형 AI가 정찰·취약점 탐색 비용을 끌어내리며 상수도 등 중요 인프라를 노린 공격이 늘고 있다. <b>'공격은 싸지고 방어는 비싸지는'</b> 비대칭이 안보 공백으로.",
+      "detail": "생성형 AI가 정찰과 취약점 탐색 비용을 극적으로 낮추면서, 미국 여러 주의 상수도 등 중요 인프라를 겨냥한 사이버공격의 빈도와 정교함이 함께 오르고 있다. 방어 측은 인력·예산 제약에 묶여 있어 '공격은 AI로 싸지고 방어는 예산으로 비싸지는' 비대칭이 구조적 안보 공백으로 지적된다. 의원들은 사이버·인프라보안청(CISA)의 예산·인력 증액을 요구하고 나섰다.",
+      "src": "Tech Startups", "url": "https://techstartups.com/2026/08/10/top-tech-news-today-august-10-2026-apple-google-meta-openai-unitree-more/"
+    }
+  ],
+  "stats": [
+    {"n": "500", "suf": "B$", "lab": "엔비디아가 월가 6개사와 조성한 AI 인프라 전용 금융 규모 — 컴퓨트를 담보 자산으로"},
+    {"n": "510", "suf": "B$", "lab": "2026 상반기 글로벌 스타트업 투자 총액 — AI 붐이 끌어올린 사상 최대"},
+    {"n": "2", "suf": "nm", "lab": "구글 Tensor G6 공정 — Pixel 11의 온디바이스 Gemini Intelligence를 떠받치는 실리콘"},
+    {"n": "300", "suf": "종", "lab": "스탠퍼드 Evo 2가 설계·합성한 박테리오파지 — 대장균 겨냥 생성형 바이오의 실증"}
+  ],
+  "timeline": [
+    {"time": "08.04", "title": "레드햇·엔비디아·IBM 'Asago'", "desc": "AI 규제를 배포 가능한 코드로 · EU AI법 대응"},
+    {"time": "08.07", "title": "스탠퍼드 Evo 2 · 알리바바 Qwen", "desc": "생성 DNA로 파지 합성 · Qwen 수익배분 실험"},
+    {"time": "08.10", "title": "Meta 'Muse Glimmer' · 지멘스", "desc": "온디바이스 오픈웨이트 30B · 물리 AI '인간이 통제'"},
+    {"time": "08.11", "title": "엔비디아 $500B 금융 벤처", "desc": "월가 6개사 · 컴퓨트 담보 · 데이터센터=자산"},
+    {"time": "08.11", "title": "OpenAI IPO S-1 제출 임박", "desc": "8월 중하순 · MS 매출배분·재무 첫 공개"},
+    {"time": "08.12", "title": "구글 'Made by Google'", "desc": "Pixel 11 · 2nm Tensor G6 · Gemini Intelligence"}
+  ],
+  "ticker": [
+    "엔비디아 <b>$500B</b> AI 금융 벤처 — 월가 6개사 참여",
+    "구글 <b>Pixel 11 + Gemini Intelligence</b> 오늘 밤 공개",
+    "엔비디아, OpenAI DC에 <b>$250B+</b> 자금 백스톱",
+    "Meta <b>Muse Glimmer</b> 오픈웨이트 개발자 확산",
+    "상반기 글로벌 스타트업 투자 <b>$510B</b> 사상 최대",
+    "스탠퍼드 <b>Evo 2</b>, 박테리오파지 300종 합성",
+    "알리바바 <b>Qwen 수익배분</b> 모델 실험",
+    "OpenAI <b>IPO S-1</b> 제출 임박"
+  ]
+}
