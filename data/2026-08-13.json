@@ -1,0 +1,132 @@
+{
+  "date": "2026-08-13",
+  "weekday": "목",
+  "dateLabel": "2026년 8월 13일 · 목요일",
+  "desc": "2026년 8월 13일, 세계를 움직인 AI 뉴스 13선. 엔비디아의 5천억 달러 파이낸싱 동맹부터 앤트로픽·인텔의 초대형 베팅, EU AI법 시행까지.",
+  "hero": ["오늘,", "월가가", "AI에 5천억 달러를 걸었다."],
+  "heroSub": "<b>엔비디아의 $500B 파이낸싱 플랫폼</b>부터 <b>앤트로픽 $9.1B 컴퓨트 계약</b>, 인텔 $20B 증자와 EU AI법 시행까지 — 자본이 AI 인프라로 폭발적으로 쏠린 하루의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "파이낸싱·컴퓨트·실리콘·규제 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "엔비디아, 월가 6곳과 $500B AI 인프라 파이낸싱 동맹",
+    "앤트로픽, Riot과 20년·$9.1B 컴퓨트 계약 (텍사스 191MW)",
+    "인텔, $20B로 증자 상향 — AI 파운드리 실탄 확보"
+  ],
+  "feature": {
+    "cat": "INFRA · 파이낸싱", "catClass": "c-infra",
+    "title": "엔비디아, 월가 6곳과 5천억 달러 'AI 인프라 은행'을 세우다",
+    "body": "엔비디아가 아폴로·블랙록·블랙스톤·브룩필드·골드만삭스·KKR과 손잡고 <b>5천억 달러 이상의 제3자 자본</b>을 데이터센터·컴퓨트에 투입하는 파이낸싱 플랫폼을 세운다. 젠슨 황은 \"칩은 이제 투자 가능한 자산\"이라며 GPU를 담보화하는 금융 구조를 예고했다.",
+    "detail": "엔비디아가 세계 최대 사모·자산운용사 6곳과 함께 AI 컴퓨트 인프라에 5천억 달러 넘는 외부 자본을 동원하는 금융 플랫폼을 출범시켰다. 데이터센터·전력·GPU 확보에 필요한 막대한 자금을 벤처가 아니라 채권·사모 시장에서 조달하겠다는 구상으로, 젠슨 황 CEO는 CNBC에서 \"엔비디아 칩은 이제 투자 가능한 자산(investable asset)\"이라고 규정했다. AI 경쟁의 병목이 모델에서 '자본과 전력'으로 넘어갔음을 보여주는 상징적 장면이며, GPU가 부동산처럼 담보·리스 대상이 되는 금융화의 신호탄으로 읽힌다.",
+    "src": "NVIDIA", "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+    "keys": [["$500B", "동원 목표 제3자 자본"], ["6곳", "월가 파트너 운용사"], ["'자산'", "젠슨 황: 칩=투자자산"]]
+  },
+  "stories": [
+    {
+      "cat": "INFRA · 컴퓨트", "catClass": "c-infra",
+      "title": "앤트로픽, 비트코인 채굴사 Riot과 20년·$9.1B 컴퓨트 계약",
+      "body": "앤트로픽이 Riot Platforms와 <b>20년, 91억 달러</b> 규모 컴퓨트 계약을 맺고 텍사스 록데일 캠퍼스의 191MW 용량을 확보했다. 클로드 학습·추론을 위한 대규모 전력·데이터센터 락인. RIOT 주가는 발표 후 약 25% 급등했다.",
+      "detail": "앤트로픽이 텍사스 록데일의 Riot Platforms 데이터센터에서 191MW 규모 용량을 20년간 쓰는 91억 달러 컴퓨트 계약을 체결했다. 비트코인 채굴 시설을 AI 인프라로 전환하는 흐름의 상징으로, 프런티어 랩이 전력과 부지를 장기 락인하기 위해 이례적인 초장기 계약에 나섰음을 보여준다. 계약 소식에 Riot 주가는 시간외에서 25%가량 급등했고, 채굴업체들이 앞다퉈 AI 컴퓨트로 사업 축을 옮기는 재편이 가속되고 있다.",
+      "src": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-08-11/anthropic-strikes-9-billion-deal-with-cloud-computing-firm-riot"
+    },
+    {
+      "cat": "INFRA · 반도체", "catClass": "c-infra",
+      "title": "인텔, 증자 규모 $20B로 상향 — 주당 $95에 확정",
+      "body": "인텔이 보통주 증자 규모를 150억에서 <b>200억 달러</b>로 키우고 주당 95달러에 가격을 확정했다. AI 수요로 가속되는 첨단 파운드리 증설 자금 확보가 목적으로, 대형 파운드리 계약 임박설이 함께 돌았다.",
+      "detail": "인텔이 당초 150억 달러였던 보통주 공모 규모를 200억 달러로 상향하고 주당 95달러에 가격을 확정했다. AI 반도체 수요가 첨단 공정·패키징 증설을 밀어붙이는 가운데 파운드리 재건에 필요한 실탄을 시장에서 대규모로 조달한 것이다. 일부 애널리스트는 '메이저 파운드리 고객 확보가 임박했다'고 해석했으며, 미국의 반도체 자립 서사와 맞물려 인텔의 회생 여부가 다시 시험대에 올랐다.",
+      "src": "Intel", "url": "https://www.intc.com/news-events/press-releases/detail/1779/intel-announces-upsize-and-pricing-of-20-billion-common"
+    },
+    {
+      "cat": "SEC · 방어모델", "catClass": "c-sec",
+      "title": "OpenAI, 사이버 방어 특화 'GPT-5.6-Cyber' 공개",
+      "body": "OpenAI가 인가된 방어 전문가에게만 열리는 사이버보안 특화 모델 GPT-5.6-Cyber를 Daybreak 프로그램으로 내놨다. <b>공격보다 방어의 시간창이 좁아진다</b>는 위기의식이 배경으로, 접근을 제한한 이중용도 관리가 핵심이다.",
+      "detail": "OpenAI가 사이버보안 방어에 특화한 GPT-5.6-Cyber를 Daybreak 이니셔티브의 일환으로 공개했다. 취약점 분석·대응 역량을 크게 끌어올린 모델이지만, 오남용을 막기 위해 인가받은 방어 전문가·기관에만 접근을 제한하는 티어 구조를 택했다. \"AI가 공격에 쓰이는 속도가 방어를 앞지르는 창(window)이 좁아지고 있다\"는 문제의식에서 출발했으며, 강력한 이중용도 모델을 '누구에게 열 것인가'가 안전 정책의 새 전선으로 떠올랐다.",
+      "src": "OpenAI", "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/"
+    },
+    {
+      "cat": "CREATE · 진위", "catClass": "c-create",
+      "title": "앤트로픽, 클로드 생성물에 '보이지 않는 워터마크'",
+      "body": "앤트로픽이 클로드가 만든 <b>텍스트·이미지에 기계 판독용 워터마크</b>를 심는다. 복사·편집을 거쳐도 남도록 설계돼 AI 생성물 진위 확인을 노린다. EU AI법 투명성 의무를 전 세계에 동일 적용하는 결정이기도 하다.",
+      "detail": "앤트로픽이 클로드가 생성한 텍스트와 이미지에 사람 눈에 보이지 않는 기계 판독형 워터마크를 삽입한다고 밝혔다. 단순 복사·편집으로는 지워지지 않도록 설계돼, 'AI 슬롭'과 딥페이크가 범람하는 환경에서 콘텐츠 출처·진위를 검증하려는 시도다. EU AI법의 투명성 의무를 유럽뿐 아니라 전 세계 사용자에게 동일하게 적용하기로 한 점이 눈길을 끌며, 어느 정도의 편집이면 워터마크가 제거되는지 등 실효성 논쟁도 함께 시작됐다.",
+      "src": "TechCrunch", "url": "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/"
+    },
+    {
+      "cat": "BIZ · IPO", "catClass": "c-biz",
+      "title": "유니트리, 상하이 IPO 청약 8,000배 — '체화 AI' 광풍",
+      "body": "중국 유니트리 로보틱스의 상하이 상장 공모에 <b>개인 청약이 8,000배 넘게</b> 몰렸다. 공모가 150.80위안, 약 9억 달러 조달. 휴머노이드·4족 로봇에 대한 투자 열기가 '체화된 AI' 붐으로 번지고 있다.",
+      "detail": "유니트리 로보틱스의 상하이 STAR 마켓 IPO에 개인투자자 청약이 8,000배를 웃돌며 중국 최고 수준의 경쟁률을 기록했다. 공모가는 주당 150.80위안, 조달 규모는 약 9억 달러로 추정된다. 저가 4족·휴머노이드 로봇으로 이름을 알린 이 회사에 자금이 폭발적으로 쏠리며, AI가 소프트웨어를 넘어 물리 세계로 들어가는 '체화된 AI(embodied AI)'가 새로운 투기 테마로 부상했음을 보여준다.",
+      "src": "Reuters", "url": "https://finance.yahoo.com/markets/stocks/articles/unitrees-shanghai-ipo-more-8-112909363.html"
+    },
+    {
+      "cat": "MODEL · 가격", "catClass": "c-model",
+      "title": "OpenAI, GPT-5.6 Luna·Terra 가격 인하 + Sol 'Fast 모드'",
+      "body": "OpenAI가 GPT-5.6 Luna·Terra의 <b>API 가격을 낮추고</b> Sol에 저지연 'Fast 모드'를 추가했다. 서빙·컨텍스트 처리 효율 개선을 반영한 조치로, 추론 비용 하락 경쟁이 다시 격화되는 신호다.",
+      "detail": "OpenAI가 GPT-5.6 라인업 가운데 Luna와 Terra의 API 단가를 인하하고, Sol 모델에는 응답 속도를 높인 'Fast 모드'를 새로 도입했다. 서빙 인프라와 컨텍스트 관리 효율이 개선되면서 절감분을 가격에 반영한 것으로, 토큰당 비용 인하 경쟁이 다시 불붙었음을 보여준다. 컴퓨트 확보에는 천문학적 자본이 투입되는 반면, 실제 추론 단가는 빠르게 떨어지는 이중 구조가 뚜렷해지고 있다.",
+      "src": "OpenAI", "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+    },
+    {
+      "cat": "SEC · 취약점", "catClass": "c-sec",
+      "title": "크로스랩 API 결함 — 약한 모델이 강한 모델의 추론을 해독",
+      "body": "OpenAI·앤트로픽·구글의 API에서 <b>더 약한 모델이 더 강한 모델의 추론 과정을 복원</b>할 수 있는 결함이 보고됐다. 노출된 추론 토큰을 통해 상위 모델의 사고 흐름을 훔쳐볼 수 있다는 지적이다.",
+      "detail": "보안 연구진이 OpenAI·앤트로픽·구글의 API에서 상대적으로 약한 모델이 상위 프런티어 모델의 내부 추론(reasoning) 과정을 상당 부분 복원할 수 있는 결함을 공개했다. 추론 토큰이나 중간 산출물이 의도치 않게 노출되면서, 공격자가 값비싼 모델의 '사고 방식'을 저렴하게 역설계할 수 있다는 우려다. 프런티어 모델의 핵심 자산인 추론 능력이 API 설계 허점으로 새어 나갈 수 있음을 보여준 사례로, 각 사가 관련 응답 포맷을 재점검하는 계기가 됐다.",
+      "src": "The Hacker News", "url": "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html"
+    },
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "EU AI법 투명성 규칙, 8월 2일부터 시행",
+      "body": "EU 집행위가 <b>범용 AI·투명성 의무</b>를 8월 2일부터 본격 시행했다. AI 생성물 표시·모델 문서화 요구가 발효되며, 앤트로픽의 전 세계 워터마킹 결정도 이 규칙과 직접 맞닿아 있다.",
+      "detail": "EU 집행위원회가 AI법에 따른 범용 AI(GPAI)와 투명성 관련 의무를 8월 2일부터 집행하기 시작했다. AI가 생성·조작한 콘텐츠임을 알리는 표시 의무와 모델 문서화·리스크 관리 요구가 발효되면서, 유럽에서 서비스하는 모든 사업자가 규정 준수 체계를 갖춰야 한다. 같은 주 앤트로픽이 전 세계 사용자에게 워터마킹을 적용하기로 한 것도 이 흐름의 직접적 산물로, EU 규제가 사실상 글로벌 표준을 견인하는 '브뤼셀 효과'가 재확인됐다.",
+      "src": "European Commission", "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1714"
+    },
+    {
+      "cat": "BIZ · 조직", "catClass": "c-biz",
+      "title": "구글, AI 주도권을 캘리포니아로 이전 — 3파전 재정비",
+      "body": "구글이 앤트로픽·OpenAI와의 경쟁을 위해 <b>AI 리더십·의사결정을 캘리포니아로 재편</b>했다는 보도가 나왔다. 딥마인드 중심 체제에서 제품·배포 속도를 끌어올리려는 조직 개편으로 읽힌다.",
+      "detail": "블룸버그에 따르면 구글이 AI 관련 핵심 권한과 의사결정을 캘리포니아로 옮기며 조직을 재정비했다. 런던 딥마인드 중심으로 흩어져 있던 역량을 본사 가까이 결집해 제품화·배포 속도를 높이려는 포석으로, OpenAI·앤트로픽과의 프런티어 3파전에서 실행력을 끌어올리려는 의도다. 연구 조직과 제품 조직의 거리가 곧 경쟁력이 된다는 인식이 반영된 움직임이다.",
+      "src": "Bloomberg", "url": "https://www.bloomberg.com/news/articles/2026-08-06/google-shifts-ai-power-to-california-in-race-against-anthropic-openai"
+    },
+    {
+      "cat": "POLICY · 거버넌스", "catClass": "c-policy",
+      "title": "OpenAI 윤리 총괄, 1년 못 채우고 떠나다",
+      "body": "OpenAI의 윤리 책임자 클로이 바칼라가 <b>부임 1년도 안 돼 사임</b>했다. 급성장하는 조직 안에서 윤리 기능의 영향력을 둘러싼 물음이 다시 제기됐다.",
+      "detail": "OpenAI의 윤리 총괄 클로이 바칼라(Chloe Bakalar)가 취임 1년이 채 되지 않아 회사를 떠난 것으로 확인됐다. 제품 출시와 상업화 속도가 빠른 조직에서 윤리·안전 기능이 실제로 얼마나 힘을 갖는지에 대한 회의론이 다시 고개를 든다. 안전·정책 담당자의 잇단 이탈은 프런티어 랩들이 성장 압박과 책임 사이에서 겪는 긴장을 드러내는 신호로 해석된다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-august-12-2026"
+    },
+    {
+      "cat": "POLICY · 프라이버시", "catClass": "c-policy",
+      "title": "영국 법원, 메타 스마트글라스 법정 반입 금지",
+      "body": "영국 법원이 <b>메타 스마트글라스의 법정 반입을 금지</b>했다. 은밀한 음성·영상 녹화 가능성이 민감한 재판 환경의 프라이버시를 위협한다는 이유다.",
+      "detail": "영국 법원이 메타의 카메라 내장 스마트글라스를 법정에 들이는 것을 금지했다. 착용자가 티 나지 않게 음성·영상을 녹화할 수 있어, 증인 보호와 비공개 절차 같은 민감한 재판 환경의 프라이버시를 침해할 수 있다는 우려에서다. 웨어러블 AI 기기가 일상으로 파고들면서, 기술의 편의성과 '항상 켜진 카메라'가 야기하는 감시 위험 사이의 충돌이 제도적 대응을 부르고 있다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-august-12-2026"
+    },
+    {
+      "cat": "POLICY · 주권AI", "catClass": "c-policy",
+      "title": "영국 정부, 자국 스타트업 'Cosine'에 주권 AI 베팅",
+      "body": "영국 정부가 <b>자국 AI 스타트업 Cosine을 지원</b>해 국내 주권 AI 역량을 키운다. 해외 프런티어 모델 의존을 줄이려는 유럽발 '자립' 흐름의 연장선이다.",
+      "detail": "영국 정부가 AI 스타트업 Cosine을 후원해 자국 내에서 개발·운영되는 '주권 AI(sovereign AI)' 역량을 확보하기로 했다. 미국 빅테크의 프런티어 모델에 대한 의존을 줄이고, 국가 안보·데이터 주권 관점에서 핵심 기술을 국내에 두려는 유럽 각국의 흐름과 궤를 같이한다. 컴퓨트·모델을 소수 미국 기업이 장악한 구도 속에서, 정부가 직접 국산 챔피언을 키우는 산업정책이 확산되고 있다.",
+      "src": "Build Fast with AI", "url": "https://www.buildfastwithai.com/blogs/ai-news-today-august-12-2026"
+    }
+  ],
+  "stats": [
+    {"n": "500", "suf": "B$", "lab": "엔비디아가 월가 6곳과 동원하는 AI 인프라 파이낸싱 목표"},
+    {"n": "9.1", "suf": "B$", "lab": "앤트로픽·Riot 20년 컴퓨트 계약 · 텍사스 191MW"},
+    {"n": "20", "suf": "B$", "lab": "인텔 증자 상향 규모 · 주당 $95 · AI 파운드리 실탄"},
+    {"n": "8000", "suf": "배", "lab": "유니트리 상하이 IPO 개인 청약 경쟁률 · 체화 AI 광풍"}
+  ],
+  "timeline": [
+    {"time": "08.10", "title": "엔비디아 $500B 파이낸싱 플랫폼", "desc": "월가 6곳과 AI 인프라 자본 동원"},
+    {"time": "08.10", "title": "인텔 증자 $20B로 상향", "desc": "주당 $95 확정 · 파운드리 증설"},
+    {"time": "08.10", "title": "유니트리 IPO 8,000배 청약", "desc": "상하이 STAR · 약 $9억 조달"},
+    {"time": "08.11", "title": "앤트로픽·Riot $9.1B 컴퓨트", "desc": "텍사스 191MW · 20년 계약"},
+    {"time": "08.11", "title": "OpenAI GPT-5.6-Cyber 공개", "desc": "Daybreak · 방어 전문가 한정"},
+    {"time": "08.11", "title": "앤트로픽 클로드 워터마킹", "desc": "텍스트·이미지 진위 표시 · EU법 대응"}
+  ],
+  "ticker": [
+    "엔비디아, 월가 6곳과 <b>$500B AI 파이낸싱</b> 동맹",
+    "앤트로픽, Riot과 <b>20년·$9.1B</b> 컴퓨트 계약",
+    "인텔 증자 <b>$20B로 상향</b> · 주당 $95",
+    "유니트리 상하이 IPO <b>청약 8,000배</b>",
+    "OpenAI, 방어 특화 <b>GPT-5.6-Cyber</b> 공개",
+    "앤트로픽, 클로드 생성물 <b>워터마킹</b> 도입",
+    "<b>EU AI법</b> 투명성 규칙 8/2 시행",
+    "구글, AI 주도권 <b>캘리포니아로</b> 재편"
+  ]
+}
