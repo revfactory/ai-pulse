@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#05060a">
+<title>AI PULSE · 2026.08.21 — 오늘의 AI 뉴스</title>
+<meta name="description" content="2026년 8월 21일, 세계를 움직인 AI 뉴스 15선. 유니트리 로보틱스의 상장 광풍부터 OpenAI의 2027년 IPO, 실리콘 쟁탈전, 그리고 사이버 보안까지.">
+<script>document.documentElement.className='js';</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+@property --spin { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+:root{
+  --bg:#05060a;--bg2:#090b12;--ink:#eaf0ff;--muted:#8b93ab;--line:rgba(255,255,255,.08);
+  --cyan:#22e0d6;--violet:#7c5cff;--magenta:#ff4d8d;--amber:#ffcb47;--lime:#9bff5a;
+  --glass:rgba(255,255,255,.045);--maxw:1180px;--ease:cubic-bezier(.16,1,.3,1);
+  --font:"Pretendard","Space Grotesk",system-ui,sans-serif;--disp:"Syne","Pretendard",sans-serif;--mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.6;overflow-x:hidden;position:relative;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--violet);color:#fff}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
+
+/* BACKGROUND */
+#neural{position:fixed;inset:0;z-index:0;opacity:.55;pointer-events:none}
+.mesh{position:fixed;inset:-20%;z-index:-1;pointer-events:none;filter:blur(70px) saturate(140%);opacity:.6;
+  background:
+    radial-gradient(38vw 38vw at 15% 20%, color-mix(in oklab, var(--violet) 60%, transparent), transparent 60%),
+    radial-gradient(34vw 34vw at 85% 18%, color-mix(in oklab, var(--cyan) 55%, transparent), transparent 60%),
+    radial-gradient(40vw 40vw at 70% 85%, color-mix(in oklab, var(--magenta) 50%, transparent), transparent 62%),
+    radial-gradient(30vw 30vw at 25% 90%, color-mix(in oklab, var(--amber) 40%, transparent), transparent 60%);
+  animation:mesh 26s var(--ease) infinite alternate}
+@keyframes mesh{0%{transform:translate3d(-4%,-2%,0) scale(1.05) rotate(0deg)}
+  50%{transform:translate3d(3%,3%,0) scale(1.12) rotate(6deg)}100%{transform:translate3d(-2%,4%,0) scale(1.08) rotate(-4deg)}}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.04;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(320px 320px at var(--mx,50%) var(--my,-20%), color-mix(in oklab,var(--cyan) 22%, transparent), transparent 70%);
+  mix-blend-mode:screen}
+html:not(.js) .spotlight{display:none}
+
+/* LOADER — pure CSS, always auto-dismisses (never gets stuck) */
+#loader{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;
+  animation:loaderGone .7s var(--ease) 2.1s forwards}
+@keyframes loaderGone{to{opacity:0;visibility:hidden;pointer-events:none}}
+.load-inner{width:min(80vw,340px);text-align:center}
+.load-mark{font-family:var(--disp);font-weight:800;font-size:clamp(28px,7vw,44px);letter-spacing:-.02em;
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.load-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.1);margin-top:18px;overflow:hidden}
+.load-fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--cyan),var(--magenta));
+  box-shadow:0 0 18px var(--cyan);animation:fillUp 1.9s var(--ease) forwards}
+@keyframes fillUp{to{width:100%}}
+.load-pct{margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.3em}
+html:not(.js) #loader{display:none} /* if no JS at all, don't risk any overlay */
+
+/* SCROLL PROGRESS */
+.progress{position:fixed;top:0;left:0;height:3px;z-index:120;width:100%;transform-origin:0 50%;transform:scaleX(0);
+  background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));box-shadow:0 0 14px color-mix(in oklab,var(--violet) 70%,transparent)}
+@supports (animation-timeline: scroll()){.progress{animation:grow linear;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}}
+
+/* NAV */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:110;display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);backdrop-filter:blur(14px);background:linear-gradient(180deg,rgba(5,6,10,.7),transparent);
+  transition:transform .5s var(--ease)}
+header.nav.hide{transform:translateY(-110%)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;letter-spacing:-.01em;font-size:18px}
+.brand .dot{width:11px;height:11px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.5}}
+.nav-date{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.15em}
+@media(max-width:640px){.nav-date{display:none}}
+
+/* TICKER */
+.ticker{position:fixed;bottom:0;left:0;right:0;z-index:105;background:rgba(5,6,10,.72);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line);overflow:hidden;padding:9px 0;display:flex;align-items:center}
+.ticker-tag{flex:none;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--bg);
+  background:var(--magenta);padding:5px 12px;margin:0 14px;border-radius:5px;text-transform:uppercase;
+  box-shadow:0 0 18px color-mix(in oklab,var(--magenta) 60%,transparent)}
+.ticker-track{display:flex;gap:44px;white-space:nowrap;animation:slide 40s linear infinite;font-family:var(--mono);font-size:13px;color:var(--muted)}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track b{color:var(--cyan)}
+.ticker-track span{display:inline-flex;gap:8px;align-items:center}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* LAYOUT */
+main{position:relative;z-index:3}
+section{padding:clamp(70px,11vw,150px) clamp(18px,5vw,40px);max-width:var(--maxw);margin-inline:auto}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);box-shadow:0 0 8px var(--cyan)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:110px;padding-bottom:120px;max-width:var(--maxw)}
+.hero-kick{font-family:var(--mono);font-size:clamp(12px,2.6vw,15px);letter-spacing:.3em;color:var(--muted);
+  text-transform:uppercase;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center}
+.hero-kick .live{color:var(--magenta);display:inline-flex;align-items:center;gap:7px}
+.hero-kick .live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--magenta);box-shadow:0 0 10px var(--magenta);animation:pulse 1.4s infinite}
+.hero h1{font-family:var(--disp);font-weight:800;line-height:.94;letter-spacing:-.03em;font-size:clamp(52px,14vw,168px);margin-bottom:8px}
+.hero h1 .l{display:block;overflow:hidden}
+.hero h1 .l>span{display:block;animation:rise 1s var(--ease) both}
+.hero h1 .l:nth-child(1)>span{animation-delay:.15s}
+.hero h1 .l:nth-child(2)>span{animation-delay:.27s}
+.hero h1 .l:nth-child(3)>span{animation-delay:.39s}
+@keyframes rise{from{transform:translateY(110%)}to{transform:translateY(0)}}
+.grad{background:linear-gradient(105deg,var(--cyan),var(--violet) 45%,var(--magenta));
+  -webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:hue 8s linear infinite}
+@keyframes hue{to{background-position:200% 0}}
+.hero-sub{max-width:640px;color:var(--muted);font-size:clamp(15px,2.4vw,20px);margin-top:26px;animation:fade 1s var(--ease) .6s both}
+.hero-sub b{color:var(--ink);font-weight:600}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.hero-meta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;animation:fade 1s var(--ease) .8s both}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.05em;padding:9px 15px;border:1px solid var(--line);border-radius:99px;
+  background:var(--glass);color:var(--muted);backdrop-filter:blur(6px);transition:.4s var(--ease)}
+.chip b{color:var(--ink)}
+.chip:hover{border-color:var(--cyan);color:var(--ink);transform:translateY(-3px)}
+.scroll-cue{position:absolute;bottom:74px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:11px;
+  letter-spacing:.3em;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:10px;animation:fade 1s 1.2s both}
+.scroll-cue .track{width:1px;height:44px;background:linear-gradient(var(--cyan),transparent);position:relative;overflow:hidden}
+.scroll-cue .track::after{content:"";position:absolute;top:0;left:0;width:100%;height:14px;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:cue 1.8s var(--ease) infinite}
+@keyframes cue{0%{transform:translateY(-16px)}100%{transform:translateY(46px)}}
+@media(max-width:640px){.scroll-cue{display:none}}
+
+/* REVEAL — visible by default; only hidden/animated when JS present */
+.reveal{opacity:1;transform:none}
+html.js .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .grid .card:nth-child(3n+2){transition-delay:.06s}
+html.js .grid .card:nth-child(3n+3){transition-delay:.12s}
+
+/* SECTION HEAD */
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:44px}
+.section-head h2{font-family:var(--disp);font-weight:800;font-size:clamp(30px,6vw,60px);letter-spacing:-.02em;line-height:1}
+.section-head p{color:var(--muted);font-size:14px;max-width:340px}
+
+/* FEATURED */
+.feature{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);
+  background:linear-gradient(160deg,rgba(124,92,255,.16),rgba(34,224,214,.06) 60%,transparent);
+  padding:clamp(26px,5vw,56px);isolation:isolate}
+.feature::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;
+  background:conic-gradient(from var(--spin),transparent,color-mix(in oklab,var(--violet) 40%,transparent),transparent 40%);
+  animation:sweep 12s linear infinite}
+@keyframes sweep{to{--spin:360deg}}
+.feature .rank{font-family:var(--disp);font-weight:800;font-size:clamp(64px,16vw,150px);line-height:.8;letter-spacing:-.04em;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.12));-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.9}
+.feature .cat{margin:20px 0 14px}
+.feature h3{font-family:var(--disp);font-weight:700;font-size:clamp(26px,5vw,52px);line-height:1.02;letter-spacing:-.02em;text-wrap:balance;max-width:14ch}
+.feature p{color:var(--muted);font-size:clamp(15px,2.2vw,18px);max-width:56ch;margin-top:18px}
+.feature .keys{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.kbig{font-family:var(--mono);font-size:13px;color:var(--ink);border:1px solid var(--line);background:rgba(0,0,0,.25);
+  padding:10px 16px;border-radius:12px;display:flex;gap:8px;align-items:baseline}
+.kbig b{font-family:var(--disp);font-size:20px;color:var(--cyan)}
+
+.cat{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;padding:5px 11px;border-radius:99px;border:1px solid currentColor}
+.cat::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+.c-model{color:var(--cyan)}.c-biz{color:var(--violet)}.c-policy{color:var(--amber)}
+.c-infra{color:var(--lime)}.c-sec{color:var(--magenta)}.c-create{color:#ff8f5a}
+
+/* NEWS GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{position:relative;border:1px solid var(--line);border-radius:20px;padding:26px;background:var(--glass);
+  backdrop-filter:blur(8px);overflow:hidden;transition:transform .5s var(--ease),border-color .5s}
+.card::after{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;pointer-events:none;opacity:0;transition:opacity .5s;
+  background:linear-gradient(140deg,var(--cyan),transparent 40%,var(--magenta));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.card:hover{border-color:transparent;transform:translateY(-6px)}
+.card:hover::after{opacity:1}
+.card .glowdot{position:absolute;width:180px;height:180px;border-radius:50%;filter:blur(50px);opacity:0;transition:opacity .5s;
+  top:var(--gy,50%);left:var(--gx,50%);transform:translate(-50%,-50%);pointer-events:none;background:var(--cyan)}
+.card:hover .glowdot{opacity:.16}
+.card .idx{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.1em}
+.card h4{font-family:var(--disp);font-weight:700;font-size:20px;line-height:1.18;letter-spacing:-.01em;margin:16px 0 12px;text-wrap:balance}
+.card p{color:var(--muted);font-size:14.5px;line-height:1.6}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+.card .src{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.06em}
+.card .arrow{font-size:18px;transition:transform .4s var(--ease);color:var(--ink)}
+.card:hover .arrow{transform:translate(4px,-4px)}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.stat{background:var(--bg2);padding:clamp(28px,5vw,46px) 28px;position:relative;overflow:hidden}
+.stat::before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width 1.4s var(--ease)}
+.stat.in::before{width:100%}
+html:not(.js) .stat::before{width:100%}
+.stat .num{font-family:var(--disp);font-weight:800;font-size:clamp(40px,8vw,68px);line-height:1;letter-spacing:-.03em;
+  background:linear-gradient(180deg,#fff,var(--muted));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .num .u{font-size:.42em;color:var(--cyan);-webkit-text-fill-color:var(--cyan);margin-left:4px}
+.stat .lab{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.45}
+
+/* TIMELINE */
+.tl-row{display:grid;grid-template-columns:92px 1fr;gap:22px;padding:22px 0;border-top:1px solid var(--line);align-items:start;transition:background .4s}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-row:hover{background:rgba(255,255,255,.02)}
+.tl-time{font-family:var(--mono);font-size:13px;color:var(--cyan);letter-spacing:.05em;padding-top:2px}
+.tl-body h5{font-family:var(--disp);font-weight:700;font-size:18px;letter-spacing:-.01em;margin-bottom:6px}
+.tl-body p{color:var(--muted);font-size:14px}
+
+/* OUTRO / FOOTER */
+.outro{text-align:center}
+.outro h2{font-family:var(--disp);font-weight:800;font-size:clamp(34px,8vw,86px);letter-spacing:-.03em;line-height:.98;text-wrap:balance}
+.outro p{color:var(--muted);max-width:520px;margin:24px auto 0;font-size:16px}
+footer{border-top:1px solid var(--line);padding:50px clamp(18px,5vw,40px) 90px;max-width:var(--maxw);margin-inline:auto;
+  display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-start;position:relative;z-index:3}
+footer .fbrand{font-family:var(--disp);font-weight:800;font-size:22px}
+footer .fmeta{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.9;max-width:420px}
+
+/* logo link */
+a.brand{cursor:pointer;text-decoration:none;transition:opacity .3s}
+a.brand:hover{opacity:.72}
+/* card interactivity + source link */
+.card,.feature[data-modal]{cursor:pointer}
+.foot a.src{color:var(--muted);transition:color .3s}
+.foot a.src:hover{color:var(--cyan)}
+.more{font-family:var(--mono);font-size:12px;color:var(--cyan);font-weight:700;letter-spacing:.03em;white-space:nowrap;transition:transform .3s var(--ease)}
+.card:hover .more,.feature:hover .more{transform:translateX(4px)}
+.feature .foot{margin-top:24px;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px}
+/* modal (더 보기 팝업) */
+.modal{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:opacity .35s var(--ease),visibility .35s}
+.modal.open{opacity:1;visibility:visible}
+.modal-backdrop{position:absolute;inset:0;background:rgba(3,4,8,.72);backdrop-filter:blur(10px)}
+.modal-panel{position:relative;max-width:640px;width:100%;max-height:85vh;overflow:auto;border-radius:24px;border:1px solid var(--line);background:linear-gradient(160deg,rgba(124,92,255,.18),rgba(34,224,214,.06) 55%,var(--bg2));padding:clamp(28px,5vw,46px);transform:translateY(30px) scale(.9);opacity:0;transition:transform .5s var(--ease),opacity .5s var(--ease);box-shadow:0 40px 120px rgba(0,0,0,.6)}
+.modal.open .modal-panel{transform:none;opacity:1}
+.modal-x{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--ink);font-size:15px;cursor:pointer;display:grid;place-items:center;transition:.35s var(--ease);z-index:2}
+.modal-x:hover{border-color:var(--magenta);color:var(--magenta);transform:rotate(90deg)}
+.modal-cat{margin-bottom:18px}
+.modal-title{font-family:var(--disp);font-weight:800;font-size:clamp(23px,4vw,36px);line-height:1.1;letter-spacing:-.02em;text-wrap:balance;padding-right:40px}
+.modal-detail{color:var(--muted);font-size:clamp(15px,2.2vw,17px);line-height:1.78;margin-top:20px}
+.modal-detail b{color:var(--ink);font-weight:600}
+.modal-src{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-family:var(--mono);font-size:13px;font-weight:700;color:#05060a;background:linear-gradient(105deg,var(--cyan),var(--violet));padding:12px 20px;border-radius:99px;transition:transform .3s var(--ease)}
+.modal-src:hover{transform:translateY(-2px)}
+html:not(.js) .modal{display:none}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .hero h1 .l>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="loader"><div class="load-inner">
+  <div class="load-mark">AI&nbsp;PULSE</div>
+  <div class="load-bar"><div class="load-fill"></div></div>
+  <div class="load-pct">LIVE BRIEFING · 2026.08.21</div>
+</div></div>
+
+<div class="mesh"></div>
+<canvas id="neural"></canvas>
+<div class="grain"></div>
+<div class="spotlight" id="spot"></div>
+<div class="progress" id="prog"></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="../index.html" aria-label="AI PULSE 아카이브 홈"><span class="dot"></span>AI&nbsp;PULSE</a>
+  <div class="nav-date" id="clock">2026 · 07 · 13 · MON</div>
+</header>
+
+<div class="ticker">
+  <span class="ticker-tag">BREAKING</span>
+  <div class="ticker-track" id="ticker">
+    <span>◈ 유니트리 상장 첫날 <b>최대 +629%</b> 폭등</span>
+    <span>◈ OpenAI <b>2027년 IPO</b> 공식화</span>
+    <span>◈ 구글, 마벨 <b>$12.2B 워런트</b> 확보</span>
+    <span>◈ 英 Fractile <b>$6.5B</b> · Anthropic 추론칩 수주</span>
+    <span>◈ 엔비디아, Mercor <b>$20B 투자</b> 검토</span>
+    <span>◈ MS <b>제로클릭 Copilot</b> 취약점 패치</span>
+    <span>◈ 삼성 파운드리 <b>단가 +10~15%</b></span>
+    <span>◈ Z.ai <b>GLM-5.3</b> 사이버 벤치 1위</span>
+    <span>◈ 유니트리 상장 첫날 <b>최대 +629%</b> 폭등</span>
+    <span>◈ OpenAI <b>2027년 IPO</b> 공식화</span>
+    <span>◈ 구글, 마벨 <b>$12.2B 워런트</b> 확보</span>
+    <span>◈ 英 Fractile <b>$6.5B</b> · Anthropic 추론칩 수주</span>
+    <span>◈ 엔비디아, Mercor <b>$20B 투자</b> 검토</span>
+    <span>◈ MS <b>제로클릭 Copilot</b> 취약점 패치</span>
+    <span>◈ 삼성 파운드리 <b>단가 +10~15%</b></span>
+    <span>◈ Z.ai <b>GLM-5.3</b> 사이버 벤치 1위</span>
+  </div>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-kick">
+      <span class="live">LIVE BRIEFING</span>
+      <span>2026년 8월 21일 · 금요일</span>
+      <span>오늘의 AI 뉴스 15선</span>
+    </div>
+    <h1>
+      <span class="l"><span>오늘,</span></span>
+      <span class="l"><span class="grad">휴머노이드가</span></span>
+      <span class="l"><span>증시를 뒤흔들었다.</span></span>
+    </h1>
+    <p class="hero-sub"><b>유니트리 로보틱스</b>의 상장 첫날 폭등부터 <b>OpenAI의 2027년 IPO 공식화</b>, 구글·삼성·엔비디아가 벌이는 실리콘 쟁탈전까지 — 하루 동안 세계를 흔든 열다섯 개의 신호를 한 화면에 담았습니다.</p>
+    <div class="hero-meta">
+      <span class="chip"><b>15</b>&nbsp;STORIES</span>
+      <span class="chip"><b>6</b>&nbsp;CATEGORIES</span>
+      <span class="chip"><b>08.21</b>&nbsp;2026</span>
+      <span class="chip">SCROLL&nbsp;↓</span>
+    </div>
+    <div class="scroll-cue">SCROLL<div class="track"></div></div>
+  </section>
+
+  <!-- FEATURED -->
+  <section id="top">
+    <div class="eyebrow">오늘의 헤드라인</div>
+          <div class="feature reveal tilt" data-modal data-cat="BIZ · IPO" data-catclass="c-biz" data-title="유니트리 로보틱스, 상장 첫날 최대 629% 폭등" data-src="Fortune / Benzinga" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="중국 휴머노이드·4족 로봇의 대표주자 유니트리 로보틱스가 상하이 STAR 마켓에 상장하며 첫날부터 광풍을 일으켰다. 공모가 150.8위안에서 출발해 장중 1,100위안(+629%)까지 뛰었고 종가 845위안으로 첫날 460% 상승, 한때 660억 달러 가치를 기록했다. 2025년 5,000대 이상을 출하한 이 회사에 개인 청약이 5,500배 몰린 것은, 휴머노이드 로봇이 데모 단계를 넘어 '투자 가능한 산업'으로 인식되기 시작했음을 보여준다.">
+        <div class="rank">01</div>
+        <div class="cat c-biz">BIZ · IPO</div>
+        <h3>유니트리 로보틱스, 상장 첫날 최대 629% 폭등</h3>
+        <p><b>유니트리 로보틱스</b>가 상하이 STAR 마켓 데뷔에서 공모가 150.8위안 대비 장중 1,100위안(+629%)까지 치솟았다. 종가 기준으로도 첫날 460% 상승, 한때 <b>660억 달러</b> 밸류에이션을 찍으며 개인 청약은 5,500배 초과했다.</p>
+        <div class="keys"><span class="kbig"><b>+629%</b> 상장 첫날 장중 최고 상승률</span>
+          <span class="kbig"><b>$66B</b> 한때 기록한 밸류에이션</span>
+          <span class="kbig"><b>5,500x</b> 개인 청약 초과 배수</span></div>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Fortune / Benzinga ↗</a><span class="more">더 보기 →</span></div>
+      </div>
+  </section>
+
+  <!-- NEWS GRID -->
+  <section id="stories">
+    <div class="section-head">
+      <div><div class="eyebrow">디스패치</div><h2>하루의 신호들</h2></div>
+      <p>모델·기업·정책·인프라·보안·크리에이티브 — 카테고리별로 읽는 오늘의 흐름.</p>
+    </div>
+    <div class="grid">
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 보안" data-catclass="c-model" data-title="Z.ai 'GLM-5.3', 사이버 벤치마크 1위로 올라서다" data-src="DataNorth / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="중국 Z.ai가 GLM-5.3을 발표하며 사이버보안 능력 벤치마크 CyberGym에서 84.5%로 최상위에 올랐다. 추가 데이터 없이 사후학습(post-training) 정제만으로 실제 터미널 작업 성공률을 4.6%에서 28.3%로 6배 넘게 끌어올린 점이 눈길을 끈다. 안전성 테스트를 거쳐 8월 28일 오픈웨이트를 공개할 예정으로, 오픈 모델 진영의 공격·방어 역량이 프런티어 랩을 위협하는 국면이다."><span class="glowdot"></span>
+        <div class="idx">/ 02</div>
+        <div class="cat c-model">MODEL · 보안</div>
+        <h4>Z.ai 'GLM-5.3', 사이버 벤치마크 1위로 올라서다</h4>
+        <p>Z.ai가 GLM-5.3을 공개하며 CyberGym에서 84.5%로 Claude Mythos 5·GPT-5.6 Sol을 앞섰다. 사후학습만으로 터미널 작업 성공률을 4.6%에서 28.3%로 끌어올렸고, 오픈웨이트는 8월 28일 공개 예정.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · DataNorth / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · IPO" data-catclass="c-biz" data-title="OpenAI, 2027년 상장 공식화 — 조기 가능성도" data-src="CNBC / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="OpenAI의 CFO 사라 프라이어가 직원들에게 회사가 2027년 상장을 목표로 한다고 밝혔다. 사업 지표가 크게 개선되면 시점이 더 앞당겨질 수 있다는 단서도 달았다. 앞서 Anthropic이 비공개로 상장 신청을 마친 것으로 알려진 가운데, 매출은 작지만 영업이익률이 높은 Anthropic이 오히려 먼저 상장할 수 있다는 관측도 나온다. 프런티어 AI 경쟁이 모델 성능을 넘어 '누가 먼저 공개시장 자본을 확보하나'로 확장되고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 03</div>
+        <div class="cat c-biz">BIZ · IPO</div>
+        <h4>OpenAI, 2027년 상장 공식화 — 조기 가능성도</h4>
+        <p>샘 올트먼의 OpenAI가 2027년 IPO를 직원들에게 공식화했다. CFO 사라 프라이어는 실적 지표가 급변하면 시점이 앞당겨질 수 있다고 밝혔다. Anthropic의 비공개 상장 신청과 맞물려 프런티어 랩의 자본시장 진입이 본격화된다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · CNBC / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 반도체" data-catclass="c-infra" data-title="구글, 마벨과 12.2억 달러 규모 커스텀 칩 워런트" data-src="CNBC / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="구글이 마벨 테크놀로지 주식 최대 5,897만 주(주당 206.58달러, 총 약 12.2억 달러)를 매입할 수 있는 워런트를 확보했다. AI 추론용 가속기와 메모리 컨트롤러를 함께 개발하는 커스텀 실리콘 협약과 연동된 것으로, 상당수는 누적 5억 달러어치 구매라는 문턱을 넘겨야 베스팅된다. 선불 자본 부담 없이 파트너의 인센티브를 묶어두는 구조로, 하이퍼스케일러들의 '탈(脫)엔비디아' 자체 칩 전략이 계약 설계 방식까지 바꾸고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 04</div>
+        <div class="cat c-infra">INFRA · 반도체</div>
+        <h4>구글, 마벨과 12.2억 달러 규모 커스텀 칩 워런트</h4>
+        <p>구글이 마벨 주식 최대 5,897만 주를 주당 206.58달러에 매입할 수 있는 워런트를 확보했다. AI 추론 가속기와 메모리 컨트롤러를 위한 커스텀 칩 협력의 일환으로, 대부분 누적 5억 달러 구매 달성 시 베스팅된다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · CNBC / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 칩스타트업" data-catclass="c-infra" data-title="英 Fractile, Anthropic 수주로 밸류 6배 급등" data-src="The Next Web / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="영국 옥스퍼드 스핀아웃 반도체 스타트업 Fractile이 프리머니 6.5억 달러 밸류에이션으로 약 6억 달러를 유치했다. 불과 석 달 전 5월 대비 6배 넘게 뛴 몸값은 Anthropic에 약 2.5억 달러어치 SRAM 기반 추론 칩을 공급하기로 한 계약이 결정적이었다. 양산 칩은 2027년으로 예상되며, HBM 메모리 대역폭 한계를 우회하려는 새로운 추론 아키텍처가 프런티어 랩의 러브콜을 받고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 05</div>
+        <div class="cat c-infra">INFRA · 칩스타트업</div>
+        <h4>英 Fractile, Anthropic 수주로 밸류 6배 급등</h4>
+        <p>옥스퍼드 스핀아웃 Fractile이 6.5억 달러 밸류에 약 6억 달러를 조달했다. 5월 대비 6배 넘게 뛴 몸값은 Anthropic에 약 2.5억 달러 규모 SRAM 기반 추론 칩을 공급하기로 한 계약이 견인했다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · The Next Web / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 투자" data-catclass="c-biz" data-title="엔비디아, 데이터 라벨링 Mercor에 200억 달러 투자 검토" data-src="The Information / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="엔비디아가 AI 데이터 라벨링 스타트업 Mercor에 대한 투자를 검토 중이며, 밸류에이션은 2025년 10월의 두 배 수준으로 거론된다. Mercor의 2026년 상반기 총매출은 6.14억 달러에 달했는데, 이는 값싼 대량 주석(annotation)이 아니라 전문가의 판단이 담긴 '평가 데이터'로 시장이 이동하고 있음을 보여준다. 모델이 고도화될수록 인간 전문가의 피드백이 병목이자 새로운 해자가 되는 국면이다."><span class="glowdot"></span>
+        <div class="idx">/ 06</div>
+        <div class="cat c-biz">BIZ · 투자</div>
+        <h4>엔비디아, 데이터 라벨링 Mercor에 200억 달러 투자 검토</h4>
+        <p>엔비디아가 AI 데이터 라벨링 스타트업 Mercor에 2025년 10월 대비 두 배 밸류로 투자를 저울질 중이다. Mercor의 상반기 총매출 6.14억 달러는 단순 주석에서 전문가 평가 데이터로 옮겨가는 산업 흐름을 반영한다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · The Information / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="SEC · 취약점" data-catclass="c-sec" data-title="MS, 제로클릭 Copilot 취약점 'CoSnitch' 패치" data-src="CSO Online / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="마이크로소프트가 Copilot의 제로클릭 취약점 CVE-2026-24301(코드명 'CoSnitch')을 8월 18일 패치했다. 악성 링크가 열리기만 하면 사용자의 어떤 조작도 없이 프롬프트가 자동 실행돼 Gmail·구글 드라이브·캘린더 데이터를 탈취할 수 있었다. Varonis Threat Labs가 2024년 12월 처음 보고했지만 약 8개월간 방치된 사실이 드러나며, AI 어시스턴트가 연결된 개인 데이터의 공격 표면이 급격히 커졌음을 경고한다."><span class="glowdot"></span>
+        <div class="idx">/ 07</div>
+        <div class="cat c-sec">SEC · 취약점</div>
+        <h4>MS, 제로클릭 Copilot 취약점 'CoSnitch' 패치</h4>
+        <p>링크 클릭만으로 Gmail·드라이브·캘린더 데이터를 유출하던 CVE-2026-24301 취약점이 8월 18일 패치됐다. 악성 링크가 사용자 조작 없이 프롬프트를 자동 실행하는 제로클릭 공격으로, 최초 신고 후 8개월간 방치됐다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · CSO Online / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 파운드리" data-catclass="c-infra" data-title="삼성, 파운드리 단가 10~15% 인상 — AI 수요가 견인" data-src="Reuters / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="삼성전자가 첨단 파운드리 가격을 4·5nm(SF4/5) 10~15%, 8nm 약 10% 인상했다. 평택 라인이 2022년 말부터 사실상 풀가동 상태인 데다, 물량이 매진된 TSMC의 넘치는 수요가 삼성으로 흘러온 결과다. AI 관련 물량이 파운드리 매출의 30%를 넘어설 것으로 전망되며, 제조사들이 소비자 가전용 웨이퍼를 AI 칩으로 돌리면서 공급 부족과 단가 상승이 산업 전반으로 번지고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 08</div>
+        <div class="cat c-infra">INFRA · 파운드리</div>
+        <h4>삼성, 파운드리 단가 10~15% 인상 — AI 수요가 견인</h4>
+        <p>삼성이 SF4/5 노드와 8nm 라인 가격을 인상했다. 4·5nm은 10~15%, 8nm은 약 10% 오른다. 평택 공장은 2022년 말부터 풀가동 중이며, TSMC의 매진된 물량이 넘쳐오고 있다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reuters / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 무역" data-catclass="c-policy" data-title="중국, 대만에 핵심 소재 수출 조인다" data-src="Nikkei Asia / AI Weekly" data-url="https://aiweekly.co/ai-news-today" data-detail="중국이 반도체와 광학 부품 제조에 필수적인 게르마늄, 고순도 석영, 희토류 원소의 대만향 선적을 조이고 있다. 대만의 항공우주와 첨단 칩 제조에 직접적인 공급망 병목을 만드는 조치로, AI 칩 공급망의 상류(upstream)까지 지정학이 파고들었음을 보여준다. 소재→웨이퍼→칩으로 이어지는 사슬의 가장 앞단이 통제 수단이 되면서, 각국의 소재 자립·비축 경쟁이 재점화될 전망이다."><span class="glowdot"></span>
+        <div class="idx">/ 09</div>
+        <div class="cat c-policy">POLICY · 무역</div>
+        <h4>중국, 대만에 핵심 소재 수출 조인다</h4>
+        <p>중국이 반도체·광학 제조에 필수인 게르마늄·석영·희토류의 대만 수출을 제한하기 시작했다. 대만의 항공우주·칩 제조에 새로운 공급망 병목을 만드는 조치다.</p>
+        <div class="foot"><a class="src" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Nikkei Asia / AI Weekly ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="POLICY · 의료" data-catclass="c-policy" data-title="FDA, 생성형 AI 의료기기 평가 프레임워크 제안" data-src="US FDA / Medical Xpress" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="미 FDA가 생성형 AI 의료기기에 대해 비임상 벤치마킹을 먼저 하고 실제 임상에서 성능을 확인하도록 요구하는 평가 프레임워크를 발표했다. 의견 수렴은 10월 19일까지다. PLOS Digital Health 분석에 따르면 FDA 승인 AI 의료기기 1,357개 가운데 사망률·입원 같은 실제 환자 결과로 평가된 것은 단 3개에 불과했다. '승인=시장 동등성'일 뿐 '임상적 유효성 입증'은 아니라는 경고가 규제 강화로 이어지고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 10</div>
+        <div class="cat c-policy">POLICY · 의료</div>
+        <h4>FDA, 생성형 AI 의료기기 평가 프레임워크 제안</h4>
+        <p>FDA가 비임상 벤치마킹 뒤 실사용 임상 확인을 요구하는 생성형 의료기기 가이드라인을 공개했다. 승인된 AI 기기 1,357개 중 사망·입원 같은 환자 결과로 검증된 것은 단 3개뿐이었다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · US FDA / Medical Xpress ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="INFRA · 입지" data-catclass="c-infra" data-title="유럽 AI 데이터센터, 허브에서 175km 밖으로" data-src="Reuters / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="유럽의 신규 AI 데이터센터 프로젝트가 주요 허브에서 평균 175km 떨어진 곳에 세워지고 있다. 과거 46km와 비교하면 네 배 가까이 멀어진 셈으로, 전력을 끌어올 수 있는 부지의 비용이 최대 4.6배 차이 나는 것이 결정적이다. 새로 짓는 그린필드가 전체 파이프라인의 39%를 차지하며, 이제 입지를 결정하는 것은 '네트워크 근접성'이 아니라 '전력 가용성'임을 보여준다. 컴퓨트 경쟁이 결국 전력 인프라 경쟁으로 귀결되는 흐름이다."><span class="glowdot"></span>
+        <div class="idx">/ 11</div>
+        <div class="cat c-infra">INFRA · 입지</div>
+        <h4>유럽 AI 데이터센터, 허브에서 175km 밖으로</h4>
+        <p>신규 AI 데이터센터의 평균 입지가 과거 46km에서 175km로 멀어졌다. 전력 부지 비용이 4.6배 차이 나는 탓으로, 그린필드 신축이 전체 파이프라인의 39%를 차지한다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Reuters / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="CREATE · 코딩" data-catclass="c-create" data-title="Cursor, 클라우드 에이전트·서브에이전트 출시" data-src="Cursor Changelog / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="AI 코딩 도구 Cursor가 클라우드에서 상주하는 에이전트와 서브에이전트를 공개했다. PR 감시, 슬랙 스레드 구독, 사용자 지정 고정 모드, 격리된 VM 서브에이전트, 장기 지속되는 /goal 목표 등을 지원한다. 특히 '비차단 조종' 메시지는 에이전트가 현재 도구 호출을 마칠 때까지 교정 지시를 큐에 쌓아, 연속 작업을 끊지 않으면서 감독할 수 있게 했다. 코딩 에이전트가 '한 번의 응답'에서 '지속 운영되는 동료'로 진화하고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 12</div>
+        <div class="cat c-create">CREATE · 코딩</div>
+        <h4>Cursor, 클라우드 에이전트·서브에이전트 출시</h4>
+        <p>Cursor가 PR 모니터링, 슬랙 스레드 구독, 격리 VM 서브에이전트, 장기 /goal 목표를 지원하는 클라우드 에이전트를 내놨다. 비차단(non-interrupting) 조종 메시지로 진행 중인 작업을 끊지 않고 교정할 수 있다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Cursor Changelog / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="BIZ · 교육" data-catclass="c-biz" data-title="구글, 美 대학생에 AI Pro 1년 무료 제공" data-src="Google Blog / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="구글이 미국 대학생에게 월 19.99달러 상당의 Google AI Pro를 12개월 무료로 제공한다. Gemini Spark와 5TB 저장공간이 포함되며, 140개 이상의 국제 시장에서는 AI Plus 1년 무료 이용이 열린다. 등록은 2026년 12월 31일 마감된다. 학생층을 조기에 자사 AI 생태계에 묶어두려는 '습관 선점' 전략으로, OpenAI·앤트로픽과의 사용자 확보 경쟁이 캠퍼스로 번지고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 13</div>
+        <div class="cat c-biz">BIZ · 교육</div>
+        <h4>구글, 美 대학생에 AI Pro 1년 무료 제공</h4>
+        <p>미국 대학생은 월 19.99달러짜리 Google AI Pro를 12개월 무료로 받는다. Gemini Spark와 5TB 저장공간이 포함되며, 140여 개국은 AI Plus 1년 무료를 받는다. 등록 마감은 12월 31일.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · Google Blog / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 업데이트" data-catclass="c-model" data-title="OpenAI, o3 종료하고 GPT-5.4 mini 배포" data-src="OpenAI / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="OpenAI가 8월 26일 o3 모델 지원을 종료한다. 출시 90일 만이다. 동시에 GPT-5.4 mini를 무료·Go 등급 사용자에게 'Thinking' 기능과 속도 제한 시 대체 모델(fallback)로 배포한다. o3에 의존하던 자동화·API 워크플로는 종료일 전에 마이그레이션해야 한다. 프런티어 랩이 신모델을 빠르게 갈아치우면서, 특정 모델에 하드코딩된 파이프라인의 유지보수 부담이 새로운 현실이 되고 있다."><span class="glowdot"></span>
+        <div class="idx">/ 14</div>
+        <div class="cat c-model">MODEL · 업데이트</div>
+        <h4>OpenAI, o3 종료하고 GPT-5.4 mini 배포</h4>
+        <p>OpenAI가 90일 만인 8월 26일 o3 지원을 종료하고, GPT-5.4 mini를 무료·Go 사용자에게 'Thinking' 기능과 속도제한 대체 모델로 배포한다. o3 의존 워크플로는 종료 전 이전이 필요하다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · OpenAI / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+
+      <article class="card tilt reveal" data-modal data-cat="MODEL · 로보틱스" data-catclass="c-model" data-title="샤오미 휴머노이드, 조립 정밀도 98% 달성" data-src="TechNode / Build Fast with AI" data-url="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" data-detail="샤오미의 1.7미터 휴머노이드 로봇이 자동차 공장 실증 테스트에서 너트 체결 정밀도를 90.2%에서 98%로 개선했다. 센터 콘솔 커버를 접는 작업도 약 90% 정확도에 도달했다. 샤오미는 소비자용 통합보다 스마트 제조 현장 배치를 먼저 겨냥하고 있는데, 이는 같은 날 상장 광풍을 부른 유니트리와 함께 중국 휴머노이드 진영이 '데모'에서 '공장 실전'으로 넘어가고 있음을 보여준다."><span class="glowdot"></span>
+        <div class="idx">/ 15</div>
+        <div class="cat c-model">MODEL · 로보틱스</div>
+        <h4>샤오미 휴머노이드, 조립 정밀도 98% 달성</h4>
+        <p>샤오미의 1.7m 휴머노이드가 자동차 공장 테스트에서 너트 체결 정밀도를 90.2%에서 98%로 끌어올렸다. 콘솔 커버 접기도 약 90%에 도달했으며, 소비자용보다 스마트 제조 배치를 우선한다.</p>
+        <div class="foot"><a class="src" href="https://www.buildfastwithai.com/blogs/ai-news-today-august-20-2026" target="_blank" rel="noopener" onclick="event.stopPropagation()">출처 · TechNode / Build Fast with AI ↗</a><span class="more">더 보기 →</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="numbers">
+    <div class="eyebrow">숫자로 보는 오늘</div>
+    <div class="section-head"><h2>By the Numbers</h2></div>
+    <div class="stats">
+      <div class="stat reveal"><div class="num" data-n="629" data-suf="%">629<span class="u">%</span></div><div class="lab">유니트리 로보틱스 상장 첫날 장중 최고 상승률 · 밸류 한때 660억 달러</div></div>
+      <div class="stat reveal"><div class="num" data-n="12.2" data-suf="B$">12.2<span class="u">B$</span></div><div class="lab">구글이 확보한 마벨 주식 워런트 규모 · 커스텀 AI 칩 협력</div></div>
+      <div class="stat reveal"><div class="num" data-n="6.5" data-suf="B$">6.5<span class="u">B$</span></div><div class="lab">英 칩 스타트업 Fractile 밸류 · Anthropic 추론칩 수주로 6배 급등</div></div>
+      <div class="stat reveal"><div class="num" data-n="20" data-suf="B$">20<span class="u">B$</span></div><div class="lab">엔비디아가 검토 중인 데이터 라벨링 스타트업 Mercor 투자 가치</div></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="eyebrow">타임라인</div>
+    <div class="section-head"><h2>08.21의 궤적</h2><p>로보틱스·IPO·실리콘·보안 — 하루를 관통한 사건의 순서.</p></div>
+    <div class="tl">
+      <div class="tl-row reveal"><div class="tl-time">08.18</div><div class="tl-body"><h5>MS, 제로클릭 Copilot 취약점 패치</h5><p>CoSnitch(CVE-2026-24301) · 8개월 만</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.20</div><div class="tl-body"><h5>유니트리 로보틱스 상장 첫날 폭등</h5><p>공모가 대비 최대 +629% · 밸류 660억$</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.20</div><div class="tl-body"><h5>구글, 마벨 12.2억$ 워런트 확보</h5><p>커스텀 AI 추론칩 협력</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.20</div><div class="tl-body"><h5>OpenAI, 2027년 IPO 공식화</h5><p>CFO 사라 프라이어 · 조기 가능성</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.21</div><div class="tl-body"><h5>삼성 파운드리 단가 10~15% 인상</h5><p>AI 수요로 풀가동 · TSMC 물량 넘침</p></div></div>
+      <div class="tl-row reveal"><div class="tl-time">08.28</div><div class="tl-body"><h5>GLM-5.3 오픈웨이트 공개 예정</h5><p>사이버 벤치마크 84.5% 1위</p></div></div>
+    </div>
+  </section>
+
+  <!-- OUTRO -->
+  <section class="outro">
+    <div class="eyebrow" style="justify-content:center">내일, 다시</div>
+    <h2>가속은 <span class="grad">멈추지 않는다.</span></h2>
+    <p>AI PULSE는 매일의 인공지능 신호를 가장 임팩트 있게 압축합니다. 오늘의 15선은 여기까지 — 내일의 헤드라인은 이미 쓰이고 있습니다.</p>
+  </section>
+</main>
+
+<footer>
+  <div>
+    <div class="fbrand">AI&nbsp;PULSE</div>
+    <p class="fmeta" style="margin-top:10px">2026.08.21 데일리 브리핑 · 오늘의 AI 뉴스 큐레이션</p>
+  </div>
+  <div class="fmeta">
+    출처 · Build Fast with AI<br>
+    HTML · CSS Scroll-driven Animations · Canvas · @property<br>
+    <span style="color:var(--muted)">Crafted as a single living document.</span>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-x" data-close aria-label="닫기">✕</button>
+    <div class="modal-cat cat c-model" id="modalCat"></div>
+    <h3 class="modal-title" id="modalTitle"></h3>
+    <div class="modal-detail" id="modalDetail"></div>
+    <a class="modal-src" id="modalSrc" target="_blank" rel="noopener"></a>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduce=false;
+  try{reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+
+  /* REVEAL via IntersectionObserver */
+  try{
+    if('IntersectionObserver'in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){
+            e.target.classList.add('in');
+            if(e.target.classList.contains('stat'))countUp(e.target);
+            io.unobserve(e.target);
+          }
+        });
+      },{threshold:.16});
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){io.observe(e);});
+    }else{
+      document.querySelectorAll('.reveal,.stat').forEach(function(e){e.classList.add('in');});
+    }
+  }catch(e){
+    document.querySelectorAll('.reveal,.stat').forEach(function(el){el.classList.add('in');});
+  }
+
+  /* COUNTERS */
+  function countUp(stat){
+    try{
+      var el=stat.querySelector('.num');if(!el)return;
+      var n=+el.getAttribute('data-n'),suf=el.getAttribute('data-suf')||'';
+      var t0=null,dur=1400;
+      function tick(now){
+        if(t0===null)t0=now;
+        var k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
+        var v=n<10?(Math.round(n*e*10)/10):Math.floor(n*e);
+        el.innerHTML=v+'<span class="u">'+suf+'</span>';
+        if(k<1)requestAnimationFrame(tick);else el.innerHTML=n+'<span class="u">'+suf+'</span>';
+      }
+      requestAnimationFrame(tick);
+    }catch(e){}
+  }
+
+  /* TILT + GLOW */
+  try{
+    document.querySelectorAll('.tilt').forEach(function(card){
+      card.addEventListener('pointermove',function(ev){
+        var r=card.getBoundingClientRect();
+        var px=(ev.clientX-r.left)/r.width,py=(ev.clientY-r.top)/r.height;
+        if(!reduce)card.style.transform='perspective(900px) rotateY('+((px-.5)*8)+'deg) rotateX('+((.5-py)*8)+'deg) translateY(-6px)';
+        card.style.setProperty('--gx',px*100+'%');card.style.setProperty('--gy',py*100+'%');
+      });
+      card.addEventListener('pointerleave',function(){card.style.transform='';});
+    });
+  }catch(e){}
+
+  /* MODAL (더 보기 팝업) */
+  try{
+    var modal=document.getElementById('modal');
+    var mCat=document.getElementById('modalCat'),mTitle=document.getElementById('modalTitle'),
+        mDetail=document.getElementById('modalDetail'),mSrc=document.getElementById('modalSrc');
+    function openModal(el){
+      var d=el.dataset;
+      mCat.className='modal-cat cat '+(d.catclass||'c-model');
+      mCat.textContent=d.cat||'';
+      mTitle.textContent=d.title||'';
+      mDetail.innerHTML=d.detail||'';
+      if(d.url){mSrc.style.display='';mSrc.href=d.url;mSrc.textContent='출처 · '+(d.src||'열기')+' ↗';}else{mSrc.style.display='none';}
+      modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+      try{if(navigator.vibrate)navigator.vibrate(6);}catch(e){}
+    }
+    function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+    document.querySelectorAll('[data-modal]').forEach(function(el){
+      el.addEventListener('click',function(ev){if(ev.target.closest('a.src'))return;openModal(el);});
+    });
+    modal.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',closeModal);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  }catch(e){}
+
+  /* SPOTLIGHT */
+  try{
+    var spot=document.getElementById('spot');
+    window.addEventListener('pointermove',function(e){
+      spot.style.setProperty('--mx',e.clientX+'px');spot.style.setProperty('--my',e.clientY+'px');
+    },{passive:true});
+  }catch(e){}
+
+  /* NAV HIDE + SCROLL PROGRESS FALLBACK */
+  try{
+    var nav=document.getElementById('nav'),prog=document.getElementById('prog'),lastY=0;
+    var supportsSDA=false;try{supportsSDA=CSS.supports('animation-timeline: scroll()');}catch(e){}
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY||window.pageYOffset;
+      if(!supportsSDA&&prog){var max=document.documentElement.scrollHeight-window.innerHeight;prog.style.transform='scaleX('+(max>0?y/max:0)+')';}
+      if(nav)nav.classList.toggle('hide',y>lastY&&y>240);
+      lastY=y;
+    },{passive:true});
+  }catch(e){}
+
+  /* MOBILE: HAPTICS + RIPPLE + DEVICE TILT */
+  try{
+    var isTouch='ontouchstart'in window;
+    document.querySelectorAll('.card,.chip,.kbig').forEach(function(el){
+      el.addEventListener('touchstart',function(){try{if(navigator.vibrate)navigator.vibrate(8);}catch(e){}},{passive:true});
+      el.addEventListener('pointerdown',function(ev){
+        try{
+          var b=el.getBoundingClientRect(),r=document.createElement('span');
+          r.style.cssText='position:absolute;left:'+(ev.clientX-b.left)+'px;top:'+(ev.clientY-b.top)+'px;width:8px;height:8px;border-radius:50%;background:rgba(34,224,214,.5);transform:translate(-50%,-50%) scale(1);pointer-events:none;transition:transform .6s ease-out,opacity .6s;opacity:1;z-index:5';
+          el.appendChild(r);
+          requestAnimationFrame(function(){r.style.transform='translate(-50%,-50%) scale(26)';r.style.opacity='0';});
+          setTimeout(function(){r.remove();},650);
+        }catch(e){}
+      });
+    });
+    if(window.DeviceOrientationEvent&&isTouch){
+      var mesh=document.querySelector('.mesh'),feat=document.querySelector('.feature');
+      window.addEventListener('deviceorientation',function(e){
+        if(e.beta==null)return;
+        var g=Math.max(-14,Math.min(14,(e.gamma||0))),b=Math.max(-14,Math.min(14,((e.beta||0)-40)));
+        if(mesh)mesh.style.transform='translate3d('+(g*0.4)+'%,'+(b*0.3)+'%,0) scale(1.1)';
+        if(feat)feat.style.transform='perspective(1000px) rotateY('+(g*0.35)+'deg) rotateX('+(-b*0.25)+'deg)';
+      });
+    }
+  }catch(e){}
+
+  /* TEXT SCRAMBLE on hero */
+  try{
+    if(!reduce){
+      var target=document.querySelector('.hero h1 .grad');
+      if(target){
+        var final=target.textContent,chars='アイウエオ01ンΞΔΣ人工知能<>/AI#*',frame=0;
+        setTimeout(function(){
+          var iv=setInterval(function(){
+            var out='';for(var i=0;i<final.length;i++){out+=(i<frame/2)?final[i]:chars[Math.floor(Math.random()*chars.length)];}
+            target.textContent=out;frame++;
+            if(frame>final.length*2+2){clearInterval(iv);target.textContent=final;}
+          },46);
+        },520);
+      }
+    }
+  }catch(e){}
+
+  /* CLOCK */
+  try{
+    var clock=document.getElementById('clock');
+    function upd(){
+      var d=new Date();
+      var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2),ss=('0'+d.getSeconds()).slice(-2);
+      clock.textContent='2026·08·21·FRI — '+hh+':'+mm+':'+ss;
+    }
+    upd();setInterval(upd,1000);
+  }catch(e){}
+
+  /* NEURAL CANVAS */
+  try{
+    var cv=document.getElementById('neural'),ctx=cv.getContext('2d');
+    var w,h,dpr,nodes=[],mouse={x:-999,y:-999},isMobile=window.innerWidth<720;
+    function size(){dpr=Math.min(2,window.devicePixelRatio||1);w=cv.width=window.innerWidth*dpr;h=cv.height=window.innerHeight*dpr;
+      cv.style.width=window.innerWidth+'px';cv.style.height=window.innerHeight+'px';}
+    function init(){size();var count=isMobile?30:Math.min(88,Math.floor(window.innerWidth*window.innerHeight/16000));
+      nodes=[];for(var i=0;i<count;i++){nodes.push({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.28*dpr,vy:(Math.random()-.5)*.28*dpr,r:(Math.random()*1.6+.6)*dpr});}}
+    var cols=[[34,224,214],[124,92,255],[255,77,141]];
+    function draw(){
+      ctx.clearRect(0,0,w,h);var maxd=(isMobile?110:140)*dpr;
+      for(var i=0;i<nodes.length;i++){
+        var a=nodes[i];a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0||a.x>w)a.vx*=-1;if(a.y<0||a.y>h)a.vy*=-1;
+        var mdx=a.x-mouse.x,mdy=a.y-mouse.y,md=Math.hypot(mdx,mdy);
+        if(md<120*dpr&&md>0){a.x+=mdx/md*1.4;a.y+=mdy/md*1.4;}
+        for(var j=i+1;j<nodes.length;j++){
+          var b=nodes[j],dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
+          if(d<maxd){var o=(1-d/maxd),c=cols[(i+j)%3];
+            ctx.strokeStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(o*0.32)+')';ctx.lineWidth=dpr*.6;
+            ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+        }
+        var cc=cols[i%3];ctx.fillStyle='rgba('+cc[0]+','+cc[1]+','+cc[2]+',.9)';
+        ctx.beginPath();ctx.arc(a.x,a.y,a.r,0,7);ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    window.addEventListener('pointermove',function(e){mouse.x=e.clientX*dpr;mouse.y=e.clientY*dpr;},{passive:true});
+    window.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999;});
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(init,180);});
+    init();draw();
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
