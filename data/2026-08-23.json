@@ -1,0 +1,146 @@
+{
+  "date": "2026-08-23",
+  "weekday": "일",
+  "dateLabel": "2026년 8월 23일 · 일요일",
+  "desc": "2026년 8월 23일, 세계를 움직인 AI 뉴스 14선. Nvidia의 60억 달러 Poolside 딜부터 Anthropic 사상 최대 IPO, 그리고 자본시장을 다시 짜는 AI 인프라 금융까지.",
+  "hero": ["오늘,", "자본이", "AI로 재편됐다."],
+  "heroSub": "<b>Nvidia의 60억 달러 Poolside 라이선스</b>부터 <b>Anthropic 사상 최대 IPO</b>, 그리고 <b>Broadcom의 최대 1,000억 달러 부채 조달</b>까지 — 하루 동안 세계를 흔든 열네 개의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "자본·실리콘·모델·규제 — 주말을 관통한 사건의 순서.",
+  "highlights": [
+    "Nvidia, Poolside에 $6B 라이선스 + $1B 투자 (신형 M&A)",
+    "Anthropic, SpaceX 넘보는 사상 최대 IPO 준비 (연환산 $65B)",
+    "Broadcom, AI 인프라에 최대 $100B 부채 조달"
+  ],
+  "feature": {
+    "cat": "BIZ · IPO", "catClass": "c-biz",
+    "title": "Anthropic, SpaceX를 넘보는 사상 최대 IPO를 준비하다",
+    "body": "블룸버그에 따르면 Anthropic은 <b>SpaceX의 기록에 필적하거나 이를 뛰어넘는 규모</b>의 상장을 기대하고 있다. 7월 기준 연환산 매출은 약 650억 달러까지 치솟았고, 이르면 8월 말 상장 서류를 제출할 수 있다는 전망이다.",
+    "detail": "Anthropic이 SpaceX가 세운 기록에 맞먹거나 이를 능가할 IPO를 준비 중이라고 블룸버그가 전했다. 2025년 말 대비 급등한 연환산 매출은 7월 기준 약 650억 달러에 이르며, 이르면 8월 말 등록 서류(S-1) 제출이 가능하다는 관측이 나온다. 불과 열흘 전 2분기 첫 영업흑자(5.59억 달러, 매출 109억 달러·+130%)를 기록한 흐름과 맞물려, 프런티어 랩이 '적자 성장'에서 '수익성 있는 상장 후보'로 옮겨가고 있음을 보여주는 상징적 장면이다.",
+    "src": "Bloomberg", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/",
+    "keys": [["$65B", "연환산 매출 (7월 기준)"], ["$559M", "2분기 영업이익 · 첫 흑자"], ["8월말", "S-1 제출 전망"]]
+  },
+  "stories": [
+    {
+      "cat": "BIZ · M&A", "catClass": "c-biz",
+      "title": "Nvidia, Poolside에 60억 달러 라이선스 — '사지 않고 흡수하는' 새 공식",
+      "body": "Nvidia가 AI 코딩 기술의 비독점 라이선스에 <b>60억 달러</b>를 지급하고, 120억 달러 밸류에 10억 달러를 추가 투자한다. 직원 약 109명에게는 Nvidia 입사 제안이 갔다.",
+      "detail": "Nvidia가 Poolside의 AI 코딩 기술을 비독점으로 라이선스하는 대가로 60억 달러를 지급하고, 120억 달러 프리머니 밸류에이션 기준 10억 달러를 추가로 투자한다. 여기에 Poolside 직원 약 109명이 Nvidia로부터 채용 제안을 받았다. 정식 인수 없이 '라이선스+투자+인재 흡수'를 결합한 이 방식은 규제 리스크를 피하면서 핵심 기술과 팀을 확보하는 새로운 M&A 공식으로 주목받는다.",
+      "src": "Newcomer", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "INFRA · 자본", "catClass": "c-infra",
+      "title": "Broadcom, AI 인프라에 최대 1,000억 달러 부채 조달 추진",
+      "body": "Broadcom이 Anthropic 등 주요 AI 기업을 지원할 인프라를 위해 선순위 담보 부채 600~700억 달러에 후순위 300억 달러를 더한 자금 조달에 나섰다. AI 설비투자를 에너지·통신처럼 독립된 자산군으로 취급하는 신호.",
+      "detail": "Broadcom이 대규모 AI 인프라 구축을 위해 선순위 담보 부채 600~700억 달러와 후순위 금융 300억 달러를 합친 자금 조달을 추진하는 것으로 전해졌다. 조달 자금은 Anthropic을 비롯한 주요 AI 기업의 컴퓨트 인프라를 뒷받침하는 데 쓰인다. AI 설비투자를 에너지·통신 프로젝트처럼 하나의 독립된 자산군으로 다루는 금융 모델이 자리 잡고 있음을 보여준다.",
+      "src": "Bloomberg", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "BIZ · 반도체", "catClass": "c-biz",
+      "title": "젠슨 황, 한국 리벨리온과 협력 논의 — AI 칩 지형에 파장",
+      "body": "Nvidia CEO 젠슨 황이 이번 주 산타클라라 본사에서 <b>리벨리온</b> 공동창업자를 만나 협력·투자·인수 가능성을 논의했다. 에너지 효율 추론 가속기로 23억 달러 밸류를 인정받은 한국 스타트업이다.",
+      "detail": "Nvidia의 젠슨 황 CEO가 이번 주 산타클라라 본사에서 한국 AI 칩 스타트업 리벨리온의 공동창업자를 만나 협력, 투자 또는 인수 가능성을 타진했다고 블룸버그가 전했다. 리벨리온은 에너지 효율이 높은 추론용 가속기를 앞세워 약 23억 달러의 기업가치를 인정받은 회사다. 추론 비용 절감이 최대 화두로 떠오른 가운데, 글로벌 1위 GPU 기업과 한국 팹리스의 접점이 국내 반도체 생태계에도 파장을 줄 전망이다.",
+      "src": "Bloomberg", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "MODEL · 에이전트", "catClass": "c-model",
+      "title": "알리바바 'Qwen-UI-Agent', 화면 조작에서 GPT-5.6·Opus 4.8 제쳤다",
+      "body": "알리바바가 공개한 GUI 특화 에이전트가 <b>폰·PC·웹앱 화면 내비게이션</b> 과제에서 GPT-5.6과 Claude Opus 4.8을 앞섰다. 컴퓨터를 '보고 클릭해' 조작하는 에이전트 경쟁이 격화된다.",
+      "detail": "알리바바가 GUI 조작에 특화된 Qwen-UI-Agent를 내놓으며, 스마트폰·PC·웹 애플리케이션의 화면 내비게이션 벤치마크에서 GPT-5.6과 Claude Opus 4.8을 능가했다고 밝혔다. 텍스트 명령을 넘어 실제 화면을 인식하고 버튼을 눌러 작업을 수행하는 '컴퓨터 사용 에이전트' 영역에서 중국 모델의 약진이 두드러진다. 사무 자동화와 앱 조작을 대행하는 에이전트 시장의 주도권 경쟁이 한층 뜨거워졌다.",
+      "src": "AI Agent Store", "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "MODEL · 멀티모달", "catClass": "c-model",
+      "title": "DeepSeek 'V4-Flash-Vision', 같은 가격에 이미지 이해 얹었다",
+      "body": "DeepSeek가 기존 텍스트 모델에 이미지 이해를 더한 멀티모달 변형을 <b>동일 토큰 가격</b>으로 공개했다. 멀티모달 벤치마크에서 Opus 4.8 성능에 근접했다는 주장이다.",
+      "detail": "DeepSeek가 V4-Flash의 멀티모달 실험 버전 'V4-Flash-Vision-Exp'를 선보였다. 기존 텍스트 모델과 같은 토큰 단가를 유지하면서 이미지 이해 능력을 추가했고, 멀티모달 벤치마크에서 Claude Opus 4.8 수준에 근접했다고 회사 측은 설명한다. 저가 정책과 빠른 기능 확장을 앞세운 중국 오픈 모델 진영이 멀티모달 영역에서도 가성비 압박을 이어가는 모습이다.",
+      "src": "AI Agent Store", "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    },
+    {
+      "cat": "SEC · 취약점", "catClass": "c-sec",
+      "title": "CISA, Ray 프레임워크 치명적 결함에 '3일 패치' 시한",
+      "body": "미국 CISA가 아마존·애플·OpenAI가 쓰는 분산 컴퓨팅 프레임워크 <b>Ray</b>의 치명적 취약점에 대해 3일 내 패치를 명령했다. AI 학습 인프라의 공급망 보안이 도마에 올랐다.",
+      "detail": "미국 사이버보안·인프라보안청(CISA)이 널리 쓰이는 분산 컴퓨팅 프레임워크 Ray의 치명적 취약점에 대해 연방기관에 3일 내 패치를 지시했다. Ray는 아마존·애플·OpenAI 등 대형 AI 기업의 학습·추론 파이프라인에서 폭넓게 사용된다. 모델 자체가 아니라 이를 떠받치는 오픈소스 인프라가 공격 표면이 되고 있음을 보여주는 사례로, AI 공급망 보안의 중요성이 다시 부각됐다.",
+      "src": "AIToolsRecap", "url": "https://aitoolsrecap.com/daily-ai-news.aspx"
+    },
+    {
+      "cat": "MODEL · 과학", "catClass": "c-model",
+      "title": "Anthropic, 검증된 단백질 설계 결과 공개",
+      "body": "Anthropic이 AI로 설계한 단백질을 실험으로 검증한 결과를 발표했다. 언어모델 기업이 <b>생명과학</b> 응용으로 영역을 넓히며, AI 신약·바이오 설계 경쟁에 가세했다.",
+      "detail": "Anthropic이 AI를 활용해 설계한 단백질을 실제 실험으로 검증한 연구 결과를 공개했다. 대화형 언어모델로 알려진 기업이 단백질 구조·기능 설계라는 생명과학 영역에서 검증 가능한 성과를 내놓은 것이다. AI가 창약·효소·바이오 소재 설계로 확장되는 흐름 속에서, 프런티어 랩들이 과학 연구 자체를 가속하는 도구로 자리매김하고 있음을 보여준다.",
+      "src": "AIToolsRecap", "url": "https://aitoolsrecap.com/daily-ai-news.aspx"
+    },
+    {
+      "cat": "BIZ · 제품", "catClass": "c-biz",
+      "title": "OpenAI, macOS '메시지'에 ChatGPT를 심다",
+      "body": "OpenAI가 macOS의 애플 '메시지' 앱 연동을 출시했다. 사용자 허가 후 <b>메시지를 읽고·검색·요약·작성·발송</b>한다. AI가 개별 앱을 넘어 운영체제의 한 층으로 스며드는 신호.",
+      "detail": "OpenAI가 macOS용 애플 메시지 연동 기능을 내놨다. 사용자가 권한을 허용하면 ChatGPT가 메시지를 읽고 검색·요약하며, 초안을 작성해 대신 보낼 수도 있다. AI 비서가 독립된 앱에서 벗어나 여러 애플리케이션을 가로지르는 '운영 계층'으로 진화하고 있음을 보여주는 사례다. 편의성이 커지는 만큼 메시지 접근 권한을 둘러싼 프라이버시 논의도 함께 뒤따를 전망이다.",
+      "src": "9to5Mac", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "BIZ · 로보택시", "catClass": "c-biz",
+      "title": "Tesla, 라스베이거스에 로보택시 최대 5,000대 승인",
+      "body": "네바다 규제당국이 Tesla에 향후 1년간 라스베이거스에서 <b>최대 5,000대</b>의 로보택시 운행 허가를 내줬다. 각각 1,000대인 Waymo·Uber를 크게 앞지르는 규모다.",
+      "detail": "네바다 규제당국이 Tesla에 향후 1년간 라스베이거스에서 최대 5,000대의 로보택시를 운행할 수 있는 허가를 부여했다. 이는 각각 1,000대씩 승인받은 Waymo와 Uber를 크게 웃도는 규모로, 라스베이거스가 대규모 자율주행 실증의 각축장으로 떠올랐다. 승인 대수는 곧바로 도로 위 실제 운행 데이터의 양으로 이어져, 자율주행 상용화 경쟁의 주도권을 가르는 변수가 된다.",
+      "src": "TechCrunch", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "MODEL · 오픈", "catClass": "c-model",
+      "title": "구글 Gemma, 오픈 모델 다운로드 10억 건 돌파",
+      "body": "구글 딥마인드가 오픈 AI 모델 제품군 <b>Gemma</b>의 누적 다운로드가 10억 건을 넘고, 10만 개 이상의 커뮤니티 변형이 나왔다고 밝혔다. 개발자 생태계의 저변을 보여주는 수치.",
+      "detail": "구글 딥마인드가 오픈 AI 모델 제품군 Gemma의 누적 다운로드가 10억 건을 돌파했으며, 커뮤니티가 만든 파생 모델이 10만 개를 넘었다고 발표했다. 유전체 분석, 동물 소통 연구, 우주 기반 컴퓨팅에 이르기까지 활용 범위가 넓어졌다. 폐쇄형 프런티어 모델과 별개로, 무료로 배포되는 오픈 모델이 개발자 생태계의 두터운 저변을 형성하고 있음을 보여준다.",
+      "src": "Google DeepMind", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "POLICY · 인프라", "catClass": "c-policy",
+      "title": "펜실베이니아, AI 데이터센터 계약의 '비밀유지 조항' 금지",
+      "body": "펜실베이니아가 행정명령으로 AI 데이터센터 거래에서 <b>기밀유지(NDA) 조항을 금지</b>하고, 지역 승인과 개발자 부담 인프라를 의무화했다. 데이터센터 확장의 투명성을 겨냥한 조치.",
+      "detail": "펜실베이니아 주가 행정명령 2026-05호를 통해 AI 데이터센터 거래에 붙는 비밀유지(NDA) 조항을 금지하고, 지역사회의 승인 절차와 개발자 부담 인프라 구축을 의무화했다. 급증하는 데이터센터가 전력·용수·토지에 미치는 영향이 주민에게 감춰진 채 진행되는 문제를 겨냥한 것이다. AI 인프라 확장이 지역 정치·환경 규제와 정면으로 맞물리기 시작했음을 보여준다.",
+      "src": "AIToolsRecap", "url": "https://aitoolsrecap.com/daily-ai-news.aspx"
+    },
+    {
+      "cat": "BIZ · 인재", "catClass": "c-biz",
+      "title": "뉴욕, 13년 만에 베이 에어리어 제치고 최대 테크 허브로",
+      "body": "뉴욕의 테크 인력이 약 39만 4,300명으로 샌프란시스코 베이 에어리어(37만 5,730명)를 13년 만에 앞질렀다. AI 채용이 미국 테크 구인의 <b>3분의 1</b>을 차지하며 지형을 바꿨다.",
+      "detail": "뉴욕의 테크 일자리가 약 39만 4,300개로, 37만 5,730개인 샌프란시스코 베이 에어리어를 13년 만에 처음으로 추월했다. AI 관련 채용과 금융권 수요가 성장을 이끌었으며, AI 직무는 이제 미국 테크 구인 공고의 약 3분의 1을 차지하고 전년 대비 45% 늘었다. AI 인재 수요가 실리콘밸리 일극 구도를 흔들며 인재 지도를 다시 그리고 있다.",
+      "src": "CNBC", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "POLICY · 주권", "catClass": "c-policy",
+      "title": "브라질, 4.44억 달러 '주권 AI' 투자 — 미·중 사이 균형",
+      "body": "브라질이 미국·중국 파트너와 함께 약 <b>4.44억 달러</b> 규모의 AI 투자를 발표했다. 화웨이·아이플라이텍과의 슈퍼컴퓨팅 사업(약 2.5억 달러)이 포함된다.",
+      "detail": "브라질이 미국과 중국 양쪽 파트너를 아우르는 약 4.44억 달러 규모의 AI 투자를 발표했다. 여기에는 화웨이·아이플라이텍과 함께 추진하는 약 2.5억 달러 규모의 슈퍼컴퓨팅 프로젝트가 포함된다. 신흥국이 경쟁하는 지정학 진영을 넘나들며 자체 'AI 주권' 인프라를 구축하는 흐름을 보여주는 사례로, 컴퓨트 자립이 국가 전략 의제로 부상하고 있다.",
+      "src": "Reuters", "url": "https://techstartups.com/2026/08/21/top-tech-news-today-august-21-2026-anthropic-apple-broadcom-google-nvidia-openai-tesla-more/"
+    },
+    {
+      "cat": "INFRA · 에이전트", "catClass": "c-infra",
+      "title": "AWS 'AgentCore Payments' 정식 출시 — 에이전트가 스스로 결제한다",
+      "body": "AWS Bedrock의 AgentCore Payments가 정식 출시(GA)됐다. AI 에이전트가 <b>API·서비스 비용을 자율적으로 결제</b>하고, 지속형 런타임 인스턴스를 유지할 수 있게 됐다.",
+      "detail": "AWS가 Bedrock의 AgentCore Payments를 정식 출시했다. 이제 AI 에이전트가 필요한 API나 외부 서비스 이용료를 사람 개입 없이 자율적으로 결제하고, 작업 사이에 상태를 유지하는 지속형 런타임 인스턴스를 운영할 수 있다. 에이전트가 단순히 '판단'하는 단계를 넘어 '돈을 쓰며 실행'하는 경제 주체로 확장되는 흐름으로, 자율 에이전트의 상업적 활용 범위가 넓어진다.",
+      "src": "AI Agent Store", "url": "https://aiagentstore.ai/ai-agent-news/this-week"
+    }
+  ],
+  "stats": [
+    {"n": "65", "suf": "B$", "lab": "Anthropic 연환산 매출(7월 기준) — 사상 최대 IPO 준비"},
+    {"n": "6", "suf": "B$", "lab": "Nvidia가 Poolside AI 코딩 기술에 지급하는 라이선스료"},
+    {"n": "100", "suf": "B$", "lab": "Broadcom이 AI 인프라 위해 조달 추진하는 부채 규모(최대)"},
+    {"n": "5000", "suf": "대", "lab": "Tesla가 라스베이거스에 배치 승인받은 로보택시"}
+  ],
+  "timeline": [
+    {"time": "08.20", "title": "펜실베이니아, AI 데이터센터 NDA 금지", "desc": "행정명령 2026-05 · 지역 승인 의무화"},
+    {"time": "08.21", "title": "Nvidia, Poolside에 $6B 라이선스", "desc": "+$1B 투자 · 직원 109명 채용 제안"},
+    {"time": "08.21", "title": "Anthropic, 사상 최대 IPO 준비 보도", "desc": "연환산 $65B · 8월말 S-1 전망"},
+    {"time": "08.21", "title": "Broadcom, 최대 $100B 부채 조달 추진", "desc": "AI 인프라를 자산군으로 취급"},
+    {"time": "08.22", "title": "알리바바 Qwen-UI-Agent 공개", "desc": "화면 조작서 GPT-5.6·Opus 4.8 제쳐"},
+    {"time": "08.22", "title": "CISA, Ray 취약점 3일 패치 시한", "desc": "아마존·애플·OpenAI가 쓰는 프레임워크"}
+  ],
+  "ticker": [
+    "Nvidia, Poolside에 <b>$6B 라이선스</b> + $1B 투자",
+    "Anthropic <b>사상 최대 IPO</b> 준비 · 연환산 $65B",
+    "Broadcom, AI 인프라 <b>최대 $100B 부채</b> 조달",
+    "알리바바 <b>Qwen-UI-Agent</b>, GPT-5.6·Opus 4.8 제쳐",
+    "DeepSeek <b>V4-Flash-Vision</b> 멀티모달 공개",
+    "CISA, Ray 취약점 <b>3일 패치 시한</b>",
+    "Tesla, 라스베이거스 <b>로보택시 5,000대</b> 승인",
+    "구글 Gemma <b>10억 다운로드</b> 돌파"
+  ]
+}
