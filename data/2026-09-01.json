@@ -1,0 +1,153 @@
+{
+  "date": "2026-09-01",
+  "weekday": "화",
+  "dateLabel": "2026년 9월 1일 · 화요일",
+  "desc": "2026년 9월 1일, 세계를 움직인 AI 뉴스 15선. OpenAI 광고 10억 달러 런레이트부터 EU 규제, 실리콘 전쟁, AI 보안 위협까지.",
+  "hero": ["챗봇이", "광고로", "돈을 벌기 시작했다."],
+  "heroSub": "<b>OpenAI의 ChatGPT 광고</b>가 파일럿 200일 만에 <b>연 10억 달러 런레이트</b>를 넘어선 하루 — EU의 ChatGPT 초대형 플랫폼 지정, 펜타곤의 Anthropic 블랙리스트 무효 판결, DeepSeek·텐센트의 오픈소스 공세까지 열다섯 개의 신호를 한 화면에 담았습니다.",
+  "timelineSub": "광고·규제·실리콘·보안 — 하루를 관통한 사건의 순서.",
+  "highlights": [
+    "OpenAI ChatGPT 광고, 200일 만에 $1B 런레이트 돌파",
+    "EU, ChatGPT를 '초대형 온라인 검색엔진(VLOSE)'으로 지정",
+    "美 법원, 펜타곤의 Anthropic 블랙리스트 '위헌' 무효화"
+  ],
+  "feature": {
+    "cat": "BIZ · 광고", "catClass": "c-biz",
+    "title": "OpenAI 광고 사업, 200일 만에 연 10억 달러를 넘다",
+    "body": "OpenAI가 <b>ChatGPT 광고 사업이 연환산 10억 달러 런레이트</b>를 돌파했다고 밝혔다. 지난 2월 파일럿 출시 이후 채 200일이 되지 않아 세운 기록으로, 유럽 셀프서브 광고까지 열며 IPO를 앞둔 <b>매출 다각화</b>의 신호탄이 됐다.",
+    "detail": "OpenAI가 ChatGPT 광고 사업의 연환산 매출 런레이트가 10억 달러를 넘었다고 공개했다. 2026년 2월 파일럿 이후 200일이 채 안 된 시점의 기록으로, 회사는 2026년 광고 매출을 25억 달러로 가이던스하며 회사 전체 400억 달러대 런레이트에 얹었다. 상장을 앞두고 '구독 외 수익원'을 입증하려는 포석이자, 대화형 AI가 검색·미디어 광고 시장을 직접 잠식하기 시작했다는 상징적 전환점으로 읽힌다.",
+    "src": "Forbes", "url": "https://www.forbes.com/sites/gabrielalinzainescu/2026/08/31/openais-chatgpt-ads-hit-1-billion-run-rate-in-just-200-days/",
+    "keys": [["$1B", "광고 연환산 런레이트"], ["<200일", "2월 파일럿 이후"], ["$2.5B", "2026 광고 매출 가이던스"]]
+  },
+  "stories": [
+    {
+      "cat": "POLICY · 규제", "catClass": "c-policy",
+      "title": "EU, ChatGPT를 '초대형 온라인 검색엔진'으로 지정",
+      "body": "유럽집행위가 ChatGPT(월 1.59억 사용자)를 디지털서비스법(DSA)의 최고 감독 등급인 VLOSE로 지정했다. 11월 30일까지 시스템 리스크 평가와 독립 감사를 마쳐야 하며, 미준수 시 글로벌 매출의 최대 6% 과징금이 걸린다.",
+      "detail": "유럽집행위원회가 ChatGPT를 Reddit·Roblox와 함께 DSA의 '초대형 온라인 검색엔진(VLOSE)'으로 지정했다. EU 역내 월 4,500만 사용자 임계치를 넘긴 데 따른 조치로, 이들은 11월 30일까지 시스템적 위험 평가와 독립 감사를 완료해야 한다. 위반 시 전 세계 매출의 최대 6%에 달하는 과징금이 부과될 수 있어, 생성형 AI가 콘텐츠·검색 규제의 정면 대상으로 편입되는 분기점이다.",
+      "src": "Euronews", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "POLICY · 국방", "catClass": "c-policy",
+      "title": "美 법원, 펜타곤의 Anthropic 블랙리스트 '위헌' 무효화",
+      "body": "리타 린 연방판사가 국방부의 Anthropic '공급망 리스크' 지정을 수정헌법 1조를 침해한 보복으로 판단해 무효화했다. 다리오 아모데이 CEO가 대량감시·자율무기 등 군사 활용 허가를 거부한 뒤 내려진 조치였다.",
+      "detail": "미 캘리포니아 북부지법의 리타 린 판사가 국방부의 Anthropic 공급망 리스크 지정을 위법한 '표현의 자유 보복'으로 판결해 무효화했다. 아모데이 CEO가 대량감시·자율무기 사용을 포함한 군사 활용 허가를 거부한 직후 블랙리스트에 오른 정황이 핵심 쟁점이었다. AI 기업의 사용정책과 정부 조달권이 헌법적 차원에서 충돌한 첫 사례로, 향후 방산-AI 계약의 전제를 뒤흔들 판례가 될 전망이다.",
+      "src": "Fortune", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "BIZ · 계약", "catClass": "c-biz",
+      "title": "OpenAI, Cursor 모델 접근을 11월 12일 차단 통보",
+      "body": "OpenAI가 SpaceX의 Anysphere 인수를 '지배구조 변경' 조항의 트리거로 보고, Cursor에 대한 모델 접근을 11월 12일 종료하겠다고 통보했다. 머스크 계열사의 계약 위반 전력과 에이전트 코딩의 안전성 우려를 근거로 들었다.",
+      "detail": "OpenAI가 Cursor 개발사 Anysphere에 모델 접근을 11월 12일부로 종료한다고 통보했다. SpaceX의 600억 달러 규모 Anysphere 인수가 계약상 '지배구조 변경' 조항을 발동시켰다는 것이 명분으로, OpenAI는 머스크 계열사의 과거 계약 위반과 에이전트형 코딩의 안전성 리스크를 함께 거론했다. 앙숙 관계인 OpenAI와 머스크 진영의 갈등이 개발자 툴 생태계로 번지며, 프런티어 모델 의존이 곧 사업 리스크임을 다시 드러냈다.",
+      "src": "CybersecurityNews", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "POLICY · 저작권", "catClass": "c-policy",
+      "title": "소니·워너채플, Anthropic을 저작권 침해로 제소",
+      "body": "소니뮤직퍼블리싱과 워너채플이 '수만 곡'의 가사가 Claude 학습에 무단 사용됐다며 Anthropic을 캘리포니아 북부지법에 제소했다. 곡당 최대 15만 달러 배상을 청구해 잠재 노출액이 수십억 달러에 이를 수 있다.",
+      "detail": "소니뮤직퍼블리싱과 워너채플이 MusixMatch·LyricFind와 토런트에서 긁어온 '수만 건'의 저작권 가사가 Claude 학습에 쓰였다며 Anthropic을 상대로 소송을 냈다. 원고는 저작물당 최대 15만 달러의 법정손해배상과 권리 제거 조치를 요구했다. 뉴욕타임스·저자 소송에 이어 음악 권리자까지 전선을 넓히면서, 학습 데이터의 출처와 라이선스가 프런티어 랩의 최대 재무 리스크로 굳어지는 흐름이다.",
+      "src": "Music Business Worldwide", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "MODEL · 멀티모달", "catClass": "c-model",
+      "title": "DeepSeek, 305B 멀티모달 'V4-Vision-Exp' 공개",
+      "body": "DeepSeek가 305B 파라미터의 실험적 멀티모달 모델 V4-Flash-Vision-Exp을 MIT 라이선스로 허깅페이스에 올렸다. V4-Flash 아키텍처에 비전 인코딩을 결합해, 멀티모달 에이전트 벤치(ApexBench)에서 26.2→36.5로 크게 앞섰다.",
+      "detail": "DeepSeek가 305B 파라미터 멀티모달 모델 DeepSeek-V4-Flash-Vision-Exp를 MIT 라이선스로 허깅페이스에 공개했다. V4-Flash 아키텍처에 비전 인코더를 얹은 실험 버전으로, 멀티모달 에이전트 성능 지표(ApexBench Pass@1)에서 기존 26.2 대비 36.5로 두드러진 향상을 보였다. 완전 개방형 라이선스로 풀린 프런티어급 멀티모달 모델이라는 점에서, 중국 오픈소스 진영의 압박이 이미지·에이전트 영역까지 확장되고 있음을 보여준다.",
+      "src": "Hugging Face", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "MODEL · 오픈소스", "catClass": "c-model",
+      "title": "텐센트, 1M 컨텍스트 'Hy4' 770B 오픈소스 공개",
+      "body": "텐센트 훈위안팀이 Apache 2.0 라이선스로 Hy4-preview를 내놨다. 총 770B·토큰당 49B 활성, 256개 라우팅 전문가, 100만 토큰 컨텍스트를 갖췄고 GPQA Diamond 92.3, SWE-bench Pro 65.7을 기록했다.",
+      "detail": "텐센트 훈위안팀이 대형 MoE 모델 Hy4-preview를 Apache 2.0으로 공개했다. 총 파라미터 770B에 토큰당 49B만 활성화하는 구조로 256개 라우팅 전문가와 100만 토큰 컨텍스트를 지원하며, GPQA Diamond 92.3·SWE-bench Pro 65.7의 벤치마크를 제시했다. FP8 가중치와 vLLM·SGLang 실행 레시피까지 함께 배포돼, 상업적으로 바로 쓸 수 있는 초대형 오픈 모델의 기준선을 다시 끌어올렸다.",
+      "src": "TechNode", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "INFRA · 실리콘", "catClass": "c-infra",
+      "title": "애플, 첫 2nm 'M6'와 4다이 'M5 Ultra' 공개",
+      "body": "애플이 첫 2나노 M6(12코어 CPU·12코어 GPU·듀얼 16코어 뉴럴엔진)와 첫 4다이 구성 M5 Ultra(최대 36코어 CPU·80코어 GPU·512GB 메모리)를 발표했다. M5 Ultra의 AI GPU 연산은 M3 Ultra의 최대 4.5배다.",
+      "detail": "애플이 2나노 공정 첫 칩 M6와 처음으로 4개 다이를 잇는 M5 Ultra를 공개했다. M6는 12코어 CPU·12코어 GPU에 듀얼 16코어 뉴럴엔진을 얹었고, M5 Ultra는 최대 36코어 CPU·80코어 GPU와 1.2TB/s 대역의 512GB 통합메모리를 갖췄다. M5 Ultra의 AI GPU 연산이 M3 Ultra 대비 최대 4.5배라는 점에서, 온디바이스·워크스테이션급 AI를 겨냥한 애플 실리콘의 세대 도약이 확인됐다.",
+      "src": "Apple", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "INFRA · 실리콘", "catClass": "c-infra",
+      "title": "OpenAI 자체 추론칩 '할라피뇨', 엔비디아 루빈 넘본다",
+      "body": "세미애널리시스 분석에 따르면 OpenAI의 커스텀 추론칩 Jalapeño(브로드컴·TSMC N3P, 16개월 개발)의 B0 스테핑이 700W에서 13.4 PFLOPs(MXFP4)를 낸다. HBM4 15.4TB/s를 붙여 DeepSeek R1에서 700 tok/s 이상, 와트당 성능에서 루빈을 앞선다.",
+      "detail": "세미애널리시스가 OpenAI의 자체 추론칩 Jalapeño 분석을 공개했다. 브로드컴과 TSMC N3P로 16개월 만에 테이프아웃한 이 칩의 B0 스테핑은 700W에서 13.4 PFLOPs(MXFP4)를 내고 HBM4를 15.4TB/s로 연결해, DeepSeek R1 추론에서 700 tok/s를 넘겼다. 와트당 성능에서 엔비디아 루빈을 앞선다는 평가로, 프런티어 랩이 추론 원가를 직접 통제하려는 '자체 실리콘' 경쟁이 실측 단계에 진입했음을 보여준다.",
+      "src": "SemiAnalysis", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "BIZ · 투자", "catClass": "c-biz",
+      "title": "엔비디아, 미디어텍에 35억 달러 전환사채 투자",
+      "body": "엔비디아가 대만 미디어텍의 전환사채 35억 달러어치를 인수하며 협력을 심화했다. NVLink Fusion 기술을 미디어텍의 커스텀 XPU에 통합해 AI 인프라용 칩 라인업을 넓히려는 포석이다.",
+      "detail": "엔비디아가 미디어텍이 발행한 35억 달러 규모 전환사채를 매입하며 파트너십을 강화했다. 자사의 NVLink Fusion 인터커넥트를 미디어텍의 커스텀 XPU에 결합해 AI 데이터센터용 이종 칩 생태계를 확장하려는 전략으로 해석된다. GPU 단일 공급을 넘어 커스텀 실리콘 파트너를 자본으로 묶어두는 움직임으로, 엔비디아식 '락인'의 새로운 층위를 보여준다.",
+      "src": "Bloomberg", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "BIZ · 투자", "catClass": "c-biz",
+      "title": "a16z, 5호 그로스 펀드 85억 달러로 최종 마감",
+      "body": "안드리센 호로위츠가 5호 그로스 펀드를 총 85억 달러로 마감했다. 엔터프라이즈·컨슈머 AI, 아메리칸 다이너미즘, 로보틱스/자율주행, 헬스케어/프로그래머블 바이오, AI 시대 컴퓨트 인프라 등 6대 축에 집중 투자한다.",
+      "detail": "안드리센 호로위츠가 5호 그로스 펀드에 추가 자본을 모아 총 85억 달러로 최종 마감했다. 엔터프라이즈 AI·컨슈머 AI·아메리칸 다이너미즘·로보틱스와 자율주행·헬스케어와 프로그래머블 바이오·AI 컴퓨트 인프라를 6대 투자 축으로 명시했다. AI 후기 성장단계 기업에 대규모 자본이 계속 쏠리고 있음을 보여주는 지표로, 로보틱스·인프라로 무게중심이 옮겨가는 흐름이 드러난다.",
+      "src": "a16z", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "INFRA · 데이터센터", "catClass": "c-infra",
+      "title": "투게더AI, 사우디와 연 50억 달러 컴퓨트 계약",
+      "body": "Together AI가 사우디 국부 지원 HUMAIN과 손잡고 250MW AI 데이터센터를 지어 첫해 연 50억 달러 이상의 총매출을 창출한다. 미국 내 증설이 지역사회 반발로 지연되는 가운데 컴퓨트 용량을 거의 세 배로 늘린다.",
+      "detail": "Together AI가 사우디 국영 HUMAIN과 전략적 파트너십을 맺고 250MW 규모 AI 데이터센터를 구축한다. 첫해에만 연환산 50억 달러 이상의 총매출이 걸린 대형 계약으로, 회사의 컴퓨트 용량을 거의 3배로 늘린다. 미국 내 데이터센터 증설이 전력·물·지역 반대에 부딪히는 사이, 걸프 자본과 에너지가 AI 인프라의 새로운 정착지로 부상하는 지정학적 전환을 보여준다.",
+      "src": "AIthority", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "SEC · 취약점", "catClass": "c-sec",
+      "title": "Claude Code '오토 모드'서 원격코드실행 취약점 공개",
+      "body": "보안연구자 분더우치가 Claude의 Auto Mode에서 60~80% 성공률의 5단계 원격코드실행 체인을 공개했다. HTTP 415 오류로 curl 폴백을 유도하고 표준 라이브러리를 가리는 악성 struct.py로 임포트를 오염시키는 방식이다.",
+      "detail": "보안연구자 분더우치가 Claude Code의 Auto Mode에서 임의 코드 실행에 이르는 5단계 공격 체인을 공개했다. HTTP 415 오류를 이용해 curl 폴백을 강제하고, 파이썬 표준 라이브러리를 가리는 악성 struct.py를 담은 ZIP으로 오염된 임포트를 트리거해 60~80% 성공률을 냈다. Anthropic은 'Auto Mode는 보안 경계가 아니며 OS 수준 샌드박스가 필요하다'고 답했는데, 에이전트형 코딩 도구의 안전 모델이 재점검 대상이 됐음을 보여준다.",
+      "src": "Embrace The Red", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "SEC · 보안", "catClass": "c-sec",
+      "title": "정보탈취 악성코드, Claude 로그인 세션 노린다",
+      "body": "Anthropic이 Vidar·LummaC2·StealC·RedLine·Acreed(윈도우)와 Atomic Stealer/AMOS(맥) 악성코드가 활성 Claude 세션을 탈취해 사용량을 빼가고 있다고 밝혔다. 회사는 피해 계정을 로그아웃시키고 결제수단을 삭제한 뒤 환불했다.",
+      "detail": "Anthropic이 여러 정보탈취(infostealer) 악성코드가 사용자의 활성 Claude 로그인 세션을 가로채 사용 한도를 소진시키고 있다고 경고했다. 윈도우용 Vidar·LummaC2·StealC·RedLine·Acreed와 맥용 Atomic Stealer가 확인됐으며, 회사는 영향받은 계정을 강제 로그아웃하고 저장된 결제수단을 삭제한 뒤 부정 청구를 환불했다. AI 서비스 계정 자체가 사이버 범죄의 새로운 수익 표적이 되고 있음을 보여준다.",
+      "src": "BleepingComputer", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "MODEL · 로보틱스", "catClass": "c-model",
+      "title": "Skild AI 'S1', 영상 한 편만 보고 작업을 배운다",
+      "body": "Skild AI가 사람 시연 영상 한 편만으로 파인튜닝 없이 10분짜리 작업을 수행하는 로보틱스 파운데이션 모델 S1을 공개했다. 처음 보는 작업 성공률이 66%로, 언어 프롬프트 기반 VLA의 9%를 크게 앞섰다.",
+      "detail": "Skild AI가 로보틱스 파운데이션 모델 S1을 공개했다. 사람의 시연 영상 한 편을 관찰하는 것만으로 별도 파인튜닝 없이 10분 길이의 작업을 실행하며, 비슷한 10만 시간 학습 규모에서 처음 보는 작업 성공률 66%를 기록해 언어 프롬프트형 VLA의 9%를 압도했다. '한 번 보고 따라 하는' 일반화 능력이 체화 AI의 실용화 장벽을 낮추고 있음을 보여주는 성과다.",
+      "src": "Skild AI", "url": "https://aiweekly.co/ai-news-today"
+    },
+    {
+      "cat": "CREATE · 플랫폼", "catClass": "c-create",
+      "title": "인스타그램, 라벨 없는 AI 페르소나 계정에 도달 제한",
+      "body": "인스타그램이 'AI 생성 프로필' 라벨을 도입하고, 이를 붙이지 않은 AI 페르소나 계정은 '도달이 제한될 수 있다'고 경고했다. 합성 인격의 정체 표기를 둘러싼 커뮤니티 불만에 대응한 조치다.",
+      "detail": "인스타그램이 'AI로 생성된 프로필'을 표시하는 라벨을 새로 도입하고, 이를 적용하지 않은 채 AI 페르소나를 내세우는 계정은 노출(도달)이 축소될 수 있다고 경고했다. 진짜 사람과 합성 인격을 구분해달라는 이용자 요구가 커진 데 따른 것으로, 생성형 미디어 시대의 '정체성 표기' 규범이 플랫폼 정책으로 자리 잡는 흐름을 보여준다. 크리에이터 이코노미와 AI 콘텐츠의 경계 설정이 본격화되는 국면이다.",
+      "src": "Engadget", "url": "https://aiweekly.co/ai-news-today"
+    }
+  ],
+  "stats": [
+    {"n": "1", "suf": "B$", "lab": "OpenAI ChatGPT 광고 연환산 런레이트 · 파일럿 200일 만"},
+    {"n": "8.5", "suf": "B$", "lab": "a16z 5호 그로스 펀드 최종 규모 · 로보틱스·인프라 집중"},
+    {"n": "770", "suf": "B", "lab": "텐센트 Hy4 오픈소스 총 파라미터 · 100만 토큰 컨텍스트"},
+    {"n": "6", "suf": "%", "lab": "EU DSA 미준수 시 글로벌 매출 대비 최대 과징금"}
+  ],
+  "timeline": [
+    {"time": "08.31", "title": "ChatGPT 광고 $1B 런레이트", "desc": "파일럿 200일 만 · 2026 가이던스 $2.5B"},
+    {"time": "08.31", "title": "EU, ChatGPT VLOSE 지정", "desc": "DSA 최고 감독 · 11/30까지 리스크 평가"},
+    {"time": "08.30", "title": "펜타곤 Anthropic 블랙리스트 무효", "desc": "수정헌법 1조 보복 · 리타 린 판사"},
+    {"time": "08.30", "title": "OpenAI, Cursor 접근 차단 통보", "desc": "SpaceX의 Anysphere 인수 트리거 · 11/12"},
+    {"time": "08.28", "title": "텐센트 Hy4 오픈소스 공개", "desc": "770B · 1M 컨텍스트 · Apache 2.0"},
+    {"time": "09.01", "title": "9월 개막 — 실리콘·규제 격돌", "desc": "애플 2nm M6 · OpenAI 할라피뇨 칩"}
+  ],
+  "ticker": [
+    "OpenAI 광고 <b>$1B 런레이트</b> 돌파",
+    "EU, ChatGPT <b>초대형 플랫폼(VLOSE)</b> 지정",
+    "美 법원, <b>펜타곤 Anthropic 블랙리스트 무효</b>",
+    "OpenAI, <b>Cursor 접근 11/12 차단</b>",
+    "DeepSeek <b>V4-Vision 305B</b> 공개",
+    "텐센트 <b>Hy4 770B</b> 오픈소스",
+    "Nvidia, <b>MediaTek에 $3.5B</b> 투자",
+    "Sony·Warner, <b>Anthropic 저작권 소송</b>"
+  ]
+}
